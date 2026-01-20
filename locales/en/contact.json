@@ -1,6 +1,10 @@
 {
+  "seo": {
+    "title": "Contact Us - Get in Touch",
+    "description": "Have questions? Want to talk to a real person? Contact Domain Tescil. No pressure, no sales pitch. Just a real conversation about what you need."
+  },
   "hero": {
-    "title": "Let's talk.",
+    "title": "Contact Us - Let's Talk",
     "description": "No pressure. No sales pitch. Just a real conversation about what you need."
   },
   "form": {

@@ -1,7 +1,11 @@
 {
+  "seo": {
+    "title": "SSL Sertifikaları - Web Sitenizi SSL ile Güvence Altına Alın",
+    "description": "SSL sertifikaları ile web sitenizi koruyun ve güven oluşturun. Positive SSL, Wildcard SSL ve EV SSL seçenekleri. Ücretsiz kurulum, otomatik yenileme hatırlatıcıları. Sitenizi bugün güvence altına alın."
+  },
   "overview": {
     "hero": {
-      "title": "Ziyaretçileriniz güvende hissetmeyi hak ediyor",
+      "title": "SSL Sertifikaları - Ziyaretçileriniz Güvende Hissetmeyi Hak Ediyor",
       "description": "SSL sertifikaları sadece teknik güvenlikle ilgili değil. Ziyaretçilerinize bilgilerini korumayı önemsediğinizi göstermekle ilgili. Profesyonellik ve güvenilirlik için sessiz bir sinyal.",
       "imageAlt": "Web sitesinde güvenle çalışan kişi",
       "seeOptions": "SSL seçeneklerini görüntüle",
@@ -66,6 +70,26 @@
         "description": "Google ve diğer arama motorları güvenli siteleri tercih eder. Bir SSL sertifikası sitenizin arama sonuçlarında daha iyi sıralanmasına yardımcı olabilir. Artık standart bir beklenti haline geldi."
       }
     },
+    "whySSL Matters": {
+      "title": "SSL'in web siteniz için neden önemli olduğu",
+      "description": "SSL sertifikaları sadece veri şifrelemez—güven, güvenilirlik ve arama görünürlüğü için gereklidir.",
+      "trust": {
+        "title": "Ziyaretçi güveni oluşturur",
+        "description": "URL'nizdeki kilit simgesi ve 'https', ziyaretçilere bağlantılarının güvenli olduğunu söyler. Bu görsel sinyal güven oluşturur ve hemen çıkma oranlarını azaltır."
+      },
+      "credibility": {
+        "title": "İtibarınızı korur",
+        "description": "Tarayıcılar artık siteler güvenli değilse kullanıcıları uyarıyor. Bu uyarılar, ziyaretçiler içeriğinizi görmeden önce güvenilirliğinize zarar verebilir."
+      },
+      "seo": {
+        "title": "Arama sıralamalarını iyileştirir",
+        "description": "Google ve diğer arama motorları güvenli siteleri önceliklendirir. SSL artık bir sıralama faktörüdür, yani güvenli siteler arama sonuçlarında daha yüksek sıralanma eğilimindedir."
+      },
+      "compliance": {
+        "title": "Modern standartları karşılar",
+        "description": "Birçok ödeme işlemcisi ve üçüncü taraf hizmet SSL gerektirir. Olmadan, işiniz için gerekli araçları entegre edemeyebilirsiniz."
+      }
+    },
     "whenYouNeed": {
       "title": "SSL'e ne zaman ihtiyacınız var",
       "description": "SSL'in önemli olduğu gerçek durumlar. Bunlardan herhangi biri size benziyorsa, bir SSL sertifikasına ihtiyacınız var.",
@@ -84,6 +108,26 @@
       "professional": {
         "title": "Profesyonel görünmek istiyorsunuz",
         "description": "Tarayıcılar artık bir site güvenli değilse ziyaretçilere uyarı gösteriyor. Bu uyarı, kimse içeriğinizi okumadan önce güvenilirliğinize zarar verebilir."
+      }
+    },
+    "sslBasics": {
+      "title": "SSL temellerini anlama",
+      "description": "Teknik jargon olmadan açıklanan önemli kavramlar:",
+      "encryption": {
+        "title": "Şifreleme nedir?",
+        "description": "Şifreleme, verileri karıştırır, böylece sadece amaçlanan alıcı okuyabilir. Birisi sitenizde bir form gönderdiğinde, SSL bu bilgiyi internette dolaşmadan önce şifreler."
+      },
+      "certificates": {
+        "title": "Sertifika nedir?",
+        "description": "Bir SSL sertifikası, web sitenizin kimliğini kanıtlayan dijital bir belgedir. Alan adına sahip olduğunuzu doğruladıktan sonra güvenilir bir otorite (Sertifika Otoritesi) tarafından verilir."
+      },
+      "https": {
+        "title": "HTTP vs HTTPS",
+        "description": "HTTP, web sitelerinin iletişim kurduğu standart yoldur, ancak güvenli değildir. HTTPS 'Güvenli' için 'S' ekler—tarayıcılar ve siteniz arasındaki bağlantıyı şifrelemek için SSL kullanır."
+      },
+      "validation": {
+        "title": "Doğrulama seviyeleri",
+        "description": "SSL sertifikaları farklı doğrulama seviyelerinde gelir. Alan adı doğrulaması (DV) alan adına sahip olduğunuzu doğrular. Genişletilmiş doğrulama (EV) ayrıca işletme kimliğinizi doğrular ve tarayıcıda şirket adınızı gösterir."
       }
     },
     "notSure": {

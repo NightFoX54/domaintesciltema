@@ -1,7 +1,11 @@
 {
+  "seo": {
+    "title": "SSL Certificates - Secure Your Website with SSL",
+    "description": "Protect your website and build trust with SSL certificates. Positive SSL, Wildcard SSL, and EV SSL options. Free installation, automatic renewal reminders. Secure your site today."
+  },
   "overview": {
     "hero": {
-      "title": "Your visitors deserve to feel safe",
+      "title": "SSL Certificates - Your Visitors Deserve to Feel Safe",
       "description": "SSL certificates aren't just about technical security. They're about showing your visitors that you care about protecting their information. It's a quiet signal of professionalism and trustworthiness.",
       "imageAlt": "Person working confidently on their website",
       "seeOptions": "See SSL options",
@@ -66,6 +70,26 @@
         "description": "Google and other search engines favor secure sites. An SSL certificate can help your site rank better in search results. It's become a standard expectation."
       }
     },
+    "whySSL Matters": {
+      "title": "Why SSL matters for your website",
+      "description": "SSL certificates do more than just encrypt data—they're essential for trust, credibility, and search visibility.",
+      "trust": {
+        "title": "Builds visitor trust",
+        "description": "The padlock icon and 'https' in your URL tell visitors their connection is secure. This visual signal builds confidence and reduces bounce rates."
+      },
+      "credibility": {
+        "title": "Protects your reputation",
+        "description": "Browsers now warn users when sites aren't secure. These warnings can damage your credibility before visitors even see your content."
+      },
+      "seo": {
+        "title": "Improves search rankings",
+        "description": "Google and other search engines prioritize secure sites. SSL is now a ranking factor, meaning secure sites tend to rank higher in search results."
+      },
+      "compliance": {
+        "title": "Meets modern standards",
+        "description": "Many payment processors and third-party services require SSL. Without it, you may not be able to integrate essential tools for your business."
+      }
+    },
     "whenYouNeed": {
       "title": "When you need SSL",
       "description": "Here are real situations where SSL matters. If any of these sound like you, you need an SSL certificate.",
@@ -84,6 +108,26 @@
       "professional": {
         "title": "You want to look professional",
         "description": "Browsers now warn visitors when a site isn't secure. That warning can hurt your credibility before anyone even reads your content."
+      }
+    },
+    "sslBasics": {
+      "title": "Understanding SSL basics",
+      "description": "Key concepts explained without technical jargon:",
+      "encryption": {
+        "title": "What is encryption?",
+        "description": "Encryption scrambles data so only the intended recipient can read it. When someone submits a form on your site, SSL encrypts that information before it travels across the internet."
+      },
+      "certificates": {
+        "title": "What is a certificate?",
+        "description": "An SSL certificate is a digital document that proves your website's identity. It's issued by a trusted authority (Certificate Authority) after verifying you own the domain."
+      },
+      "https": {
+        "title": "HTTP vs HTTPS",
+        "description": "HTTP is the standard way websites communicate, but it's not secure. HTTPS adds the 'S' for 'Secure'—it uses SSL to encrypt the connection between browsers and your site."
+      },
+      "validation": {
+        "title": "Validation levels",
+        "description": "SSL certificates come in different validation levels. Domain validation (DV) verifies you own the domain. Extended validation (EV) also verifies your business identity, showing your company name in the browser."
       }
     },
     "notSure": {

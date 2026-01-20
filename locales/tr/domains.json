@@ -24,7 +24,95 @@
     "popularExtensions": {
       "title": "Popüler alan adı uzantıları",
       "description": "Müşterilerin tanıdığı en güvenilir uzantılarla başlayın",
-      "searchExtension": "{{ext}} ara"
+      "searchExtension": "{{ext}} ara",
+      "extensions": [
+        {
+          "ext": ".com",
+          "desc": "Dünya çapında en güvenilir uzantı"
+        },
+        {
+          "ext": ".net",
+          "desc": "Teknoloji ve ağ projeleri için harika"
+        },
+        {
+          "ext": ".org",
+          "desc": "Kuruluşlar için mükemmel"
+        },
+        {
+          "ext": ".com.tr",
+          "desc": "Türk varlığı, yerel güven"
+        },
+        {
+          "ext": ".info",
+          "desc": "Bilgi ve kaynak paylaşın"
+        },
+        {
+          "ext": ".co",
+          "desc": ".com'a modern alternatif"
+        }
+      ]
+    },
+    "checkingAvailability": "Tüm uzantılarda müsaitlik kontrol ediliyor...",
+    "tips": {
+      "title": "Alan adı seçimi için ipuçları",
+      "description": "Doğru uyumu bulmanıza yardımcı olacak birkaç basit kılavuz",
+      "items": [
+        {
+          "title": "Kısa ve akılda kalıcı tutun",
+          "desc": "Daha kısa alan adları hatırlamak, yazmak ve paylaşmak için daha kolaydır. Mümkünse maksimum 2-3 kelime hedefleyin."
+        },
+        {
+          "title": "Yazımı kolay yapın",
+          "desc": "İnsanları karıştırabilecek karmaşık yazımlardan veya sayılardan kaçının. Nasıl yazıldığını açıklamanız gerekiyorsa, başka bir seçenek düşünün."
+        },
+        {
+          "title": "Mümkün olduğunda .com seçin",
+          "desc": "İnsanlar doğal olarak önce .com'u varsayar. İdeal .com'unuz alınmışsa, alışılmadık bir uzantıya razı olmaktansa farklı bir isim düşünün."
+        },
+        {
+          "title": "Uzun vadeli düşünün",
+          "desc": "Alan adınız ilk ürün fikrinizden daha uzun süre yaşayabilir. Büyümeniz ve gelişmeniz için alan veren bir şey seçin."
+        },
+        {
+          "title": "Yüksek sesle söyleyin",
+          "desc": "Söylediğinizde insanlar anlayacak mı? Konuşmada doğal geliyor mu? Bu düşündüğünüzden daha önemli."
+        },
+        {
+          "title": "Sosyal medyayı da kontrol edin",
+          "desc": "Eşleşen sosyal medya hesaplarının müsait olup olmadığına bakın. Platformlar arasında tutarlılık, insanların sizi bulmasına ve hatırlamasına yardımcı olur."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Alan adı araması hakkında yaygın sorular",
+      "items": [
+        {
+          "question": "İdeal alan adım alınmışsa ne olur?",
+          "answer": "Bu düşündüğünüzden daha sık olur. Açıklayıcı bir kelime eklemeyi deneyin (\"get\", \"try\" veya \"app\" gibi), .co veya .io gibi farklı bir uzantı düşünün veya ismi tamamen yeniden düşünün. Bazen alınmış bir alan adı, aksi takdirde düşünmeyeceğiniz daha iyi bir isme yol açar."
+        },
+        {
+          "question": "Birden fazla alan adı uzantısı satın almalı mıyım?",
+          "answer": "Hedeflerinize bağlı. Türk bir işletmeyseniz, hem .com hem de .com.tr'yi güvence altına almak mantıklıdır. Ancak her olası uzantıyı satın almanıza gerek yok—müşterileriniz için en önemli olanları korumaya odaklanın."
+        },
+        {
+          "question": "Daha sonra alan adımı değiştirebilir miyim?",
+          "answer": "Evet, her zaman yeni bir alan adı kaydedebilir ve eskisini yönlendirebilirsiniz. Ancak alan adlarını değiştirmek SEO'yu etkileyebilir ve mevcut müşterileri karıştırabilir, bu yüzden acele etmektense şimdi dikkatli seçmek için zaman ayırmaya değer."
+        },
+        {
+          "question": "Alan adı kaydı ne kadar sürer?",
+          "answer": "Çoğu uzantı için kayıt anlıktır. Ödemeniz geçer geçmez, alan adı sizin olur. Bazı ülkeye özel uzantılar doğrulama gerektirebilir, ancak gerekirse size rehberlik edeceğiz."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Alan adınızı bulmaya hazır mısınız?",
+      "description": "Müsaitliği kontrol etmek için yukarıda arama yapın veya zaten bir tane sahipseniz alan adı transfer seçeneklerimizi keşfedin.",
+      "startSearching": "Aramaya başla",
+      "transferDomain": "Alan adı transfer et"
+    },
+    "contextualLink": {
+      "text": "Hosting'e de mi ihtiyacınız var?",
+      "link": "Hosting planlarımızı keşfedin"
     },
     "rightName": {
       "title": "Doğru isim her şeyi değiştirir",
@@ -40,6 +128,10 @@
       },
       "imageAlt": "Mükemmel alan adını bulmaktan heyecanlanan kişi"
     }
+  },
+  "seo": {
+    "title": "Alan Adı Kaydı - Mükemmel Alan Adınızı Bulun",
+    "description": "Şeffaf fiyatlandırma, ücretsiz WHOIS gizliliği ve tam sahiplik ile alan adınızı kaydedin. Gizli ücret yok, kilit yok. Girişimciler için ICANN akrediteli alan adı kayıt şirketi."
   },
   "overview": {
     "hero": {
@@ -161,8 +253,10 @@
       "notEligible": {
         "locked": "Bu alan adı kilitli. Lütfen önce mevcut kayıt şirketinizin kontrol panelinden kilidi açın.",
         "recentlyRegistered": "Bu alan adı 60 günden daha kısa bir süre önce kaydedilmiş. ICANN kuralları transferlerden önce 60 günlük bir bekleme süresi gerektirir.",
+        "icannRule": "ICANN, bir alan adının transfer edilebilmesi için kayıttan sonra 60 günlük bir bekleme süresi gerektirir. Bu, dolandırıcılığı önlemek için küresel bir politikadır.",
         "expired": "Bu alan adı süresi dolmuş veya geri alma döneminde görünüyor. Önce mevcut kayıt şirketinizle yenilemeniz gerekebilir.",
-        "notFound": "Bu alan adını bulamadık. Lütfen yazımı kontrol edin ve tekrar deneyin."
+        "notFound": "Bu alan adını bulamadık. Lütfen yazımı kontrol edin ve tekrar deneyin.",
+        "reminderMessage": "Bir hatırlatıcı ayarlayın ve bekleme süresi sonrası geri dönün. Burada olacağız!"
       }
     },
     "authCode": {
@@ -234,7 +328,35 @@
     "reassurance": {
       "title": "Binlerce kişinin alan adlarını taşımasına yardımcı olduk",
       "description1": "Kayıt şirketi değiştirmek riskli gelebilir. Ya bir şeyler bozulursa? Ya sonsuza kadar sürerse?",
-      "description2": "Her adımı sadeleştirdik. Çoğu girişimci aslında ne kadar basit olduğuna şaşırıyor."
+      "description2": "Her adımı sadeleştirdik. Çoğu girişimci aslında ne kadar basit olduğuna şaşırıyor.",
+      "whyTransfer": "Neden bize transfer edin?",
+      "gainTitle": "Sadece alan adınızı taşımaktan öte, işte kazandıklarınız",
+      "benefits": [
+        {
+          "title": "Dürüst fiyatlandırma",
+          "desc": "Sürpriz yenileme ücreti yok. Gizli ücret yok. Sadece yıldan yıla değişmeyen net, dürüst fiyatlandırma."
+        },
+        {
+          "title": "Gerçek insan desteği",
+          "desc": "Transfer sırasında bir şeyler ters giderse, nasıl yardımcı olacağını bilen gerçek bir kişiyle konuşabilirsiniz."
+        },
+        {
+          "title": "Ücretsiz WHOIS gizliliği",
+          "desc": "Kişisel bilgileriniz otomatik olarak gizli kalır. Ekstra ücret yok, katılım yok—sadece dahil."
+        },
+        {
+          "title": "Basit yönetim",
+          "desc": "DNS'i güncelleyin, yenileyin veya gerçekten mantıklı bir kontrol paneli üzerinden değişiklik yapın. Kafa karıştırıcı jargon yok."
+        },
+        {
+          "title": "Bir yıl ücretsiz ek",
+          "desc": "Transfer ettiğinizde, mevcut kaydınıza ek bir yıl ekstra ücret olmadan eklenir."
+        },
+        {
+          "title": "E-postanızın çalışmasını sağlayın",
+          "desc": "Mevcut e-postanızın ve web sitenizin transfer sırasında çökmediğinden emin olacağız. Hiçbir şey bozulmaz."
+        }
+      ]
     },
     "process": {
       "title": "Alan adı transferi nasıl çalışır",
@@ -267,6 +389,34 @@
       "description": "Başlamak için yukarıdaki alan adınızı girin veya önce süreç hakkında konuşmak isterseniz bizimle iletişime geçin.",
       "startTransfer": "Transferinizi başlatın",
       "talkFirst": "Önce biriyle konuşun"
+    },
+    "helpSection": {
+      "title": "Yapabilecekleriniz",
+      "locked": {
+        "title": "Alan adınızın kilidini açmak için:",
+        "steps": [
+          "Mevcut kayıt şirketinize ({{registrar}}) giriş yapın",
+          "Alan adı ayarlarınızı veya güvenlik seçeneklerinizi bulun",
+          "\"Domain Lock\" veya \"Transfer Lock\" seçeneğini bulun ve devre dışı bırakın",
+          "Birkaç dakika bekleyin, ardından uygunluğu tekrar kontrol edin"
+        ]
+      },
+      "expired": {
+        "message": "Süresi dolmuş alan adları yenilenene kadar transfer edilemez. Önce mevcut kayıt şirketinizle iletişime geçerek alan adını yenileyin, ardından tekrar deneyin."
+      },
+      "notFound": {
+        "message": "Alan adı yazımını tekrar kontrol edin. Doğru olduğundan eminseniz, alan adı henüz kayıtlı olmayabilir. Bunun yerine kaydetmek ister misiniz?",
+        "searchButton": "Bu alan adını ara"
+      },
+      "contactSupport": {
+        "text": "Yardıma mı ihtiyacınız var?",
+        "link": "Destek ekibimizle iletişime geçin",
+        "suffix": "— süreç boyunca size rehberlik etmekten mutluluk duyarız."
+      }
+    },
+    "contextualLink": {
+      "text": "Hosting'e de mi ihtiyacınız var?",
+      "link": "Hosting planlarımızı keşfedin"
     }
   }
 }

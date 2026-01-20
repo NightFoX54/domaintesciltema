@@ -1,6 +1,10 @@
 {
+  "seo": {
+    "title": "İletişim - Bizimle İletişime Geçin",
+    "description": "Sorularınız mı var? Gerçek bir kişiyle konuşmak mı istiyorsunuz? Domain Tescil ile iletişime geçin. Baskı yok, satış konuşması yok. Sadece ihtiyacınız olan şey hakkında gerçek bir konuşma."
+  },
   "hero": {
-    "title": "Konuşalım.",
+    "title": "İletişim - Konuşalım",
     "description": "Baskı yok. Satış konuşması yok. Sadece ihtiyacınız olan şey hakkında gerçek bir konuşma."
   },
   "form": {

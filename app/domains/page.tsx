@@ -195,6 +195,18 @@ export default function DomainsPage() {
         </div>
       </SectionWrapper>
 
+      {/* Contextual Link */}
+      <SectionWrapper padding="md">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-muted-foreground">
+            {t("overview.contextualLink.text")}{" "}
+            <Link href="/hosting" className="text-foreground font-medium hover:underline">
+              {t("overview.contextualLink.link")}
+            </Link>
+          </p>
+        </div>
+      </SectionWrapper>
+
       </main>
 
       <SiteFooter />

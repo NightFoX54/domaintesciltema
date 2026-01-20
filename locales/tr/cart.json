@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Alışveriş Sepeti - Siparişinizi İnceleyin",
+    "description": "Ödeme yapmadan önce sepet öğelerinizi inceleyin. Alan adı, hosting ve SSL sertifika seçimlerinizi ekleyin, kaldırın veya değiştirin. Şeffaf fiyatlandırma, gizli ücret yok."
+  },
   "title": "Sepetiniz",
   "description": "Ürünlerinizi gözden geçirin. Ödeme yapmadan önce her şeyi değiştirebilir veya kaldırabilirsiniz.",
   "empty": {

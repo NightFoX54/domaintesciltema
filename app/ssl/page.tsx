@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Check, Shield, Globe, Lock } from "lucide-react"
+import { Check, Shield, Globe, Lock, TrendingUp, FileCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -124,6 +124,52 @@ export default function SSLPage() {
         </div>
       </SectionWrapper>
 
+      <SectionWrapper padding="lg">
+        <SectionHeader
+          title={t("overview.whySSL Matters.title")}
+          description={t("overview.whySSL Matters.description")}
+          headingLevel={2}
+        />
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <Shield className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">{t("overview.whySSL Matters.trust.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.whySSL Matters.trust.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <Globe className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">{t("overview.whySSL Matters.credibility.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.whySSL Matters.credibility.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <TrendingUp className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">{t("overview.whySSL Matters.seo.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.whySSL Matters.seo.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <FileCheck className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">{t("overview.whySSL Matters.compliance.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.whySSL Matters.compliance.description")}
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
       <SectionWrapper background="muted" padding="lg">
         <SectionHeader
           title={t("overview.whenYouNeed.title")}
@@ -161,6 +207,40 @@ export default function SSLPage() {
         </div>
       </SectionWrapper>
 
+      <SectionWrapper padding="lg">
+        <SectionHeader
+          title={t("overview.sslBasics.title")}
+          description={t("overview.sslBasics.description")}
+          headingLevel={2}
+        />
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <h3 className="font-semibold text-xl text-foreground mb-3">{t("overview.sslBasics.encryption.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.sslBasics.encryption.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <h3 className="font-semibold text-xl text-foreground mb-3">{t("overview.sslBasics.certificates.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.sslBasics.certificates.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <h3 className="font-semibold text-xl text-foreground mb-3">{t("overview.sslBasics.https.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.sslBasics.https.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <h3 className="font-semibold text-xl text-foreground mb-3">{t("overview.sslBasics.validation.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.sslBasics.validation.description")}
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
       <SectionWrapper padding="lg" id="help">
         <div className="max-w-4xl mx-auto">
           <div className="bg-muted/30 p-12 rounded-2xl text-center">
@@ -172,7 +252,7 @@ export default function SSLPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-base" asChild>
-                <Link href="#contact">{t("overview.notSure.talkToSupport")}</Link>
+                <Link href="/contact">{t("overview.notSure.talkToSupport")}</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-base bg-transparent" asChild>
                 <Link href="#faq">{t("overview.notSure.readFAQ")}</Link>
@@ -211,10 +291,22 @@ export default function SSLPage() {
         }}
         secondaryAction={{
           label: t("overview.cta.secondary"),
-          href: "#contact",
+          href: "/contact",
           variant: "outline",
         }}
       />
+
+      {/* Contextual Link */}
+      <SectionWrapper padding="md">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-muted-foreground">
+            Need hosting?{" "}
+            <Link href="/hosting" className="text-foreground font-medium hover:underline">
+              Explore our hosting plans
+            </Link>
+          </p>
+        </div>
+      </SectionWrapper>
 
       </main>
 

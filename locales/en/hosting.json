@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Web Hosting - Fast, Reliable Hosting for Your Website",
+    "description": "Fast, reliable web hosting with 99.9% uptime guarantee. Linux, WordPress, and Joomla hosting options. Free SSL, 24/7 support, transparent pricing. Perfect for founders and small businesses."
+  },
   "overview": {
     "hero": {
       "title": "Hosting that just works",
@@ -20,6 +24,64 @@
       "keepsSecure": {
         "title": "It keeps things secure and updated",
         "description": "Good hosting includes security updates, backups, and monitoring so you can focus on your business instead of server maintenance."
+      }
+    },
+    "whyHostingMatters": {
+      "title": "Why hosting matters for your business",
+      "description": "Hosting isn't just technical infrastructure—it's the foundation of your online presence.",
+      "reliability": {
+        "title": "Reliability builds trust",
+        "description": "When your site is always available, visitors trust that you're a real, established business. Downtime doesn't just mean lost visitors—it means lost credibility."
+      },
+      "performance": {
+        "title": "Speed affects everything",
+        "description": "Fast-loading sites keep visitors engaged. Slow sites drive people away. Good hosting ensures your site loads quickly, which improves user experience and search rankings."
+      },
+      "scalability": {
+        "title": "Room to grow",
+        "description": "As your business grows, your website needs to handle more traffic. Good hosting scales with you, so you don't have to worry about outgrowing your infrastructure."
+      }
+    },
+    "whenYouNeedHosting": {
+      "title": "When you need hosting",
+      "description": "If you're building anything online, you need hosting. Here are common scenarios:",
+      "scenarios": [
+        {
+          "title": "You're launching a new website",
+          "description": "Whether it's a portfolio, blog, or business site, you need hosting to make it accessible to the world."
+        },
+        {
+          "title": "You're moving from a free platform",
+          "description": "Free platforms like WordPress.com or Blogger have limitations. Hosting gives you full control and a professional domain."
+        },
+        {
+          "title": "Your current host isn't working",
+          "description": "Slow speeds, frequent downtime, or poor support? It might be time to switch to hosting that actually works."
+        },
+        {
+          "title": "You're building an application",
+          "description": "Custom apps, APIs, or databases need reliable hosting infrastructure to run smoothly."
+        }
+      ]
+    },
+    "hostingBasics": {
+      "title": "Understanding hosting basics",
+      "description": "A few key concepts explained in plain language:",
+      "servers": {
+        "title": "What is a server?",
+        "description": "A server is a powerful computer that's always on and connected to the internet. It stores your website files and delivers them to visitors when they request your site."
+      },
+      "uptime": {
+        "title": "Uptime and reliability",
+        "description": "Uptime is the percentage of time your site is accessible. 99.9% uptime means your site is down less than 9 hours per year. Good hosting providers maintain high uptime through redundancy and monitoring."
+      },
+      "bandwidth": {
+        "title": "Bandwidth explained",
+        "description": "Bandwidth is the amount of data that can be transferred between your site and visitors. Think of it like a pipe—wider pipes handle more traffic. Most sites don't need unlimited bandwidth, but good hosting doesn't surprise you with overage fees."
+      },
+      "storage": {
+        "title": "Storage space",
+        "description": "This is how much space you have for your website files—code, images, videos, databases. Most sites need relatively little storage, but it's important to have room to grow."
       }
     },
     "whichHosting": {

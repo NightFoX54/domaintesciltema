@@ -321,16 +321,15 @@ export default function DomainTransferPage() {
                     {/* Help section for non-eligible */}
                     {!transferResult.eligible && (
                       <div className="bg-card border border-border rounded-2xl p-6 md:p-8 space-y-4">
-                        <h3 className="text-xl font-semibold text-foreground">What you can do</h3>
+                        <h3 className="text-xl font-semibold text-foreground">{t("transfer.helpSection.title")}</h3>
 
                         {transferResult.status === "locked" && (
                           <div className="space-y-3">
-                            <p className="text-muted-foreground">To unlock your domain:</p>
+                            <p className="text-muted-foreground">{t("transfer.helpSection.locked.title")}</p>
                             <ol className="list-decimal list-inside space-y-2 text-[15px] text-muted-foreground">
-                              <li>Log into your current registrar ({transferResult.currentRegistrar})</li>
-                              <li>Find your domain settings or security options</li>
-                              <li>Look for "Domain Lock" or "Transfer Lock" and disable it</li>
-                              <li>Wait a few minutes, then check eligibility again</li>
+                              {(t("transfer.helpSection.locked.steps") as any[]).map((step: string, idx: number) => (
+                                <li key={idx}>{step.replace("{{registrar}}", transferResult.currentRegistrar || "")}</li>
+                              ))}
                             </ol>
                           </div>
                         )}
@@ -338,11 +337,10 @@ export default function DomainTransferPage() {
                         {transferResult.status === "recently_registered" && (
                           <div className="space-y-3">
                             <p className="text-muted-foreground">
-                              ICANN requires a 60-day waiting period after registration before a domain can be
-                              transferred. This is a global policy to prevent fraud.
+                              {t("transfer.status.notEligible.icannRule")}
                             </p>
                             <p className="text-muted-foreground">
-                              Set a reminder and come back after the waiting period. We'll be here!
+                              {t("transfer.status.notEligible.reminderMessage")}
                             </p>
                           </div>
                         )}
@@ -350,8 +348,7 @@ export default function DomainTransferPage() {
                         {transferResult.status === "expired" && (
                           <div className="space-y-3">
                             <p className="text-muted-foreground">
-                              Expired domains can't be transferred until they're renewed. Contact your current registrar
-                              to renew the domain first, then try again.
+                              {t("transfer.helpSection.expired.message")}
                             </p>
                           </div>
                         )}
@@ -359,22 +356,21 @@ export default function DomainTransferPage() {
                         {transferResult.status === "not_found" && (
                           <div className="space-y-3">
                             <p className="text-muted-foreground">
-                              Double-check the domain spelling. If you're sure it's correct, the domain might not be
-                              registered yet. Would you like to register it instead?
+                              {t("transfer.helpSection.notFound.message")}
                             </p>
                             <Button variant="outline" className="bg-transparent" asChild>
-                              <Link href={`/domains/search?q=${transferResult.domain}`}>Search for this domain</Link>
+                              <Link href={`/domains/search?q=${transferResult.domain}`}>{t("transfer.helpSection.notFound.searchButton")}</Link>
                             </Button>
                           </div>
                         )}
 
                         <div className="pt-4 border-t border-border">
                           <p className="text-sm text-muted-foreground">
-                            Need help?{" "}
+                            {t("transfer.helpSection.contactSupport.text")}{" "}
                             <Link href="/contact" className="text-primary hover:underline">
-                              Contact our support team
+                              {t("transfer.helpSection.contactSupport.link")}
                             </Link>{" "}
-                            — we're happy to guide you through the process.
+                            {t("transfer.helpSection.contactSupport.suffix")}
                           </p>
                         </div>
                       </div>
@@ -393,40 +389,15 @@ export default function DomainTransferPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-balance mb-4">
-                Why transfer to us?
+                {t("transfer.reassurance.whyTransfer")}
               </h2>
               <p className="text-[15px] text-muted-foreground text-balance">
-                Beyond just moving your domain, here's what you gain
+                {t("transfer.reassurance.gainTitle")}
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Straightforward pricing",
-                  desc: "No surprise renewal fees. No hidden charges. Just clear, honest pricing that doesn't change year to year.",
-                },
-                {
-                  title: "Real human support",
-                  desc: "If something goes wrong during the transfer, you can talk to an actual person who knows how to help.",
-                },
-                {
-                  title: "Free WHOIS privacy",
-                  desc: "Your personal information stays private automatically. No extra fees, no opt-ins—it's just included.",
-                },
-                {
-                  title: "Simple management",
-                  desc: "Update DNS, renew, or make changes through a dashboard that actually makes sense. No confusing jargon.",
-                },
-                {
-                  title: "One extra year free",
-                  desc: "When you transfer, you get an additional year added to your existing registration at no extra cost.",
-                },
-                {
-                  title: "Keep your email working",
-                  desc: "We'll make sure your existing email and website don't go down during the transfer. Nothing breaks.",
-                },
-              ].map((item, idx) => (
+              {(t("transfer.reassurance.benefits") as any[]).map((item: any, idx: number) => (
                 <div key={idx} className="bg-card border border-border rounded-xl p-6">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4" aria-hidden="true">
                     <Check className="h-5 w-5 text-primary" />
@@ -604,6 +575,20 @@ export default function DomainTransferPage() {
                 <Link href="/contact">{t("transfer.cta.talkFirst")}</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contextual Link */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              {t("transfer.contextualLink.text")}{" "}
+              <Link href="/hosting" className="text-foreground font-medium hover:underline">
+                {t("transfer.contextualLink.link")}
+              </Link>
+            </p>
           </div>
         </div>
       </section>

@@ -1,6 +1,10 @@
 {
+  "seo": {
+    "title": "Domain Registration & Hosting for Founders",
+    "description": "Domain registration and hosting for first-time founders. No jargon. No hidden fees. Just real humans helping you start something meaningful. ICANN accredited, transparent pricing, 24/7 support."
+  },
   "hero": {
-    "title": "Built for founders who bet on themselves",
+    "title": "Domain Registration & Hosting for Founders - Built for Those Who Bet on Themselves",
     "description": "Starting something meaningful is hard enough. Getting your idea online shouldn't add to the anxiety.",
     "searchPlaceholder": "Find your domain name...",
     "searchButton": "Search",

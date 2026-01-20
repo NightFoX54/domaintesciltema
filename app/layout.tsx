@@ -4,34 +4,29 @@ import { Inter, Crimson_Pro } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SkipToContent } from "@/components/skip-to-content"
 import { TranslationProvider } from "@/lib/i18n"
+import { HtmlLangUpdater } from "@/components/html-lang-updater"
+import { createMetadata } from "@/lib/seo"
+import enHomepage from "@/locales/en/homepage.json"
+import trHomepage from "@/locales/tr/homepage.json"
 import "./globals.css"
 
 const _inter = Inter({ subsets: ["latin"] })
 const _crimsonPro = Crimson_Pro({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "Domain Tescil - Built for Founders Who Bet on Themselves",
-  description:
-    "Domain registration and hosting for first-time founders. No jargon. No hidden fees. Just real humans helping you start something meaningful.",
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
-}
+// Default metadata for homepage - can be overridden by route-specific layouts
+export const metadata: Metadata = createMetadata(
+  { path: "/" },
+  {
+    en: {
+      title: enHomepage.seo.title,
+      description: enHomepage.seo.description,
+    },
+    tr: {
+      title: trHomepage.seo.title,
+      description: trHomepage.seo.description,
+    },
+  }
+)
 
 export default function RootLayout({
   children,
@@ -42,6 +37,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
         <TranslationProvider>
+          <HtmlLangUpdater />
           <SkipToContent />
           {children}
         </TranslationProvider>

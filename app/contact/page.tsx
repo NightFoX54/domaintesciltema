@@ -195,6 +195,27 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Browse Products */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h2 className="text-2xl md:text-3xl font-semibold text-balance">Browse our products</h2>
+            <p className="text-muted-foreground">Looking for domains, hosting, or SSL certificates?</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button variant="outline" asChild>
+                <Link href="/domains">Domains</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/hosting">Hosting</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/ssl">SSL Certificates</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       </main>
 
       <SiteFooter />

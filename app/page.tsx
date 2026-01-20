@@ -192,8 +192,8 @@ export default function HomePage() {
               <div className="pt-3 space-y-3 border-t border-border/50">
                 <div className="text-sm font-medium text-foreground/80">{t("outcomes.simpleWebsite.recommendation")}</div>
                 <div className="text-sm text-muted-foreground leading-relaxed">{t("outcomes.simpleWebsite.solution")}</div>
-                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4">
-                  {t("outcomes.simpleWebsite.action")}
+                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4" asChild>
+                  <Link href="/hosting">{t("outcomes.simpleWebsite.action")}</Link>
                 </Button>
               </div>
             </CardContent>
@@ -208,8 +208,8 @@ export default function HomePage() {
               <div className="pt-3 space-y-3 border-t border-border/50">
                 <div className="text-sm font-medium text-foreground/80">{t("outcomes.sellOnline.recommendation")}</div>
                 <div className="text-sm text-muted-foreground leading-relaxed">{t("outcomes.sellOnline.solution")}</div>
-                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4">
-                  {t("outcomes.sellOnline.action")}
+                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4" asChild>
+                  <Link href="/hosting">{t("outcomes.sellOnline.action")}</Link>
                 </Button>
               </div>
             </CardContent>
@@ -224,8 +224,8 @@ export default function HomePage() {
               <div className="pt-3 space-y-3 border-t border-border/50">
                 <div className="text-sm font-medium text-foreground/80">{t("outcomes.professional.recommendation")}</div>
                 <div className="text-sm text-muted-foreground leading-relaxed">{t("outcomes.professional.solution")}</div>
-                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4">
-                  {t("outcomes.professional.action")}
+                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4" asChild>
+                  <Link href="/hosting">{t("outcomes.professional.action")}</Link>
                 </Button>
               </div>
             </CardContent>
@@ -240,8 +240,8 @@ export default function HomePage() {
               <div className="pt-3 space-y-3 border-t border-border/50">
                 <div className="text-sm font-medium text-foreground/80">{t("outcomes.custom.recommendation")}</div>
                 <div className="text-sm text-muted-foreground leading-relaxed">{t("outcomes.custom.solution")}</div>
-                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4">
-                  {t("outcomes.custom.action")}
+                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4" asChild>
+                  <Link href="/contact">{t("outcomes.custom.action")}</Link>
                 </Button>
               </div>
             </CardContent>
@@ -256,8 +256,8 @@ export default function HomePage() {
               <div className="pt-3 space-y-3 border-t border-border/50">
                 <div className="text-sm font-medium text-foreground/80">{t("outcomes.unsure.recommendation")}</div>
                 <div className="text-sm text-muted-foreground leading-relaxed">{t("outcomes.unsure.solution")}</div>
-                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4">
-                  {t("outcomes.unsure.action")}
+                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4" asChild>
+                  <Link href="/contact">{t("outcomes.unsure.action")}</Link>
                 </Button>
               </div>
             </CardContent>
@@ -272,8 +272,8 @@ export default function HomePage() {
               <div className="pt-3 space-y-3 border-t border-border/50">
                 <div className="text-sm font-medium text-foreground/80">{t("outcomes.migration.recommendation")}</div>
                 <div className="text-sm text-muted-foreground leading-relaxed">{t("outcomes.migration.solution")}</div>
-                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4">
-                  {t("outcomes.migration.action")}
+                <Button variant="outline" className="w-full bg-transparent hover:bg-foreground/5 mt-4" asChild>
+                  <Link href="/migration">{t("outcomes.migration.action")}</Link>
                 </Button>
               </div>
             </CardContent>

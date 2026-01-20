@@ -27,11 +27,11 @@ export default function JoomlaHostingPage() {
                 {t("joomla.hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg" className="h-12 px-8 text-base shadow-md">
-                  {t("joomla.hero.viewPlans")}
+                <Button size="lg" className="h-12 px-8 text-base shadow-md" asChild>
+                  <Link href="#pricing">{t("joomla.hero.viewPlans")}</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent">
-                  {t("joomla.hero.talkToUs")}
+                <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent" asChild>
+                  <Link href="/contact">{t("joomla.hero.talkToUs")}</Link>
                 </Button>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function JoomlaHostingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 md:py-20 lg:py-24">
+      <section id="pricing" className="py-16 md:py-20 lg:py-24">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-balance leading-[1.1]">
@@ -339,13 +339,27 @@ export default function JoomlaHostingPage() {
               {t("joomla.cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button size="lg" className="h-12 px-8 text-base shadow-md">
-                {t("joomla.cta.choosePlan")}
+              <Button size="lg" className="h-12 px-8 text-base shadow-md" asChild>
+                <Link href="#pricing">{t("joomla.cta.choosePlan")}</Link>
               </Button>
-              <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent">
-                {t("joomla.cta.talkToSupport")}
+              <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent" asChild>
+                <Link href="/contact">{t("joomla.cta.talkToSupport")}</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contextual Link */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              Secure your site with SSL.{" "}
+              <Link href="/ssl" className="text-foreground font-medium hover:underline">
+                View SSL certificates
+              </Link>
+            </p>
           </div>
         </div>
       </section>

@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Shopping Cart - Review Your Order",
+    "description": "Review your cart items before checkout. Add, remove, or modify your domain, hosting, and SSL certificate selections. Transparent pricing, no hidden fees."
+  },
   "title": "Your cart",
   "description": "Review your items. You can change or remove anything before checkout.",
   "empty": {

@@ -182,7 +182,7 @@ export default function DomainSearchPage() {
               {isSearching ? (
                 <div className="text-center py-12">
                   <Loader2 className="h-12 w-12 animate-spin text-primary mx-auto mb-4" />
-                  <p className="text-lg text-muted-foreground">Checking availability across all extensions...</p>
+                  <p className="text-lg text-muted-foreground">{t("search.checkingAvailability")}</p>
                 </div>
               ) : (
                 <>
@@ -304,21 +304,21 @@ export default function DomainSearchPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-balance mb-4">
-                Popular domain extensions
+                {t("search.popularExtensions.title")}
               </h2>
               <p className="text-[15px] text-muted-foreground text-balance">
-                Start with the most trusted extensions that customers recognize
+                {t("search.popularExtensions.description")}
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { ext: ".com", price: "₺299", renewal: "₺399/year", desc: "The most trusted extension worldwide" },
-                { ext: ".net", price: "₺349", renewal: "₺449/year", desc: "Great for tech and network projects" },
-                { ext: ".org", price: "₺349", renewal: "₺449/year", desc: "Perfect for organizations" },
-                { ext: ".com.tr", price: "₺149", renewal: "₺199/year", desc: "Turkish presence, local trust" },
-                { ext: ".info", price: "₺299", renewal: "₺399/year", desc: "Share information and resources" },
-                { ext: ".co", price: "₺699", renewal: "₺799/year", desc: "Modern alternative to .com" },
+                { ext: ".com", price: "₺299", renewal: "₺399/yıl", desc: t("search.popularExtensions.extensions.0.desc") },
+                { ext: ".net", price: "₺349", renewal: "₺449/yıl", desc: t("search.popularExtensions.extensions.1.desc") },
+                { ext: ".org", price: "₺349", renewal: "₺449/yıl", desc: t("search.popularExtensions.extensions.2.desc") },
+                { ext: ".com.tr", price: "₺149", renewal: "₺199/yıl", desc: t("search.popularExtensions.extensions.3.desc") },
+                { ext: ".info", price: "₺299", renewal: "₺399/yıl", desc: t("search.popularExtensions.extensions.4.desc") },
+                { ext: ".co", price: "₺699", renewal: "₺799/yıl", desc: t("search.popularExtensions.extensions.5.desc") },
               ].map((item) => (
                 <div
                   key={item.ext}
@@ -407,40 +407,15 @@ export default function DomainSearchPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-balance mb-4">
-                Tips for choosing a domain
+                {t("search.tips.title")}
               </h2>
               <p className="text-[15px] text-muted-foreground text-balance">
-                A few simple guidelines to help you find the right fit
+                {t("search.tips.description")}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Keep it short and memorable",
-                  desc: "Shorter domains are easier to remember, type, and share. Aim for 2-3 words maximum if possible.",
-                },
-                {
-                  title: "Make it easy to spell",
-                  desc: "Avoid complex spellings or numbers that could confuse people. If you have to explain how to spell it, consider another option.",
-                },
-                {
-                  title: "Choose .com when possible",
-                  desc: "People naturally assume .com first. If your ideal .com is taken, consider a different name rather than settling for an unusual extension.",
-                },
-                {
-                  title: "Think long-term",
-                  desc: "Your domain might outlive your first product idea. Choose something that gives you room to grow and evolve.",
-                },
-                {
-                  title: "Say it out loud",
-                  desc: "Will people understand it when you say it? Does it sound natural in conversation? This matters more than you think.",
-                },
-                {
-                  title: "Check social media too",
-                  desc: "See if matching social handles are available. Consistency across platforms helps people find and remember you.",
-                },
-              ].map((tip, idx) => (
+              {(t("search.tips.items") as any[]).map((tip: any, idx: number) => (
                 <div key={idx} className="flex gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-semibold text-primary">
                     {idx + 1}
@@ -462,54 +437,21 @@ export default function DomainSearchPage() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-balance mb-4">
-                Common questions about domain search
+                {t("search.faq.title")}
               </h2>
             </div>
 
             <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">What if my ideal domain is taken?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  This happens more often than you'd think. Try adding a descriptive word (like "get", "try", or "app"),
-                  consider a different extension like .co or .io, or rethink the name entirely. Sometimes a taken domain
-                  leads you to an even better name you wouldn't have considered otherwise.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-2" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">Should I buy multiple domain extensions?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  It depends on your goals. If you're a Turkish business, securing both .com and .com.tr makes sense.
-                  But you don't need to buy every possible extension—focus on protecting the ones that matter most to
-                  your customers.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">Can I change my domain later?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  Yes, you can always register a new domain and redirect your old one. But changing domains can affect
-                  SEO and confuse existing customers, so it's worth taking time to choose carefully now rather than
-                  rushing.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">How long does domain registration take?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  Registration is instant for most extensions. As soon as your payment goes through, the domain is
-                  yours. Some country-specific extensions might require verification, but we'll guide you through that
-                  if needed.
-                </AccordionContent>
-              </AccordionItem>
+              {(t("search.faq.items") as any[]).map((item: any, index: number) => (
+                <AccordionItem key={`item-${index + 1}`} value={`item-${index + 1}`} className="border border-border rounded-lg px-6 bg-card">
+                  <AccordionTrigger className="text-left hover:no-underline py-5">
+                    <span className="text-base font-medium">{item.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
@@ -520,19 +462,33 @@ export default function DomainSearchPage() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-balance mb-4">
-              Ready to find your domain?
+              {t("search.cta.title")}
             </h2>
             <p className="text-[17px] text-muted-foreground text-balance leading-relaxed mb-8">
-              Search above to check availability, or explore our domain transfer options if you already own one.
+              {t("search.cta.description")}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="h-12 px-8" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                Start searching
+                {t("search.cta.startSearching")}
               </Button>
               <Button size="lg" variant="outline" className="h-12 px-8 bg-transparent" asChild>
-                <Link href="/domains/transfer">Transfer a domain</Link>
+                <Link href="/domains/transfer">{t("search.cta.transferDomain")}</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contextual Link */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              {t("search.contextualLink.text")}{" "}
+              <Link href="/hosting" className="text-foreground font-medium hover:underline">
+                {t("search.contextualLink.link")}
+              </Link>
+            </p>
           </div>
         </div>
       </section>

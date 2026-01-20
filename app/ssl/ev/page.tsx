@@ -238,6 +238,20 @@ export default function EVSSLPage() {
         </div>
       </section>
 
+      {/* Contextual Link */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              Need hosting?{" "}
+              <Link href="/hosting" className="text-foreground font-medium hover:underline">
+                Explore our hosting plans
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <SiteFooter />
     </div>
   )

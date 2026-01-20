@@ -24,7 +24,95 @@
     "popularExtensions": {
       "title": "Popular domain extensions",
       "description": "Start with the most trusted extensions that customers recognize",
-      "searchExtension": "Search {{ext}}"
+      "searchExtension": "Search {{ext}}",
+      "extensions": [
+        {
+          "ext": ".com",
+          "desc": "The most trusted extension worldwide"
+        },
+        {
+          "ext": ".net",
+          "desc": "Great for tech and network projects"
+        },
+        {
+          "ext": ".org",
+          "desc": "Perfect for organizations"
+        },
+        {
+          "ext": ".com.tr",
+          "desc": "Turkish presence, local trust"
+        },
+        {
+          "ext": ".info",
+          "desc": "Share information and resources"
+        },
+        {
+          "ext": ".co",
+          "desc": "Modern alternative to .com"
+        }
+      ]
+    },
+    "checkingAvailability": "Checking availability across all extensions...",
+    "tips": {
+      "title": "Tips for choosing a domain",
+      "description": "A few simple guidelines to help you find the right fit",
+      "items": [
+        {
+          "title": "Keep it short and memorable",
+          "desc": "Shorter domains are easier to remember, type, and share. Aim for 2-3 words maximum if possible."
+        },
+        {
+          "title": "Make it easy to spell",
+          "desc": "Avoid complex spellings or numbers that could confuse people. If you have to explain how to spell it, consider another option."
+        },
+        {
+          "title": "Choose .com when possible",
+          "desc": "People naturally assume .com first. If your ideal .com is taken, consider a different name rather than settling for an unusual extension."
+        },
+        {
+          "title": "Think long-term",
+          "desc": "Your domain might outlive your first product idea. Choose something that gives you room to grow and evolve."
+        },
+        {
+          "title": "Say it out loud",
+          "desc": "Will people understand it when you say it? Does it sound natural in conversation? This matters more than you think."
+        },
+        {
+          "title": "Check social media too",
+          "desc": "See if matching social handles are available. Consistency across platforms helps people find and remember you."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Common questions about domain search",
+      "items": [
+        {
+          "question": "What if my ideal domain is taken?",
+          "answer": "This happens more often than you'd think. Try adding a descriptive word (like \"get\", \"try\", or \"app\"), consider a different extension like .co or .io, or rethink the name entirely. Sometimes a taken domain leads you to an even better name you wouldn't have considered otherwise."
+        },
+        {
+          "question": "Should I buy multiple domain extensions?",
+          "answer": "It depends on your goals. If you're a Turkish business, securing both .com and .com.tr makes sense. But you don't need to buy every possible extension—focus on protecting the ones that matter most to your customers."
+        },
+        {
+          "question": "Can I change my domain later?",
+          "answer": "Yes, you can always register a new domain and redirect your old one. But changing domains can affect SEO and confuse existing customers, so it's worth taking time to choose carefully now rather than rushing."
+        },
+        {
+          "question": "How long does domain registration take?",
+          "answer": "Registration is instant for most extensions. As soon as your payment goes through, the domain is yours. Some country-specific extensions might require verification, but we'll guide you through that if needed."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to find your domain?",
+      "description": "Search above to check availability, or explore our domain transfer options if you already own one.",
+      "startSearching": "Start searching",
+      "transferDomain": "Transfer a domain"
+    },
+    "contextualLink": {
+      "text": "Need hosting too?",
+      "link": "Explore our hosting plans"
     },
     "rightName": {
       "title": "The right name changes everything",
@@ -40,6 +128,10 @@
       },
       "imageAlt": "Person excited about finding the perfect domain name"
     }
+  },
+  "seo": {
+    "title": "Domain Registration - Find Your Perfect Domain Name",
+    "description": "Register your domain name with transparent pricing, free WHOIS privacy, and full ownership. No hidden fees, no lock-in. ICANN accredited domain registrar for founders."
   },
   "overview": {
     "hero": {
@@ -129,6 +221,10 @@
           "answer": "Absolutely. Choosing a domain can feel overwhelming. Talk to us—we'll ask about your business, help you think through options, and guide you toward something that feels right. No pressure, no upselling. Just honest advice."
         }
       ]
+    },
+    "contextualLink": {
+      "text": "Need hosting too?",
+      "link": "Explore our hosting plans"
     }
   },
   "transfer": {
@@ -162,7 +258,8 @@
         "locked": "This domain is locked. Please unlock it in your current registrar's control panel first.",
         "recentlyRegistered": "This domain was registered less than 60 days ago. ICANN rules require a 60-day wait before transfers.",
         "expired": "This domain appears to be expired or in redemption period. You may need to renew it first with your current registrar.",
-        "notFound": "We couldn't find this domain. Please check the spelling and try again."
+        "notFound": "We couldn't find this domain. Please check the spelling and try again.",
+        "reminderMessage": "Set a reminder and come back after the waiting period. We'll be here!"
       }
     },
     "authCode": {
@@ -186,23 +283,28 @@
       "imageAlt": "Founder relaxed after completing domain transfer"
     },
     "process": {
-      "title": "How the transfer process works",
+      "title": "How domain transfer works",
+      "subtitle": "Five simple steps from start to finish",
       "steps": {
         "step1": {
-          "title": "Check eligibility",
-          "description": "We verify your domain can be transferred and isn't locked or recently registered."
+          "title": "Unlock your domain",
+          "description": "Log into your current registrar and unlock your domain. This is usually in domain settings or security options."
         },
         "step2": {
-          "title": "Provide auth code",
-          "description": "Get your EPP/authorization code from your current registrar and enter it here."
+          "title": "Get your authorization code",
+          "description": "Request an \"EPP code\" or \"auth code\" from your current provider. They'll email it to you—usually within minutes."
         },
         "step3": {
-          "title": "We initiate transfer",
-          "description": "We start the transfer process and keep you updated on progress."
+          "title": "Start the transfer with us",
+          "description": "Enter your domain and authorization code in our transfer form. We'll verify everything is ready to move."
         },
         "step4": {
-          "title": "Approval & completion",
-          "description": "Your current registrar sends an approval email. Once approved, transfer completes in 5-7 days."
+          "title": "Approve the transfer",
+          "description": "You'll receive an email asking you to approve the transfer. Click the link to confirm. Your old registrar may also ask for confirmation."
+        },
+        "step5": {
+          "title": "Wait for completion",
+          "description": "Most transfers finish within 5-7 days. We'll email you updates along the way, and you can contact us anytime if you have questions."
         }
       }
     },
@@ -234,39 +336,69 @@
     "reassurance": {
       "title": "We've helped thousands move their domains",
       "description1": "Switching registrars can feel risky. What if something breaks? What if it takes forever?",
-      "description2": "We've streamlined every step. Most founders are surprised how simple it actually is."
-    },
-    "process": {
-      "title": "How domain transfer works",
-      "subtitle": "Five simple steps from start to finish",
-      "steps": {
-        "step1": {
-          "title": "Unlock your domain",
-          "description": "Log into your current registrar and unlock your domain. This is usually in domain settings or security options."
+      "description2": "We've streamlined every step. Most founders are surprised how simple it actually is.",
+      "whyTransfer": "Why transfer to us?",
+      "gainTitle": "Beyond just moving your domain, here's what you gain",
+      "benefits": [
+        {
+          "title": "Straightforward pricing",
+          "desc": "No surprise renewal fees. No hidden charges. Just clear, honest pricing that doesn't change year to year."
         },
-        "step2": {
-          "title": "Get your authorization code",
-          "description": "Request an \"EPP code\" or \"auth code\" from your current provider. They'll email it to you—usually within minutes."
+        {
+          "title": "Real human support",
+          "desc": "If something goes wrong during the transfer, you can talk to an actual person who knows how to help."
         },
-        "step3": {
-          "title": "Start the transfer with us",
-          "description": "Enter your domain and authorization code in our transfer form. We'll verify everything is ready to move."
+        {
+          "title": "Free WHOIS privacy",
+          "desc": "Your personal information stays private automatically. No extra fees, no opt-ins—it's just included."
         },
-        "step4": {
-          "title": "Approve the transfer",
-          "description": "You'll receive an email asking you to approve the transfer. Click the link to confirm. Your old registrar may also ask for confirmation."
+        {
+          "title": "Simple management",
+          "desc": "Update DNS, renew, or make changes through a dashboard that actually makes sense. No confusing jargon."
         },
-        "step5": {
-          "title": "Wait for completion",
-          "description": "Most transfers finish within 5-7 days. We'll email you updates along the way, and you can contact us anytime if you have questions."
+        {
+          "title": "One extra year free",
+          "desc": "When you transfer, you get an additional year added to your existing registration at no extra cost."
+        },
+        {
+          "title": "Keep your email working",
+          "desc": "We'll make sure your existing email and website don't go down during the transfer. Nothing breaks."
         }
-      }
+      ]
     },
     "cta": {
       "title": "Ready to transfer?",
       "description": "Enter your domain above to get started, or contact us if you'd like to talk through the process first.",
       "startTransfer": "Start your transfer",
       "talkFirst": "Talk to someone first"
+    },
+    "helpSection": {
+      "title": "What you can do",
+      "locked": {
+        "title": "To unlock your domain:",
+        "steps": [
+          "Log into your current registrar ({{registrar}})",
+          "Find your domain settings or security options",
+          "Look for \"Domain Lock\" or \"Transfer Lock\" and disable it",
+          "Wait a few minutes, then check eligibility again"
+        ]
+      },
+      "expired": {
+        "message": "Expired domains can't be transferred until they're renewed. Contact your current registrar to renew the domain first, then try again."
+      },
+      "notFound": {
+        "message": "Double-check the domain spelling. If you're sure it's correct, the domain might not be registered yet. Would you like to register it instead?",
+        "searchButton": "Search for this domain"
+      },
+      "contactSupport": {
+        "text": "Need help?",
+        "link": "Contact our support team",
+        "suffix": "— we're happy to guide you through the process."
+      }
+    },
+    "contextualLink": {
+      "text": "Need hosting too?",
+      "link": "Explore our hosting plans"
     }
   }
 }

@@ -1,6 +1,10 @@
 {
+  "seo": {
+    "title": "Support - Get Help from Real People",
+    "description": "24/7 support from real humans, not bots. Average 2-minute response time. Get help with domains, hosting, SSL, and site migration. We're here when you need us."
+  },
   "hero": {
-    "title": "You're not alone in this.",
+    "title": "24/7 Customer Support - You're Not Alone in This",
     "description": "Real people. Real answers. No bots, no scripts, no runaround. Just human support when you need it.",
     "talkToHuman": "Talk to a human",
     "getMigrationHelp": "Get migration help",

@@ -1,6 +1,10 @@
 {
+  "seo": {
+    "title": "Girişimciler İçin Alan Adı Kaydı ve Hosting",
+    "description": "İlk kez girişim yapanlar için alan adı kaydı ve hosting. Jargon yok. Gizli ücret yok. Sadece anlamlı bir şey başlatmanıza yardımcı olan gerçek insanlar. ICANN akrediteli, şeffaf fiyatlandırma, 7/24 destek."
+  },
   "hero": {
-    "title": "Kendine inanan girişimciler için tasarlandı",
+    "title": "Girişimciler İçin Alan Adı Kaydı ve Hosting - Kendine İnananlar İçin Tasarlandı",
     "description": "Anlamlı bir şey başlatmak zaten yeterince zor. Fikrinizi çevrimiçi hale getirmek daha da zorlaşmamalı.",
     "searchPlaceholder": "Alan adınızı bulun...",
     "searchButton": "Ara",

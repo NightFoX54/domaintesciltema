@@ -99,6 +99,61 @@ export default function HostingOverviewPage() {
 
       <SectionWrapper padding="lg">
         <SectionHeader
+          title={t("overview.whyHostingMatters.title")}
+          description={t("overview.whyHostingMatters.description")}
+          headingLevel={2}
+        />
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <Shield className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">{t("overview.whyHostingMatters.reliability.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.whyHostingMatters.reliability.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <Zap className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">{t("overview.whyHostingMatters.performance.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.whyHostingMatters.performance.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4" aria-hidden="true">
+              <Server className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">{t("overview.whyHostingMatters.scalability.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.whyHostingMatters.scalability.description")}
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper background="muted" padding="lg">
+        <SectionHeader
+          title={t("overview.whenYouNeedHosting.title")}
+          description={t("overview.whenYouNeedHosting.description")}
+          headingLevel={2}
+        />
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {(t("overview.whenYouNeedHosting.scenarios") as any[]).map((scenario: any, index: number) => (
+            <div key={index} className="bg-card border border-border rounded-xl p-6 shadow-sm">
+              <h3 className="font-semibold text-lg text-foreground mb-2">{scenario.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-[15px]">
+                {scenario.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper padding="lg">
+        <SectionHeader
           title={t("overview.whichHosting.title")}
           description={t("overview.whichHosting.description")}
           headingLevel={2}
@@ -128,7 +183,41 @@ export default function HostingOverviewPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper background="muted" padding="md">
+      <SectionWrapper background="muted" padding="lg">
+        <SectionHeader
+          title={t("overview.hostingBasics.title")}
+          description={t("overview.hostingBasics.description")}
+          headingLevel={2}
+        />
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <h3 className="font-semibold text-xl text-foreground mb-3">{t("overview.hostingBasics.servers.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.hostingBasics.servers.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <h3 className="font-semibold text-xl text-foreground mb-3">{t("overview.hostingBasics.uptime.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.hostingBasics.uptime.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <h3 className="font-semibold text-xl text-foreground mb-3">{t("overview.hostingBasics.bandwidth.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.hostingBasics.bandwidth.description")}
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <h3 className="font-semibold text-xl text-foreground mb-3">{t("overview.hostingBasics.storage.title")}</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {t("overview.hostingBasics.storage.description")}
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper padding="md">
         <div className="max-w-3xl mx-auto">
           <SectionHeader
             title={t("overview.faq.title")}
@@ -161,6 +250,18 @@ export default function HostingOverviewPage() {
           variant: "outline",
         }}
       />
+
+      {/* Contextual Link */}
+      <SectionWrapper padding="md">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-muted-foreground">
+            Secure your site with SSL.{" "}
+            <Link href="/ssl" className="text-foreground font-medium hover:underline">
+              View SSL certificates
+            </Link>
+          </p>
+        </div>
+      </SectionWrapper>
 
       </main>
 

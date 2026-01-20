@@ -39,7 +39,7 @@ export default function LinuxHostingPage() {
                     {t("linux.hero.configurePlan")}
                   </Button>
                 </Link>
-                <Link href="/configure/hosting?plan=starter&type=linux">
+                <Link href="/contact">
                   <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent">
                     {t("linux.hero.talkToUs")}
                   </Button>
@@ -298,12 +298,26 @@ export default function LinuxHostingPage() {
                   {t("linux.cta.choosePlan")}
                 </Button>
               </Link>
-              <Link href="/configure/hosting?plan=starter&type=linux">
+              <Link href="/contact">
                 <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent">
                   {t("linux.cta.talkToSupport")}
                 </Button>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contextual Link */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-muted-foreground">
+              Secure your site with SSL.{" "}
+              <Link href="/ssl" className="text-foreground font-medium hover:underline">
+                View SSL certificates
+              </Link>
+            </p>
           </div>
         </div>
       </section>

@@ -1,6 +1,10 @@
 {
+  "seo": {
+    "title": "Destek - Gerçek İnsanlardan Yardım Alın",
+    "description": "Botlardan değil, gerçek insanlardan 7/24 destek. Ortalama 2 dakika yanıt süresi. Alan adları, hosting, SSL ve site taşıma konularında yardım alın. İhtiyacınız olduğunda buradayız."
+  },
   "hero": {
-    "title": "Bu konuda yalnız değilsiniz.",
+    "title": "7/24 Müşteri Desteği - Bu Konuda Yalnız Değilsiniz",
     "description": "Gerçek insanlar. Gerçek cevaplar. Bot yok, script yok, dolambaçlı yol yok. Sadece ihtiyacınız olduğunda insan desteği.",
     "talkToHuman": "Bir insanla konuşun",
     "getMigrationHelp": "Taşıma yardımı alın",

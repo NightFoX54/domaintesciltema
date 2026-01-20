@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Web Hosting - Web Siteniz İçin Hızlı, Güvenilir Hosting",
+    "description": "%99.9 uptime garantisi ile hızlı, güvenilir web hosting. Linux, WordPress ve Joomla hosting seçenekleri. Ücretsiz SSL, 7/24 destek, şeffaf fiyatlandırma. Girişimciler ve küçük işletmeler için mükemmel."
+  },
   "overview": {
     "hero": {
       "title": "Sorunsuz çalışan hosting",
@@ -20,6 +24,64 @@
       "keepsSecure": {
         "title": "Her şeyi güvenli ve güncel tutar",
         "description": "İyi hosting, güvenlik güncellemeleri, yedeklemeler ve izleme içerir, böylece sunucu bakımı yerine işinize odaklanabilirsiniz."
+      }
+    },
+    "whyHostingMatters": {
+      "title": "Hosting'in işiniz için neden önemli olduğu",
+      "description": "Hosting sadece teknik altyapı değil—çevrimiçi varlığınızın temelidir.",
+      "reliability": {
+        "title": "Güvenilirlik güven oluşturur",
+        "description": "Siteniz her zaman erişilebilir olduğunda, ziyaretçiler gerçek, yerleşik bir işletme olduğunuza güvenir. Downtime sadece kayıp ziyaretçi anlamına gelmez—kayıp güvenilirlik anlamına gelir."
+      },
+      "performance": {
+        "title": "Hız her şeyi etkiler",
+        "description": "Hızlı yüklenen siteler ziyaretçileri meşgul tutar. Yavaş siteler insanları uzaklaştırır. İyi hosting, sitenizin hızlı yüklenmesini sağlar, bu da kullanıcı deneyimini ve arama sıralamalarını iyileştirir."
+      },
+      "scalability": {
+        "title": "Büyüme alanı",
+        "description": "İşiniz büyüdükçe, web siteniz daha fazla trafiği kaldırması gerekir. İyi hosting sizinle birlikte ölçeklenir, böylece altyapınızı aşma konusunda endişelenmenize gerek kalmaz."
+      }
+    },
+    "whenYouNeedHosting": {
+      "title": "Hosting'e ne zaman ihtiyacınız var",
+      "description": "Çevrimiçi herhangi bir şey inşa ediyorsanız, hosting'e ihtiyacınız var. İşte yaygın senaryolar:",
+      "scenarios": [
+        {
+          "title": "Yeni bir web sitesi başlatıyorsunuz",
+          "description": "Portföy, blog veya iş sitesi olsun, dünyaya erişilebilir hale getirmek için hosting'e ihtiyacınız var."
+        },
+        {
+          "title": "Ücretsiz bir platformdan taşınıyorsunuz",
+          "description": "WordPress.com veya Blogger gibi ücretsiz platformların sınırlamaları vardır. Hosting size tam kontrol ve profesyonel bir alan adı verir."
+        },
+        {
+          "title": "Mevcut hostunuz çalışmıyor",
+          "description": "Yavaş hızlar, sık downtime veya zayıf destek? Gerçekten çalışan bir hosting'e geçme zamanı gelmiş olabilir."
+        },
+        {
+          "title": "Bir uygulama inşa ediyorsunuz",
+          "description": "Özel uygulamalar, API'ler veya veritabanları sorunsuz çalışmak için güvenilir hosting altyapısına ihtiyaç duyar."
+        }
+      ]
+    },
+    "hostingBasics": {
+      "title": "Hosting temellerini anlama",
+      "description": "Sade bir dille açıklanan birkaç önemli kavram:",
+      "servers": {
+        "title": "Sunucu nedir?",
+        "description": "Sunucu, her zaman açık ve internete bağlı güçlü bir bilgisayardır. Web sitenizin dosyalarını saklar ve ziyaretçiler sitenizi istediğinde onlara iletir."
+      },
+      "uptime": {
+        "title": "Uptime ve güvenilirlik",
+        "description": "Uptime, sitenizin erişilebilir olduğu zaman yüzdesidir. %99.9 uptime, sitenizin yılda 9 saatten az kapalı olduğu anlamına gelir. İyi hosting sağlayıcıları, yedeklilik ve izleme yoluyla yüksek uptime sürdürür."
+      },
+      "bandwidth": {
+        "title": "Bant genişliği açıklaması",
+        "description": "Bant genişliği, siteniz ve ziyaretçiler arasında aktarılabilecek veri miktarıdır. Bunu bir boru gibi düşünün—daha geniş borular daha fazla trafiği kaldırır. Çoğu sitenin sınırsız bant genişliğine ihtiyacı yoktur, ancak iyi hosting sizi aşırı kullanım ücretleriyle şaşırtmaz."
+      },
+      "storage": {
+        "title": "Depolama alanı",
+        "description": "Bu, web sitenizin dosyaları için ne kadar alanınız olduğudur—kod, görseller, videolar, veritabanları. Çoğu sitenin nispeten az depolama alanına ihtiyacı vardır, ancak büyümek için alan olması önemlidir."
       }
     },
     "whichHosting": {
