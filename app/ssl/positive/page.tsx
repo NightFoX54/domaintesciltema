@@ -11,6 +11,7 @@ import { SSLPricingCard } from "@/components/ssl/ssl-pricing-card"
 import { SSLFeatureItem } from "@/components/ssl/ssl-feature-item"
 import { FAQAccordion } from "@/components/common/faq-accordion"
 import { CTABlock } from "@/components/common/cta-block"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation } from "@/lib/i18n"
 
 export default function PositiveSSLPage() {
