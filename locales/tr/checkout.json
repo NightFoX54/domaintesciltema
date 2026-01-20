@@ -63,5 +63,49 @@
     "cardNumber": "Lütfen geçerli bir kart numarası girin",
     "expiry": "Lütfen son kullanma tarihini AA/YY olarak girin",
     "cvv": "Lütfen CVV girin"
+  },
+  "confirmation": {
+    "title": "Hazırsınız!",
+    "description": "Siparişiniz onaylandı. Detayları e-postanıza gönderdik.",
+    "whatHappensNext": {
+      "title": "Sırada ne var",
+      "description": "Her şeyi sizin için hazırlıyoruz. İşte bekleyebilecekleriniz:",
+      "step1": {
+        "title": "E-postanızı kontrol edin (şimdi)",
+        "description": "Sipariş detaylarınız ve sonraki adımlarınızla birlikte bir onay e-postası alacaksınız. Birkaç dakika içinde görmezseniz, spam klasörünüzü kontrol edin."
+      },
+      "step2": {
+        "title": "Hizmetlerinizi kuruyoruz (10 dakika içinde)",
+        "description": "Alan adınız, hosting'iniz ve SSL'iniz yapılandırılacak ve kullanıma hazır olacak. Çoğu hizmet anında aktifleşir, bazıları birkaç dakika sürebilir."
+      },
+      "step3": {
+        "title": "Hesabınıza erişin",
+        "description": "Hesap bilgileriniz e-postada olacak. Hizmetlerinizi yönetmek, faturaları görüntülemek veya değişiklik yapmak için istediğiniz zaman giriş yapabilirsiniz."
+      },
+      "step4": {
+        "title": "Yardıma mı ihtiyacınız var? Buradayız",
+        "description": "Sorularınız varsa veya başlamak için rehberliğe ihtiyacınız varsa, destek ekibimiz 7/24 müsait. Sadece ulaşın—hiçbir soru çok küçük değil."
+      }
+    },
+    "support": {
+      "talkToSupport": {
+        "title": "Destekle konuşun",
+        "description": "İstediğiniz zaman gerçek bir kişiden yardım alın",
+        "action": "Bize ulaşın"
+      },
+      "gettingStarted": {
+        "title": "Başlangıç kılavuzları",
+        "description": "Yaygın görevler için adım adım yardım",
+        "action": "Kılavuzları görüntüle"
+      }
+    },
+    "cta": {
+      "description": "Daha fazla hizmet eklemek veya hesabınızı yönetmek ister misiniz?",
+      "button": "Hesabınıza gidin"
+    },
+    "contact": {
+      "email": "Sorularınız mı var? Bize support@domaintescil.com adresinden e-posta gönderin",
+      "responseTime": "Genellikle bir saat içinde yanıt veriyoruz, çoğu zaman çok daha hızlı."
+    }
   }
 }

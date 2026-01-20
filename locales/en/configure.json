@@ -98,5 +98,44 @@
       "label": "Add SSL to cart"
     },
     "note": "You can review everything before checkout. No commitment yet."
+  },
+  "domain": {
+    "back": "Back",
+    "steps": {
+      "configure": "Configure",
+      "reviewCheckout": "Review & checkout"
+    },
+    "title": "Configure your domain",
+    "description": "You're almost there. Just a few simple choices, then your domain is yours.",
+    "yourDomain": {
+      "title": "Your domain",
+      "description": "This domain will be registered in your name. You're the legal owner."
+    },
+    "registrationPeriod": {
+      "title": "How long would you like to register it?",
+      "oneYear": "1 year",
+      "twoYears": "2 years",
+      "threeYears": "3 years",
+      "renewsAt": "Renews at ${{price}}/year"
+    },
+    "included": {
+      "title": "What's included with every domain",
+      "whois": "Free WHOIS privacy protection (your info stays private)",
+      "dns": "Easy DNS management (point your domain anywhere)",
+      "ownership": "Full ownership (transfer anytime, no lock-in)",
+      "renewal": "Auto-renewal reminders (so you never lose your domain)"
+    },
+    "total": {
+      "title": "Total today",
+      "forPeriod": "For {{period}} {{periodLabel}}",
+      "year": "year",
+      "years": "years",
+      "renewsAt": "Renews at ${{price}}/year"
+    },
+    "addToCart": {
+      "adding": "Adding to cart...",
+      "label": "Add domain to cart"
+    },
+    "note": "You can review everything before checkout. No commitment yet."
   }
 }

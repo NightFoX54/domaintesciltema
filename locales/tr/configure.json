@@ -98,5 +98,44 @@
       "label": "SSL'i sepete ekle"
     },
     "note": "Ödeme yapmadan önce her şeyi inceleyebilirsiniz. Henüz taahhüt yok."
+  },
+  "domain": {
+    "back": "Geri",
+    "steps": {
+      "configure": "Yapılandır",
+      "reviewCheckout": "İncele ve öde"
+    },
+    "title": "Alan adınızı yapılandırın",
+    "description": "Neredeyse hazırsınız. Sadece birkaç basit seçim, sonra alan adınız sizin.",
+    "yourDomain": {
+      "title": "Alan adınız",
+      "description": "Bu alan adı sizin adınıza kaydedilecek. Yasal sahibi sizsiniz."
+    },
+    "registrationPeriod": {
+      "title": "Ne kadar süre kaydetmek istersiniz?",
+      "oneYear": "1 yıl",
+      "twoYears": "2 yıl",
+      "threeYears": "3 yıl",
+      "renewsAt": "${{price}}/yıl fiyatıyla yenilenir"
+    },
+    "included": {
+      "title": "Her alan adıyla dahil",
+      "whois": "Ücretsiz WHOIS gizlilik koruması (bilgileriniz gizli kalır)",
+      "dns": "Kolay DNS yönetimi (alan adınızı istediğiniz yere yönlendirin)",
+      "ownership": "Tam sahiplik (istediğiniz zaman transfer edin, kilit yok)",
+      "renewal": "Otomatik yenileme hatırlatıcıları (böylece alan adınızı asla kaybetmezsiniz)"
+    },
+    "total": {
+      "title": "Bugün toplam",
+      "forPeriod": "{{period}} {{periodLabel}} için",
+      "year": "yıl",
+      "years": "yıl",
+      "renewsAt": "${{price}}/yıl fiyatıyla yenilenir"
+    },
+    "addToCart": {
+      "adding": "Sepete ekleniyor...",
+      "label": "Alan adını sepete ekle"
+    },
+    "note": "Ödeme yapmadan önce her şeyi inceleyebilirsiniz. Henüz taahhüt yok."
   }
 }

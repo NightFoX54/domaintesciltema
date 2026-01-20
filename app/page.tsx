@@ -325,7 +325,7 @@ export default function HomePage() {
           <div className="relative aspect-square rounded-xl overflow-hidden order-2 lg:order-1 shadow-lg">
             <img
               src="/friendly-support-person-at-desk-with-headset-smili.jpg"
-              alt="Support team member"
+              alt={t("support.imageAlt")}
               className="object-cover w-full h-full"
             />
           </div>

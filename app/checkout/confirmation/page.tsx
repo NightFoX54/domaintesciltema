@@ -6,8 +6,11 @@ import { CheckCircle, Mail, MessageCircle, FileText, ArrowRight } from "lucide-r
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import Link from "next/link"
+import { useTranslation } from "@/lib/i18n"
 
 export default function ConfirmationPage() {
+  const { t } = useTranslation('checkout')
+  
   useEffect(() => {
     // Clear any remaining cart data
     localStorage.removeItem("cart")
@@ -30,9 +33,9 @@ export default function ConfirmationPage() {
             </div>
 
             <div className="space-y-3">
-              <h1 className="text-4xl md:text-5xl font-semibold">You're all set!</h1>
+              <h1 className="text-4xl md:text-5xl font-semibold">{t("confirmation.title")}</h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Your order is confirmed. We've sent the details to your email.
+                {t("confirmation.description")}
               </p>
             </div>
           </div>
@@ -40,8 +43,8 @@ export default function ConfirmationPage() {
           {/* What happens next */}
           <div className="rounded-2xl border-2 border-border bg-card p-8 space-y-8 mb-8">
             <div>
-              <h2 className="text-2xl font-semibold mb-3">What happens next</h2>
-              <p className="text-muted-foreground">We're setting everything up for you. Here's what to expect:</p>
+              <h2 className="text-2xl font-semibold mb-3">{t("confirmation.whatHappensNext.title")}</h2>
+              <p className="text-muted-foreground">{t("confirmation.whatHappensNext.description")}</p>
             </div>
 
             <div className="space-y-6">
@@ -50,10 +53,9 @@ export default function ConfirmationPage() {
                   1
                 </div>
                 <div className="flex-1 pt-1">
-                  <h3 className="font-semibold mb-1.5">Check your email (now)</h3>
+                  <h3 className="font-semibold mb-1.5">{t("confirmation.whatHappensNext.step1.title")}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    You'll receive a confirmation email with your order details and next steps. If you don't see it in a
-                    few minutes, check your spam folder.
+                    {t("confirmation.whatHappensNext.step1.description")}
                   </p>
                 </div>
               </div>
@@ -63,10 +65,9 @@ export default function ConfirmationPage() {
                   2
                 </div>
                 <div className="flex-1 pt-1">
-                  <h3 className="font-semibold mb-1.5">We set up your services (within 10 minutes)</h3>
+                  <h3 className="font-semibold mb-1.5">{t("confirmation.whatHappensNext.step2.title")}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Your domain, hosting, and SSL will be configured and ready to use. Most services activate instantly,
-                    some may take a few minutes.
+                    {t("confirmation.whatHappensNext.step2.description")}
                   </p>
                 </div>
               </div>
@@ -76,10 +77,9 @@ export default function ConfirmationPage() {
                   3
                 </div>
                 <div className="flex-1 pt-1">
-                  <h3 className="font-semibold mb-1.5">Access your account</h3>
+                  <h3 className="font-semibold mb-1.5">{t("confirmation.whatHappensNext.step3.title")}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Your account credentials will be in the email. You can log in anytime to manage your services, view
-                    invoices, or make changes.
+                    {t("confirmation.whatHappensNext.step3.description")}
                   </p>
                 </div>
               </div>
@@ -89,10 +89,9 @@ export default function ConfirmationPage() {
                   4
                 </div>
                 <div className="flex-1 pt-1">
-                  <h3 className="font-semibold mb-1.5">Need help? We're here</h3>
+                  <h3 className="font-semibold mb-1.5">{t("confirmation.whatHappensNext.step4.title")}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    If you have questions or need guidance getting started, our support team is available 24/7. Just
-                    reach out—no question is too small.
+                    {t("confirmation.whatHappensNext.step4.description")}
                   </p>
                 </div>
               </div>
@@ -106,10 +105,10 @@ export default function ConfirmationPage() {
               className="rounded-xl border-2 border-border bg-card p-6 hover:border-primary/50 hover:shadow-md transition-all group"
             >
               <MessageCircle className="h-6 w-6 text-primary mb-3" aria-hidden="true" />
-              <h3 className="font-semibold mb-1.5">Talk to support</h3>
-              <p className="text-sm text-muted-foreground mb-3">Get help from a real person anytime</p>
+              <h3 className="font-semibold mb-1.5">{t("confirmation.support.talkToSupport.title")}</h3>
+              <p className="text-sm text-muted-foreground mb-3">{t("confirmation.support.talkToSupport.description")}</p>
               <span className="text-sm text-primary font-medium group-hover:gap-2 inline-flex items-center gap-1 transition-all">
-                Contact us <ArrowRight className="h-3 w-3" aria-hidden="true" />
+                {t("confirmation.support.talkToSupport.action")} <ArrowRight className="h-3 w-3" aria-hidden="true" />
               </span>
             </Link>
 
@@ -118,19 +117,19 @@ export default function ConfirmationPage() {
               className="rounded-xl border-2 border-border bg-card p-6 hover:border-primary/50 hover:shadow-md transition-all group"
             >
               <FileText className="h-6 w-6 text-primary mb-3" aria-hidden="true" />
-              <h3 className="font-semibold mb-1.5">Getting started guides</h3>
-              <p className="text-sm text-muted-foreground mb-3">Step-by-step help for common tasks</p>
+              <h3 className="font-semibold mb-1.5">{t("confirmation.support.gettingStarted.title")}</h3>
+              <p className="text-sm text-muted-foreground mb-3">{t("confirmation.support.gettingStarted.description")}</p>
               <span className="text-sm text-primary font-medium group-hover:gap-2 inline-flex items-center gap-1 transition-all">
-                View guides <ArrowRight className="h-3 w-3" aria-hidden="true" />
+                {t("confirmation.support.gettingStarted.action")} <ArrowRight className="h-3 w-3" aria-hidden="true" />
               </span>
             </Link>
           </div>
 
           {/* CTA */}
           <div className="text-center space-y-4 pt-4">
-            <p className="text-muted-foreground">Want to add more services or manage your account?</p>
+            <p className="text-muted-foreground">{t("confirmation.cta.description")}</p>
             <Button size="lg" asChild className="shadow-md">
-              <Link href="/signin">Go to your account</Link>
+              <Link href="/signin">{t("confirmation.cta.button")}</Link>
             </Button>
           </div>
 
@@ -138,9 +137,9 @@ export default function ConfirmationPage() {
           <div className="mt-12 pt-8 border-t border-border text-center">
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-2">
               <Mail className="h-4 w-4" aria-hidden="true" />
-              <span>Questions? Email us at support@domaintescil.com</span>
+              <span>{t("confirmation.contact.email")}</span>
             </div>
-            <p className="text-xs text-muted-foreground">We typically respond within an hour, often much faster.</p>
+            <p className="text-xs text-muted-foreground">{t("confirmation.contact.responseTime")}</p>
           </div>
         </div>
       </section>

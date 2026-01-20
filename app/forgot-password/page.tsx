@@ -11,8 +11,10 @@ import { Card, CardContent } from "@/components/ui/card"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Mail, ArrowLeft } from "lucide-react"
+import { useTranslation } from "@/lib/i18n"
 
 export default function ForgotPasswordPage() {
+  const { t } = useTranslation('auth')
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -34,13 +36,13 @@ export default function ForgotPasswordPage() {
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Back to sign in
+                {t("forgotPassword.backToSignIn")}
               </Link>
 
               <div className="space-y-3 mb-10">
-                <h1 className="text-4xl md:text-5xl font-semibold text-balance leading-tight">Reset your password</h1>
+                <h1 className="text-4xl md:text-5xl font-semibold text-balance leading-tight">{t("forgotPassword.title")}</h1>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  This happens. We'll send you a link to create a new one.
+                  {t("forgotPassword.description")}
                 </p>
               </div>
 
@@ -50,32 +52,31 @@ export default function ForgotPasswordPage() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="space-y-2">
                         <Label htmlFor="email" className="text-sm font-medium">
-                          Email address
+                          {t("forgotPassword.email.label")}
                         </Label>
                         <Input
                           id="email"
                           type="email"
-                          placeholder="you@example.com"
+                          placeholder={t("forgotPassword.email.placeholder")}
                           className="h-12"
                           autoComplete="email"
                           required
                         />
                         <p className="text-xs text-muted-foreground/70">
-                          Enter the email you used to create your account
+                          {t("forgotPassword.email.hint")}
                         </p>
                       </div>
 
                       <Button type="submit" size="lg" className="w-full h-12 text-base shadow-md">
-                        Send reset link
+                        {t("forgotPassword.submit")}
                       </Button>
 
                       <div className="pt-4 space-y-3 text-sm text-muted-foreground/80">
                         <p className="leading-relaxed">
-                          We'll send a secure link to your email. Click it to set a new password. The link expires in 1
-                          hour.
+                          {t("forgotPassword.info1")}
                         </p>
                         <p className="leading-relaxed">
-                          If you don't see the email in a few minutes, check your spam folder.
+                          {t("forgotPassword.info2")}
                         </p>
                       </div>
                     </form>
@@ -86,24 +87,23 @@ export default function ForgotPasswordPage() {
                           <Mail className="h-6 w-6 text-foreground" />
                         </div>
                         <div className="space-y-2 flex-1">
-                          <h3 className="font-semibold text-lg">Check your email</h3>
+                          <h3 className="font-semibold text-lg">{t("forgotPassword.success.title")}</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed">
-                            We've sent a password reset link to your email address. It should arrive in the next few
-                            minutes.
+                            {t("forgotPassword.success.description")}
                           </p>
                         </div>
                       </div>
 
                       <div className="space-y-3 text-sm text-muted-foreground/80 pt-2">
                         <p className="leading-relaxed">
-                          Didn't receive it? Check your spam folder, or wait a minute and try again.
+                          {t("forgotPassword.success.noEmail")}
                         </p>
                         <p className="leading-relaxed">
-                          If you're still having trouble,{" "}
+                          {t("forgotPassword.success.stillTrouble")}{" "}
                           <Link href="/contact" className="text-foreground font-medium hover:underline">
-                            contact our support team
+                            {t("forgotPassword.success.contactSupport")}
                           </Link>{" "}
-                          and we'll help you out.
+                          {t("forgotPassword.success.help")}
                         </p>
                       </div>
 
@@ -114,7 +114,7 @@ export default function ForgotPasswordPage() {
                         className="w-full h-12 text-base bg-transparent"
                         onClick={() => setSubmitted(false)}
                       >
-                        Try a different email
+                        {t("forgotPassword.success.tryDifferent")}
                       </Button>
                     </div>
                   )}
@@ -128,7 +128,7 @@ export default function ForgotPasswordPage() {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl shadow-foreground/5 ring-1 ring-border/50">
               <img
                 src="/support-person-smiling-at-desk-helping-customer.jpg"
-                alt="Support team ready to help"
+                alt={t("forgotPassword.imageAlt")}
                 className="w-full h-full object-cover"
               />
             </div>

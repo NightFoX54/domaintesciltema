@@ -73,6 +73,200 @@
     "findDomain": {
       "title": "Alan adınızı bulun.\nÖnemli bir şey inşa edin.",
       "description": "Fikriniz bir ismi hak ediyor. Birlikte bulalım."
+    },
+    "noPressure": "Baskı yok. Hile yok. Her durumda yardımcı oluruz.",
+    "whatYouGet": {
+      "title": "Her alan adıyla birlikte ne alırsınız",
+      "description": "Katman yok. Satış artırımı yok. Bunlar kaydettiğiniz her alan adıyla dahildir.",
+      "freeWhois": {
+        "title": "Ücretsiz WHOIS gizliliği",
+        "description": "Kişisel bilgileriniz gizli kalır. Spam yok, kamu kayıtları yok."
+      },
+      "fullOwnership": {
+        "title": "Tam sahiplik, kilit yok",
+        "description": "Alan adınızı istediğiniz zaman transfer edin. Gizli ücret yok, izin gerekmez."
+      },
+      "simpleDNS": {
+        "title": "Basit DNS yönetimi",
+        "description": "Alan adınızı istediğiniz yere yönlendirin. Net arayüz, teknik jargon yok."
+      },
+      "clearPricing": {
+        "title": "Şeffaf yenileme fiyatlandırması",
+        "description": "Satın almadan önce yenileme fiyatını bilirsiniz. Gelecek yıl sürpriz yok."
+      },
+      "footer": "Burada listelenen her şey dahildir. \"İlk yıl için\" değil. \"Premium planlarla\" değil. Bu her zaman aldığınız şeydir."
+    },
+    "philosophy": {
+      "paragraph1": "Çoğu girişimci fikirler yüzünden başarısız olmaz.",
+      "paragraph2": "Etraflarındaki araçlar kafa karıştırıcı olduğu için başarısız olurlar.",
+      "paragraph3": "Alan adlarını her zaman olması gerektiği gibi inşa ettik:",
+      "paragraph4": "net, dürüst ve tamamen sizin.",
+      "findDomain": "Alan adınızı bulun",
+      "talkToHuman": "Bir insanla konuşun"
+    },
+    "faq": {
+      "title": "Yaygın sorular",
+      "description": "Net cevaplar. Yasal dil yok.",
+      "items": [
+        {
+          "question": "Alan adının gerçekten sahibi ben miyim?",
+          "answer": "Evet. Tamamen. Bizimle bir alan adı kaydettiğinizde, yasal sahibi sizsiniz. İstediğiniz zaman başka bir kayıt şirketine transfer edebilir, istediğiniz yere yönlendirebilir veya satabilirsiniz. Biz sadece kayıt şirketiyiz—sahibi sizsiniz."
+        },
+        {
+          "question": "Yenileme fiyatı aniden artacak mı?",
+          "answer": "Hayır. Satın almadan önce yenileme fiyatını gösteriyoruz. Gelecek yıl ödeyeceğiniz fiyat bu. Kayıt fiyatları değişebilir (bunlar Verisign gibi organizasyonlar tarafından belirlenir, biz değil), ancak her zaman önceden sizi bilgilendireceğiz ve söz verdiğimiz şeyi yerine getireceğiz."
+        },
+        {
+          "question": "Alan adımı istediğim zaman transfer edebilir miyim?",
+          "answer": "Evet. Kayıttan 60 gün sonra (bir ICANN kuralı, bizim değil), alan adınızı herhangi bir kayıt şirketine transfer edebilirsiniz. Sizi kilitlemiyoruz. Karmaşık hale getirmiyoruz. Ayrılmak isterseniz, bunu sorunsuz yapmanıza yardımcı oluruz."
+        },
+        {
+          "question": "Mükemmel alan adım alınmışsa ne olur?",
+          "answer": "Bu olur. Size alternatifler bulmanıza yardımcı oluruz—farklı TLD'ler, yaratıcı varyasyonlar veya marka olabilir seçenekler. Bazen bir gerileme gibi görünen şey daha iyi bir isme yol açar. Beyin fırtınası konusunda yardım isterseniz, sadece sorun. Bu konuda iyiyiz."
+        },
+        {
+          "question": "Bir alan adı seçmemde bana yardımcı olabilir misiniz?",
+          "answer": "Kesinlikle. Bir alan adı seçmek bunaltıcı gelebilir. Bizimle konuşun—işiniz hakkında sorular soracağız, seçenekleri düşünmenize yardımcı olacağız ve size doğru gelen bir şeye yönlendireceğiz. Baskı yok, satış artırımı yok. Sadece dürüst tavsiye."
+        }
+      ]
+    }
+  },
+  "transfer": {
+    "hero": {
+      "title": "Alan adınızı güvenle transfer edin",
+      "description": "Alan adınızı taşımak stresli olmamalı. Teknik detayları biz hallederiz ve her adımda size rehberlik ederiz. Çoğu transfer 5-7 gün içinde tamamlanır.",
+      "inputLabel": "Transfer edilecek alan adı",
+      "placeholder": "Alan adınızı girin (örn: yourdomain.com)",
+      "checkButton": "Uygunluğu Kontrol Et",
+      "checking": "Kontrol ediliyor...",
+      "hint": "Endişelenmeyin—buraya alan adınızı girmek henüz bir şey başlatmaz. Önce uygunluğu kontrol edeceğiz.",
+      "freeYear": "Ücretsiz ek yıl eklendi",
+      "noDowntime": "Kesinti yok",
+      "imageAlt": "Dijital varlığını düzenleyen kişi"
+    },
+    "status": {
+      "checking": "Transfer uygunluğu kontrol ediliyor...",
+      "eligible": {
+        "title": "Alan adınız transfer için uygun",
+        "description": "Harika haber! Alan adınızı transfer edebiliriz. İşte sırada ne var:",
+        "currentRegistrar": "Mevcut Kayıt Şirketi",
+        "expiryDate": "Son Kullanma Tarihi",
+        "daysUntilExpiry": "Son Kullanma Tarihine Kalan Gün",
+        "transferPrice": "Transfer Fiyatı",
+        "freeYearExtension": "Ücretsiz Yıl Uzatma",
+        "whoisPrivacy": "WHOIS Gizliliği",
+        "startTransfer": "Transferi Başlat",
+        "needHelp": "Yardıma mı ihtiyacınız var? Destekle iletişime geçin"
+      },
+      "notEligible": {
+        "locked": "Bu alan adı kilitli. Lütfen önce mevcut kayıt şirketinizin kontrol panelinden kilidi açın.",
+        "recentlyRegistered": "Bu alan adı 60 günden daha kısa bir süre önce kaydedilmiş. ICANN kuralları transferlerden önce 60 günlük bir bekleme süresi gerektirir.",
+        "expired": "Bu alan adı süresi dolmuş veya geri alma döneminde görünüyor. Önce mevcut kayıt şirketinizle yenilemeniz gerekebilir.",
+        "notFound": "Bu alan adını bulamadık. Lütfen yazımı kontrol edin ve tekrar deneyin."
+      }
+    },
+    "authCode": {
+      "label": "Yetkilendirme Kodu (EPP Kodu)",
+      "placeholder": "Mevcut kayıt şirketinizden EPP/yetkilendirme kodunuzu girin",
+      "hint": "Bu kodu mevcut kayıt şirketinizin kontrol panelinden veya destek ekibiyle iletişime geçerek alabilirsiniz."
+    },
+    "guarantees": {
+      "zeroDowntime": {
+        "title": "Sıfır kesinti garantisi",
+        "description": "Siteniz ve e-postanız tüm süre boyunca çalışmaya devam eder"
+      },
+      "averageTime": {
+        "title": "Ortalama 5-7 gün",
+        "description": "Yol boyunca durum güncellemeleriyle hızlı transferler"
+      },
+      "handleComplications": {
+        "title": "Komplikasyonları biz hallederiz",
+        "description": "Eski kayıt şirketiniz zorlaştırırsa, yardımcı oluruz"
+      },
+      "imageAlt": "Alan adı transferini tamamladıktan sonra rahatlamış girişimci"
+    },
+    "process": {
+      "title": "Transfer süreci nasıl çalışır",
+      "steps": {
+        "step1": {
+          "title": "Uygunluğu kontrol et",
+          "description": "Alan adınızın transfer edilebilir olduğunu ve kilitli veya yakın zamanda kaydedilmiş olmadığını doğrularız."
+        },
+        "step2": {
+          "title": "Yetkilendirme kodunu sağla",
+          "description": "Mevcut kayıt şirketinizden EPP/yetkilendirme kodunuzu alın ve buraya girin."
+        },
+        "step3": {
+          "title": "Transferi başlatıyoruz",
+          "description": "Transfer sürecini başlatırız ve ilerleme konusunda sizi bilgilendiririz."
+        },
+        "step4": {
+          "title": "Onay ve tamamlama",
+          "description": "Mevcut kayıt şirketiniz bir onay e-postası gönderir. Onaylandıktan sonra transfer 5-7 gün içinde tamamlanır."
+        }
+      }
+    },
+    "faq": {
+      "title": "Alan adı transferleri hakkında yaygın sorular",
+      "items": [
+        {
+          "question": "Transfer sırasında web sitem çöker mi?",
+          "answer": "Hayır. Web siteniz ve e-postanız transfer süreci boyunca normal şekilde çalışmaya devam edecek. Sıfır kesinti var."
+        },
+        {
+          "question": "Bir transfer ne kadar sürer?",
+          "answer": "Çoğu transfer 5-7 gün içinde tamamlanır. Kesin süre, mevcut kayıt şirketinizin transfer talebini ne kadar hızlı onayladığına bağlıdır."
+        },
+        {
+          "question": "Önce alan adımın kilidini açmam gerekiyor mu?",
+          "answer": "Evet. Alan adınızın mevcut kayıt şirketinizin kontrol panelinde kilitli olmaması gerekir. Gerekirse size bu konuda rehberlik ederiz."
+        },
+        {
+          "question": "Yetkilendirme kodum yoksa ne olur?",
+          "answer": "Mevcut kayıt şirketinizin kontrol panelinden alabilir veya destek ekibiyle iletişime geçebilirsiniz. Nereye bakacağınızdan emin değilseniz, bulmanıza yardımcı olabiliriz."
+        },
+        {
+          "question": "Alan adı kaydımda zaman kaybeder miyim?",
+          "answer": "Hayır. Transfer yaptığınızda, alan adı kaydınıza ücretsiz bir yıl ekleriz. Yani aslında zaman kazanırsınız, kaybetmezsiniz."
+        }
+      ]
+    },
+    "reassurance": {
+      "title": "Binlerce kişinin alan adlarını taşımasına yardımcı olduk",
+      "description1": "Kayıt şirketi değiştirmek riskli gelebilir. Ya bir şeyler bozulursa? Ya sonsuza kadar sürerse?",
+      "description2": "Her adımı sadeleştirdik. Çoğu girişimci aslında ne kadar basit olduğuna şaşırıyor."
+    },
+    "process": {
+      "title": "Alan adı transferi nasıl çalışır",
+      "subtitle": "Baştan sona beş basit adım",
+      "steps": {
+        "step1": {
+          "title": "Alan adınızın kilidini açın",
+          "description": "Mevcut kayıt şirketinize giriş yapın ve alan adınızın kilidini açın. Bu genellikle alan adı ayarları veya güvenlik seçeneklerinde bulunur."
+        },
+        "step2": {
+          "title": "Yetkilendirme kodunuzu alın",
+          "description": "Mevcut sağlayıcınızdan bir \"EPP kodu\" veya \"yetkilendirme kodu\" isteyin. Size e-posta ile gönderecekler—genellikle birkaç dakika içinde."
+        },
+        "step3": {
+          "title": "Bizimle transferi başlatın",
+          "description": "Transfer formumuza alan adınızı ve yetkilendirme kodunuzu girin. Her şeyin taşınmaya hazır olduğunu doğrulayacağız."
+        },
+        "step4": {
+          "title": "Transferi onaylayın",
+          "description": "Transferi onaylamanızı isteyen bir e-posta alacaksınız. Onaylamak için bağlantıya tıklayın. Eski kayıt şirketiniz de onay isteyebilir."
+        },
+        "step5": {
+          "title": "Tamamlanmasını bekleyin",
+          "description": "Çoğu transfer 5-7 gün içinde tamamlanır. Yol boyunca size güncellemeler göndereceğiz ve sorularınız olursa istediğiniz zaman bize ulaşabilirsiniz."
+        }
+      }
+    },
+    "cta": {
+      "title": "Transfer etmeye hazır mısınız?",
+      "description": "Başlamak için yukarıdaki alan adınızı girin veya önce süreç hakkında konuşmak isterseniz bizimle iletişime geçin.",
+      "startTransfer": "Transferinizi başlatın",
+      "talkFirst": "Önce biriyle konuşun"
     }
   }
 }

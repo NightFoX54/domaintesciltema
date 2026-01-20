@@ -1,6 +1,8 @@
 {
   "language": {
-    "switcher": "Change language"
+    "switcher": "Change language",
+    "english": "English",
+    "turkish": "Türkçe"
   },
   "nav": {
     "domains": "Domains",
@@ -130,5 +132,10 @@
     "invalidEmail": "Please enter a valid email address",
     "invalidFormat": "Invalid format",
     "tryAgain": "Try again"
+  },
+  "free": "Free",
+  "included": "Included",
+  "periods": {
+    "days": "days"
   }
 }

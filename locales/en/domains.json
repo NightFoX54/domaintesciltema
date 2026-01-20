@@ -73,6 +73,200 @@
     "findDomain": {
       "title": "Find your domain.\nBuild something that matters.",
       "description": "Your idea deserves a name. Let's find it together."
+    },
+    "noPressure": "No pressure. No tricks. We'll help either way.",
+    "whatYouGet": {
+      "title": "What you get with every domain",
+      "description": "No tiers. No upsells. These are included with every domain you register.",
+      "freeWhois": {
+        "title": "Free WHOIS privacy",
+        "description": "Your personal information stays private. No spam, no public records."
+      },
+      "fullOwnership": {
+        "title": "Full ownership, no lock-in",
+        "description": "Transfer your domain anytime. No hidden fees, no permission needed."
+      },
+      "simpleDNS": {
+        "title": "Simple DNS management",
+        "description": "Point your domain anywhere. Clear interface, no technical jargon."
+      },
+      "clearPricing": {
+        "title": "Clear renewal pricing",
+        "description": "You'll know the renewal price before you buy. No surprises next year."
+      },
+      "footer": "Everything listed here is included. Not \"for the first year\". Not \"with premium plans\". This is what you get, always."
+    },
+    "philosophy": {
+      "paragraph1": "Most founders don't fail because of ideas.",
+      "paragraph2": "They fail because the tools around them are confusing.",
+      "paragraph3": "We built domains the way they should've always been:",
+      "paragraph4": "clear, honest, and fully yours.",
+      "findDomain": "Find your domain",
+      "talkToHuman": "Talk to a human"
+    },
+    "faq": {
+      "title": "Common questions",
+      "description": "Clear answers. No legal language.",
+      "items": [
+        {
+          "question": "Do I actually own the domain?",
+          "answer": "Yes. Completely. When you register a domain with us, you're the legal owner. You can transfer it to another registrar anytime, point it anywhere, or sell it. We're just the registrar—you're the owner."
+        },
+        {
+          "question": "Will the renewal price suddenly increase?",
+          "answer": "No. We show you the renewal price before you buy. That's the price you'll pay next year. Registry prices can change (they're set by organizations like Verisign, not us), but we'll always notify you in advance and honor what we promised."
+        },
+        {
+          "question": "Can I transfer my domain anytime?",
+          "answer": "Yes. After 60 days from registration (an ICANN rule, not ours), you can transfer your domain to any registrar. We don't lock you in. We don't make it complicated. If you want to leave, we'll help you do it smoothly."
+        },
+        {
+          "question": "What if my perfect domain is taken?",
+          "answer": "It happens. We'll help you find alternatives—different TLDs, creative variations, or brandable options. Sometimes what feels like a setback leads to a better name. If you want help brainstorming, just ask. We're good at this."
+        },
+        {
+          "question": "Can you help me choose a domain?",
+          "answer": "Absolutely. Choosing a domain can feel overwhelming. Talk to us—we'll ask about your business, help you think through options, and guide you toward something that feels right. No pressure, no upselling. Just honest advice."
+        }
+      ]
+    }
+  },
+  "transfer": {
+    "hero": {
+      "title": "Transfer your domain with confidence",
+      "description": "Moving your domain shouldn't be stressful. We'll handle the technical details and guide you through every step. Most transfers complete within 5-7 days.",
+      "inputLabel": "Domain name to transfer",
+      "placeholder": "Enter your domain (e.g., yourdomain.com)",
+      "checkButton": "Check Eligibility",
+      "checking": "Checking...",
+      "hint": "Don't worry—entering your domain here doesn't start anything yet. We'll check eligibility first.",
+      "freeYear": "Free extra year added",
+      "noDowntime": "No downtime",
+      "imageAlt": "Person organizing their digital presence"
+    },
+    "status": {
+      "checking": "Checking transfer eligibility...",
+      "eligible": {
+        "title": "Your domain is eligible for transfer",
+        "description": "Great news! We can transfer your domain. Here's what happens next:",
+        "currentRegistrar": "Current Registrar",
+        "expiryDate": "Expiry Date",
+        "daysUntilExpiry": "Days Until Expiry",
+        "transferPrice": "Transfer Price",
+        "freeYearExtension": "Free Year Extension",
+        "whoisPrivacy": "WHOIS Privacy",
+        "startTransfer": "Start Transfer",
+        "needHelp": "Need help? Contact support"
+      },
+      "notEligible": {
+        "locked": "This domain is locked. Please unlock it in your current registrar's control panel first.",
+        "recentlyRegistered": "This domain was registered less than 60 days ago. ICANN rules require a 60-day wait before transfers.",
+        "expired": "This domain appears to be expired or in redemption period. You may need to renew it first with your current registrar.",
+        "notFound": "We couldn't find this domain. Please check the spelling and try again."
+      }
+    },
+    "authCode": {
+      "label": "Authorization Code (EPP Code)",
+      "placeholder": "Enter your EPP/auth code from your current registrar",
+      "hint": "You can get this code from your current registrar's control panel or by contacting their support."
+    },
+    "guarantees": {
+      "zeroDowntime": {
+        "title": "Zero downtime guarantee",
+        "description": "Your site and email keep working throughout"
+      },
+      "averageTime": {
+        "title": "5-7 days average",
+        "description": "Fast transfers with status updates along the way"
+      },
+      "handleComplications": {
+        "title": "We handle complications",
+        "description": "If your old registrar makes it difficult, we'll help"
+      },
+      "imageAlt": "Founder relaxed after completing domain transfer"
+    },
+    "process": {
+      "title": "How the transfer process works",
+      "steps": {
+        "step1": {
+          "title": "Check eligibility",
+          "description": "We verify your domain can be transferred and isn't locked or recently registered."
+        },
+        "step2": {
+          "title": "Provide auth code",
+          "description": "Get your EPP/authorization code from your current registrar and enter it here."
+        },
+        "step3": {
+          "title": "We initiate transfer",
+          "description": "We start the transfer process and keep you updated on progress."
+        },
+        "step4": {
+          "title": "Approval & completion",
+          "description": "Your current registrar sends an approval email. Once approved, transfer completes in 5-7 days."
+        }
+      }
+    },
+    "faq": {
+      "title": "Common questions about domain transfers",
+      "items": [
+        {
+          "question": "Will my website go down during transfer?",
+          "answer": "No. Your website and email will continue working normally throughout the transfer process. There's zero downtime."
+        },
+        {
+          "question": "How long does a transfer take?",
+          "answer": "Most transfers complete within 5-7 days. The exact time depends on how quickly your current registrar approves the transfer request."
+        },
+        {
+          "question": "Do I need to unlock my domain first?",
+          "answer": "Yes. Your domain needs to be unlocked in your current registrar's control panel before we can transfer it. We'll guide you through this if needed."
+        },
+        {
+          "question": "What if I don't have my authorization code?",
+          "answer": "You can get it from your current registrar's control panel, or contact their support. We can help you locate it if you're not sure where to look."
+        },
+        {
+          "question": "Will I lose any time on my domain registration?",
+          "answer": "No. When you transfer, we add a free year to your domain registration. So you actually gain time, not lose it."
+        }
+      ]
+    },
+    "reassurance": {
+      "title": "We've helped thousands move their domains",
+      "description1": "Switching registrars can feel risky. What if something breaks? What if it takes forever?",
+      "description2": "We've streamlined every step. Most founders are surprised how simple it actually is."
+    },
+    "process": {
+      "title": "How domain transfer works",
+      "subtitle": "Five simple steps from start to finish",
+      "steps": {
+        "step1": {
+          "title": "Unlock your domain",
+          "description": "Log into your current registrar and unlock your domain. This is usually in domain settings or security options."
+        },
+        "step2": {
+          "title": "Get your authorization code",
+          "description": "Request an \"EPP code\" or \"auth code\" from your current provider. They'll email it to you—usually within minutes."
+        },
+        "step3": {
+          "title": "Start the transfer with us",
+          "description": "Enter your domain and authorization code in our transfer form. We'll verify everything is ready to move."
+        },
+        "step4": {
+          "title": "Approve the transfer",
+          "description": "You'll receive an email asking you to approve the transfer. Click the link to confirm. Your old registrar may also ask for confirmation."
+        },
+        "step5": {
+          "title": "Wait for completion",
+          "description": "Most transfers finish within 5-7 days. We'll email you updates along the way, and you can contact us anytime if you have questions."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to transfer?",
+      "description": "Enter your domain above to get started, or contact us if you'd like to talk through the process first.",
+      "startTransfer": "Start your transfer",
+      "talkFirst": "Talk to someone first"
     }
   }
 }

@@ -10,6 +10,7 @@ import { Check, ArrowRight, Shield, Clock, HeartHandshake, Loader2, AlertCircle 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { useTranslation } from "@/lib/i18n"
 
 interface TransferResult {
   domain: string
@@ -34,7 +35,7 @@ function checkTransferEligibility(domain: string): TransferResult {
       domain: normalizedDomain,
       eligible: true,
       status: "available",
-      message: "This domain is eligible for transfer!",
+      message: "", // Message will be translated in component
       transferPrice: "₺299",
       currentRegistrar: "GoDaddy",
       expiryDate: "2025-08-15",
@@ -45,8 +46,7 @@ function checkTransferEligibility(domain: string): TransferResult {
       domain: normalizedDomain,
       eligible: false,
       status: "locked",
-      message:
-        "This domain is currently locked. You'll need to unlock it at your current registrar before transferring.",
+      message: "", // Message will be translated in component
       transferPrice: "₺299",
       currentRegistrar: "Namecheap",
       expiryDate: "2025-06-20",
@@ -57,7 +57,7 @@ function checkTransferEligibility(domain: string): TransferResult {
       domain: normalizedDomain,
       eligible: false,
       status: "recently_registered",
-      message: "This domain was registered less than 60 days ago. ICANN rules require a 60-day wait before transfers.",
+      message: "", // Message will be translated in component
       transferPrice: "₺299",
       currentRegistrar: "Unknown",
     }
@@ -66,8 +66,7 @@ function checkTransferEligibility(domain: string): TransferResult {
       domain: normalizedDomain,
       eligible: false,
       status: "expired",
-      message:
-        "This domain appears to be expired or in redemption period. You may need to renew it first with your current registrar.",
+      message: "", // Message will be translated in component
       transferPrice: "₺299",
     }
   } else {
@@ -75,13 +74,14 @@ function checkTransferEligibility(domain: string): TransferResult {
       domain: normalizedDomain,
       eligible: false,
       status: "not_found",
-      message: "We couldn't find this domain. Please check the spelling and try again.",
+      message: "", // Message will be translated in component
       transferPrice: "₺299",
     }
   }
 }
 
 export default function DomainTransferPage() {
+  const { t } = useTranslation('domains')
   const [domain, setDomain] = useState("")
   const [transferResult, setTransferResult] = useState<TransferResult | null>(null)
   const [isChecking, setIsChecking] = useState(false)
@@ -120,11 +120,10 @@ export default function DomainTransferPage() {
             <div className="space-y-8 max-w-xl">
               <div className="space-y-6">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-balance">
-                  Transfer your domain with confidence
+                  {t("transfer.hero.title")}
                 </h1>
                 <p className="text-[17px] md:text-lg text-muted-foreground text-balance leading-relaxed">
-                  Moving your domain shouldn't be stressful. We'll handle the technical details and guide you through
-                  every step. Most transfers complete within 5-7 days.
+                  {t("transfer.hero.description")}
                 </p>
               </div>
 
@@ -132,12 +131,12 @@ export default function DomainTransferPage() {
               <div className="space-y-3">
                 <div className="flex gap-2">
                   <label htmlFor="domain-transfer-input" className="sr-only">
-                    Domain name to transfer
+                    {t("transfer.hero.inputLabel")}
                   </label>
                   <Input
                     id="domain-transfer-input"
                     type="text"
-                    placeholder="Enter your domain (e.g., yourdomain.com)"
+                    placeholder={t("transfer.hero.placeholder")}
                     value={domain}
                     onChange={(e) => setDomain(e.target.value)}
                     onKeyDown={(e) => {
@@ -147,32 +146,32 @@ export default function DomainTransferPage() {
                       }
                     }}
                     className="h-14 px-4 text-base flex-1"
-                    aria-label="Domain name to transfer"
+                    aria-label={t("transfer.hero.inputLabel")}
                   />
                   <Button size="lg" className="h-14 px-8" onClick={handleCheck} disabled={isChecking || !domain.trim()}>
                     {isChecking ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
-                        Checking...
+                        {t("transfer.hero.checking")}
                       </>
                     ) : (
-                      "Check Eligibility"
+                      t("transfer.hero.checkButton")
                     )}
                   </Button>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Don't worry—entering your domain here doesn't start anything yet. We'll check eligibility first.
+                  {t("transfer.hero.hint")}
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-6 pt-4 border-t border-border/40">
                 <div className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                  <span className="text-sm text-muted-foreground">Free extra year added</span>
+                  <span className="text-sm text-muted-foreground">{t("transfer.hero.freeYear")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                  <span className="text-sm text-muted-foreground">No downtime</span>
+                  <span className="text-sm text-muted-foreground">{t("transfer.hero.noDowntime")}</span>
                 </div>
               </div>
             </div>
@@ -181,7 +180,7 @@ export default function DomainTransferPage() {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-foreground/5 ring-1 ring-border/50">
                 <img
                   src="/person-organizing-digital-files-at-calm-workspace.jpg"
-                  alt="Person organizing their digital presence"
+                  alt={t("transfer.hero.imageAlt")}
                   className="object-cover w-full h-full"
                   loading="lazy"
                 />
@@ -198,8 +197,8 @@ export default function DomainTransferPage() {
               {isChecking ? (
                 <div className="text-center py-12">
                   <Loader2 className="h-12 w-12 animate-spin text-primary mx-auto mb-4" aria-hidden="true" />
-                  <p className="text-lg text-muted-foreground">Checking transfer eligibility for {domain}...</p>
-                  <p className="text-sm text-muted-foreground mt-2">This usually takes just a few seconds</p>
+                  <p className="text-lg text-muted-foreground">{t("transfer.status.checking")}</p>
+                  <p className="text-sm text-muted-foreground mt-2">{t("transfer.status.checking")}</p>
                 </div>
               ) : (
                 transferResult && (
@@ -227,7 +226,16 @@ export default function DomainTransferPage() {
                         <div className="flex-1">
                           <h2 className="text-2xl font-semibold text-foreground mb-2">{transferResult.domain}</h2>
                           <p className={`text-lg ${transferResult.eligible ? "text-green-700" : "text-amber-700"}`}>
-                            {transferResult.message}
+                            {transferResult.eligible 
+                              ? t("transfer.status.eligible.title")
+                              : transferResult.status === "locked" 
+                                ? t("transfer.status.notEligible.locked")
+                                : transferResult.status === "recently_registered"
+                                  ? t("transfer.status.notEligible.recentlyRegistered")
+                                  : transferResult.status === "expired"
+                                    ? t("transfer.status.notEligible.expired")
+                                    : t("transfer.status.notEligible.notFound")
+                            }
                           </p>
                         </div>
                       </div>
@@ -237,20 +245,20 @@ export default function DomainTransferPage() {
                         <div className="mt-6 pt-6 border-t border-current/10 grid sm:grid-cols-3 gap-4">
                           {transferResult.currentRegistrar && (
                             <div>
-                              <p className="text-sm text-muted-foreground">Current Registrar</p>
+                              <p className="text-sm text-muted-foreground">{t("transfer.status.eligible.currentRegistrar")}</p>
                               <p className="font-medium text-foreground">{transferResult.currentRegistrar}</p>
                             </div>
                           )}
                           {transferResult.expiryDate && (
                             <div>
-                              <p className="text-sm text-muted-foreground">Expires On</p>
+                              <p className="text-sm text-muted-foreground">{t("transfer.status.eligible.expiryDate")}</p>
                               <p className="font-medium text-foreground">{transferResult.expiryDate}</p>
                             </div>
                           )}
                           {transferResult.daysUntilExpiry && (
                             <div>
-                              <p className="text-sm text-muted-foreground">Days Until Expiry</p>
-                              <p className="font-medium text-foreground">{transferResult.daysUntilExpiry} days</p>
+                              <p className="text-sm text-muted-foreground">{t("transfer.status.eligible.daysUntilExpiry")}</p>
+                              <p className="font-medium text-foreground">{transferResult.daysUntilExpiry} {t("periods.days", "common")}</p>
                             </div>
                           )}
                         </div>
@@ -261,49 +269,48 @@ export default function DomainTransferPage() {
                     {transferResult.eligible && (
                       <div className="bg-card border border-border rounded-2xl p-6 md:p-8 space-y-6">
                         <div>
-                          <h3 className="text-xl font-semibold text-foreground mb-2">Start Your Transfer</h3>
+                          <h3 className="text-xl font-semibold text-foreground mb-2">{t("transfer.status.eligible.startTransfer")}</h3>
                           <p className="text-muted-foreground">
-                            Enter your authorization code (EPP code) to begin the transfer process.
+                            {t("transfer.status.eligible.description")}
                           </p>
                         </div>
 
                         <div className="space-y-4">
                           <div>
                             <label htmlFor="authCode" className="block text-sm font-medium text-foreground mb-2">
-                              Authorization Code (EPP Code)
+                              {t("transfer.authCode.label")}
                             </label>
                             <Input
                               id="authCode"
                               type="text"
-                              placeholder="Enter your EPP/auth code from your current registrar"
+                              placeholder={t("transfer.authCode.placeholder")}
                               value={authCode}
                               onChange={(e) => setAuthCode(e.target.value)}
                               className="h-12"
                             />
                             <p className="text-xs text-muted-foreground mt-2">
-                              You can get this code from your current registrar's control panel or by contacting their
-                              support.
+                              {t("transfer.authCode.hint")}
                             </p>
                           </div>
 
                           <div className="bg-muted/30 rounded-xl p-4 space-y-3">
                             <div className="flex justify-between">
-                              <span className="text-muted-foreground">Transfer Price</span>
+                              <span className="text-muted-foreground">{t("transfer.status.eligible.transferPrice")}</span>
                               <span className="font-semibold text-foreground">{transferResult.transferPrice}</span>
                             </div>
                             <div className="flex justify-between">
-                              <span className="text-muted-foreground">Free Year Extension</span>
-                              <span className="font-semibold text-green-600">Included</span>
+                              <span className="text-muted-foreground">{t("transfer.status.eligible.freeYearExtension")}</span>
+                              <span className="font-semibold text-green-600">{t("included", "common")}</span>
                             </div>
                             <div className="flex justify-between">
-                              <span className="text-muted-foreground">WHOIS Privacy</span>
-                              <span className="font-semibold text-green-600">Free</span>
+                              <span className="text-muted-foreground">{t("transfer.status.eligible.whoisPrivacy")}</span>
+                              <span className="font-semibold text-green-600">{t("common.free", "common")}</span>
                             </div>
                           </div>
 
                           <Button size="lg" className="w-full h-12" disabled={!authCode.trim()} asChild>
                             <Link href={`/configure/domain?domain=${transferResult.domain}&transfer=true`}>
-                              Continue to Transfer
+{t("transfer.status.eligible.startTransfer")}
                               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                             </Link>
                           </Button>
@@ -439,11 +446,11 @@ export default function DomainTransferPage() {
             <div className="space-y-8 max-w-xl order-2 lg:order-1">
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-balance">
-                  We've helped thousands move their domains
+                  {t("transfer.reassurance.title")}
                 </h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-                  <p>Switching registrars can feel risky. What if something breaks? What if it takes forever?</p>
-                  <p>We've streamlined every step. Most founders are surprised how simple it actually is.</p>
+                  <p>{t("transfer.reassurance.description1")}</p>
+                  <p>{t("transfer.reassurance.description2")}</p>
                 </div>
               </div>
 
@@ -453,8 +460,8 @@ export default function DomainTransferPage() {
                     <Shield className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Zero downtime guarantee</h3>
-                    <p className="text-[15px] text-muted-foreground">Your site and email keep working throughout</p>
+                    <h3 className="font-semibold text-foreground mb-1">{t("transfer.guarantees.zeroDowntime.title")}</h3>
+                    <p className="text-[15px] text-muted-foreground">{t("transfer.guarantees.zeroDowntime.description")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -462,9 +469,9 @@ export default function DomainTransferPage() {
                     <Clock className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">5-7 days average</h3>
+                    <h3 className="font-semibold text-foreground mb-1">{t("transfer.guarantees.averageTime.title")}</h3>
                     <p className="text-[15px] text-muted-foreground">
-                      Fast transfers with status updates along the way
+                      {t("transfer.guarantees.averageTime.description")}
                     </p>
                   </div>
                 </div>
@@ -473,9 +480,9 @@ export default function DomainTransferPage() {
                     <HeartHandshake className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">We handle complications</h3>
+                    <h3 className="font-semibold text-foreground mb-1">{t("transfer.guarantees.handleComplications.title")}</h3>
                     <p className="text-[15px] text-muted-foreground">
-                      If your old registrar makes it difficult, we'll help
+                      {t("transfer.guarantees.handleComplications.description")}
                     </p>
                   </div>
                 </div>
@@ -486,7 +493,7 @@ export default function DomainTransferPage() {
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-foreground/10 ring-1 ring-border/50">
                 <img
                   src="/founder-relaxed-after-completing-domain-transfer.jpg"
-                  alt="Founder relaxed after completing domain transfer"
+                  alt={t("transfer.guarantees.imageAlt")}
                   className="object-cover w-full h-full"
                   loading="lazy"
                 />
@@ -502,37 +509,37 @@ export default function DomainTransferPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-balance mb-4">
-                How domain transfer works
+                {t("transfer.process.title")}
               </h2>
-              <p className="text-[15px] text-muted-foreground text-balance">Five simple steps from start to finish</p>
+              <p className="text-[15px] text-muted-foreground text-balance">{t("transfer.process.subtitle")}</p>
             </div>
 
             <div className="space-y-6">
               {[
                 {
                   step: "1",
-                  title: "Unlock your domain",
-                  desc: "Log into your current registrar and unlock your domain. This is usually in domain settings or security options.",
+                  title: t("transfer.process.steps.step1.title"),
+                  desc: t("transfer.process.steps.step1.description"),
                 },
                 {
                   step: "2",
-                  title: "Get your authorization code",
-                  desc: 'Request an "EPP code" or "auth code" from your current provider. They\'ll email it to you—usually within minutes.',
+                  title: t("transfer.process.steps.step2.title"),
+                  desc: t("transfer.process.steps.step2.description"),
                 },
                 {
                   step: "3",
-                  title: "Start the transfer with us",
-                  desc: "Enter your domain and authorization code in our transfer form. We'll verify everything is ready to move.",
+                  title: t("transfer.process.steps.step3.title"),
+                  desc: t("transfer.process.steps.step3.description"),
                 },
                 {
                   step: "4",
-                  title: "Approve the transfer",
-                  desc: "You'll receive an email asking you to approve the transfer. Click the link to confirm. Your old registrar may also ask for confirmation.",
+                  title: t("transfer.process.steps.step4.title"),
+                  desc: t("transfer.process.steps.step4.description"),
                 },
                 {
                   step: "5",
-                  title: "Wait for completion",
-                  desc: "Most transfers finish within 5-7 days. We'll email you updates along the way, and you can contact us anytime if you have questions.",
+                  title: t("transfer.process.steps.step5.title"),
+                  desc: t("transfer.process.steps.step5.description"),
                 },
               ].map((item, idx) => (
                 <div key={item.step} className="flex gap-6 items-start bg-card border border-border rounded-xl p-6">
@@ -561,64 +568,21 @@ export default function DomainTransferPage() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-balance mb-4">
-                Transfer questions answered
+                {t("transfer.faq.title")}
               </h2>
             </div>
 
             <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">Will my website go down during transfer?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  No. As long as your DNS settings stay the same, your website and email continue working exactly as
-                  they did before. The transfer happens in the background without affecting your live services.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-2" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">What if I can't find my authorization code?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  Contact your current registrar's support team and ask them to resend it. They're required to provide
-                  this code to you. If you run into trouble, reach out to us—we can guide you through the process or
-                  contact them on your behalf if needed.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">How long does a domain transfer take?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  Most transfers complete within 5-7 days, though some can finish in as little as a few hours if both
-                  registrars approve quickly. We'll keep you updated throughout the process so you're never left
-                  wondering what's happening.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">Can I transfer a domain that expires soon?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  Yes, but we recommend renewing it with your current registrar first to avoid any complications. If
-                  your domain expires during a transfer, things can get messy. Once renewed, you can transfer safely,
-                  and you'll still get an extra year added when the transfer completes.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-5" className="border border-border rounded-lg px-6 bg-card">
-                <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="text-base font-medium">What happens if the transfer fails?</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
-                  If something goes wrong, we'll let you know exactly what happened and how to fix it. Common issues
-                  include incorrect auth codes, locked domains, or missing approval emails. We'll work with you to
-                  resolve it, and you won't be charged if the transfer doesn't complete.
-                </AccordionContent>
-              </AccordionItem>
+              {(t("transfer.faq.items") as any[]).map((item: any, index: number) => (
+                <AccordionItem key={`item-${index + 1}`} value={`item-${index + 1}`} className="border border-border rounded-lg px-6 bg-card">
+                  <AccordionTrigger className="text-left hover:no-underline py-5">
+                    <span className="text-base font-medium">{item.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[15px] text-muted-foreground leading-relaxed pb-5">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
@@ -628,16 +592,16 @@ export default function DomainTransferPage() {
       <section className="py-20 md:py-24 lg:py-28">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-balance mb-4">Ready to transfer?</h2>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-balance mb-4">{t("transfer.cta.title")}</h2>
             <p className="text-[17px] text-muted-foreground text-balance leading-relaxed mb-8">
-              Enter your domain above to get started, or contact us if you'd like to talk through the process first.
+              {t("transfer.cta.description")}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="h-12 px-8" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                Start your transfer
+                {t("transfer.cta.startTransfer")}
               </Button>
               <Button size="lg" variant="outline" className="h-12 px-8 bg-transparent" asChild>
-                <Link href="/contact">Talk to someone first</Link>
+                <Link href="/contact">{t("transfer.cta.talkFirst")}</Link>
               </Button>
             </div>
           </div>

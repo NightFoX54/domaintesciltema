@@ -63,5 +63,49 @@
     "cardNumber": "Please enter a valid card number",
     "expiry": "Please enter expiry as MM/YY",
     "cvv": "Please enter CVV"
+  },
+  "confirmation": {
+    "title": "You're all set!",
+    "description": "Your order is confirmed. We've sent the details to your email.",
+    "whatHappensNext": {
+      "title": "What happens next",
+      "description": "We're setting everything up for you. Here's what to expect:",
+      "step1": {
+        "title": "Check your email (now)",
+        "description": "You'll receive a confirmation email with your order details and next steps. If you don't see it in a few minutes, check your spam folder."
+      },
+      "step2": {
+        "title": "We set up your services (within 10 minutes)",
+        "description": "Your domain, hosting, and SSL will be configured and ready to use. Most services activate instantly, some may take a few minutes."
+      },
+      "step3": {
+        "title": "Access your account",
+        "description": "Your account credentials will be in the email. You can log in anytime to manage your services, view invoices, or make changes."
+      },
+      "step4": {
+        "title": "Need help? We're here",
+        "description": "If you have questions or need guidance getting started, our support team is available 24/7. Just reach out—no question is too small."
+      }
+    },
+    "support": {
+      "talkToSupport": {
+        "title": "Talk to support",
+        "description": "Get help from a real person anytime",
+        "action": "Contact us"
+      },
+      "gettingStarted": {
+        "title": "Getting started guides",
+        "description": "Step-by-step help for common tasks",
+        "action": "View guides"
+      }
+    },
+    "cta": {
+      "description": "Want to add more services or manage your account?",
+      "button": "Go to your account"
+    },
+    "contact": {
+      "email": "Questions? Email us at support@domaintescil.com",
+      "responseTime": "We typically respond within an hour, often much faster."
+    }
   }
 }

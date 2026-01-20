@@ -31,13 +31,13 @@ export function LanguageSwitcher() {
           onClick={() => setLanguage('en')}
           className={language === 'en' ? 'bg-accent' : ''}
         >
-          English
+          {t('language.english', 'common')}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setLanguage('tr')}
           className={language === 'tr' ? 'bg-accent' : ''}
         >
-          Türkçe
+          {t('language.turkish', 'common')}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

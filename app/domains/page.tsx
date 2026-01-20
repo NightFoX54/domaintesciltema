@@ -103,41 +103,40 @@ export default function DomainsPage() {
             Talk to us first
           </Button>
         </div>
-        <p className="text-sm text-muted-foreground/70 pt-2 text-center">No pressure. No tricks. We'll help either way.</p>
+        <p className="text-sm text-muted-foreground/70 pt-2 text-center">{t("overview.noPressure")}</p>
       </SectionWrapper>
 
       <SectionWrapper background="muted" padding="lg" border>
         <SectionHeader
-          title="What you get with every domain"
-          description="No tiers. No upsells. These are included with every domain you register."
+          title={t("overview.whatYouGet.title")}
+          description={t("overview.whatYouGet.description")}
           headingLevel={2}
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-10">
           <FeatureCard
-            title="Free WHOIS privacy"
-            description="Your personal information stays private. No spam, no public records."
+            title={t("overview.whatYouGet.freeWhois.title")}
+            description={t("overview.whatYouGet.freeWhois.description")}
             icon={<Shield className="h-6 w-6 text-foreground/70" />}
           />
           <FeatureCard
-            title="Full ownership, no lock-in"
-            description="Transfer your domain anytime. No hidden fees, no permission needed."
+            title={t("overview.whatYouGet.fullOwnership.title")}
+            description={t("overview.whatYouGet.fullOwnership.description")}
             icon={<Key className="h-6 w-6 text-foreground/70" />}
           />
           <FeatureCard
-            title="Simple DNS management"
-            description="Point your domain anywhere. Clear interface, no technical jargon."
+            title={t("overview.whatYouGet.simpleDNS.title")}
+            description={t("overview.whatYouGet.simpleDNS.description")}
             icon={<Database className="h-6 w-6 text-foreground/70" />}
           />
           <FeatureCard
-            title="Clear renewal pricing"
-            description="You'll know the renewal price before you buy. No surprises next year."
+            title={t("overview.whatYouGet.clearPricing.title")}
+            description={t("overview.whatYouGet.clearPricing.description")}
             icon={<Check className="h-6 w-6 text-foreground/70" />}
           />
         </div>
         <div className="max-w-3xl mx-auto rounded-xl border-2 border-border/50 bg-muted/40 p-6 text-center">
           <p className="text-[15px] text-muted-foreground leading-relaxed">
-            Everything listed here is included. Not "for the first year". Not "with premium plans".
-            <span className="font-medium text-foreground"> This is what you get, always.</span>
+            {t("overview.whatYouGet.footer")}
           </p>
         </div>
       </SectionWrapper>
@@ -157,22 +156,22 @@ export default function DomainsPage() {
 
           <div className="space-y-10 max-w-xl">
             <div className="space-y-7 text-2xl md:text-3xl font-medium text-foreground leading-relaxed text-balance">
-              <p>Most founders don't fail because of ideas.</p>
-              <p className="text-muted-foreground">They fail because the tools around them are confusing.</p>
+              <p>{t("overview.philosophy.paragraph1")}</p>
+              <p className="text-muted-foreground">{t("overview.philosophy.paragraph2")}</p>
               <p>
-                We built domains the way they should've always been:
-                <span className="block mt-2 text-foreground">clear, honest, and fully yours.</span>
+                {t("overview.philosophy.paragraph3")}
+                <span className="block mt-2 text-foreground">{t("overview.philosophy.paragraph4")}</span>
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/configure/domain?domain=yourdomain.com&tld=.com">
                 <Button size="lg" className="shadow-md hover:shadow-lg transition-shadow">
-                  Find your domain
+                  {t("overview.philosophy.findDomain")}
                 </Button>
               </Link>
               <Button size="lg" variant="outline" className="border-2 hover:bg-muted/50 bg-transparent">
-                Talk to a human
+                {t("overview.philosophy.talkToHuman")}
               </Button>
             </div>
           </div>
@@ -182,43 +181,16 @@ export default function DomainsPage() {
       <SectionWrapper background="muted" padding="lg" border>
         <div className="max-w-3xl mx-auto">
           <SectionHeader
-            title="Common questions"
-            description="Clear answers. No legal language."
+            title={t("overview.faq.title")}
+            description={t("overview.faq.description", "domains")}
             headingLevel={2}
           />
           <FAQAccordion
-            items={[
-              {
-                id: "ownership",
-                question: "Do I actually own the domain?",
-                answer:
-                  "Yes. Completely. When you register a domain with us, you're the legal owner. You can transfer it to another registrar anytime, point it anywhere, or sell it. We're just the registrar—you're the owner.",
-              },
-              {
-                id: "renewal",
-                question: "Will the renewal price suddenly increase?",
-                answer:
-                  "No. We show you the renewal price before you buy. That's the price you'll pay next year. Registry prices can change (they're set by organizations like Verisign, not us), but we'll always notify you in advance and honor what we promised.",
-              },
-              {
-                id: "transfer",
-                question: "Can I transfer my domain anytime?",
-                answer:
-                  "Yes. After 60 days from registration (an ICANN rule, not ours), you can transfer your domain to any registrar. We don't lock you in. We don't make it complicated. If you want to leave, we'll help you do it smoothly.",
-              },
-              {
-                id: "taken",
-                question: "What if my perfect domain is taken?",
-                answer:
-                  "It happens. We'll help you find alternatives—different TLDs, creative variations, or brandable options. Sometimes what feels like a setback leads to a better name. If you want help brainstorming, just ask. We're good at this.",
-              },
-              {
-                id: "help",
-                question: "Can you help me choose a domain?",
-                answer:
-                  "Absolutely. Choosing a domain can feel overwhelming. Talk to us—we'll ask about your business, help you think through options, and guide you toward something that feels right. No pressure, no upselling. Just honest advice.",
-              },
-            ]}
+            items={(t("overview.faq.items") as any[]).map((item: any, index: number) => ({
+              id: `faq-${index + 1}`,
+              question: item.question,
+              answer: item.answer,
+            }))}
           />
         </div>
       </SectionWrapper>

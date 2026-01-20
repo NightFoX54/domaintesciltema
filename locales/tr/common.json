@@ -1,6 +1,8 @@
 {
   "language": {
-    "switcher": "Dili değiştir"
+    "switcher": "Dili değiştir",
+    "english": "English",
+    "turkish": "Türkçe"
   },
   "nav": {
     "domains": "Alan Adları",
@@ -130,5 +132,10 @@
     "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
     "invalidFormat": "Geçersiz format",
     "tryAgain": "Tekrar dene"
+  },
+  "free": "Ücretsiz",
+  "included": "Dahil",
+  "periods": {
+    "days": "gün"
   }
 }
