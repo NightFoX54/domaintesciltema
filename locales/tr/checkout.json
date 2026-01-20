@@ -1,0 +1,67 @@
+{
+  "backToCart": "Sepete dön",
+  "title": "Siparişinizi tamamlayın",
+  "description": "Sadece birkaç detay ve hazırsınız. Acele etmeyin.",
+  "yourDetails": {
+    "title": "Bilgileriniz",
+    "description": "Bunu hesabınızı kurmak ve güncellemeler göndermek için kullanacağız.",
+    "email": {
+      "label": "E-posta adresi",
+      "placeholder": "sizin@email.com",
+      "hint": "Sipariş onayı ve hesap erişimi buraya gönderilecek"
+    },
+    "firstName": {
+      "label": "Ad",
+      "placeholder": "Ahmet"
+    },
+    "lastName": {
+      "label": "Soyad",
+      "placeholder": "Yılmaz"
+    }
+  },
+  "paymentMethod": {
+    "title": "Ödeme yöntemi",
+    "description": "Tüm işlemler güvenli ve şifrelenmiştir.",
+    "card": "Kredi veya banka kartı",
+    "bank": "Banka transferi (EFT)",
+    "cardNumber": {
+      "label": "Kart numarası",
+      "placeholder": "1234 5678 9012 3456"
+    },
+    "expiry": {
+      "label": "Son kullanma tarihi",
+      "placeholder": "AA/YY"
+    },
+    "cvv": {
+      "label": "CVV",
+      "placeholder": "123"
+    },
+    "securePayment": "Ödeme bilgileriniz şifrelenmiş ve güvenlidir",
+    "bankTransfer": {
+      "title": "Banka transferi detayları ödeme sonrası sağlanacaktır.",
+      "description": "Siparişinizi tamamlayın ve size banka hesap bilgilerimizi e-posta ile göndereceğiz. Ödemenizi aldıktan sonra hizmetleriniz aktifleştirilecektir (genellikle 1-2 iş günü içinde).",
+      "noFees": "Ekstra ücret yok. Sadece gösterilen tutarı transfer edin."
+    }
+  },
+  "orderSummary": "Sipariş özeti",
+  "subtotal": "Ara toplam",
+  "setupFees": "Kurulum ücretleri",
+  "totalToday": "Bugünkü toplam",
+  "renewsAt": "${{price}}/{{period}} fiyatıyla yenilenir",
+  "legal": {
+    "agree": "Bu satın almayı tamamlayarak",
+    "terms": "Hizmet Şartlarımızı",
+    "and": "ve",
+    "privacy": "Gizlilik Politikamızı",
+    "dataProtection": "Verileriniz korunur ve pazarlama için üçüncü taraflarla asla paylaşılmaz."
+  },
+  "errors": {
+    "email": "Lütfen geçerli bir e-posta adresi girin",
+    "emailRequired": "E-posta gereklidir",
+    "firstName": "Ad gereklidir",
+    "lastName": "Soyad gereklidir",
+    "cardNumber": "Lütfen geçerli bir kart numarası girin",
+    "expiry": "Lütfen son kullanma tarihini AA/YY olarak girin",
+    "cvv": "Lütfen CVV girin"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "title": "Bu konuda yalnız değilsiniz.",
+    "description": "Gerçek insanlar. Gerçek cevaplar. Bot yok, script yok, dolambaçlı yol yok. Sadece ihtiyacınız olduğunda insan desteği.",
+    "talkToHuman": "Bir insanla konuşun",
+    "getMigrationHelp": "Taşıma yardımı alın",
+    "imageAlt": "Yardıma hazır dostane destek ekibi üyesi"
+  },
+  "howWeHelp": {
+    "title": "Nasıl yardımcı oluyoruz",
+    "description": "Destek konusunda herkes gibi yapmıyoruz. Sadece biletleri yanıtlamak için değil, sorunları çözmek için buradayız.",
+    "listen": {
+      "title": "Önce dinliyoruz",
+      "description": "Varsayım yok. Kopyala-yapıştır yanıtlar yok. Gerçekten ne yapmaya çalıştığınızı anlamak için zaman ayırıyoruz."
+    },
+    "guide": {
+      "title": "Yönlendiriyoruz, ders vermiyoruz",
+      "description": "Teknik jargon kimseye yardımcı olmaz. Şeyleri sade bir dille açıklıyoruz ve çözümlerde size adım adım rehberlik ediyoruz."
+    },
+    "stay": {
+      "title": "Düzelene kadar kalıyoruz",
+      "description": "Sorununuz siz memnun olana kadar \"kapatılmaz\". Her şey olması gerektiği gibi çalışana kadar devam ediyoruz."
+    }
+  },
+  "channels": {
+    "title": "Tercih ettiğiniz şekilde bize ulaşın",
+    "description": "Birden fazla kanal aracılığıyla 7/24 hizmetinizdeyiz. Size en uygun olanı seçin.",
+    "liveChat": {
+      "title": "Canlı sohbet",
+      "description": "Şimdi gerçek bir kişiyle konuşun. Ortalama yanıt süresi: 2 dakika.",
+      "action": "Bir konuşma başlatın"
+    },
+    "email": {
+      "title": "E-posta desteği",
+      "description": "Yazmayı mı tercih ediyorsunuz? Her e-postaya yanıt veriyoruz, genellikle bir saat içinde.",
+      "action": "Bize bir e-posta gönderin"
+    },
+    "migration": {
+      "title": "Taşıma yardımı",
+      "description": "Sitenizi taşıyor musunuz? Teknik işi biz hallederiz, böylece endişelenmenize gerek kalmaz.",
+      "action": "Taşıma hakkında bilgi edinin"
+    }
+  },
+  "responseTimes": {
+    "title": "Ne zaman geri dönüş bekleyebilirsiniz?",
+    "description": "Şeffaf beklentiler belirlemeye inanıyoruz. İşte güvenebileceğiniz şeyler.",
+    "liveChat": {
+      "title": "Canlı sohbet",
+      "time": "~2 dakika",
+      "description": "Gerçek bir insanla gerçek zamanlı konuşma. Sırada bekleme yok, otomatik mesaj yok."
+    },
+    "email": {
+      "title": "E-posta desteği",
+      "time": "1 saat içinde",
+      "description": "Sorularınıza detaylı, düşünceli yanıtlar. Genellikle bir saatten daha hızlı, özellikle iş saatlerinde."
+    },
+    "urgent": {
+      "title": "Acil durumlar",
+      "time": "Anında",
+      "description": "Site mi çöktü? Kritik sorun mu? Acil durumları önceliklendiriyoruz ve hemen üzerlerine atlıyoruz."
+    },
+    "note": "Bunlar normal koşullar altındaki ortalamalardır. Büyük kesintiler veya yüksek hacimli dönemler sırasında yanıt süreleri daha uzun olabilir—ancak sizi her zaman bilgilendireceğiz."
+  },
+  "cta": {
+    "title": "Şu anda yardıma mı ihtiyacınız var?",
+    "description": "Buradayız. Otomatik sistem yok, bekleme yok—sadece yardıma hazır gerçek insanlar.",
+    "contactSupport": "Destekle iletişime geçin"
+  }
+}

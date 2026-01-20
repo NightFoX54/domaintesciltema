@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Let's talk.",
+    "description": "No pressure. No sales pitch. Just a real conversation about what you need."
+  },
+  "form": {
+    "title": "Send us a message",
+    "description": "Fill out what you can. If you're not sure about something, just leave it blank. We'll figure it out together.",
+    "name": {
+      "label": "Your name",
+      "placeholder": "What should we call you?"
+    },
+    "email": {
+      "label": "Email address",
+      "placeholder": "Where should we reply?"
+    },
+    "subject": {
+      "label": "What's this about?",
+      "optional": "(optional)",
+      "placeholder": "A quick summary helps us help you faster"
+    },
+    "message": {
+      "label": "Tell us what's going on",
+      "placeholder": "Don't worry about being technical. Just explain what you're trying to do or what's not working."
+    },
+    "submit": "Send message",
+    "responseTime": "We typically respond within an hour. If it's urgent, mention that in your message and we'll prioritize it."
+  },
+  "quickHelp": {
+    "title": "Quick help",
+    "description": "Looking for something specific? These might get you there faster.",
+    "helpCenter": {
+      "title": "Browse help center",
+      "description": "Common questions and guides"
+    },
+    "migration": {
+      "title": "Migration help",
+      "description": "We'll move your site for free"
+    },
+    "liveChat": {
+      "title": "Prefer live chat?",
+      "description": "The chat widget in the bottom right connects you instantly with a real person."
+    },
+    "directEmail": {
+      "title": "Direct email",
+      "email": "support@domaintescil.com"
+    }
+  },
+  "reassurance": {
+    "title": "We'll guide you through it",
+    "description": "Whether you're stuck on something technical or just exploring your options, we're here to help you figure it out. No judgment, no pressure, no rush. We'll take the time you need."
+  }
+}

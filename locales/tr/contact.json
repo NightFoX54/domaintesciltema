@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Konuşalım.",
+    "description": "Baskı yok. Satış konuşması yok. Sadece ihtiyacınız olan şey hakkında gerçek bir konuşma."
+  },
+  "form": {
+    "title": "Bize bir mesaj gönderin",
+    "description": "Yapabildiklerinizi doldurun. Bir şeyden emin değilseniz, sadece boş bırakın. Birlikte çözeriz.",
+    "name": {
+      "label": "Adınız",
+      "placeholder": "Size nasıl hitap edelim?"
+    },
+    "email": {
+      "label": "E-posta adresi",
+      "placeholder": "Nereye yanıt verelim?"
+    },
+    "subject": {
+      "label": "Bu ne hakkında?",
+      "optional": "(isteğe bağlı)",
+      "placeholder": "Hızlı bir özet bize size daha hızlı yardımcı olmamızı sağlar"
+    },
+    "message": {
+      "label": "Ne olduğunu anlatın",
+      "placeholder": "Teknik olmaktan endişelenmeyin. Sadece ne yapmaya çalıştığınızı veya neyin çalışmadığını açıklayın."
+    },
+    "submit": "Mesaj gönder",
+    "responseTime": "Genellikle bir saat içinde yanıt veriyoruz. Acil ise, mesajınızda bundan bahsedin ve önceliklendirelim."
+  },
+  "quickHelp": {
+    "title": "Hızlı yardım",
+    "description": "Belirli bir şey mi arıyorsunuz? Bunlar sizi daha hızlı oraya götürebilir.",
+    "helpCenter": {
+      "title": "Yardım merkezine göz atın",
+      "description": "Yaygın sorular ve rehberler"
+    },
+    "migration": {
+      "title": "Taşıma yardımı",
+      "description": "Sitenizi ücretsiz taşıyacağız"
+    },
+    "liveChat": {
+      "title": "Canlı sohbeti mi tercih ediyorsunuz?",
+      "description": "Sağ alttaki sohbet widget'ı sizi anında gerçek bir kişiyle bağlar."
+    },
+    "directEmail": {
+      "title": "Doğrudan e-posta",
+      "email": "support@domaintescil.com"
+    }
+  },
+  "reassurance": {
+    "title": "Size rehberlik edeceğiz",
+    "description": "Teknik bir şeyde takılı kalmış olsanız da sadece seçenekleri keşfediyor olsanız da, bunu çözmenize yardımcı olmak için buradayız. Yargı yok, baskı yok, acele yok. İhtiyacınız olan zamanı ayıracağız."
+  }
+}

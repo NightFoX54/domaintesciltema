@@ -1,0 +1,184 @@
+{
+  "hero": {
+    "title": "Kendine inanan girişimciler için tasarlandı",
+    "description": "Anlamlı bir şey başlatmak zaten yeterince zor. Fikrinizi çevrimiçi hale getirmek daha da zorlaşmamalı.",
+    "searchPlaceholder": "Alan adınızı bulun...",
+    "searchButton": "Ara",
+    "searchInfo": "Çoğu alan adı müsait. Sizinki değilse, size daha iyi bir alternatif bulmanıza yardımcı oluruz.",
+    "imageAlt": "Masasında çalışan girişimci"
+  },
+  "intro": {
+    "text": "Hosting konusunda bunalmış hissetmekte yalnız değilsiniz.",
+    "emphasis": "Biz de aynı durumdaydık. Bu yüzden işleri farklı yapmaya karar verdik."
+  },
+  "stats": {
+    "founders": "İlk alan adlarını bize güvenen girişimciler",
+    "responseTime": "Gerçek bir kişiden gerçek bir yanıt alma süresi",
+    "since": "İnsanların önemli fikirlerini hayata geçirmelerine yardımcı oluyoruz"
+  },
+  "story": {
+    "title": "Aynı hayal kırıklığını yaşadığımız için bunu kurduk",
+    "paragraph1": "Hosting için kaydolursunuz ve karşınıza kafa karıştırıcı seçenekler çıkar. Temel plan mı? Profesyonel plan mı? \"Droplet\" ne demek?",
+    "paragraph2": "Sonra gizli ücretler başlar. SSL sertifikası ayrı ücret. Yedekleme ayrı ücret. E-posta ayrı ücret. 5$/ay plan bir anda 35$ olur.",
+    "paragraph3": "Peki bir şeyler ters gittiğinde? Destek bileti açarsınız. Beklersiniz. Beklersiniz. Belki 48 saat sonra daha fazla bilgi isteyen otomatik bir yanıt gelir.",
+    "emphasis1": "Tüm bunları düzeltmek için Domain Tescil'i kurduk.",
+    "emphasis2": "Şeffaf fiyatlandırma. Gerçek insanlar. Karmaşık terimler yok. Sadece ihtiyacınız olduğunda samimi destek.",
+    "imageAlt": "Birlikte çalışan ekip"
+  },
+  "testimonials": {
+    "title": "Yardımcı olduğumuz girişimciler",
+    "sarah": {
+      "name": "Sarah Chen",
+      "role": "Özel ders platformu kuruyor",
+      "quote": "Yanlış hosting seçmekten çok korkuyordum. Ekibimiz bir telefon görüşmesinde her şeyi bana açıkladı. Baskı yok, sadece netlik. Başarılı olmamı gerçekten umursadıklarını hissettim."
+    },
+    "marcus": {
+      "name": "Marcus Thompson",
+      "role": "Fitness uygulaması geliştiriyor",
+      "quote": "Diğer her yerde bana satış artırımları ve kafa karıştırıcı eklentiler sunuldu. Burada gördüğüm fiyat, ödediğim fiyattı. Sonunda size gerçeği söyleyen bir şirket buldum."
+    },
+    "amelia": {
+      "name": "Amelia Rodriguez",
+      "role": "Çevrimiçi seramik mağazası açıyor",
+      "quote": "Sitem gece 2'de çöktüğünde, dakikalar içinde yanıt verdiler. Umursayan ve ne yaptıklarını bilen gerçek insanlar. Rahatlamaktan neredeyse ağlayacaktım."
+    }
+  },
+  "products": {
+    "title": "Başlamak için ihtiyacınız olan her şey",
+    "description": "Fikrinizi çevrimiçi hale getirmek için gereken her şey, karmaşık terimler veya sürprizler olmadan",
+    "domains": {
+      "title": "Alan Adları",
+      "description": "İnternetin kendi köşeniz. İnsanların hatırlayacağı ve güveneceği bir adres kaydedin, tam sahiplik ve şeffaf fiyatlandırma ile.",
+      "features": [
+        "Ücretsiz WHOIS gizlilik koruması dahil",
+        "Basit DNS yönetimi, karmaşık terimler yok",
+        "Şeffaf fiyatlandırma ile tek tıkla yenileme",
+        "Tam sahiplik—istediğiniz zaman transfer edin, kısıtlama yok"
+      ],
+      "footer": "Sürpriz yenileme ücreti yok. Gizli ücret yok. Sadece dürüst alan adı kaydı.",
+      "action": "Alan adlarını keşfedin"
+    },
+    "hosting": {
+      "title": "Hosting",
+      "description": "Web siteniz için güvenilir bir ev. Hızlı, güvenli ve sizinle birlikte büyümeye hazır—sürekli satış artırımı veya karmaşık katmanlar olmadan.",
+      "features": [
+        "Hızlı sayfa yüklemeleri için NVMe SSD depolama",
+        "Günlük otomatik yedeklemeler dahil",
+        "Ücretsiz SSL sertifikası ve kurulum",
+        "Trafik limiti veya sürpriz aşım ücreti yok",
+        "Büyümeye hazır olduğunuzda kolay yükseltmeler"
+      ],
+      "footer": "Küçük başlayın. Kendi hızınızda büyüyün. Baskı yok, ısrarlı satış yok.",
+      "action": "Hosting planlarını görüntüleyin"
+    },
+    "ssl": {
+      "title": "SSL Sertifikaları",
+      "description": "Tarayıcıdaki o küçük kilit simgesi. Ziyaretçilerinize verilerinin şifrelendiğini ve güvenliklerini önemsediğinizi gösterir.",
+      "features": [
+        "Otomatik kurulum ve yenileme",
+        "Tüm modern tarayıcılarda çalışır",
+        "Manuel kurulum veya teknik bilgi gerekmez",
+        "İhtiyaçlarınıza uygun şeffaf doğrulama seviyeleri"
+      ],
+      "footer": "Bir kez kurun, unutun. Yenilemeleri biz hallederiz, böylece işinize odaklanabilirsiniz.",
+      "action": "SSL hakkında bilgi edinin"
+    }
+  },
+  "outcomes": {
+    "title": "Ne yapmak istiyorsunuz?",
+    "description": "Yargı yok, baskı yok. Sadece şu anda bulunduğunuz yere en yakın olanı seçin, biz de sizi doğru yöne yönlendirelim.",
+    "simpleWebsite": {
+      "title": "Basit bir web sitesi istiyorum",
+      "description": "İşiniz hakkında sadece birkaç sayfa. Belki bir hakkımızda sayfası, iletişim formu ve ne yaptığınız hakkında bazı bilgiler. Süslü değil, karmaşık değil. Bir kez kurup her gün endişelenmeyeceğiniz bir şey.",
+      "recommendation": "Genellikle işe yarayan:",
+      "solution": "Temel Hosting + Alan Adı + SSL",
+      "action": "Bunun nasıl göründüğüne bakın"
+    },
+    "sellOnline": {
+      "title": "Çevrimiçi satış yapmak istiyorum",
+      "description": "Ürünleriniz veya hizmetleriniz var ve insanların bunları gerçekten satın alabilmesi için bir yola ihtiyacınız var. Alışveriş sepeti, güvenli ödemeler, belki ihtiyacınız varsa envanter takibi. Çevrimiçi satış için gereken tüm altyapı.",
+      "recommendation": "Genellikle işe yarayan:",
+      "solution": "E-ticaret Hosting + SSL + Destek",
+      "action": "Bunun nasıl göründüğüne bakın"
+    },
+    "professional": {
+      "title": "Profesyonel görünmek istiyorum",
+      "description": "Alan adınızda e-posta adresleri istiyorsunuz (Gmail değil). Sitenizin hızlı yüklenmesini ve meşru görünmesini istiyorsunuz. Müşterilerin gerçek bir işletmeyle çalıştıklarına güvenmelerini sağlayan bir şey.",
+      "recommendation": "Genellikle işe yarayan:",
+      "solution": "Pro Hosting + Özel E-posta + SSL",
+      "action": "Bunun nasıl göründüğüne bakın"
+    },
+    "custom": {
+      "title": "Özel bir şey inşa ediyorum",
+      "description": "Belirli teknik gereksinimleriniz var. Belki bir uygulama, bir platform, kullanıcıları ve veritabanları olan bir şey. Muhtemelen neye ihtiyacınız olduğunu biliyorsunuz—sadece bunu gerektiğinden daha zor hale getirmeyecek birine ihtiyacınız var.",
+      "recommendation": "Önerdiğimiz:",
+      "solution": "Birlikte konuşalım",
+      "action": "Bir görüşme planlayın"
+    },
+    "unsure": {
+      "title": "Henüz emin değilim",
+      "description": "Hala bir şeyleri çözmeye çalışıyorsunuz. Belki sadece seçenekleri keşfediyorsunuz veya kabaca bir fikriniz var ama bunu konuşmanız gerekiyor. Bu tamamen normal—çoğu insan buradan başlar.",
+      "recommendation": "Önerdiğimiz:",
+      "solution": "Hızlı bir konuşma ile başlayın",
+      "action": "Yardımcı biriyle konuşun"
+    },
+    "migration": {
+      "title": "Başka bir yerden taşınıyorum",
+      "description": "Mevcut hosting sağlayıcınız sinir bozucu, pahalı veya ikisi de. Sitenizi hiçbir şeyi bozmadan veya günlerce iş kaybetmeden taşımanız gerekiyor. Yüzlerce kişiye bu tam durumda yardımcı olduk.",
+      "recommendation": "Önerdiğimiz:",
+      "solution": "Ücretsiz site taşıma desteği dahil",
+      "action": "Site taşıma hakkında bilgi alın"
+    }
+  },
+  "faq": {
+    "title": "Aklınıza gelebilecek sorular",
+    "description": "Kafanızın karışmasını değil, kendinize güvenmenizi istiyoruz",
+    "pricing": {
+      "question": "Fiyat daha sonra aniden artacak mı?",
+      "answer": "Asla sürpriz yok. Kayıt olduğunuzda gördüğünüz fiyat, ödemeye devam edeceğiniz fiyattır. Daha sonra yeni bir şey eklemeyi seçerseniz—e-posta veya ek depolama gibi—onaylamadan önce tam olarak ne kadara mal olacağını söyleyeceğiz. Hesabınıza asla otomatik olarak ücret eklemeyiz. Her zaman kontrol sizde."
+    },
+    "upgrading": {
+      "question": "Büyüdükçe yükseltmem gerekirse ne olur?",
+      "answer": "Bu iyi bir şey—kurduğunuz şeyin çalıştığı anlamına gelir. Yükseltme tek tıkla yapılır ve sadece faturalandırma döneminizin geri kalanı için farkı ücretlendiririz. Siteniz yükseltme sırasında çevrimiçi kalır—kesinti yok, karmaşık taşıma yok. Ve çok erken yükselttiğinizi fark ederseniz? Aynı kolaylıkla geri düşürebilirsiniz. Ceza yok, sorun yok."
+    },
+    "support": {
+      "question": "Bu gerçek insan desteği mi yoksa sadece botlar mı?",
+      "answer": "Her zaman gerçek insanlar. Bir mesaj gönderdiğinizde, doğrudan destek ekibimize gider—burada tam zamanlı çalışan ve hosting'i gerçekten anlayan insanlar. Ne istediğinizi tahmin etmeye çalışan sohbet botları yok. Anlamadıkları senaryolardan okuyan dış kaynaklı ekipler yok. Ortalama yanıt süremiz yaklaşık 2 dakikadır ve sorun tamamen çözülene kadar yanınızdayız. Sadece kısmen düzeltilmiş değil—tamamen çözülmüş."
+    },
+    "migration": {
+      "question": "Mevcut sitemi taşımaktan endişeliyim. Yardımcı olabilir misiniz?",
+      "answer": "Kesinlikle ve bunu her zaman yapıyoruz. Tüm site taşıma işlemini sizin için ekstra ücret olmadan halledeceğiz. Bu, dosyalarınızı, veritabanlarınızı, e-postalarınızı—her şeyi taşımayı içerir. Ayrıca yeni sitenin mükemmel çalıştığını onaylayana kadar eski sitenizi çalışır durumda tutacağız. Ve taşıma sonrası bir şeyler yanlış gelirse, hemen düzelteceğiz. Bunu kendi başınıza çözmeye çalışırken yalnız bırakılmayacaksınız."
+    },
+    "commitment": {
+      "question": "Uzun bir sözleşmeye bağlı kalmam gerekiyor mu?",
+      "answer": "Sözleşme yok, taahhüt yok. Aylık ödeme yapabilir ve istediğiniz zaman iptal edebilirsiniz. Yıllık ödeme yaparsanız indirimler sunuyoruz, ancak bu tamamen isteğe bağlı—asla sizi zorlamayız. Sizi emin olmadığınız bir şeye kilitlemektense, her ay iyi iş yaparak işinizi kazanmayı tercih ederiz. Güven böyle çalışmaz."
+    }
+  },
+  "support": {
+    "title": "Yanıt veriyoruz. Yanınızdayız.",
+    "paragraph1": "Kara deliğe kaybolan bilet sistemleri yok. Sorununuzu anladığını iddia eden sohbet botları yok. Zar zor anladıkları senaryolardan okuyan denizaşırı ekipler yok.",
+    "paragraph2": "Bize ulaştığınızda, burada gerçekten çalışan biriyle konuşursunuz. Kararlar verebilen ve bir şeyleri düzeltebilen biri. Sitenizin çalışmasını ve işinizin başarılı olmasını gerçekten umursayan biri.",
+    "emphasis": "Sadece soruları yanıtlamıyoruz. Sorunları çözüyoruz. Ve tamamen çözülene kadar yanınızdayız.",
+    "imageAlt": "Destek ekibi üyesi",
+    "responseTime": {
+      "title": "2 dakika ortalama yanıt",
+      "description": "Saat değil. Gün değil. Dakika."
+    },
+    "humans": {
+      "title": "Gerçek insanlar, her zaman müsait",
+      "description": "7/24, hafta sonları ve tatiller dahil"
+    },
+    "stay": {
+      "title": "Düzelene kadar kalıyoruz",
+      "description": "Sadece yanıtlanmış değil. Gerçekten çözülmüş."
+    }
+  },
+  "cta": {
+    "title": "Rahat olun. Hazır olduğunuzda buradayız.",
+    "description": "Alan adınızı arayın, ekibimizden biriyle konuşun veya sadece etrafta gezinin.",
+    "description2": "Burada baskı yok. Acele etmeyin.",
+    "primary": "Alan adı arayın",
+    "secondary": "Önce bizimle konuşun",
+    "footer": "Çoğu insan bir konuşma ile başlar. Bu tamamen normal."
+  }
+}

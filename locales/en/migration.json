@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "We'll move your site for you.",
+    "description": "No technical knowledge needed. No downtime. No stress. Just tell us where it is, and we'll handle everything.",
+    "requestHelp": "Request migration help",
+    "imageAlt": "Person working stress-free knowing migration is handled"
+  },
+  "whatIs": {
+    "title": "What is migration, anyway?",
+    "description": "It's just moving your website from wherever it lives now to our servers. In plain English.",
+    "anotherHost": {
+      "title": "If you're on another host",
+      "description1": "We copy all your files, databases, email settings, and everything else from your current provider to ours. Your site stays live the entire time.",
+      "description2": "When we're done, we switch the connection so your domain points to our servers instead. Visitors won't notice a thing."
+    },
+    "local": {
+      "title": "If you're building locally",
+      "description1": "We take your local files and set them up on our live servers. We'll configure the database, make sure everything connects properly, and get your site online.",
+      "description2": "If you need help preparing the files, we'll guide you through that too."
+    }
+  },
+  "weHandle": {
+    "title": "We handle it all for you",
+    "description": "You don't need to know how any of this works. That's our job.",
+    "zeroDowntime": {
+      "title": "Zero downtime",
+      "description": "Your site stays live during the entire migration. We test everything behind the scenes before making the switch."
+    },
+    "everythingIncluded": {
+      "title": "Everything included",
+      "description": "Files, databases, email accounts, SSL certificates—we move it all. Nothing gets left behind."
+    },
+    "fastTurnaround": {
+      "title": "Fast turnaround",
+      "description": "Most migrations finish within 24-48 hours. Complex sites might take a bit longer, but we'll let you know upfront."
+    }
+  },
+  "whatWeNeed": {
+    "title": "What we'll need from you",
+    "description": "Just a few pieces of information. We'll walk you through finding them if you're not sure where they are.",
+    "loginDetails": {
+      "title": "Your current host's login details",
+      "description": "Control panel username and password, or FTP/SSH credentials. Don't worry if you don't know what these are—we'll help you find them."
+    },
+    "domainAccess": {
+      "title": "Domain registrar access (if moving the domain)",
+      "description": "Where you registered your domain name. We'll guide you through updating the nameservers or DNS settings."
+    },
+    "specialConfig": {
+      "title": "Any special configurations (optional)",
+      "description": "Custom settings, third-party services, or anything unique about your setup. If there's nothing special, that's totally fine."
+    },
+    "note": "If you're stuck finding any of this information, reach out. We've done this thousands of times and can help you locate everything you need."
+  },
+  "cta": {
+    "title": "Ready to make the move?",
+    "description": "Tell us about your site and we'll get started. The whole process is free, and we'll keep you updated every step of the way.",
+    "requestFree": "Request free migration"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "title": "You're not alone in this.",
+    "description": "Real people. Real answers. No bots, no scripts, no runaround. Just human support when you need it.",
+    "talkToHuman": "Talk to a human",
+    "getMigrationHelp": "Get migration help",
+    "imageAlt": "Friendly support team member ready to help"
+  },
+  "howWeHelp": {
+    "title": "How we help",
+    "description": "We don't do support like everyone else. We're here to solve problems, not just answer tickets.",
+    "listen": {
+      "title": "We listen first",
+      "description": "No assumptions. No copy-paste responses. We take the time to understand what you're actually trying to do."
+    },
+    "guide": {
+      "title": "We guide, not lecture",
+      "description": "Technical jargon doesn't help anyone. We explain things in plain language and walk you through solutions step by step."
+    },
+    "stay": {
+      "title": "We stay until it's fixed",
+      "description": "Your problem doesn't get \"closed\" until you're satisfied. We follow through until everything works the way it should."
+    }
+  },
+  "channels": {
+    "title": "Reach us however you prefer",
+    "description": "We're available 24/7 through multiple channels. Pick what works best for you.",
+    "liveChat": {
+      "title": "Live chat",
+      "description": "Talk to a real person right now. Average response time: 2 minutes.",
+      "action": "Start a conversation"
+    },
+    "email": {
+      "title": "Email support",
+      "description": "Prefer writing things out? We respond to every email, usually within an hour.",
+      "action": "Send us an email"
+    },
+    "migration": {
+      "title": "Migration help",
+      "description": "Moving your site? We'll handle the technical work so you don't have to worry.",
+      "action": "Learn about migration"
+    }
+  },
+  "responseTimes": {
+    "title": "When can you expect to hear back?",
+    "description": "We believe in setting honest expectations. Here's what you can count on.",
+    "liveChat": {
+      "title": "Live chat",
+      "time": "~2 minutes",
+      "description": "Real-time conversation with a human. No waiting in queue, no automated messages."
+    },
+    "email": {
+      "title": "Email support",
+      "time": "Within 1 hour",
+      "description": "Detailed, thoughtful responses to your questions. Often faster than an hour, especially during business hours."
+    },
+    "urgent": {
+      "title": "Urgent issues",
+      "time": "Immediate",
+      "description": "Site down? Critical problem? We prioritize emergencies and jump on them right away."
+    },
+    "note": "These are averages during normal circumstances. During major outages or high-volume periods, response times may be longer—but we'll always keep you informed."
+  },
+  "cta": {
+    "title": "Need help right now?",
+    "description": "We're here. No automated systems, no waiting—just real people ready to help.",
+    "contactSupport": "Contact support"
+  }
+}

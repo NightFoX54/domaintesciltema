@@ -1,0 +1,505 @@
+{
+  "overview": {
+    "hero": {
+      "title": "Sorunsuz çalışan hosting",
+      "description1": "Kurulacak bir web siteniz ve yönetecek bir işiniz var. Sitenizin çevrimiçi kalmasını, hızlı yüklenmesini ve size sorun çıkarmamasını sağlıyoruz.",
+      "description2": "Sıfırdan bir şey mi kuruyorsunuz, WordPress mi kullanıyorsunuz, yoksa belirli bir şeye mi ihtiyacınız var—karmaşıklık olmadan sizi kapsıyoruz.",
+      "imageAlt": "Düzenli masa düzeninde sakin bir şekilde çalışan geliştirici"
+    },
+    "whatHostingDoes": {
+      "title": "Hosting gerçekte ne yapar",
+      "description": "Düşündüğünüzden daha basit. Hosting, web sitenize internette bir ev verir, böylece insanlar onu ziyaret edebilir.",
+      "storesFiles": {
+        "title": "Web sitenizin dosyalarını saklar",
+        "description": "Tüm kodlarınız, görselleriniz ve içeriğinizin bir yerde yaşaması gerekir. Sunucu budur—her zaman açık ve her zaman internete bağlı bir bilgisayar."
+      },
+      "deliversSite": {
+        "title": "Sitenizi ziyaretçilere iletir",
+        "description": "Birisi alan adınızı yazdığında, hosting onlara web sitenizi gönderen şeydir—hızlı ve güvenilir bir şekilde, her seferinde."
+      },
+      "keepsSecure": {
+        "title": "Her şeyi güvenli ve güncel tutar",
+        "description": "İyi hosting, güvenlik güncellemeleri, yedeklemeler ve izleme içerir, böylece sunucu bakımı yerine işinize odaklanabilirsiniz."
+      }
+    },
+    "whichHosting": {
+      "title": "Hangi hosting ihtiyaçlarınıza uyuyor?",
+      "description": "Üç tür hosting sunuyoruz. İnşa ettiğiniz şeye uyanı seçin.",
+      "linux": {
+        "title": "Linux Hosting",
+        "description": "Özel bir site kuruyorsanız, esnekliğe ihtiyacınız varsa veya sadece ekstra katmanlar olmadan sağlam bir temel istiyorsanız mükemmel.",
+        "details": "Statik siteler, Node.js uygulamaları, özel PHP projeleri veya tam kontrol istediğiniz herhangi bir şey için ideal."
+      },
+      "wordpress": {
+        "title": "WordPress Hosting",
+        "description": "WordPress kullanıyorsanız, bu özellikle onun için optimize edilmiştir—daha hızlı, daha güvenli ve yönetmesi daha kolay.",
+        "details": "Otomatik güncellemeler, yerleşik önbellekleme ve WordPress'e özel güvenlik. Teknik işleri biz hallederiz."
+      },
+      "joomla": {
+        "title": "Joomla Hosting",
+        "description": "Joomla siteleri için özel olarak hazırlandı—önceden yapılandırılmış, test edilmiş ve Joomla'nın ihtiyaç duyduğu performansla hazır.",
+        "details": "Doğru PHP sürümü, optimize edilmiş veritabanı ayarları ve tek tıkla Joomla kurulumu dahil."
+      }
+    },
+    "faq": {
+      "title": "Hosting hakkında yaygın sorular",
+      "description": "Net cevaplar, teknik jargon yok",
+      "items": [
+        {
+          "question": "Hangi hosting türüne ihtiyacım olduğunu nasıl bilirim?",
+          "answer": "WordPress kullanıyorsanız, WordPress Hosting'e gidin—bunun için optimize edilmiştir. Joomla kullanıyorsanız, Joomla Hosting'i seçin. Özel bir şey inşa ediyorsanız veya henüz emin değilseniz, Linux Hosting size en fazla esnekliği verir. İhtiyaçlarınız değişirse daha sonra her zaman değiştirebilirsiniz."
+        },
+        {
+          "question": "Daha sonra planımı yükseltebilir miyim?",
+          "answer": "Evet, kesinlikle. Şimdi mantıklı olanla başlayın ve daha fazla kaynağa ihtiyacınız olduğunda yükseltin. Süreç sorunsuzdur—downtime yok, veri kaybı yok ve gerekirse size yardımcı oluruz."
+        },
+        {
+          "question": "Hosting'i yönetmek için teknik bilgiye ihtiyacım var mı?",
+          "answer": "Pek değil. Kontrol panelimiz anlaşılır olacak şekilde tasarlanmıştır ve yaygın görevler için rehberler sağlıyoruz. Takılırsanız, destek ekibimiz yardımcı olmak için burada—işleri açıkça açıklayan gerçek insanlar."
+        },
+        {
+          "question": "Sitem çökerse ne olur?",
+          "answer": "Tüm sunucuları 7/24 izliyoruz ve sorunların problem haline gelmeden önce yakalanması için otomatik sistemlerimiz var. Bir şeyler ters giderse, hemen düzeltiriz. Ve sizin tarafınızda bir şey varsa, bunu çözmenize yardımcı oluruz—yargılama yok, sadece çözümler."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Hala hangi hostinge ihtiyacınız olduğundan emin değil misiniz?",
+      "description": "Bizimle konuşun. İnşa ettiğiniz şey hakkında birkaç soru soracağız ve sizi doğru yöne yönlendireceğiz. Baskı yok, satış konuşması yok—sadece dürüst tavsiye.",
+      "primary": "Yardımcı biriyle konuşun",
+      "secondary": "Tüm hosting seçeneklerini görüntüle"
+    }
+  },
+  "linux": {
+    "hero": {
+      "title": "Kontrol isteyen geliştiriciler için Linux Hosting",
+      "description": "İhtiyacınız olan her şeyi çalıştırma esnekliğiyle hızlı, güvenilir hosting. Gereksiz yük yok, kısıtlama yok—sadece sorunsuz çalışan sağlam altyapı.",
+      "imageAlt": "Modern çalışma alanında kod üzerinde çalışan teknik kurucu",
+      "configurePlan": "Planı yapılandır",
+      "talkToUs": "Önce bizimle konuşun"
+    },
+    "whoIsFor": {
+      "title": "Linux hosting kimler için",
+      "description": "Bunlardan herhangi biri size benziyorsa, Linux hosting muhtemelen doğru seçimdir.",
+      "customBuilds": {
+        "title": "Özel projeler",
+        "description": "Sıfırdan bir şey kuruyorsunuz—statik bir site, bir Node.js uygulaması veya özel PHP kodu—ve temiz bir temele ihtiyacınız var."
+      },
+      "fullControl": {
+        "title": "Tam kontrol",
+        "description": "Belirli bir platforma veya çerçeveye kilitlenmeden işleri kendi yolunuzla yapılandırma esnekliği istiyorsunuz."
+      },
+      "reliableBasics": {
+        "title": "Güvenilir temel",
+        "description": "Kullanmayacağınız özellikler için ödeme yapmadan sadece sorunsuz çalışan sağlam, öngörülebilir hostinge ihtiyacınız var."
+      }
+    },
+    "pricing": {
+      "title": "Şeffaf fiyatlandırma, sürpriz yok",
+      "description": "Küçük başlayın, hazır olduğunuzda yükseltin. Tüm fiyatlar listelenen her şeyi içerir—gizli ücret yok.",
+      "note": "Tüm planlar listelenen her şeyi içerir. Kurulum ücreti yok, gizli ücret yok. İstediğiniz zaman yükseltebilir, düşürebilir veya iptal edebilirsiniz.",
+      "plans": {
+        "starter": {
+          "name": "Başlangıç",
+          "description": "Başlamak için mükemmel",
+          "price": "$4.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "Planı yapılandır"
+        },
+        "professional": {
+          "name": "Profesyonel",
+          "description": "Büyüyen projeler için",
+          "price": "$9.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "Planı yapılandır"
+        },
+        "business": {
+          "name": "İşletme",
+          "description": "Yerleşik siteler için",
+          "price": "$19.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "Planı yapılandır"
+        }
+      },
+      "features": {
+        "starter": [
+          "10 GB NVMe SSD depolama",
+          "100 GB bant genişliği",
+          "1 web sitesi",
+          "Ücretsiz SSL sertifikası",
+          "Günlük yedeklemeler",
+          "E-posta desteği"
+        ],
+        "professional": [
+          "50 GB NVMe SSD depolama",
+          "Sınırsız bant genişliği",
+          "5 web sitesi",
+          "Ücretsiz SSL sertifikaları",
+          "Günlük otomatik yedeklemeler",
+          "Öncelikli destek",
+          "Ücretsiz site taşıma"
+        ],
+        "business": [
+          "100 GB NVMe SSD depolama",
+          "Sınırsız bant genişliği",
+          "Sınırsız web sitesi",
+          "Ücretsiz SSL sertifikaları",
+          "Günlük otomatik yedeklemeler",
+          "Öncelikli destek",
+          "Ücretsiz site taşımaları",
+          "Özel IP adresi"
+        ]
+      }
+    },
+    "whatYouGet": {
+      "title": "Her planla birlikte ne dahil",
+      "description": "Bunlar ek satış değil—tüm Linux hosting planlarında standarttır.",
+      "nvmeStorage": {
+        "title": "NVMe SSD depolama",
+        "description": "Sitenizin hızlı yüklenmesini sağlayan hızlı katı hal sürücüleri—standart HDD'lerden belirgin şekilde daha hızlı."
+      },
+      "freeSSL": {
+        "title": "Ücretsiz SSL sertifikaları",
+        "description": "Siteniz için otomatik HTTPS şifreleme—güvenlik ve SEO için önemli. Otomatik olarak yenilenir."
+      },
+      "dailyBackups": {
+        "title": "Günlük yedeklemeler",
+        "description": "Her gün otomatik yedeklemeler, güvenle saklanır. Bir şeyler ters giderse, sitenizi geri yükleyebiliriz."
+      },
+      "securityMonitoring": {
+        "title": "Güvenlik izleme",
+        "description": "Sitenizi güvende tutmak için 7/24 sunucu izleme ve otomatik güvenlik güncellemeleri."
+      },
+      "uptime": {
+        "title": "%99.9 çalışma süresi",
+        "description": "Yerleşik yedeklilikle güvenilir altyapı. Siteniz önemli olduğunda çevrimiçi kalır."
+      },
+      "controlPanel": {
+        "title": "Kolay kontrol paneli",
+        "description": "Dosyaları, veritabanlarını ve e-postayı yönetmek için anlaşılır arayüz—sunucu deneyimi gerekmez."
+      }
+    },
+    "faq": {
+      "title": "Linux hosting hakkında yaygın sorular",
+      "items": [
+        {
+          "question": "Bunu kullanmak için Linux bilmem gerekiyor mu?",
+          "answer": "Hayır. Kontrol paneli her şeyi görsel bir arayüz aracılığıyla halleder—istemiyorsanız komut satırına dokunmanız gerekmez. Ve o seviyede kontrol istiyorsanız, mevcuttur."
+        },
+        {
+          "question": "Linux hosting'de WordPress veya diğer CMS'leri çalıştırabilir miyim?",
+          "answer": "Evet, kesinlikle. WordPress, Joomla, Drupal ve çoğu diğer web uygulaması Linux hosting'de mükemmel çalışır. Özellikle uzun vadede WordPress kullanıyorsanız, WordPress Hosting planımız bunun için optimize edilmiştir—ancak Linux hosting de iyi çalışır."
+        },
+        {
+          "question": "Planımı aşarsam ne olur?",
+          "answer": "Yükseltme kolaydır ve downtime olmadan gerçekleşir. Sizi daha büyük plana sorunsuz bir şekilde taşıyacağız ve sadece faturalama döngünüzde kalan süre için farkı ödersiniz."
+        },
+        {
+          "question": "İşe yaramazsa geri ödeme sunuyor musunuz?",
+          "answer": "Evet, 30 günlük para iade garantimiz var. İlk ay içinde memnun kalmazsanız, ödemenizi geri ödeyeceğiz—soru sorulmadan, zahmetsiz."
+        },
+        {
+          "question": "Mevcut hostumdan taşınmama yardımcı olur musunuz?",
+          "answer": "Evet. Taşıma Profesyonel ve İşletme planlarında ücretsiz dahildir ve Başlangıç planları için tek seferlik bir hizmet olarak mevcuttur. Ekibimiz teknik işi halleder, böylece downtime veya veri kaybı olmaz."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Rahat olun. Hazır olduğunuzda buradayız.",
+      "description": "Şimdi mantıklı olan planla başlayın. Daha sonra her zaman yükseltebilirsiniz ve size yardımcı olacağız.",
+      "choosePlan": "Bir plan seçin",
+      "talkToSupport": "Önce destek ekibimizle konuşun"
+    }
+  },
+  "wordpress": {
+    "hero": {
+      "title": "Teknik işleri halleden WordPress Hosting",
+      "description": "WordPress için özel olarak optimize edilmiş, güncellenmiş ve güvence altına alınmış. İçerik ve tasarıma odaklanın—sorunsuz çalışmasını sağlayacağız.",
+      "imageAlt": "Sakin çalışma alanında blog yazısı yazan içerik oluşturucu",
+      "viewPlans": "Planları görüntüle",
+      "talkToUs": "Önce bizimle konuşun"
+    },
+    "whoIsFor": {
+      "title": "WordPress hosting kimler için",
+      "description": "WordPress kullanıyorsanız (veya kullanmayı planlıyorsanız), bu hosting özellikle bunun için hazırlanmıştır.",
+      "bloggers": {
+        "title": "Blog yazarları ve içerik oluşturucular",
+        "description": "Düzenli olarak yazıyorsunuz, yayınlıyorsunuz ve içerik paylaşıyorsunuz. WordPress'in hızlı yüklenmesine, güvende kalmasına ve sürekli bakım olmadan çalışmasına ihtiyacınız var."
+      },
+      "smallBusiness": {
+        "title": "Küçük işletme sahipleri",
+        "description": "Web siteniz işinizi temsil ediyor ve WordPress'i esnek ve tanıdık olduğu için kullanıyorsunuz. Sunucu yöneticisi olmadan güvenilir olmasını istiyorsunuz."
+      },
+      "tiredOfSlow": {
+        "title": "Yavaş WordPress'ten bıkan herkes",
+        "description": "Mevcut WordPress hosting'iniz yavaş, güncellemeler sırasında bozuluyor veya değerinden daha fazla sorun çıkarıyor. Gerçekten profesyonel hissettirmesini istiyorsunuz."
+      }
+    },
+    "pricing": {
+      "title": "Şeffaf fiyatlandırma, sürpriz yok",
+      "description": "Küçük başlayın, hazır olduğunuzda ölçeklendirin. Tüm fiyatlar listelenen her şeyi içerir—gizli ücret yok.",
+      "note": "Tüm planlar ücretsiz SSL, günlük yedeklemeler, otomatik WordPress çekirdek güncellemeleri ve taşıma yardımı içerir. Kurulum ücreti yok, sürpriz ücret yok.",
+      "mostPopular": "En Popüler",
+      "plans": {
+        "starter": {
+          "name": "Başlangıç",
+          "description": "Yeni siteler için mükemmel",
+          "price": "$7.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "Başlangıç'ı Seç"
+        },
+        "professional": {
+          "name": "Profesyonel",
+          "description": "Büyüyen işletmeler için",
+          "price": "$14.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "Profesyonel'i Seç"
+        },
+        "business": {
+          "name": "İşletme",
+          "description": "Yüksek trafikli siteler için",
+          "price": "$29.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "İşletme'yi Seç"
+        }
+      },
+      "features": {
+        "starter": [
+          "15 GB SSD depolama",
+          "1 WordPress sitesi",
+          "Otomatik WordPress güncellemeleri",
+          "Yerleşik önbellekleme",
+          "Günlük yedeklemeler"
+        ],
+        "professional": [
+          "40 GB SSD depolama",
+          "5 WordPress sitesi",
+          "Başlangıç'taki her şey",
+          "Gelişmiş önbellekleme ve CDN",
+          "Staging ortamı",
+          "Öncelikli destek"
+        ],
+        "business": [
+          "100 GB SSD depolama",
+          "Sınırsız WordPress sitesi",
+          "Profesyonel'deki her şey",
+          "Özel kaynaklar",
+          "Beyaz etiket seçeneği",
+          "7/24 öncelikli destek"
+        ]
+      }
+    },
+    "whatYouGet": {
+      "title": "Her planla birlikte ne dahil",
+      "description": "Bunlar eklenti veya ek satış değil—tüm WordPress hosting planlarında standarttır.",
+      "autoUpdates": {
+        "title": "Otomatik güncellemeler",
+        "description": "WordPress çekirdek güncellemeleri arka planda otomatik olarak gerçekleşir. Artık güvenlik uyarılarını görmek için giriş yapmanıza gerek yok."
+      },
+      "caching": {
+        "title": "Yerleşik önbellekleme",
+        "description": "Sunucu seviyesi önbellekleme, ekstra eklenti kurmadan veya herhangi bir şey yapılandırmadan WordPress sitenizin daha hızlı yüklenmesini sağlar."
+      },
+      "security": {
+        "title": "WordPress'e özel güvenlik",
+        "description": "Yaygın WordPress saldırılarına karşı koruma, kötü amaçlı yazılım taraması ve WordPress için özel olarak ayarlanmış güvenlik duvarı kuralları."
+      },
+      "backups": {
+        "title": "Günlük yedeklemeler",
+        "description": "Tüm WordPress siteniz günlük olarak yedeklenir. Bir şeyler bozulursa, dakikalar içinde geri yükleyebiliriz."
+      },
+      "staging": {
+        "title": "Staging ortamı",
+        "description": "Değişiklikleri test edin, yeni eklentiler deneyin ve canlıya almadan önce güvenle deneyin. Oluşturmak için bir tık, yayınlamak için bir tık."
+      },
+      "migration": {
+        "title": "Ücretsiz taşıma",
+        "description": "Başka bir host'tan taşınıyor musunuz? WordPress sitenizi ücretsiz taşıyacağız—downtime yok, veri kaybı yok."
+      }
+    },
+    "faq": {
+      "title": "WordPress hosting hakkında sorular",
+      "description": "Net cevaplar, teknik jargon yok",
+      "items": [
+        {
+          "question": "Bu paylaşımlı hosting mi yoksa başka bir şey mi?",
+          "answer": "Bu paylaşımlı hosting değil. Her WordPress sitesi için özel kaynaklar sağlıyoruz, paylaşımlı hosting ortamlarının dezavantajları olmadan daha hızlı performans ve daha iyi güvenlik sağlıyoruz."
+        },
+        {
+          "question": "Sitemi ücretsiz taşıyacak mısınız?",
+          "answer": "Evet. WordPress sitenizi mevcut host'unuzdan bizimkine ücretsiz taşıyacağız. Sadece mevcut hosting detaylarınızla bir destek bileti açın, teknik işi biz hallederiz. Siteniz taşıma sırasında çevrimiçi kalır ve geçiş yapmadan önce her şeyi test ederiz."
+        },
+        {
+          "question": "Herhangi bir WordPress teması veya eklentisi kullanabilir miyim?",
+          "answer": "Evet. Bu tam WordPress hosting—istediğiniz herhangi bir tema, eklenti veya özelleştirmeyi kurabilirsiniz. Ne inşa edebileceğiniz veya nasıl inşa edeceğiniz konusunda kısıtlama yok. WordPress'te çalışıyorsa, hosting'imizde çalışır."
+        },
+        {
+          "question": "Planımı aşarsam ne olur?",
+          "answer": "İstediğiniz zaman tek tıkla yükseltebilirsiniz. Taşıma gerekmez—siteniz tam olarak olduğu yerde kalır, sadece daha fazla kaynakla. Farkı orantılı olarak hesaplayacağız, böylece sadece kullandığınız için ödersiniz. Ve hangi planı seçeceğinizden emin değilseniz, bize ulaşın. Henüz ihtiyacınız olmayan bir şeyi size satmaktansa doğru olanı seçmenize yardımcı olmayı tercih ederiz."
+        },
+        {
+          "question": "Bir şeyler bozulursa yardımcı olur musunuz?",
+          "answer": "Evet. Sunucu sorunu veya bizim tarafımızda bir şey varsa, hemen düzeltiriz. WordPress sorunu varsa (eklenti çakışması veya tema sorunu gibi), teşhis etmenize yardımcı olur ve sizi doğru yöne yönlendiririz—teknik olarak kapsamımız dışında olsa bile. Sizi bozuk bir siteyle baş başa bırakmayacağız."
+        }
+      ]
+    },
+    "cta": {
+      "title": "WordPress sitenizi çevrimiçi hale getirmeye hazır mısınız?",
+      "description": "İhtiyaçlarınıza uyan planı seçin veya karar vermede yardım istiyorsanız bize ulaşın.",
+      "choosePlan": "Bir plan seçin",
+      "talkToSupport": "Destekle konuşun"
+    }
+  },
+  "joomla": {
+    "hero": {
+      "title": "Joomla için özel olarak hazırlanmış Joomla Hosting",
+      "description": "Joomla ile önceden yapılandırılmış, optimize edilmiş ve test edilmiş. Joomla'nın ihtiyaç duyduğu performans ve güvenilirliği tahmin veya ekstra kurulum olmadan alırsınız.",
+      "imageAlt": "Profesyonel kurulumda Joomla sitesi üzerinde çalışan web geliştirici",
+      "viewPlans": "Planları görüntüle",
+      "talkToUs": "Önce bizimle konuşun"
+    },
+    "whoIsFor": {
+      "title": "Joomla hosting kimler için",
+      "description": "Joomla ile inşa ediyorsanız, bu hosting özellikle bunun için yapılandırılmıştır.",
+      "agencies": {
+        "title": "Ajanslar ve geliştiriciler",
+        "description": "Müşteriler için Joomla siteleri kuruyorsunuz ve doğru şekilde yapılandırılmış güvenilir hostinge ihtiyacınız var—deneme yanılma yok, sadece tutarlı performans."
+      },
+      "organizations": {
+        "title": "Joomla kullanan kuruluşlar",
+        "description": "Joomla'yı esnekliği için seçtiniz ve onu düzgün şekilde destekleyen hostinge ihtiyacınız var—doğru PHP sürümleri, veritabanı optimizasyonu ve Joomla'ya özel güvenlik."
+      },
+      "frustrated": {
+        "title": "Genel hosting'den bıkanlar",
+        "description": "Joomla siteniz genel hosting'de yavaş veya kararsız. Joomla'nın özel gereksinimleri için hazırlanmış hosting istiyorsunuz."
+      }
+    },
+    "pricing": {
+      "title": "Şeffaf fiyatlandırma, sürpriz yok",
+      "description": "Küçük başlayın, hazır olduğunuzda ölçeklendirin. Tüm fiyatlar listelenen her şeyi içerir—gizli ücret yok.",
+      "note": "Tüm planlar ücretsiz SSL, günlük yedeklemeler, tek tıkla Joomla kurulumu ve taşıma yardımı içerir. Kurulum ücreti yok, sürpriz ücret yok.",
+      "mostPopular": "En Popüler",
+      "plans": {
+        "starter": {
+          "name": "Başlangıç",
+          "description": "Yeni siteler için mükemmel",
+          "price": "$8.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "Başlangıç'ı Seç"
+        },
+        "professional": {
+          "name": "Profesyonel",
+          "description": "Büyüyen siteler için",
+          "price": "$16.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "Profesyonel'i Seç"
+        },
+        "business": {
+          "name": "İşletme",
+          "description": "Yüksek trafikli siteler için",
+          "price": "$32.99",
+          "pricePeriod": "/ay",
+          "renewalNote": "Aynı fiyata yenilenir",
+          "actionLabel": "İşletme'yi Seç"
+        }
+      },
+      "features": {
+        "starter": [
+          "20 GB SSD depolama",
+          "1 Joomla sitesi",
+          "Joomla için önceden yapılandırılmış PHP",
+          "Optimize edilmiş veritabanı ayarları",
+          "Günlük yedeklemeler"
+        ],
+        "professional": [
+          "50 GB SSD depolama",
+          "5 Joomla sitesi",
+          "Başlangıç'taki her şey",
+          "Gelişmiş önbellekleme ve CDN",
+          "Staging ortamı",
+          "Öncelikli destek"
+        ],
+        "business": [
+          "120 GB SSD depolama",
+          "Sınırsız Joomla sitesi",
+          "Profesyonel'deki her şey",
+          "Özel kaynaklar",
+          "Beyaz etiket seçeneği",
+          "7/24 öncelikli destek"
+        ]
+      }
+    },
+    "whatYouGet": {
+      "title": "Her planla birlikte ne dahil",
+      "description": "Bunlar eklenti veya ek satış değil—tüm Joomla hosting planlarında standarttır.",
+      "preConfigured": {
+        "title": "Joomla için önceden yapılandırılmış",
+        "description": "Doğru PHP sürümü, optimize edilmiş veritabanı ayarları ve gerekli uzantılar zaten kurulmuş ve test edilmiş."
+      },
+      "oneClick": {
+        "title": "Tek tıkla Joomla kurulumu",
+        "description": "Önceden yapılandırılmış kurulum programımızla saniyeler içinde Joomla kurun. Manuel kurulum yok, teknik bilgi gerekmez."
+      },
+      "security": {
+        "title": "Joomla'ya özel güvenlik",
+        "description": "Yaygın Joomla saldırılarına karşı koruma, kötü amaçlı yazılım taraması ve Joomla için yapılandırılmış güvenlik duvarı kuralları."
+      },
+      "performance": {
+        "title": "Performans optimizasyonu",
+        "description": "Joomla'nın mimarisi için özel olarak ayarlanmış sunucu seviyesi önbellekleme ve veritabanı optimizasyonu."
+      },
+      "backups": {
+        "title": "Günlük yedeklemeler",
+        "description": "Tüm Joomla siteniz günlük olarak yedeklenir. Bir şeyler bozulursa, dakikalar içinde geri yükleyebiliriz."
+      },
+      "migration": {
+        "title": "Ücretsiz taşıma",
+        "description": "Başka bir host'tan taşınıyor musunuz? Joomla sitenizi ücretsiz taşıyacağız—downtime yok, veri kaybı yok."
+      }
+    },
+    "faq": {
+      "title": "Joomla hosting hakkında sorular",
+      "description": "Net cevaplar, teknik jargon yok",
+      "items": [
+        {
+          "question": "Bunu normal hosting'den farklı kılan nedir?",
+          "answer": "Normal hosting geneldir. Joomla hosting, doğru PHP sürümleri, veritabanı optimizasyonu, gerekli uzantılar ve Joomla'ya özel güvenlik ayarlarıyla önceden yapılandırılmıştır. Teknik kurulumu ve testi zaten yaptık, böylece Joomla ilk günden itibaren düzgün çalışır."
+        },
+        {
+          "question": "Joomla sitemi ücretsiz taşıyacak mısınız?",
+          "answer": "Evet. Joomla sitenizi mevcut host'unuzdan ücretsiz taşıyacağız. Sadece mevcut hosting detaylarınızla bir destek bileti açın, her şeyi biz hallederiz. Siteniz taşıma sırasında çevrimiçi kalır ve geçiş yapmadan önce kapsamlı bir şekilde test ederiz."
+        },
+        {
+          "question": "Herhangi bir Joomla şablonu veya uzantısı kullanabilir miyim?",
+          "answer": "Evet. Bu tam Joomla hosting—ihtiyacınız olan herhangi bir şablon, uzantı veya özelleştirmeyi kurabilirsiniz. Kısıtlama yok. Joomla ile çalışıyorsa, hosting'imizde çalışır."
+        },
+        {
+          "question": "Planımı aşarsam ne olur?",
+          "answer": "İstediğiniz zaman tek tıkla yükseltebilirsiniz. Siteniz tam olarak olduğu yerde kalır, sadece daha fazla kaynakla. Farkı orantılı olarak hesaplayacağız, böylece sadece kullandığınız için ödersiniz. Hangi planın uygun olduğundan emin değilseniz, bize ulaşın—size fazla satış yapmaktansa doğru olanı seçmenize yardımcı olmayı tercih ederiz."
+        },
+        {
+          "question": "Bir şeyler bozulursa yardımcı olur musunuz?",
+          "answer": "Evet. Sunucu veya hosting sorunu varsa, hemen düzeltiriz. Joomla sorunu varsa (uzantı çakışması gibi), teşhis etmenize yardımcı olur ve düzeltme konusunda size rehberlik ederiz—teknik olarak kapsamımız dışında olsa bile. Sizi bozuk bir siteyle baş başa bırakmayacağız."
+        },
+        {
+          "question": "Bu mevcut Joomla uzantılarımla çalışacak mı?",
+          "answer": "Evet, bu Joomla hosting planı mevcut Joomla uzantılarınızla uyumludur. Platformumuz tüm Joomla uzantılarını sorunsuz bir şekilde destekleyecek şekilde tasarlanmıştır."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Joomla sitenizi çevrimiçi hale getirmeye hazır mısınız?",
+      "description": "İhtiyaçlarınıza uyan planı seçin veya karar vermede yardım istiyorsanız bize ulaşın.",
+      "choosePlan": "Bir plan seçin",
+      "talkToSupport": "Destekle konuşun"
+    }
+  }
+}

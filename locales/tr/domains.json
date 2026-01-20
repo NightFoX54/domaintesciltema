@@ -1,0 +1,78 @@
+{
+  "search": {
+    "title": "Size en uygun alan adını bulun",
+    "description": "Alan adınız sadece bir adres değil. Müşterilerin sizi bulduğu, hatırladığı ve güvendiği yerdir. Birlikte doğru olanı bulalım.",
+    "inputLabel": "Alan adı arama",
+    "searchPlaceholder": "İdeal alan adınızı girin...",
+    "searchButton": "Ara",
+    "searching": "Aranıyor...",
+    "searchHint": "Ne arayacağınızdan emin değil misiniz? İşletme adınızı, fikrinizi veya sadece beğendiğiniz bir kelimeyi deneyin.",
+    "instantCheck": "Anında müsaitlik kontrolü",
+    "freeWhois": "Ücretsiz WHOIS gizliliği",
+    "imageAlt": "Alan adı fikirleri üzerinde beyin fırtınası yapan kurucu",
+    "resultsTitle": "\"{{query}}\" için sonuçlar",
+    "resultsDescription": "{{total}} kontrol edilen alan adından {{available}} tanesi müsait",
+    "availableDomains": "Müsait Alan Adları",
+    "unavailable": "Müsait Değil",
+    "noMatches": "Tam eşleşme müsait değil, ancak aşağıdaki önerilere bakın!",
+    "popular": "Popüler",
+    "renewsAt": "{{price}} fiyatıyla yenilenir",
+    "firstYear": "ilk yıl",
+    "addToCart": "Sepete Ekle",
+    "alreadyRegistered": "Zaten kayıtlı",
+    "notAvailable": "Müsait Değil",
+    "popularExtensions": {
+      "title": "Popüler alan adı uzantıları",
+      "description": "Müşterilerin tanıdığı en güvenilir uzantılarla başlayın",
+      "searchExtension": "{{ext}} ara"
+    },
+    "rightName": {
+      "title": "Doğru isim her şeyi değiştirir",
+      "paragraph1": "Girişimcilerin mükemmel alan adı için haftalarca düşündüğünü gördük. Ve diğerlerinin dakikalar içinde bulduğunu da gördük.",
+      "paragraph2": "Fark nedir? Doğru araçlara ve rehberliğe sahip olmak. Arama sistemimiz, aklınıza gelmemiş seçenekleri keşfetmenize yardımcı olur.",
+      "smartSuggestions": {
+        "title": "Akıllı öneriler",
+        "description": "İlk tercihiniz alınmışsa alternatifler önereceğiz"
+      },
+      "multipleExtensions": {
+        "title": "Çoklu uzantılar",
+        "description": "Tüm büyük TLD'lerde müsaitliği aynı anda görün"
+      },
+      "imageAlt": "Mükemmel alan adını bulmaktan heyecanlanan kişi"
+    }
+  },
+  "overview": {
+    "hero": {
+      "title": "İnternetteki adınız",
+      "description": "Bir alan adı sadece bir adres değil. Fikrinizin gerçek olduğu ilk andır. Bu anı sakin, net ve tamamen sizin için kolaylaştırıyoruz.",
+      "searchPlaceholder": "Alan adınızı arayın...",
+      "searchButton": "Ara",
+      "additionalInfo": "Alan adınızın tam sahibi sizsiniz. İstediğiniz zaman transfer edin. Kısıtlama yok.",
+      "icannAccredited": "ICANN akrediteli",
+      "freeWhoisPrivacy": "Ücretsiz WHOIS gizliliği",
+      "transparentRenewal": "Şeffaf yenileme fiyatlandırması",
+      "imageAlt": "Alan adını seçen kurucu"
+    },
+    "whyMatters": {
+      "title": "Bir alan adı neden önemlidir",
+      "description": "Bu sadece bir URL değil. İnşa edeceğiniz her şeyin temelidir.",
+      "identity": {
+        "title": "Bu sizin kimliğiniz",
+        "description": "Bir web siteniz olmadan, müşterileriniz olmadan önce — bir adınız var. Bir alan adı bu adı kalıcı ve sizin yapar."
+      },
+      "credibility": {
+        "title": "Güvenilirlik oluşturur",
+        "description": "İnsanlar kendi alan adına sahip işletmelere güvenir. Ciddi, yerleşik ve kalıcı olduğunuzu gösterir."
+      },
+      "asset": {
+        "title": "Uzun vadeli bir varlıktır",
+        "description": "Alan adınız sizinle birlikte büyür. SEO, tanınma ve değer biriktirir. Geleceğinize yapılan bir yatırımdır."
+      },
+      "imageAlt": "Çevrimiçi varlığını planlayan girişimci"
+    },
+    "findDomain": {
+      "title": "Alan adınızı bulun.\nÖnemli bir şey inşa edin.",
+      "description": "Fikriniz bir ismi hak ediyor. Birlikte bulalım."
+    }
+  }
+}

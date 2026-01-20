@@ -1,0 +1,56 @@
+{
+  "title": "Sepetiniz",
+  "description": "Ürünlerinizi gözden geçirin. Ödeme yapmadan önce her şeyi değiştirebilir veya kaldırabilirsiniz.",
+  "empty": {
+    "title": "Sepetiniz boş",
+    "description": "Burada görmek için ürün eklemeye başlayın.",
+    "browseButton": "Ürünlere göz atın"
+  },
+  "removeItem": "Ürünü kaldır",
+  "price": "Fiyat",
+  "edit": "Düzenle",
+  "orderSummary": "Sipariş özeti",
+  "coupon": {
+    "label": "Kupon kodunuz var mı?",
+    "placeholder": "Kodu girin",
+    "apply": "Uygula",
+    "applying": "...",
+    "remove": "Kaldır",
+    "discount": "%{{discount}} indirim"
+  },
+  "subtotal": "Ara toplam",
+  "discount": "İndirim (%{{discount}})",
+  "setupFees": "Kurulum ücretleri",
+  "totalToday": "Bugünkü toplam",
+  "continueToCheckout": "Ödemeye devam et",
+  "keepBrowsing": "Gezinmeye devam et",
+  "guarantees": {
+    "changeCancel": "Ödeme sırasında istediğiniz zaman değiştirebilir veya iptal edebilirsiniz",
+    "noSurprises": "Sürpriz ücret yok. Her zaman net fiyatlandırma",
+    "secureCheckout": "Birden fazla ödeme seçeneği ile güvenli ödeme"
+  },
+  "errors": {
+    "enterCoupon": "Lütfen bir kupon kodu girin",
+    "invalidCoupon": "Geçersiz kupon kodu. Lütfen tekrar deneyin."
+  },
+  "itemTypes": {
+    "domain": "Alan Adı",
+    "ssl": "SSL Sertifikası",
+    "item": "Ürün"
+  },
+  "periods": {
+    "year": "yıl",
+    "years": "yıl",
+    "month": "ay",
+    "months": "ay"
+  },
+  "descriptions": {
+    "domain": "{{period}} kayıt • {{price}}/yıl fiyatıyla yenilenir",
+    "hosting": "{{period}} faturalandırma{{addons}}",
+    "ssl": "Yıllık sertifika • Otomatik yenileme hatırlatıcıları"
+  },
+  "addons": {
+    "dailyBackups": "Günlük yedeklemeler",
+    "prioritySupport": "Öncelikli destek"
+  }
+}

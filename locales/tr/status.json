@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Sistem Durumu",
+    "description": "Hizmetlerimiz hakkında gerçek zamanlı güncellemeler. Şeffaflığa inanıyoruz, özellikle bir şeyler ters gittiğinde."
+  },
+  "overallStatus": {
+    "title": "Tüm sistemler çalışıyor",
+    "lastChecked": "Son kontrol: Şimdi"
+  },
+  "serviceStatus": {
+    "title": "Hizmet durumu",
+    "operational": "Çalışıyor",
+    "webHosting": {
+      "name": "Web Barındırma",
+      "description": "Linux, WordPress, Joomla"
+    },
+    "domainServices": {
+      "name": "Alan Adı Hizmetleri",
+      "description": "Kayıt, transfer, DNS"
+    },
+    "emailServices": {
+      "name": "E-posta Hizmetleri",
+      "description": "SMTP, IMAP, webmail"
+    },
+    "sslCertificates": {
+      "name": "SSL Sertifikaları",
+      "description": "Verilme ve yenileme"
+    },
+    "supportSystems": {
+      "name": "Destek Sistemleri",
+      "description": "Sohbet, e-posta, telefon"
+    }
+  },
+  "uptimeStats": {
+    "title": "Çalışma süresi istatistikleri",
+    "last30Days": "Son 30 gün",
+    "last90Days": "Son 90 gün",
+    "last12Months": "Son 12 ay",
+    "description": "Çalışma süresi tüm barındırma altyapımız genelinde hesaplanır. Bireysel sunucu performansı biraz değişebilir. Bu sayıları dürüstçe raporluyoruz—yaratıcı muhasebe yok."
+  },
+  "incidentHistory": {
+    "title": "Son olay geçmişi",
+    "noIncidents": {
+      "title": "Son olay yok",
+      "period": "Son 7 gün",
+      "description": "Tüm hizmetler kesinti veya performans düşüşü olmadan sorunsuz çalışıyor."
+    },
+    "commitment": {
+      "title": "Taahhüdümüz:",
+      "description": "Bir şeyler ters giderse, buraya hemen güncellemeler yayınlayacağız. Sorunları gizleme yok, kurumsal konuşma yok—sadece ne olduğu, bunun hakkında ne yaptığımız ve ne zaman düzelteceğimiz hakkında dürüst açıklamalar."
+    }
+  }
+}

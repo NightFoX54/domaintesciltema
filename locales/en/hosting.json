@@ -1,0 +1,505 @@
+{
+  "overview": {
+    "hero": {
+      "title": "Hosting that just works",
+      "description1": "You've got a website to build and a business to run. We make sure your site stays online, loads fast, and doesn't give you headaches.",
+      "description2": "Whether you're building from scratch, running WordPress, or need something specific—we've got you covered without the complexity.",
+      "imageAlt": "Developer working calmly at organized desk setup"
+    },
+    "whatHostingDoes": {
+      "title": "What hosting actually does",
+      "description": "It's simpler than you think. Hosting gives your website a home on the internet so people can visit it.",
+      "storesFiles": {
+        "title": "It stores your website files",
+        "description": "All your code, images, and content need to live somewhere. That's what a server is—a computer that's always on and always connected to the internet."
+      },
+      "deliversSite": {
+        "title": "It delivers your site to visitors",
+        "description": "When someone types in your domain name, hosting is what sends them your website—quickly and reliably, every time."
+      },
+      "keepsSecure": {
+        "title": "It keeps things secure and updated",
+        "description": "Good hosting includes security updates, backups, and monitoring so you can focus on your business instead of server maintenance."
+      }
+    },
+    "whichHosting": {
+      "title": "Which hosting fits your needs?",
+      "description": "We offer three types of hosting. Pick the one that matches what you're building.",
+      "linux": {
+        "title": "Linux Hosting",
+        "description": "Perfect if you're building a custom site, need flexibility, or just want a solid foundation without extra layers.",
+        "details": "Great for static sites, Node.js apps, custom PHP projects, or anything you want full control over."
+      },
+      "wordpress": {
+        "title": "WordPress Hosting",
+        "description": "If you're using WordPress, this is optimized specifically for it—faster, safer, and easier to manage.",
+        "details": "Automatic updates, built-in caching, and WordPress-specific security. We handle the technical stuff."
+      },
+      "joomla": {
+        "title": "Joomla Hosting",
+        "description": "Built for Joomla sites—pre-configured, tested, and ready to go with the performance Joomla needs.",
+        "details": "Right PHP version, optimized database settings, and one-click Joomla installation included."
+      }
+    },
+    "faq": {
+      "title": "Common questions about hosting",
+      "description": "Clear answers, no technical jargon",
+      "items": [
+        {
+          "question": "How do I know which hosting type I need?",
+          "answer": "If you're using WordPress, go with WordPress Hosting—it's optimized for it. If you're using Joomla, choose Joomla Hosting. If you're building something custom or aren't sure yet, Linux Hosting gives you the most flexibility. You can always switch later if your needs change."
+        },
+        {
+          "question": "Can I upgrade my plan later?",
+          "answer": "Yes, absolutely. Start with what makes sense now, and upgrade whenever you need more resources. The process is smooth—no downtime, no data loss, and we'll help you through it if needed."
+        },
+        {
+          "question": "Do I need technical knowledge to manage hosting?",
+          "answer": "Not really. Our control panel is designed to be straightforward, and we provide guides for common tasks. If you get stuck, our support team is here to help—real humans who explain things clearly."
+        },
+        {
+          "question": "What if my site goes down?",
+          "answer": "We monitor all servers 24/7 and have automated systems to catch issues before they become problems. If something does go wrong, we'll fix it immediately. And if it's something on your end, we'll help you figure it out—no judgment, just solutions."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Still not sure which hosting you need?",
+      "description": "Talk to us. We'll ask a few questions about what you're building and point you in the right direction. No pressure, no sales pitch—just honest advice.",
+      "primary": "Talk to someone helpful",
+      "secondary": "View all hosting options"
+    }
+  },
+  "linux": {
+    "hero": {
+      "title": "Linux Hosting for builders who want control",
+      "description": "Fast, reliable hosting with the flexibility to run whatever you need. No bloat, no restrictions—just solid infrastructure that works.",
+      "imageAlt": "Technical founder working on code in modern workspace",
+      "configurePlan": "Configure plan",
+      "talkToUs": "Talk to us first"
+    },
+    "whoIsFor": {
+      "title": "Who Linux hosting is for",
+      "description": "If any of these sound like you, Linux hosting is probably the right fit.",
+      "customBuilds": {
+        "title": "Custom builds",
+        "description": "You're building something from scratch—a static site, a Node.js app, or custom PHP code—and need a clean foundation."
+      },
+      "fullControl": {
+        "title": "Full control",
+        "description": "You want the flexibility to configure things your way without being locked into a specific platform or framework."
+      },
+      "reliableBasics": {
+        "title": "Reliable basics",
+        "description": "You need solid, predictable hosting that just works—without paying for features you won't use."
+      }
+    },
+    "pricing": {
+      "title": "Honest pricing, no surprises",
+      "description": "Start small, upgrade when you need to. All prices include everything listed—no hidden fees.",
+      "note": "All plans include everything listed. No setup fees, no hidden charges. You can upgrade, downgrade, or cancel anytime.",
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "description": "Perfect for getting started",
+          "price": "$4.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Configure plan"
+        },
+        "professional": {
+          "name": "Professional",
+          "description": "For growing projects",
+          "price": "$9.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Configure plan"
+        },
+        "business": {
+          "name": "Business",
+          "description": "For established sites",
+          "price": "$19.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Configure plan"
+        }
+      },
+      "features": {
+        "starter": [
+          "10 GB NVMe SSD storage",
+          "100 GB bandwidth",
+          "1 website",
+          "Free SSL certificate",
+          "Daily backups",
+          "Email support"
+        ],
+        "professional": [
+          "50 GB NVMe SSD storage",
+          "Unlimited bandwidth",
+          "5 websites",
+          "Free SSL certificates",
+          "Daily automated backups",
+          "Priority support",
+          "Free site migration"
+        ],
+        "business": [
+          "100 GB NVMe SSD storage",
+          "Unlimited bandwidth",
+          "Unlimited websites",
+          "Free SSL certificates",
+          "Daily automated backups",
+          "Priority support",
+          "Free site migrations",
+          "Dedicated IP address"
+        ]
+      }
+    },
+    "whatYouGet": {
+      "title": "What's included with every plan",
+      "description": "These aren't upsells—they're standard with all Linux hosting plans.",
+      "nvmeStorage": {
+        "title": "NVMe SSD storage",
+        "description": "Fast solid-state drives that make your site load quickly—noticeably faster than standard HDDs."
+      },
+      "freeSSL": {
+        "title": "Free SSL certificates",
+        "description": "Automatic HTTPS encryption for your site—important for security and SEO. Renews automatically."
+      },
+      "dailyBackups": {
+        "title": "Daily backups",
+        "description": "Automated backups every day, stored safely. If something goes wrong, we can restore your site."
+      },
+      "securityMonitoring": {
+        "title": "Security monitoring",
+        "description": "24/7 server monitoring and automatic security updates to keep your site safe."
+      },
+      "uptime": {
+        "title": "99.9% uptime",
+        "description": "Reliable infrastructure with redundancy built in. Your site stays online when it matters."
+      },
+      "controlPanel": {
+        "title": "Easy control panel",
+        "description": "Straightforward interface for managing files, databases, and email—no server experience required."
+      }
+    },
+    "faq": {
+      "title": "Common questions about Linux hosting",
+      "items": [
+        {
+          "question": "Do I need to know Linux to use this?",
+          "answer": "No. The control panel handles everything through a visual interface—you won't need to touch the command line unless you want to. And if you do want that level of control, it's available."
+        },
+        {
+          "question": "Can I run WordPress or other CMSs on Linux hosting?",
+          "answer": "Yes, absolutely. WordPress, Joomla, Drupal, and most other web apps run perfectly on Linux hosting. If you're specifically using WordPress long-term, our WordPress Hosting plan is optimized for it—but Linux hosting works fine too."
+        },
+        {
+          "question": "What if I outgrow my plan?",
+          "answer": "Upgrading is easy and happens without downtime. We'll migrate you to the larger plan smoothly, and you only pay the difference for the remaining time in your billing cycle."
+        },
+        {
+          "question": "Do you offer refunds if it doesn't work out?",
+          "answer": "Yes, we have a 30-day money-back guarantee. If you're not satisfied within the first month, we'll refund your payment—no questions asked, no hassle."
+        },
+        {
+          "question": "Will you help me migrate from my current host?",
+          "answer": "Yes. Migration is included free with Professional and Business plans, and available as a one-time service for Starter plans. Our team handles the technical work so there's no downtime or data loss."
+        }
+      ]
+    },
+    "cta": {
+      "title": "No pressure. We're here when you're ready.",
+      "description": "Start with the plan that makes sense now. You can always upgrade later, and we'll help you through it.",
+      "choosePlan": "Choose a plan",
+      "talkToSupport": "Talk to support first"
+    }
+  },
+  "wordpress": {
+    "hero": {
+      "title": "WordPress Hosting that handles the technical stuff",
+      "description": "Optimized, updated, and secured specifically for WordPress. You focus on content and design—we'll make sure it runs smoothly.",
+      "imageAlt": "Content creator writing blog post in calm workspace",
+      "viewPlans": "View plans",
+      "talkToUs": "Talk to us first"
+    },
+    "whoIsFor": {
+      "title": "Who WordPress hosting is for",
+      "description": "If you're running WordPress (or planning to), this hosting is built specifically for it.",
+      "bloggers": {
+        "title": "Bloggers and content creators",
+        "description": "You write, publish, and share content regularly. You need WordPress to load fast, stay secure, and just work without constant maintenance."
+      },
+      "smallBusiness": {
+        "title": "Small business owners",
+        "description": "Your website represents your business, and you use WordPress because it's flexible and familiar. You want it to be reliable without needing to become a server admin."
+      },
+      "tiredOfSlow": {
+        "title": "Anyone tired of slow WordPress",
+        "description": "Your current WordPress hosting is slow, breaks during updates, or feels like more trouble than it's worth. You want it to actually feel professional."
+      }
+    },
+    "pricing": {
+      "title": "Honest pricing, no surprises",
+      "description": "Start small, scale when ready. All prices include everything listed—no hidden fees.",
+      "note": "All plans include free SSL, daily backups, automatic WordPress core updates, and migration assistance. No setup fees, no surprise charges.",
+      "mostPopular": "Most Popular",
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "description": "Perfect for new sites",
+          "price": "$7.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Choose Starter"
+        },
+        "professional": {
+          "name": "Professional",
+          "description": "For growing businesses",
+          "price": "$14.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Choose Professional"
+        },
+        "business": {
+          "name": "Business",
+          "description": "For high-traffic sites",
+          "price": "$29.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Choose Business"
+        }
+      },
+      "features": {
+        "starter": [
+          "15 GB SSD storage",
+          "1 WordPress site",
+          "Automatic WordPress updates",
+          "Built-in caching",
+          "Daily backups"
+        ],
+        "professional": [
+          "40 GB SSD storage",
+          "5 WordPress sites",
+          "Everything in Starter",
+          "Advanced caching & CDN",
+          "Staging environment",
+          "Priority support"
+        ],
+        "business": [
+          "100 GB SSD storage",
+          "Unlimited WordPress sites",
+          "Everything in Professional",
+          "Dedicated resources",
+          "White-label option",
+          "24/7 priority support"
+        ]
+      }
+    },
+    "whatYouGet": {
+      "title": "What's included with every plan",
+      "description": "These aren't add-ons or upsells—they're standard with all WordPress hosting plans.",
+      "autoUpdates": {
+        "title": "Automatic updates",
+        "description": "WordPress core updates happen automatically in the background. No more logging in to see security warnings."
+      },
+      "caching": {
+        "title": "Built-in caching",
+        "description": "Server-level caching makes your WordPress site load faster without installing extra plugins or configuring anything."
+      },
+      "security": {
+        "title": "WordPress-specific security",
+        "description": "Protection against common WordPress attacks, malware scanning, and firewall rules tuned specifically for WordPress."
+      },
+      "backups": {
+        "title": "Daily backups",
+        "description": "Your entire WordPress site is backed up daily. If something breaks, we can restore it in minutes."
+      },
+      "staging": {
+        "title": "Staging environment",
+        "description": "Test changes, try new plugins, and experiment safely before pushing anything live. One click to create, one click to publish."
+      },
+      "migration": {
+        "title": "Free migration",
+        "description": "Moving from another host? We'll migrate your WordPress site for free—no downtime, no data loss."
+      }
+    },
+    "faq": {
+      "title": "Questions about WordPress hosting",
+      "description": "Clear answers, no technical jargon",
+      "items": [
+        {
+          "question": "Is this shared hosting or something else?",
+          "answer": "This is not shared hosting. We provide dedicated resources for each WordPress site, ensuring faster performance and better security without the drawbacks of shared hosting environments."
+        },
+        {
+          "question": "Will you migrate my site for free?",
+          "answer": "Yes. We'll move your WordPress site from your current host to ours at no charge. Just open a support ticket with your current hosting details, and we'll handle the technical work. Your site stays online during the migration, and we test everything before switching it over."
+        },
+        {
+          "question": "Can I use any WordPress theme or plugin?",
+          "answer": "Yes. This is full WordPress hosting—you can install any theme, plugin, or customization you want. There are no restrictions on what you can build or how you build it. If it works on WordPress, it works on our hosting."
+        },
+        {
+          "question": "What if I outgrow my plan?",
+          "answer": "You can upgrade anytime with one click. No migration needed—your site stays exactly where it is, just with more resources. We'll prorate the difference so you only pay for what you use. And if you're not sure which plan to pick, reach out. We'd rather help you choose the right one than upsell you on something you don't need yet."
+        },
+        {
+          "question": "Do you help if something breaks?",
+          "answer": "Yes. If it's a server issue or something on our end, we'll fix it immediately. If it's a WordPress issue (like a plugin conflict or theme problem), we'll help diagnose it and point you in the right direction—even if it's technically outside our scope. We're not going to leave you hanging with a broken site."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to get your WordPress site online?",
+      "description": "Pick the plan that fits your needs, or reach out if you'd like help deciding.",
+      "choosePlan": "Choose a plan",
+      "talkToSupport": "Talk to support"
+    }
+  },
+  "joomla": {
+    "hero": {
+      "title": "Joomla Hosting built specifically for Joomla",
+      "description": "Pre-configured, optimized, and tested with Joomla. You get the performance and reliability Joomla needs without guesswork or extra setup.",
+      "imageAlt": "Web developer working on Joomla site in professional setup",
+      "viewPlans": "View plans",
+      "talkToUs": "Talk to us first"
+    },
+    "whoIsFor": {
+      "title": "Who Joomla hosting is for",
+      "description": "If you're building with Joomla, this hosting is configured specifically for it.",
+      "agencies": {
+        "title": "Agencies and developers",
+        "description": "You build Joomla sites for clients and need reliable hosting that's already set up correctly—no trial and error, just consistent performance."
+      },
+      "organizations": {
+        "title": "Organizations using Joomla",
+        "description": "You've chosen Joomla for its flexibility and need hosting that supports it properly—right PHP versions, database optimization, and Joomla-specific security."
+      },
+      "frustrated": {
+        "title": "Frustrated with generic hosting",
+        "description": "Your Joomla site is slow or unstable on generic hosting. You want hosting built for Joomla's specific requirements."
+      }
+    },
+    "pricing": {
+      "title": "Honest pricing, no surprises",
+      "description": "Start small, scale when ready. All prices include everything listed—no hidden fees.",
+      "note": "All plans include free SSL, daily backups, one-click Joomla installation, and migration assistance. No setup fees, no surprise charges.",
+      "mostPopular": "Most Popular",
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "description": "Perfect for new sites",
+          "price": "$8.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Choose Starter"
+        },
+        "professional": {
+          "name": "Professional",
+          "description": "For growing sites",
+          "price": "$16.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Choose Professional"
+        },
+        "business": {
+          "name": "Business",
+          "description": "For high-traffic sites",
+          "price": "$32.99",
+          "pricePeriod": "/month",
+          "renewalNote": "Renews at same price",
+          "actionLabel": "Choose Business"
+        }
+      },
+      "features": {
+        "starter": [
+          "20 GB SSD storage",
+          "1 Joomla site",
+          "Pre-configured PHP for Joomla",
+          "Optimized database settings",
+          "Daily backups"
+        ],
+        "professional": [
+          "50 GB SSD storage",
+          "5 Joomla sites",
+          "Everything in Starter",
+          "Advanced caching & CDN",
+          "Staging environment",
+          "Priority support"
+        ],
+        "business": [
+          "120 GB SSD storage",
+          "Unlimited Joomla sites",
+          "Everything in Professional",
+          "Dedicated resources",
+          "White-label option",
+          "24/7 priority support"
+        ]
+      }
+    },
+    "whatYouGet": {
+      "title": "What's included with every plan",
+      "description": "These aren't add-ons or upsells—they're standard with all Joomla hosting plans.",
+      "preConfigured": {
+        "title": "Pre-configured for Joomla",
+        "description": "Right PHP version, optimized database settings, and required extensions already installed and tested."
+      },
+      "oneClick": {
+        "title": "One-click Joomla install",
+        "description": "Install Joomla in seconds with our pre-configured installer. No manual setup, no technical knowledge needed."
+      },
+      "security": {
+        "title": "Joomla-specific security",
+        "description": "Protection against common Joomla attacks, malware scanning, and firewall rules configured for Joomla."
+      },
+      "performance": {
+        "title": "Performance optimization",
+        "description": "Server-level caching and database optimization specifically tuned for Joomla's architecture."
+      },
+      "backups": {
+        "title": "Daily backups",
+        "description": "Your entire Joomla site is backed up daily. If something breaks, we can restore it in minutes."
+      },
+      "migration": {
+        "title": "Free migration",
+        "description": "Moving from another host? We'll migrate your Joomla site for free—no downtime, no data loss."
+      }
+    },
+    "faq": {
+      "title": "Questions about Joomla hosting",
+      "description": "Clear answers, no technical jargon",
+      "items": [
+        {
+          "question": "What makes this different from regular hosting?",
+          "answer": "Regular hosting is generic. Joomla hosting is pre-configured with the right PHP versions, database optimization, required extensions, and Joomla-specific security settings. We've already done the technical setup and testing so Joomla runs properly from day one."
+        },
+        {
+          "question": "Will you migrate my Joomla site for free?",
+          "answer": "Yes. We'll move your Joomla site from your current host at no charge. Just open a support ticket with your current hosting details, and we'll handle everything. Your site stays online during migration, and we test it thoroughly before switching over."
+        },
+        {
+          "question": "Can I use any Joomla template or extension?",
+          "answer": "Yes. This is full Joomla hosting—you can install any template, extension, or customization you need. There are no restrictions. If it works with Joomla, it works on our hosting."
+        },
+        {
+          "question": "What if I outgrow my plan?",
+          "answer": "You can upgrade anytime with one click. Your site stays exactly where it is, just with more resources. We'll prorate the difference so you only pay for what you use. If you're not sure which plan fits, reach out—we'd rather help you pick the right one than oversell you."
+        },
+        {
+          "question": "Do you help if something breaks?",
+          "answer": "Yes. If it's a server or hosting issue, we'll fix it immediately. If it's a Joomla issue (like an extension conflict), we'll help diagnose it and guide you through the fix—even if it's technically outside our scope. We're not going to leave you with a broken site."
+        },
+        {
+          "question": "Will this work with my existing Joomla extensions?",
+          "answer": "Yes, this Joomla hosting plan is compatible with your existing Joomla extensions. Our platform is designed to support all Joomla extensions seamlessly."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to get your Joomla site online?",
+      "description": "Pick the plan that fits your needs, or reach out if you'd like help deciding.",
+      "choosePlan": "Choose a plan",
+      "talkToSupport": "Talk to support"
+    }
+  }
+}

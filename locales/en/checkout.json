@@ -1,0 +1,67 @@
+{
+  "backToCart": "Back to cart",
+  "title": "Complete your order",
+  "description": "Just a few details and you're all set. Take your time.",
+  "yourDetails": {
+    "title": "Your details",
+    "description": "We'll use this to set up your account and send updates.",
+    "email": {
+      "label": "Email address",
+      "placeholder": "your@email.com",
+      "hint": "You'll receive order confirmation and account access here"
+    },
+    "firstName": {
+      "label": "First name",
+      "placeholder": "John"
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": "Doe"
+    }
+  },
+  "paymentMethod": {
+    "title": "Payment method",
+    "description": "All transactions are secure and encrypted.",
+    "card": "Credit or debit card",
+    "bank": "Bank transfer (EFT)",
+    "cardNumber": {
+      "label": "Card number",
+      "placeholder": "1234 5678 9012 3456"
+    },
+    "expiry": {
+      "label": "Expiry date",
+      "placeholder": "MM/YY"
+    },
+    "cvv": {
+      "label": "CVV",
+      "placeholder": "123"
+    },
+    "securePayment": "Your payment information is encrypted and secure",
+    "bankTransfer": {
+      "title": "Bank transfer details will be provided after checkout.",
+      "description": "Complete your order and we'll email you our bank account details. Your services will be activated once we receive your payment (usually within 1-2 business days).",
+      "noFees": "No extra fees. Just transfer the exact amount shown."
+    }
+  },
+  "orderSummary": "Order summary",
+  "subtotal": "Subtotal",
+  "setupFees": "Setup fees",
+  "totalToday": "Total today",
+  "renewsAt": "Renews at ${{price}}/{{period}}",
+  "legal": {
+    "agree": "By completing this purchase, you agree to our",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "dataProtection": "Your data is protected and never shared with third parties for marketing."
+  },
+  "errors": {
+    "email": "Please enter a valid email address",
+    "emailRequired": "Email is required",
+    "firstName": "First name is required",
+    "lastName": "Last name is required",
+    "cardNumber": "Please enter a valid card number",
+    "expiry": "Please enter expiry as MM/YY",
+    "cvv": "Please enter CVV"
+  }
+}

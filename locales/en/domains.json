@@ -1,0 +1,78 @@
+{
+  "search": {
+    "title": "Find your perfect domain name",
+    "description": "Your domain is more than just an address. It's how customers find you, remember you, and trust you. Let's find one that feels right.",
+    "inputLabel": "Domain name search",
+    "searchPlaceholder": "Enter your ideal domain name...",
+    "searchButton": "Search",
+    "searching": "Searching...",
+    "searchHint": "Not sure what to search for? Try your business name, your idea, or even just a word you like.",
+    "instantCheck": "Instant availability check",
+    "freeWhois": "Free WHOIS privacy",
+    "imageAlt": "Founder brainstorming domain name ideas",
+    "resultsTitle": "Results for \"{{query}}\"",
+    "resultsDescription": "{{available}} domains available out of {{total}} checked",
+    "availableDomains": "Available Domains",
+    "unavailable": "Unavailable",
+    "noMatches": "No exact matches available, but check out the suggestions below!",
+    "popular": "Popular",
+    "renewsAt": "Renews at {{price}}",
+    "firstYear": "first year",
+    "addToCart": "Add to Cart",
+    "alreadyRegistered": "Already registered",
+    "notAvailable": "Not Available",
+    "popularExtensions": {
+      "title": "Popular domain extensions",
+      "description": "Start with the most trusted extensions that customers recognize",
+      "searchExtension": "Search {{ext}}"
+    },
+    "rightName": {
+      "title": "The right name changes everything",
+      "paragraph1": "We've seen founders spend weeks agonizing over the perfect domain. And we've seen others find it in minutes.",
+      "paragraph2": "The difference? Having the right tools and guidance. Our search helps you explore options you might not have considered.",
+      "smartSuggestions": {
+        "title": "Smart suggestions",
+        "description": "We'll suggest alternatives if your first choice is taken"
+      },
+      "multipleExtensions": {
+        "title": "Multiple extensions",
+        "description": "See availability across all major TLDs at once"
+      },
+      "imageAlt": "Person excited about finding the perfect domain name"
+    }
+  },
+  "overview": {
+    "hero": {
+      "title": "Your name on the internet",
+      "description": "A domain isn't just an address. It's the first time your idea becomes real. We make that moment calm, clear, and completely yours.",
+      "searchPlaceholder": "Search for your domain...",
+      "searchButton": "Search",
+      "additionalInfo": "You fully own your domain. Transfer anytime. No lock-in.",
+      "icannAccredited": "ICANN accredited",
+      "freeWhoisPrivacy": "Free WHOIS privacy",
+      "transparentRenewal": "Transparent renewal pricing",
+      "imageAlt": "Founder choosing their domain name"
+    },
+    "whyMatters": {
+      "title": "Why a domain matters",
+      "description": "It's more than a URL. It's the foundation of everything you'll build.",
+      "identity": {
+        "title": "It's your identity",
+        "description": "Before you have a website, before you have customers — you have a name. A domain makes that name permanent and yours."
+      },
+      "credibility": {
+        "title": "It builds credibility",
+        "description": "People trust businesses with their own domain. It shows you're serious, established, and here to stay."
+      },
+      "asset": {
+        "title": "It's a long-term asset",
+        "description": "Your domain grows with you. It accumulates SEO, recognition, and value. It's an investment in your future."
+      },
+      "imageAlt": "Entrepreneur planning their online presence"
+    },
+    "findDomain": {
+      "title": "Find your domain.\nBuild something that matters.",
+      "description": "Your idea deserves a name. Let's find it together."
+    }
+  }
+}

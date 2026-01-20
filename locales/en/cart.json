@@ -1,0 +1,56 @@
+{
+  "title": "Your cart",
+  "description": "Review your items. You can change or remove anything before checkout.",
+  "empty": {
+    "title": "Your cart is empty",
+    "description": "Start adding items to see them here.",
+    "browseButton": "Browse products"
+  },
+  "removeItem": "Remove item",
+  "price": "Price",
+  "edit": "Edit",
+  "orderSummary": "Order summary",
+  "coupon": {
+    "label": "Have a coupon code?",
+    "placeholder": "Enter code",
+    "apply": "Apply",
+    "applying": "...",
+    "remove": "Remove",
+    "discount": "{{discount}}% off"
+  },
+  "subtotal": "Subtotal",
+  "discount": "Discount ({{discount}}%)",
+  "setupFees": "Setup fees",
+  "totalToday": "Total today",
+  "continueToCheckout": "Continue to checkout",
+  "keepBrowsing": "Keep browsing",
+  "guarantees": {
+    "changeCancel": "You can change or cancel anytime during checkout",
+    "noSurprises": "No surprise charges. Clear pricing, always",
+    "secureCheckout": "Secure checkout with multiple payment options"
+  },
+  "errors": {
+    "enterCoupon": "Please enter a coupon code",
+    "invalidCoupon": "Invalid coupon code. Please try again."
+  },
+  "itemTypes": {
+    "domain": "Domain",
+    "ssl": "SSL Certificate",
+    "item": "Item"
+  },
+  "periods": {
+    "year": "year",
+    "years": "years",
+    "month": "month",
+    "months": "months"
+  },
+  "descriptions": {
+    "domain": "{{period}} registration • Renews at ${{price}}/year",
+    "hosting": "{{period}} billing{{addons}}",
+    "ssl": "Annual certificate • Auto-renewal reminders"
+  },
+  "addons": {
+    "dailyBackups": "Daily backups",
+    "prioritySupport": "Priority support"
+  }
+}

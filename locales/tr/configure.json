@@ -1,0 +1,102 @@
+{
+  "hosting": {
+    "back": "Geri",
+    "steps": {
+      "configure": "Yapılandır",
+      "reviewCheckout": "İncele ve öde"
+    },
+    "title": "Hosting planınızı yapılandırın",
+    "description": "Hosting planınızı kuralım. Daha sonra her zaman değiştirebilirsiniz.",
+    "selectedPlan": {
+      "title": "Seçtiğiniz plan",
+      "description": "Başlamak için ihtiyacınız olan her şeyle hızlı, güvenilir hosting."
+    },
+    "billingCycle": {
+      "title": "Faturalandırma döngünüzü seçin",
+      "description": "Daha uzun süreler = daha iyi değer. Daha sonra değiştirebilirsiniz.",
+      "oneMonth": "1 ay",
+      "twelveMonths": "12 ay",
+      "twentyFourMonths": "24 ay",
+      "save": "{{months}} ay tasarruf edin",
+      "perMonth": "/ay"
+    },
+    "addons": {
+      "title": "İsteğe bağlı eklentiler",
+      "description": "Bunlar tamamen isteğe bağlıdır. İhtiyacınız yoksa atlayın.",
+      "backups": {
+        "label": "Günlük otomatik yedeklemeler",
+        "description": "Siteniz her gün yedeklenir. Bir şeyler ters giderse istediğiniz zaman geri yükleyin."
+      },
+      "priority": {
+        "label": "Öncelikli destek",
+        "description": "Kuyruğu atlayın. İhtiyacınız olduğunda daha hızlı yardım alın."
+      }
+    },
+    "included": {
+      "title": "Planınızla dahil",
+      "storage": "NVMe SSD depolama (hızlı ve güvenilir)",
+      "ssl": "Ücretsiz SSL sertifikası (siteniz güvende kalır)",
+      "support": "7/24 destek (gerçek insanlar, botlar değil)",
+      "uptime": "%99.9 uptime garantisi (siteniz çevrimiçi kalır)"
+    },
+    "total": {
+      "title": "Bugün toplam",
+      "forMonths": "{{months}} {{monthLabel}} için",
+      "month": "ay",
+      "months": "ay",
+      "perMonth": "/ay"
+    },
+    "addToCart": {
+      "adding": "Sepete ekleniyor...",
+      "label": "Hosting'i sepete ekle"
+    },
+    "note": "Ödeme yapmadan önce her şeyi inceleyebilirsiniz. Henüz taahhüt yok."
+  },
+  "ssl": {
+    "back": "Geri",
+    "steps": {
+      "configure": "Yapılandır",
+      "reviewCheckout": "İncele ve öde"
+    },
+    "title": "SSL sertifikanızı yapılandırın",
+    "description": "Sitenizi koruyun ve ziyaretçilerinizle güven oluşturun.",
+    "certificate": {
+      "title": "SSL sertifikanız"
+    },
+    "protects": {
+      "title": "Bu neyi korur",
+      "encrypted": {
+        "title": "Şifreli bağlantılar",
+        "description": "Siteniz ve ziyaretçileriniz arasındaki tüm veriler şifrelenir. Kimse araya giremez."
+      },
+      "trust": {
+        "title": "Tarayıcı güven göstergeleri",
+        "description": "Ziyaretçiler kilit simgesini görür. Siteniz profesyonel ve güvenilir görünür."
+      },
+      "seo": {
+        "title": "SEO faydaları",
+        "description": "Google HTTPS sitelerini daha yüksek sıralar. SSL görünürlüğünüze yardımcı olur."
+      }
+    },
+    "process": {
+      "title": "Yapmanız gerekenler",
+      "description": "SSL'i basit hale getiriyoruz. İşte süreç:",
+      "step1": "Sertifikayı hosting'inize otomatik olarak kuracağız",
+      "step2": "Siteniz otomatik olarak HTTPS'e yönlendirilecek",
+      "step3": "Yenileme hatırlatmalarını biz hallederiz, böylece asla süresi dolmaz"
+    },
+    "important": {
+      "text": "Önemli: SSL sertifikaları yıllıktır. Her yıl aynı fiyattan yenileyeceksiniz. Size çok önceden hatırlatacağız ve yenileme tek tıklamayla."
+    },
+    "total": {
+      "title": "Bugün toplam",
+      "annual": "Yıllık sertifika",
+      "perYear": "Yıllık"
+    },
+    "addToCart": {
+      "adding": "Sepete ekleniyor...",
+      "label": "SSL'i sepete ekle"
+    },
+    "note": "Ödeme yapmadan önce her şeyi inceleyebilirsiniz. Henüz taahhüt yok."
+  }
+}

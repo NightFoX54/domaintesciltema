@@ -1,0 +1,361 @@
+"use client"
+
+import Link from "next/link"
+import { Zap, Check, Shield, Database, Gauge, Users } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
+import { useTranslation } from "@/lib/i18n"
+
+export default function WordPressHostingPage() {
+  const { t } = useTranslation('hosting')
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <SiteHeader />
+
+      <main id="main-content">
+
+      {/* Hero Section */}
+      <section className="py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+            <div className="space-y-6 lg:space-y-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-balance leading-[1.05] tracking-tight">
+                {t("wordpress.hero.title")}
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground/90 leading-relaxed text-pretty max-w-lg">
+                {t("wordpress.hero.description")}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button size="lg" className="h-12 px-8 text-base shadow-md">
+                  {t("wordpress.hero.viewPlans")}
+                </Button>
+                <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent">
+                  {t("wordpress.hero.talkToUs")}
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/content-creator-writing-blog-post-at-organized-desk.jpg?height=600&width=800"
+                alt={t("wordpress.hero.imageAlt")}
+                className="w-full rounded-2xl shadow-2xl"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who This Is For */}
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-balance leading-[1.1]">
+              {t("wordpress.whoIsFor.title")}
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {t("wordpress.whoIsFor.description")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden="true">
+                <Zap className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{t("wordpress.whoIsFor.bloggers.title")}</h3>
+              <p className="text-[15px] text-muted-foreground leading-relaxed">
+                {t("wordpress.whoIsFor.bloggers.description")}
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden="true">
+                <Users className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{t("wordpress.whoIsFor.smallBusiness.title")}</h3>
+              <p className="text-[15px] text-muted-foreground leading-relaxed">
+                {t("wordpress.whoIsFor.smallBusiness.description")}
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6" aria-hidden="true">
+                <Shield className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{t("wordpress.whoIsFor.tiredOfSlow.title")}</h3>
+              <p className="text-[15px] text-muted-foreground leading-relaxed">
+                {t("wordpress.whoIsFor.tiredOfSlow.description")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-balance leading-[1.1]">
+              {t("wordpress.pricing.title")}
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {t("wordpress.pricing.description")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Starter Plan */}
+            <div className="bg-card border-2 border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-2xl text-foreground mb-2">{t("wordpress.pricing.plans.starter.name")}</h3>
+                  <p className="text-muted-foreground text-sm">{t("wordpress.pricing.plans.starter.description")}</p>
+                </div>
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-bold text-foreground">{t("wordpress.pricing.plans.starter.price")}</span>
+                    <span className="text-muted-foreground">{t("wordpress.pricing.plans.starter.pricePeriod")}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2">{t("wordpress.pricing.plans.starter.renewalNote")}</p>
+                </div>
+                <ul className="space-y-3">
+                  {(t("wordpress.pricing.features.starter") as string[]).map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button className="w-full h-11 shadow-sm" asChild>
+                  <Link href="/configure/hosting?plan=starter&type=wordpress">{t("wordpress.pricing.plans.starter.actionLabel")}</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Professional Plan */}
+            <div className="bg-card border-2 border-primary rounded-2xl p-8 shadow-lg relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
+                {t("wordpress.pricing.mostPopular")}
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-2xl text-foreground mb-2">{t("wordpress.pricing.plans.professional.name")}</h3>
+                  <p className="text-muted-foreground text-sm">{t("wordpress.pricing.plans.professional.description")}</p>
+                </div>
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-bold text-foreground">{t("wordpress.pricing.plans.professional.price")}</span>
+                    <span className="text-muted-foreground">{t("wordpress.pricing.plans.professional.pricePeriod")}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2">{t("wordpress.pricing.plans.professional.renewalNote")}</p>
+                </div>
+                <ul className="space-y-3">
+                  {(t("wordpress.pricing.features.professional") as string[]).map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button className="w-full h-11 shadow-md" asChild>
+                  <Link href="/configure/hosting?plan=professional&type=wordpress">{t("wordpress.pricing.plans.professional.actionLabel")}</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Business Plan */}
+            <div className="bg-card border-2 border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-2xl text-foreground mb-2">{t("wordpress.pricing.plans.business.name")}</h3>
+                  <p className="text-muted-foreground text-sm">{t("wordpress.pricing.plans.business.description")}</p>
+                </div>
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-bold text-foreground">{t("wordpress.pricing.plans.business.price")}</span>
+                    <span className="text-muted-foreground">{t("wordpress.pricing.plans.business.pricePeriod")}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2">{t("wordpress.pricing.plans.business.renewalNote")}</p>
+                </div>
+                <ul className="space-y-3">
+                  {(t("wordpress.pricing.features.business") as string[]).map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button className="w-full h-11 shadow-sm" asChild>
+                  <Link href="/configure/hosting?plan=business&type=wordpress">{t("wordpress.pricing.plans.business.actionLabel")}</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-muted-foreground mt-12 max-w-2xl mx-auto leading-relaxed">
+            {t("wordpress.pricing.note")}
+          </p>
+        </div>
+      </section>
+
+      {/* What You Get Section */}
+      <section className="py-16 md:py-20 bg-muted/30">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
+            <h2 className="text-4xl md:text-5xl font-semibold text-balance">{t("wordpress.whatYouGet.title")}</h2>
+            <p className="text-xl text-muted-foreground/90 leading-relaxed">
+              {t("wordpress.whatYouGet.description")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <Zap className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{t("wordpress.whatYouGet.autoUpdates.title")}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t("wordpress.whatYouGet.autoUpdates.description")}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <Gauge className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{t("wordpress.whatYouGet.caching.title")}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t("wordpress.whatYouGet.caching.description")}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <Shield className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{t("wordpress.whatYouGet.security.title")}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t("wordpress.whatYouGet.security.description")}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <Database className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{t("wordpress.whatYouGet.backups.title")}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t("wordpress.whatYouGet.backups.description")}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  {/* Placeholder for icon */}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{t("wordpress.whatYouGet.staging.title")}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t("wordpress.whatYouGet.staging.description")}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  {/* Placeholder for icon */}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{t("wordpress.whatYouGet.migration.title")}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t("wordpress.whatYouGet.migration.description")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight text-balance">
+                {t("wordpress.faq.title")}
+              </h2>
+              <p className="text-lg text-muted-foreground">{t("wordpress.faq.description")}</p>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-4">
+              {(t("wordpress.faq.items") as any[]).map((item: any, index: number) => (
+                <AccordionItem
+                  key={`item-${index + 1}`}
+                  value={`item-${index + 1}`}
+                  className="bg-card border border-border rounded-xl px-6 shadow-sm data-[state=open]:shadow-md transition-shadow"
+                >
+                  <AccordionTrigger className="text-left hover:no-underline py-6">
+                    <span className="font-semibold text-lg pr-4">{item.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[15px] text-muted-foreground/90 leading-relaxed pb-6 pt-2">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 md:py-20 lg:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-balance leading-tight">
+              {t("wordpress.cta.title")}
+            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground/90 leading-relaxed text-pretty max-w-2xl mx-auto">
+              {t("wordpress.cta.description")}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Button size="lg" className="h-12 px-8 text-base shadow-md">
+                {t("wordpress.cta.choosePlan")}
+              </Button>
+              <Button size="lg" variant="outline" className="h-12 px-8 text-base bg-transparent">
+                {t("wordpress.cta.talkToSupport")}
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      </main>
+
+      {/* Footer */}
+      <SiteFooter />
+    </div>
+  )
+}

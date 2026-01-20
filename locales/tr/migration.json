@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "Sitenizi sizin için taşıyacağız.",
+    "description": "Teknik bilgi gerekmez. Kesinti yok. Stres yok. Sadece nerede olduğunu söyleyin, gerisini biz hallederiz.",
+    "requestHelp": "Taşıma yardımı isteyin",
+    "imageAlt": "Taşımanın halledildiğini bilerek stressiz çalışan kişi"
+  },
+  "whatIs": {
+    "title": "Taşıma nedir zaten?",
+    "description": "Web sitenizi şu anda nerede yaşıyorsa oradan sunucularımıza taşımaktır. Sade bir dille.",
+    "anotherHost": {
+      "title": "Başka bir barındırıcıdaysanız",
+      "description1": "Tüm dosyalarınızı, veritabanlarınızı, e-posta ayarlarınızı ve diğer her şeyi mevcut sağlayıcınızdan bizimkine kopyalıyoruz. Siteniz tüm süre boyunca canlı kalır.",
+      "description2": "İşimiz bittiğinde, bağlantıyı değiştiriyoruz böylece alan adınız bizim sunucularımıza işaret ediyor. Ziyaretçiler hiçbir şey fark etmeyecek."
+    },
+    "local": {
+      "title": "Yerel olarak geliştiriyorsanız",
+      "description1": "Yerel dosyalarınızı alıp canlı sunucularımıza kuruyoruz. Veritabanını yapılandıracağız, her şeyin düzgün bağlandığından emin olacağız ve sitenizi çevrimiçi hale getireceğiz.",
+      "description2": "Dosyaları hazırlamak için yardıma ihtiyacınız varsa, buna da rehberlik edeceğiz."
+    }
+  },
+  "weHandle": {
+    "title": "Hepsini sizin için hallediyoruz",
+    "description": "Bunların nasıl çalıştığını bilmenize gerek yok. Bu bizim işimiz.",
+    "zeroDowntime": {
+      "title": "Sıfır kesinti",
+      "description": "Siteniz tüm taşıma süresi boyunca canlı kalır. Değişikliği yapmadan önce her şeyi perde arkasında test ediyoruz."
+    },
+    "everythingIncluded": {
+      "title": "Her şey dahil",
+      "description": "Dosyalar, veritabanları, e-posta hesapları, SSL sertifikaları—hepsini taşıyoruz. Hiçbir şey geride kalmaz."
+    },
+    "fastTurnaround": {
+      "title": "Hızlı dönüş",
+      "description": "Çoğu taşıma 24-48 saat içinde tamamlanır. Karmaşık siteler biraz daha uzun sürebilir, ancak önceden size bildireceğiz."
+    }
+  },
+  "whatWeNeed": {
+    "title": "Sizden neye ihtiyacımız var",
+    "description": "Sadece birkaç bilgi parçası. Nerede olduklarından emin değilseniz, onları bulmanızda size rehberlik edeceğiz.",
+    "loginDetails": {
+      "title": "Mevcut hosting sağlayıcınızın giriş bilgileri",
+      "description": "Kontrol paneli kullanıcı adı ve şifresi veya FTP/SSH kimlik bilgileri. Bunların ne olduğunu bilmiyorsanız endişelenmeyin—onları bulmanıza yardımcı olacağız."
+    },
+    "domainAccess": {
+      "title": "Alan adı kayıt sağlayıcısı erişimi (alan adını taşıyorsanız)",
+      "description": "Alan adınızı kaydettirdiğiniz yer. Ad sunucularını veya DNS ayarlarını güncelleme konusunda size rehberlik edeceğiz."
+    },
+    "specialConfig": {
+      "title": "Özel yapılandırmalar (isteğe bağlı)",
+      "description": "Özel ayarlar, üçüncü taraf hizmetler veya kurulumunuzla ilgili benzersiz bir şey. Özel bir şey yoksa, bu tamamen sorun değil."
+    },
+    "note": "Bu bilgilerden herhangi birini bulmakta zorlanıyorsanız, bize ulaşın. Bunu binlerce kez yaptık ve ihtiyacınız olan her şeyi bulmanıza yardımcı olabiliriz."
+  },
+  "cta": {
+    "title": "Taşınmaya hazır mısınız?",
+    "description": "Siteniz hakkında bize bilgi verin ve başlayalım. Tüm süreç ücretsizdir ve her adımda sizi bilgilendireceğiz.",
+    "requestFree": "Ücretsiz taşıma isteyin"
+  }
+}

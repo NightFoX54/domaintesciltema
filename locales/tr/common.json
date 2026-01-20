@@ -1,0 +1,134 @@
+{
+  "language": {
+    "switcher": "Dili değiştir"
+  },
+  "nav": {
+    "domains": "Alan Adları",
+    "hosting": "Hosting",
+    "ssl": "SSL",
+    "support": "Destek",
+    "contact": "İletişim",
+    "signIn": "Giriş Yap",
+    "cart": "Sepet",
+    "getStarted": "Hemen Başla",
+    "dropdowns": {
+      "domains": {
+        "search": {
+          "title": "Alan Adı Arama",
+          "description": "Size en uygun alan adını bulun"
+        },
+        "transfer": {
+          "title": "Alan Adı Transferi",
+          "description": "Mevcut alan adınızı bize aktarın"
+        }
+      },
+      "hosting": {
+        "linux": {
+          "title": "Linux Hosting",
+          "description": "Hızlı, güvenilir, uygun fiyat"
+        },
+        "wordpress": {
+          "title": "WordPress Hosting",
+          "description": "Optimize, yönetimli, sorunsuz"
+        },
+        "joomla": {
+          "title": "Joomla Hosting",
+          "description": "Joomla için özel olarak hazırlanmış"
+        }
+      },
+      "ssl": {
+        "overview": {
+          "title": "SSL Sertifikaları",
+          "description": "SSL sertifikaları hakkında bilgi alın"
+        },
+        "positive": {
+          "title": "Positive SSL",
+          "description": "Kişisel siteler ve bloglar için ideal"
+        },
+        "wildcard": {
+          "title": "Wildcard SSL",
+          "description": "Sınırsız alt alan adı koruması"
+        },
+        "ev": {
+          "title": "EV SSL",
+          "description": "İşletmeler için en yüksek güvenlik"
+        }
+      },
+      "support": {
+        "help": {
+          "title": "Yardım Merkezi",
+          "description": "Kılavuzlar ve dokümantasyon"
+        },
+        "contact": {
+          "title": "Destek Ekibimizle İletişime Geçin",
+          "description": "Gerçek bir insanla konuşun, bot değil"
+        },
+        "migration": {
+          "title": "Site Taşıma Desteği",
+          "description": "Sitenizi ücretsiz olarak taşıyoruz"
+        },
+        "status": {
+          "title": "Sistem Durumu",
+          "description": "Hizmetlerimizin durumunu kontrol edin"
+        }
+      }
+    },
+    "cartItems": "ürün sepette",
+    "homeLabel": "Domain Tescil ana sayfası"
+  },
+  "footer": {
+    "tagline": "Kendine inanan girişimciler için tasarlandı. Şeffaf fiyatlandırma, gerçek insanlar ve ihtiyacınız olduğunda yanınızdayız. Karmaşık terimler yok. Baskı yok. Sadece samimi destek.",
+    "needHelp": "Yardıma mı ihtiyacınız var? Bize ulaşın",
+    "company": "Şirket",
+    "products": "Ürünler",
+    "support": "Destek",
+    "legal": "Yasal",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "domains": "Alan Adları",
+    "domainSearch": "Alan Adı Arama",
+    "domainTransfer": "Alan Adı Transferi",
+    "linuxHosting": "Linux Hosting",
+    "wordpressHosting": "WordPress Hosting",
+    "joomlaHosting": "Joomla Hosting",
+    "ssl": "SSL Sertifikaları",
+    "help": "Yardım Merkezi",
+    "migrationHelp": "Site Taşıma Desteği",
+    "contactSupport": "Destek Ekibine Ulaşın",
+    "systemStatus": "Sistem Durumu",
+    "blog": "Blog",
+    "documentation": "Dokümantasyon",
+    "terms": "Hizmet Şartları",
+    "privacy": "Gizlilik Politikası",
+    "cookies": "Çerezler",
+    "copyright": "© 2026 Domain Tescil. Kurucular için özenle inşa edildi.",
+    "allRightsReserved": "Tüm hakları saklıdır."
+  },
+  "buttons": {
+    "search": "Ara",
+    "continue": "Devam Et",
+    "cancel": "İptal",
+    "submit": "Gönder",
+    "close": "Kapat",
+    "save": "Kaydet",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "remove": "Kaldır",
+    "add": "Ekle",
+    "apply": "Uygula",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki"
+  },
+  "loading": {
+    "loading": "Yükleniyor...",
+    "processing": "İşleniyor...",
+    "pleaseWait": "Lütfen bekleyin..."
+  },
+  "errors": {
+    "required": "Bu alan zorunludur",
+    "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
+    "invalidFormat": "Geçersiz format",
+    "tryAgain": "Tekrar dene"
+  }
+}

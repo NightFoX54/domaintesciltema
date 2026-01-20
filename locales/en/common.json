@@ -1,0 +1,134 @@
+{
+  "language": {
+    "switcher": "Change language"
+  },
+  "nav": {
+    "domains": "Domains",
+    "hosting": "Hosting",
+    "ssl": "SSL",
+    "support": "Support",
+    "contact": "Contact",
+    "signIn": "Sign in",
+    "cart": "Cart",
+    "getStarted": "Get started",
+    "dropdowns": {
+      "domains": {
+        "search": {
+          "title": "Domain Search",
+          "description": "Find your perfect domain name"
+        },
+        "transfer": {
+          "title": "Domain Transfer",
+          "description": "Move your domain to us easily"
+        }
+      },
+      "hosting": {
+        "linux": {
+          "title": "Linux Hosting",
+          "description": "Fast, reliable, and affordable"
+        },
+        "wordpress": {
+          "title": "WordPress Hosting",
+          "description": "Optimized, managed, worry-free"
+        },
+        "joomla": {
+          "title": "Joomla Hosting",
+          "description": "Purpose-built for Joomla sites"
+        }
+      },
+      "ssl": {
+        "overview": {
+          "title": "SSL Overview",
+          "description": "Learn about SSL certificates"
+        },
+        "positive": {
+          "title": "Positive SSL",
+          "description": "For personal sites and blogs"
+        },
+        "wildcard": {
+          "title": "Wildcard SSL",
+          "description": "For unlimited subdomains"
+        },
+        "ev": {
+          "title": "EV SSL",
+          "description": "Maximum trust for businesses"
+        }
+      },
+      "support": {
+        "help": {
+          "title": "Help Center",
+          "description": "Guides and documentation"
+        },
+        "contact": {
+          "title": "Contact Support",
+          "description": "Talk to a real human"
+        },
+        "migration": {
+          "title": "Migration Help",
+          "description": "We'll move your site for free"
+        },
+        "status": {
+          "title": "System Status",
+          "description": "Check service availability"
+        }
+      }
+    },
+    "cartItems": "items in cart",
+    "homeLabel": "Domain Tescil home"
+  },
+  "footer": {
+    "tagline": "Built for founders who bet on themselves. Clear pricing, real humans, and support when you need it most. No jargon. No pressure. Just help.",
+    "needHelp": "Need help? Talk to us",
+    "company": "Company",
+    "products": "Products",
+    "support": "Support",
+    "legal": "Legal",
+    "about": "About Us",
+    "contact": "Contact",
+    "domains": "Domains",
+    "domainSearch": "Domain Search",
+    "domainTransfer": "Domain Transfer",
+    "linuxHosting": "Linux Hosting",
+    "wordpressHosting": "WordPress Hosting",
+    "joomlaHosting": "Joomla Hosting",
+    "ssl": "SSL Certificates",
+    "help": "Help Center",
+    "migrationHelp": "Migration Help",
+    "contactSupport": "Contact Support",
+    "systemStatus": "System Status",
+    "blog": "Blog",
+    "documentation": "Documentation",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies",
+    "copyright": "© 2026 Domain Tescil. Built with care for founders.",
+    "allRightsReserved": "All rights reserved."
+  },
+  "buttons": {
+    "search": "Search",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "close": "Close",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "remove": "Remove",
+    "add": "Add",
+    "apply": "Apply",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "loading": {
+    "loading": "Loading...",
+    "processing": "Processing...",
+    "pleaseWait": "Please wait..."
+  },
+  "errors": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidFormat": "Invalid format",
+    "tryAgain": "Try again"
+  }
+}

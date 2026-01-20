@@ -1,0 +1,102 @@
+{
+  "hosting": {
+    "back": "Back",
+    "steps": {
+      "configure": "Configure",
+      "reviewCheckout": "Review & checkout"
+    },
+    "title": "Configure your hosting",
+    "description": "Let's set up your hosting plan. You can always change this later.",
+    "selectedPlan": {
+      "title": "Your selected plan",
+      "description": "Fast, reliable hosting with everything you need to get started."
+    },
+    "billingCycle": {
+      "title": "Choose your billing cycle",
+      "description": "Longer terms = better value. You can change later.",
+      "oneMonth": "1 month",
+      "twelveMonths": "12 months",
+      "twentyFourMonths": "24 months",
+      "save": "Save {{months}} months",
+      "perMonth": "/mo"
+    },
+    "addons": {
+      "title": "Optional add-ons",
+      "description": "These are completely optional. Skip if you don't need them.",
+      "backups": {
+        "label": "Daily automated backups",
+        "description": "Your site backed up every day. Restore anytime if something goes wrong."
+      },
+      "priority": {
+        "label": "Priority support",
+        "description": "Skip the queue. Get help faster when you need it."
+      }
+    },
+    "included": {
+      "title": "Included with your plan",
+      "storage": "NVMe SSD storage (fast and reliable)",
+      "ssl": "Free SSL certificate (your site stays secure)",
+      "support": "24/7 support (real humans, not bots)",
+      "uptime": "99.9% uptime guarantee (your site stays online)"
+    },
+    "total": {
+      "title": "Total today",
+      "forMonths": "For {{months}} {{monthLabel}}",
+      "month": "month",
+      "months": "months",
+      "perMonth": "/month"
+    },
+    "addToCart": {
+      "adding": "Adding to cart...",
+      "label": "Add hosting to cart"
+    },
+    "note": "You can review everything before checkout. No commitment yet."
+  },
+  "ssl": {
+    "back": "Back",
+    "steps": {
+      "configure": "Configure",
+      "reviewCheckout": "Review & checkout"
+    },
+    "title": "Configure your SSL certificate",
+    "description": "Protect your site and build trust with your visitors.",
+    "certificate": {
+      "title": "Your SSL certificate"
+    },
+    "protects": {
+      "title": "What this protects",
+      "encrypted": {
+        "title": "Encrypted connections",
+        "description": "All data between your site and visitors is encrypted. No one can intercept it."
+      },
+      "trust": {
+        "title": "Browser trust indicators",
+        "description": "Visitors see the padlock icon. Your site looks professional and trustworthy."
+      },
+      "seo": {
+        "title": "SEO benefits",
+        "description": "Google ranks HTTPS sites higher. SSL helps your visibility."
+      }
+    },
+    "process": {
+      "title": "What you need to do",
+      "description": "We make SSL simple. Here's the process:",
+      "step1": "We'll install the certificate on your hosting automatically",
+      "step2": "Your site will automatically redirect to HTTPS",
+      "step3": "We'll handle renewal reminders so you never expire"
+    },
+    "important": {
+      "text": "Important: SSL certificates are annual. You'll renew each year at the same price. We'll remind you well in advance, and renewal is one click."
+    },
+    "total": {
+      "title": "Total today",
+      "annual": "Annual certificate",
+      "perYear": "Per year"
+    },
+    "addToCart": {
+      "adding": "Adding to cart...",
+      "label": "Add SSL to cart"
+    },
+    "note": "You can review everything before checkout. No commitment yet."
+  }
+}

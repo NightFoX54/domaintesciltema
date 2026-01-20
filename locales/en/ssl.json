@@ -1,0 +1,417 @@
+{
+  "overview": {
+    "hero": {
+      "title": "Your visitors deserve to feel safe",
+      "description": "SSL certificates aren't just about technical security. They're about showing your visitors that you care about protecting their information. It's a quiet signal of professionalism and trustworthiness.",
+      "imageAlt": "Person working confidently on their website",
+      "seeOptions": "See SSL options",
+      "notSure": "Not sure which you need?"
+    },
+    "types": {
+      "title": "Choose the right SSL for your needs",
+      "description": "We offer three types of SSL certificates. Each one provides security, but they differ in scope and verification level.",
+      "positive": {
+        "title": "Positive SSL",
+        "price": "$49",
+        "pricePeriod": "/year",
+        "description": "Perfect for personal sites, blogs, and portfolios. Covers one domain.",
+        "features": [
+          "Secures one domain",
+          "Shows padlock icon",
+          "Domain validation",
+          "Quick setup"
+        ],
+        "actionLabel": "Learn more"
+      },
+      "wildcard": {
+        "title": "Wildcard SSL",
+        "price": "$149",
+        "pricePeriod": "/year",
+        "description": "For growing businesses with multiple subdomains. One certificate covers them all.",
+        "features": [
+          "Unlimited subdomains",
+          "Cost-effective scaling",
+          "Domain validation",
+          "Easier management"
+        ],
+        "actionLabel": "Learn more"
+      },
+      "ev": {
+        "title": "EV SSL",
+        "price": "$299",
+        "pricePeriod": "/year",
+        "description": "Maximum trust for e-commerce and organizations. Shows your company name in the address bar.",
+        "features": [
+          "Extended validation",
+          "Company name visible",
+          "Highest trust signal",
+          "Identity verification"
+        ],
+        "actionLabel": "Learn more"
+      }
+    },
+    "whatSSLDoes": {
+      "title": "What SSL actually does",
+      "description": "In plain language, here's what happens when you have an SSL certificate on your website.",
+      "encrypts": {
+        "title": "Encrypts information",
+        "description": "When someone fills out a form or logs into your site, SSL encrypts that data so it can't be read by anyone else along the way. It's like sealing a letter in an envelope."
+      },
+      "verified": {
+        "title": "Shows you're verified",
+        "description": "SSL certificates verify that your website is actually yours. Visitors see the padlock icon in their browser, which tells them they're on a legitimate, secure site."
+      },
+      "seo": {
+        "title": "Helps with search rankings",
+        "description": "Google and other search engines favor secure sites. An SSL certificate can help your site rank better in search results. It's become a standard expectation."
+      }
+    },
+    "whenYouNeed": {
+      "title": "When you need SSL",
+      "description": "Here are real situations where SSL matters. If any of these sound like you, you need an SSL certificate.",
+      "contactForm": {
+        "title": "You have a contact form",
+        "description": "Even simple contact forms should be secure. When someone shares their email or phone number with you, they trust you to protect it."
+      },
+      "sellOnline": {
+        "title": "You sell anything online",
+        "description": "If you accept payments, process orders, or handle customer accounts, SSL is non-negotiable. It's essential for protecting financial and personal data."
+      },
+      "userLogins": {
+        "title": "You have user logins",
+        "description": "Any site where people create accounts and log in needs SSL. Passwords and user data should always be encrypted during transmission."
+      },
+      "professional": {
+        "title": "You want to look professional",
+        "description": "Browsers now warn visitors when a site isn't secure. That warning can hurt your credibility before anyone even reads your content."
+      }
+    },
+    "notSure": {
+      "title": "Not sure which SSL you need?",
+      "description": "That's completely normal. SSL certificates can be confusing, and we'd rather you make the right choice than rush into the wrong one. Talk to us, and we'll help you figure it out.",
+      "talkToSupport": "Talk to support",
+      "readFAQ": "Read the FAQ"
+    },
+    "faq": {
+      "title": "Common questions about SSL",
+      "description": "These are the questions we hear most often. If yours isn't here, just ask us.",
+      "items": [
+        {
+          "question": "Do I really need SSL if I'm just starting out?",
+          "answer": "Yes, even from day one. Browsers now show \"Not Secure\" warnings on sites without SSL, which can scare away visitors before they even see your content. Plus, SSL is now a standard expectation, not a luxury feature. Starting with SSL from the beginning is easier than adding it later."
+        },
+        {
+          "question": "Will adding SSL break my existing site?",
+          "answer": "No. SSL doesn't change how your site works—it just encrypts the connection. We help you install it properly, and most modern hosting platforms make the transition smooth. If you run into issues, we're here to help troubleshoot."
+        },
+        {
+          "question": "How long does it take to set up?",
+          "answer": "For Positive SSL and Wildcard SSL, setup usually takes a few minutes to a few hours. Extended Validation (EV) SSL takes longer because it involves verifying your organization's identity, which can take 1-3 business days. We guide you through every step."
+        },
+        {
+          "question": "What happens when my SSL certificate expires?",
+          "answer": "We'll send you reminders before your certificate expires so you can renew it on time. If it does expire, visitors will see a security warning when they try to access your site. Renewing is simple, and we make sure you don't forget."
+        },
+        {
+          "question": "Can I upgrade from one SSL type to another later?",
+          "answer": "Absolutely. Many people start with Positive SSL and upgrade to Wildcard or EV as their business grows. You're never locked into one choice. We make upgrading straightforward when you're ready."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to secure your site?",
+      "description": "We'll help you choose the right SSL certificate and get it installed properly. No pressure, no confusing jargon.",
+      "primary": "Start with Positive SSL",
+      "secondary": "Talk to us first"
+    }
+  },
+  "positive": {
+    "hero": {
+      "badge": "For personal sites and blogs",
+      "title": "Positive SSL",
+      "description": "Simple, affordable security for your personal website, blog, or portfolio. Show visitors the padlock icon and let them know your site is safe to browse.",
+      "imageAlt": "Person working on their personal website",
+      "seePricing": "See pricing",
+      "whatYouGet": "What you get"
+    },
+    "pricing": {
+      "title": "Simple, transparent pricing",
+      "description": "One price for one year of protection. Renews at the same rate.",
+      "price": "$49",
+      "pricePeriod": "per year",
+      "renewalNote": "Renews at $49/year. You'll receive reminders before it expires so you can renew on time.",
+      "actionLabel": "Get Positive SSL",
+      "features": [
+        "Valid for one year",
+        "Covers one domain",
+        "Quick domain validation",
+        "Free reissues if needed",
+        "Setup support included"
+      ]
+    },
+    "whoIsFor": {
+      "title": "Who this is for",
+      "description": "Positive SSL is perfect if you're running a straightforward website with one domain.",
+      "personal": {
+        "title": "Personal blogs and portfolios",
+        "description": "If you're sharing your thoughts, showcasing your work, or building your personal brand, Positive SSL gives you the security badge you need without any complexity."
+      },
+      "smallBusiness": {
+        "title": "Small business websites",
+        "description": "If you have a single domain and a contact form, this is all you need. Your visitors will see that your site is secure, and you'll avoid browser warnings."
+      },
+      "information": {
+        "title": "Information sites",
+        "description": "Even if you're not collecting sensitive data, SSL shows professionalism and helps with SEO. It's become a standard expectation for any legitimate website."
+      },
+      "testing": {
+        "title": "Testing and development",
+        "description": "If you're building something new and want to test it in a secure environment, Positive SSL is a cost-effective way to get started with proper encryption."
+      }
+    },
+    "whatYouGet": {
+      "title": "What you get",
+      "description": "Everything you need for basic SSL protection. No hidden fees or surprise limitations.",
+      "domainValidation": {
+        "title": "Domain validation",
+        "description": "We verify that you own the domain. This is a quick, automated process that usually takes just a few minutes."
+      },
+      "encryption": {
+        "title": "256-bit encryption",
+        "description": "Industry-standard encryption that protects data as it travels between your server and your visitors' browsers."
+      },
+      "browserCompatibility": {
+        "title": "Works on all major browsers",
+        "description": "Compatible with Chrome, Firefox, Safari, Edge, and mobile browsers. Your visitors won't see any issues regardless of how they access your site."
+      },
+      "reissues": {
+        "title": "Free reissues",
+        "description": "If you need to reissue your certificate during the validity period (e.g., if you change servers), we handle it at no extra cost."
+      },
+      "setupHelp": {
+        "title": "Setup help",
+        "description": "We provide clear instructions and support to help you install your SSL certificate. If you get stuck, we're here to help."
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "How quickly can I get this set up?",
+          "answer": "Once you purchase, domain validation usually takes just a few minutes. After that, you'll receive your certificate and installation instructions. Most people have their SSL up and running within an hour."
+        },
+        {
+          "question": "Will this work with my hosting provider?",
+          "answer": "Yes. Positive SSL works with virtually all hosting providers. We provide instructions for the most popular platforms, and our support team can help if you're using something less common."
+        },
+        {
+          "question": "What if I have multiple domains?",
+          "answer": "Positive SSL covers one domain at a time. If you need to secure multiple domains or subdomains, consider Wildcard SSL, which covers unlimited subdomains under one main domain."
+        },
+        {
+          "question": "Can I upgrade to a different SSL later?",
+          "answer": "Absolutely. If your needs change, you can upgrade to Wildcard SSL or EV SSL at any time. We make the transition straightforward."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to secure your site?",
+      "description": "We'll walk you through the setup process step by step. If you need help, we're here.",
+      "primary": "Get Positive SSL — $49/year",
+      "secondary": "Talk to support"
+    }
+  },
+  "wildcard": {
+    "hero": {
+      "badge": "For growing businesses",
+      "title": "Wildcard SSL",
+      "description": "One certificate that covers unlimited subdomains. Perfect for businesses that are building multiple services under one brand.",
+      "imageAlt": "Team planning website structure",
+      "seePricing": "See pricing",
+      "whatYouGet": "What you get"
+    },
+    "pricing": {
+      "title": "Simple, transparent pricing",
+      "description": "One price for unlimited subdomains. No per-subdomain fees.",
+      "price": "$149",
+      "pricePeriod": "per year",
+      "mostPopular": "Most popular",
+      "renewalNote": "Renews at $149/year. You'll receive reminders before it expires.",
+      "actionLabel": "Get Wildcard SSL",
+      "features": [
+        "Valid for one year",
+        "Covers unlimited subdomains",
+        "Quick domain validation",
+        "Free reissues if needed",
+        "Setup support included"
+      ]
+    },
+    "whoIsFor": {
+      "title": "Who this is for",
+      "description": "Wildcard SSL makes sense when you're building a platform with multiple parts or expanding your digital presence.",
+      "saas": {
+        "title": "SaaS and web applications",
+        "description": "If you're running app.yourdomain.com, dashboard.yourdomain.com, and api.yourdomain.com, one Wildcard SSL covers all of them. No need to buy separate certificates for each subdomain."
+      },
+      "agencies": {
+        "title": "Agencies and consultancies",
+        "description": "If you're managing client sites or creating custom portals for different customers, Wildcard SSL lets you scale without worrying about certificate costs piling up."
+      },
+      "ecommerce": {
+        "title": "E-commerce businesses",
+        "description": "If you have shop.yourdomain.com, blog.yourdomain.com, and support.yourdomain.com, Wildcard SSL secures them all under one certificate, making management much easier."
+      },
+      "development": {
+        "title": "Development and staging environments",
+        "description": "Secure your dev.yourdomain.com, staging.yourdomain.com, and test.yourdomain.com environments without buying individual certificates for each one."
+      }
+    },
+    "whatYouGet": {
+      "title": "What you get",
+      "description": "Everything in Positive SSL, plus unlimited subdomain coverage.",
+      "unlimitedSubdomains": {
+        "title": "Covers unlimited subdomains",
+        "description": "One certificate protects *.yourdomain.com, which includes any current and future subdomains you create."
+      },
+      "domainValidation": {
+        "title": "Domain validation",
+        "description": "Quick verification process that confirms you own the domain. Usually completed in minutes."
+      },
+      "encryption": {
+        "title": "256-bit encryption",
+        "description": "Industry-standard encryption across all your subdomains, ensuring secure data transmission everywhere."
+      },
+      "costEffective": {
+        "title": "Cost-effective scaling",
+        "description": "Instead of buying individual SSL certificates for each subdomain, you pay once and secure everything. This saves money as you grow."
+      },
+      "reissues": {
+        "title": "Free reissues",
+        "description": "If you need to reissue your certificate during its validity period, we handle it at no extra charge."
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "What exactly does \"unlimited subdomains\" mean?",
+          "answer": "If your main domain is yourdomain.com, a Wildcard SSL secures anything at *.yourdomain.com—like blog.yourdomain.com, shop.yourdomain.com, app.yourdomain.com, and so on. You can create as many subdomains as you want, and they'll all be covered."
+        },
+        {
+          "question": "Does it cover the main domain too?",
+          "answer": "Wildcard SSL covers only subdomains (*.yourdomain.com). If you also want to secure the root domain (yourdomain.com), you'll need to include that as a separate entry or use a multi-domain certificate. We can help you with this setup."
+        },
+        {
+          "question": "How is this different from buying individual certificates?",
+          "answer": "If you bought individual SSL certificates for each subdomain, you'd pay for each one separately and manage them all individually. Wildcard SSL bundles them into one certificate, saving you time and money."
+        },
+        {
+          "question": "Can I use this for multiple different domains?",
+          "answer": "No. Wildcard SSL covers one domain and its subdomains. If you have multiple separate domains (like yourbusiness.com and anotherbusiness.com), you'll need separate certificates for each."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to secure all your subdomains?",
+      "description": "One certificate, unlimited subdomains, simple management. We'll help you get set up.",
+      "primary": "Get Wildcard SSL — $149/year",
+      "secondary": "Talk to support"
+    }
+  },
+  "ev": {
+    "hero": {
+      "badge": "For e-commerce and organizations",
+      "title": "Extended Validation SSL",
+      "description": "The highest level of trust. EV SSL displays your company name in the browser, giving visitors maximum confidence that your site is legitimate and secure.",
+      "imageAlt": "Business professional working confidently",
+      "seePricing": "See pricing",
+      "whatYouGet": "What you get"
+    },
+    "pricing": {
+      "title": "Simple, transparent pricing",
+      "description": "Premium validation and trust. One price, renewed annually.",
+      "price": "$299",
+      "pricePeriod": "per year",
+      "renewalNote": "Renews at $299/year. You'll receive reminders before it expires.",
+      "actionLabel": "Get EV SSL",
+      "features": [
+        "Valid for one year",
+        "Extended validation",
+        "Company name displayed",
+        "Comprehensive warranty",
+        "Dedicated support"
+      ]
+    },
+    "whoIsFor": {
+      "title": "Who this is for",
+      "description": "EV SSL is the right choice when trust and credibility are critical to your business.",
+      "ecommerce": {
+        "title": "E-commerce and online stores",
+        "description": "When people are entering credit card information and making purchases, seeing your verified company name in the address bar creates confidence and reduces cart abandonment."
+      },
+      "financial": {
+        "title": "Financial services and banking",
+        "description": "If you handle sensitive financial data or transactions, EV SSL signals that your organization has been thoroughly vetted and verified. It's a standard expectation in this industry."
+      },
+      "sensitive": {
+        "title": "Organizations handling sensitive data",
+        "description": "Healthcare, legal services, and other industries that collect private information benefit from the extra trust signal that EV SSL provides."
+      },
+      "brands": {
+        "title": "Established brands protecting reputation",
+        "description": "If phishing or impersonation is a concern, EV SSL makes it much harder for scammers to fake your site. The verified company name is impossible to replicate without going through the same rigorous validation."
+      }
+    },
+    "whatYouGet": {
+      "title": "What you get",
+      "description": "The highest level of validation and trust, backed by rigorous verification.",
+      "extendedValidation": {
+        "title": "Extended validation process",
+        "description": "Certificate authorities verify your legal business registration, physical address, phone number, and that you're authorized to request the certificate. This takes 1-3 business days."
+      },
+      "companyName": {
+        "title": "Company name displayed in browser",
+        "description": "Your verified organization name appears directly in the address bar, providing visible proof of your legitimacy."
+      },
+      "encryption": {
+        "title": "256-bit encryption",
+        "description": "Same industry-standard encryption as other SSL types, protecting all data in transit."
+      },
+      "warranty": {
+        "title": "Comprehensive warranty",
+        "description": "EV SSL certificates typically include higher warranty coverage, providing additional financial protection in the unlikely event of a certificate-related security breach."
+      },
+      "support": {
+        "title": "Dedicated support",
+        "description": "We guide you through the validation process and help you install your EV SSL certificate properly. The verification process can be complex, and we're here to help at every step."
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "How long does the validation process take?",
+          "answer": "Extended Validation typically takes 1-3 business days. The certificate authority needs to verify your business registration, physical location, and contact details. We'll guide you through what documents you need and help speed things along wherever possible."
+        },
+        {
+          "question": "What documentation do I need to provide?",
+          "answer": "You'll need proof of business registration (like articles of incorporation or business license), proof of your physical address, and verification that you're authorized to request the certificate on behalf of your organization. Requirements vary slightly by jurisdiction, but we'll walk you through exactly what you need."
+        },
+        {
+          "question": "Do I really need EV SSL, or would Positive or Wildcard work?",
+          "answer": "If you're running e-commerce, handling financial transactions, or operating in an industry where trust is critical, EV SSL is worth it. The visible company name makes a real difference in customer confidence. For personal sites or internal tools, Positive or Wildcard SSL are usually sufficient. We can help you decide."
+        },
+        {
+          "question": "Can I upgrade from Positive or Wildcard SSL to EV SSL later?",
+          "answer": "Yes. Many businesses start with a simpler certificate and upgrade to EV SSL as they grow or start handling more sensitive transactions. We make the transition straightforward."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready for maximum trust?",
+      "description": "Your company name in the address bar. The highest level of validation. We'll guide you through every step.",
+      "primary": "Get EV SSL — $299/year",
+      "secondary": "Talk to support"
+    }
+  }
+}

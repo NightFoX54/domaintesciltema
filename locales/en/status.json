@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "System Status",
+    "description": "Real-time updates on our services. We believe in transparency, especially when things go wrong."
+  },
+  "overallStatus": {
+    "title": "All systems operational",
+    "lastChecked": "Last checked: Just now"
+  },
+  "serviceStatus": {
+    "title": "Service status",
+    "operational": "Operational",
+    "webHosting": {
+      "name": "Web Hosting",
+      "description": "Linux, WordPress, Joomla"
+    },
+    "domainServices": {
+      "name": "Domain Services",
+      "description": "Registration, transfer, DNS"
+    },
+    "emailServices": {
+      "name": "Email Services",
+      "description": "SMTP, IMAP, webmail"
+    },
+    "sslCertificates": {
+      "name": "SSL Certificates",
+      "description": "Issuance and renewal"
+    },
+    "supportSystems": {
+      "name": "Support Systems",
+      "description": "Chat, email, phone"
+    }
+  },
+  "uptimeStats": {
+    "title": "Uptime statistics",
+    "last30Days": "Last 30 days",
+    "last90Days": "Last 90 days",
+    "last12Months": "Last 12 months",
+    "description": "Uptime is calculated across all our hosting infrastructure. Individual server performance may vary slightly. We report these numbers honestly—no creative accounting."
+  },
+  "incidentHistory": {
+    "title": "Recent incident history",
+    "noIncidents": {
+      "title": "No recent incidents",
+      "period": "Last 7 days",
+      "description": "All services have been running smoothly with no interruptions or degraded performance."
+    },
+    "commitment": {
+      "title": "Our commitment:",
+      "description": "If something goes wrong, we'll post updates here immediately. No hiding issues, no corporate speak—just honest explanations of what happened, what we're doing about it, and when we expect it to be fixed."
+    }
+  }
+}

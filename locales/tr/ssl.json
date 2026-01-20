@@ -1,0 +1,417 @@
+{
+  "overview": {
+    "hero": {
+      "title": "Ziyaretçileriniz güvende hissetmeyi hak ediyor",
+      "description": "SSL sertifikaları sadece teknik güvenlikle ilgili değil. Ziyaretçilerinize bilgilerini korumayı önemsediğinizi göstermekle ilgili. Profesyonellik ve güvenilirlik için sessiz bir sinyal.",
+      "imageAlt": "Web sitesinde güvenle çalışan kişi",
+      "seeOptions": "SSL seçeneklerini görüntüle",
+      "notSure": "Hangisine ihtiyacınız olduğundan emin değil misiniz?"
+    },
+    "types": {
+      "title": "İhtiyaçlarınıza uygun SSL'i seçin",
+      "description": "Üç tür SSL sertifikası sunuyoruz. Her biri güvenlik sağlar, ancak kapsam ve doğrulama seviyesinde farklılık gösterir.",
+      "positive": {
+        "title": "Positive SSL",
+        "price": "$49",
+        "pricePeriod": "/yıl",
+        "description": "Kişisel siteler, bloglar ve portföyler için mükemmel. Bir alan adını kapsar.",
+        "features": [
+          "Bir alan adını güvence altına alır",
+          "Kilit simgesi gösterir",
+          "Alan adı doğrulaması",
+          "Hızlı kurulum"
+        ],
+        "actionLabel": "Daha fazla bilgi"
+      },
+      "wildcard": {
+        "title": "Wildcard SSL",
+        "price": "$149",
+        "pricePeriod": "/yıl",
+        "description": "Birden fazla alt alan adına sahip büyüyen işletmeler için. Bir sertifika hepsini kapsar.",
+        "features": [
+          "Sınırsız alt alan adı",
+          "Maliyet etkin büyüme",
+          "Alan adı doğrulaması",
+          "Daha kolay yönetim"
+        ],
+        "actionLabel": "Daha fazla bilgi"
+      },
+      "ev": {
+        "title": "EV SSL",
+        "price": "$299",
+        "pricePeriod": "/yıl",
+        "description": "E-ticaret ve kuruluşlar için maksimum güven. Adres çubuğunda şirket adınızı gösterir.",
+        "features": [
+          "Genişletilmiş doğrulama",
+          "Şirket adı görünür",
+          "En yüksek güven sinyali",
+          "Kimlik doğrulaması"
+        ],
+        "actionLabel": "Daha fazla bilgi"
+      }
+    },
+    "whatSSLDoes": {
+      "title": "SSL gerçekte ne yapar",
+      "description": "Sade bir dille, web sitenizde bir SSL sertifikanız olduğunda ne olduğu.",
+      "encrypts": {
+        "title": "Bilgileri şifreler",
+        "description": "Birisi formunuzu doldurduğunda veya sitenize giriş yaptığında, SSL bu verileri şifreler, böylece yol boyunca başka hiç kimse okuyamaz. Bir mektubu zarfa kapatmak gibi."
+      },
+      "verified": {
+        "title": "Doğrulandığınızı gösterir",
+        "description": "SSL sertifikaları web sitenizin gerçekten sizin olduğunu doğrular. Ziyaretçiler tarayıcılarında kilit simgesini görür, bu da onlara meşru, güvenli bir sitede olduklarını söyler."
+      },
+      "seo": {
+        "title": "Arama sıralamalarına yardımcı olur",
+        "description": "Google ve diğer arama motorları güvenli siteleri tercih eder. Bir SSL sertifikası sitenizin arama sonuçlarında daha iyi sıralanmasına yardımcı olabilir. Artık standart bir beklenti haline geldi."
+      }
+    },
+    "whenYouNeed": {
+      "title": "SSL'e ne zaman ihtiyacınız var",
+      "description": "SSL'in önemli olduğu gerçek durumlar. Bunlardan herhangi biri size benziyorsa, bir SSL sertifikasına ihtiyacınız var.",
+      "contactForm": {
+        "title": "Bir iletişim formunuz var",
+        "description": "Basit iletişim formları bile güvenli olmalıdır. Birisi e-postasını veya telefon numarasını sizinle paylaştığında, onu koruyacağınıza güvenir."
+      },
+      "sellOnline": {
+        "title": "Online bir şey satıyorsunuz",
+        "description": "Ödeme kabul ediyorsanız, sipariş işliyorsanız veya müşteri hesaplarını yönetiyorsanız, SSL pazarlık edilemez. Finansal ve kişisel verileri korumak için gereklidir."
+      },
+      "userLogins": {
+        "title": "Kullanıcı girişleriniz var",
+        "description": "İnsanların hesap oluşturduğu ve giriş yaptığı herhangi bir sitenin SSL'e ihtiyacı vardır. Şifreler ve kullanıcı verileri iletim sırasında her zaman şifrelenmelidir."
+      },
+      "professional": {
+        "title": "Profesyonel görünmek istiyorsunuz",
+        "description": "Tarayıcılar artık bir site güvenli değilse ziyaretçilere uyarı gösteriyor. Bu uyarı, kimse içeriğinizi okumadan önce güvenilirliğinize zarar verebilir."
+      }
+    },
+    "notSure": {
+      "title": "Hangi SSL'e ihtiyacınız olduğundan emin değil misiniz?",
+      "description": "Bu tamamen normal. SSL sertifikaları kafa karıştırıcı olabilir ve yanlış bir seçime acele etmektense doğru seçimi yapmanızı tercih ederiz. Bizimle konuşun, size yardımcı olalım.",
+      "talkToSupport": "Destekle konuşun",
+      "readFAQ": "SSS'yi okuyun"
+    },
+    "faq": {
+      "title": "SSL hakkında yaygın sorular",
+      "description": "Bunlar en sık duyduğumuz sorular. Sizinki burada değilse, sadece bize sorun.",
+      "items": [
+        {
+          "question": "Henüz başlangıç aşamasındaysam gerçekten SSL'e ihtiyacım var mı?",
+          "answer": "Evet, ilk günden itibaren. Tarayıcılar artık SSL olmayan sitelerde \"Güvenli Değil\" uyarıları gösteriyor, bu da ziyaretçileri içeriğinizi görmeden önce korkutabilir. Artı, SSL artık lüks bir özellik değil, standart bir beklenti. Baştan SSL ile başlamak, daha sonra eklemekten daha kolaydır."
+        },
+        {
+          "question": "SSL eklemek mevcut sitemi bozar mı?",
+          "answer": "Hayır. SSL sitenizin nasıl çalıştığını değiştirmez—sadece bağlantıyı şifreler. Kurulumda size yardımcı oluyoruz ve çoğu modern barındırma platformu geçişi sorunsuz hale getiriyor. Sorun yaşarsanız, sorun gidermede yardımcı olmak için buradayız."
+        },
+        {
+          "question": "Kurulum ne kadar sürer?",
+          "answer": "Positive SSL ve Wildcard SSL için kurulum genellikle birkaç dakika ile birkaç saat arasında sürer. Genişletilmiş Doğrulama (EV) SSL daha uzun sürer çünkü kuruluşunuzun kimliğini doğrulamayı içerir, bu 1-3 iş günü sürebilir. Her adımda size rehberlik ediyoruz."
+        },
+        {
+          "question": "SSL sertifikamın süresi dolduğunda ne olur?",
+          "answer": "Sertifikanızın süresi dolmadan önce size hatırlatmalar göndereceğiz, böylece zamanında yenileyebilirsiniz. Süresi dolarsa, ziyaretçiler sitenize erişmeye çalıştıklarında bir güvenlik uyarısı görecekler. Yenileme basittir ve unutmamanızı sağlıyoruz."
+        },
+        {
+          "question": "Daha sonra bir SSL türünden diğerine yükseltebilir miyim?",
+          "answer": "Kesinlikle. Birçok kişi Positive SSL ile başlar ve işleri büyüdükçe Wildcard veya EV'ye yükseltir. Asla bir seçime kilitlenmezsiniz. Hazır olduğunuzda yükseltmeyi basit hale getiriyoruz."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Sitenizi güvence altına almaya hazır mısınız?",
+      "description": "Size doğru SSL sertifikasını seçmenize ve düzgün bir şekilde kurmanıza yardımcı olacağız. Baskı yok, kafa karıştırıcı jargon yok.",
+      "primary": "Positive SSL ile başlayın",
+      "secondary": "Önce bizimle konuşun"
+    }
+  },
+  "positive": {
+    "hero": {
+      "badge": "Kişisel siteler ve bloglar için",
+      "title": "Positive SSL",
+      "description": "Kişisel web siteniz, blogunuz veya portföyünüz için basit, uygun fiyatlı güvenlik. Ziyaretçilere kilit simgesini gösterin ve sitenizin güvenli olduğunu bilmelerini sağlayın.",
+      "imageAlt": "Kişisel web sitesinde çalışan kişi",
+      "seePricing": "Fiyatlandırmayı görüntüle",
+      "whatYouGet": "Ne alırsınız"
+    },
+    "pricing": {
+      "title": "Basit, şeffaf fiyatlandırma",
+      "description": "Bir yıllık koruma için tek fiyat. Aynı oranda yenilenir.",
+      "price": "$49",
+      "pricePeriod": "yıllık",
+      "renewalNote": "$49/yıl olarak yenilenir. Süresi dolmadan önce hatırlatmalar alacaksınız, böylece zamanında yenileyebilirsiniz.",
+      "actionLabel": "Positive SSL Al",
+      "features": [
+        "Bir yıl geçerli",
+        "Bir alan adını kapsar",
+        "Hızlı alan adı doğrulaması",
+        "Gerekirse ücretsiz yeniden verilme",
+        "Kurulum desteği dahil"
+      ]
+    },
+    "whoIsFor": {
+      "title": "Bu kimler için",
+      "description": "Tek bir alan adıyla düz bir web sitesi çalıştırıyorsanız, Positive SSL mükemmeldir.",
+      "personal": {
+        "title": "Kişisel bloglar ve portföyler",
+        "description": "Düşüncelerinizi paylaşıyorsanız, işinizi sergiliyorsanız veya kişisel markanızı oluşturuyorsanız, Positive SSL karmaşıklık olmadan ihtiyacınız olan güvenlik rozetini verir."
+      },
+      "smallBusiness": {
+        "title": "Küçük işletme web siteleri",
+        "description": "Tek bir alan adınız ve bir iletişim formunuz varsa, ihtiyacınız olan tek şey budur. Ziyaretçileriniz sitenizin güvenli olduğunu görecek ve tarayıcı uyarılarından kaçınacaksınız."
+      },
+      "information": {
+        "title": "Bilgi siteleri",
+        "description": "Hassas veri toplamıyor olsanız bile, SSL profesyonellik gösterir ve SEO'ya yardımcı olur. Artık meşru herhangi bir web sitesi için standart bir beklenti haline geldi."
+      },
+      "testing": {
+        "title": "Test ve geliştirme",
+        "description": "Yeni bir şey inşa ediyorsanız ve güvenli bir ortamda test etmek istiyorsanız, Positive SSL uygun şifreleme ile başlamak için maliyet etkin bir yoldur."
+      }
+    },
+    "whatYouGet": {
+      "title": "Ne alırsınız",
+      "description": "Temel SSL koruması için ihtiyacınız olan her şey. Gizli ücret veya sürpriz sınırlama yok.",
+      "domainValidation": {
+        "title": "Alan adı doğrulaması",
+        "description": "Alan adına sahip olduğunuzu doğrularız. Bu genellikle sadece birkaç dakika süren hızlı, otomatik bir süreçtir."
+      },
+      "encryption": {
+        "title": "256-bit şifreleme",
+        "description": "Sunucunuz ve ziyaretçilerinizin tarayıcıları arasında veri seyahat ederken verileri koruyan endüstri standardı şifreleme."
+      },
+      "browserCompatibility": {
+        "title": "Tüm büyük tarayıcılarda çalışır",
+        "description": "Chrome, Firefox, Safari, Edge ve mobil tarayıcılarla uyumludur. Ziyaretçileriniz sitenize nasıl erişirlerse erişsinler herhangi bir sorun görmeyecekler."
+      },
+      "reissues": {
+        "title": "Ücretsiz yeniden verilme",
+        "description": "Geçerlilik süresi boyunca sertifikanızı yeniden vermeniz gerekirse (örneğin, sunucuları değiştirirseniz), bunu ekstra maliyet olmadan hallederiz."
+      },
+      "setupHelp": {
+        "title": "Kurulum yardımı",
+        "description": "SSL sertifikanızı kurmanıza yardımcı olmak için net talimatlar ve destek sağlıyoruz. Takılırsanız, yardımcı olmak için buradayız."
+      }
+    },
+    "faq": {
+      "title": "Sık sorulan sorular",
+      "items": [
+        {
+          "question": "Bunu ne kadar hızlı kurabilirim?",
+          "answer": "Satın aldıktan sonra, alan adı doğrulaması genellikle sadece birkaç dakika sürer. Bundan sonra, sertifikanızı ve kurulum talimatlarınızı alacaksınız. Çoğu kişi SSL'lerini bir saat içinde çalışır duruma getirir."
+        },
+        {
+          "question": "Bu hosting sağlayıcımla çalışacak mı?",
+          "answer": "Evet. Positive SSL neredeyse tüm hosting sağlayıcılarıyla çalışır. En popüler platformlar için talimatlar sağlıyoruz ve daha az yaygın bir şey kullanıyorsanız destek ekibimiz yardımcı olabilir."
+        },
+        {
+          "question": "Birden fazla alan adım varsa ne olur?",
+          "answer": "Positive SSL aynı anda bir alan adını kapsar. Birden fazla alan adını veya alt alan adını güvence altına almanız gerekiyorsa, bir ana alan adı altında sınırsız alt alan adını kapsayan Wildcard SSL'i düşünün."
+        },
+        {
+          "question": "Daha sonra farklı bir SSL'e yükseltebilir miyim?",
+          "answer": "Kesinlikle. İhtiyaçlarınız değişirse, istediğiniz zaman Wildcard SSL veya EV SSL'ye yükseltebilirsiniz. Geçişi basit hale getiriyoruz."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Sitenizi güvence altına almaya hazır mısınız?",
+      "description": "Kurulum sürecini adım adım size rehberlik edeceğiz. Yardıma ihtiyacınız varsa, buradayız.",
+      "primary": "Positive SSL Al — $49/yıl",
+      "secondary": "Destekle konuşun"
+    }
+  },
+  "wildcard": {
+    "hero": {
+      "badge": "Büyüyen işletmeler için",
+      "title": "Wildcard SSL",
+      "description": "Sınırsız alt alan adını kapsayan bir sertifika. Tek bir marka altında birden fazla hizmet inşa eden işletmeler için mükemmel.",
+      "imageAlt": "Web sitesi yapısını planlayan ekip",
+      "seePricing": "Fiyatlandırmayı görüntüle",
+      "whatYouGet": "Ne alırsınız"
+    },
+    "pricing": {
+      "title": "Basit, şeffaf fiyatlandırma",
+      "description": "Sınırsız alt alan adı için tek fiyat. Alt alan adı başına ücret yok.",
+      "price": "$149",
+      "pricePeriod": "yıllık",
+      "mostPopular": "En popüler",
+      "renewalNote": "$149/yıl olarak yenilenir. Süresi dolmadan önce hatırlatmalar alacaksınız.",
+      "actionLabel": "Wildcard SSL Al",
+      "features": [
+        "Bir yıl geçerli",
+        "Sınırsız alt alan adını kapsar",
+        "Hızlı alan adı doğrulaması",
+        "Gerekirse ücretsiz yeniden verilme",
+        "Kurulum desteği dahil"
+      ]
+    },
+    "whoIsFor": {
+      "title": "Bu kimler için",
+      "description": "Birden fazla parçadan oluşan bir platform inşa ediyorsanız veya dijital varlığınızı genişletiyorsanız, Wildcard SSL mantıklıdır.",
+      "saas": {
+        "title": "SaaS ve web uygulamaları",
+        "description": "app.yourdomain.com, dashboard.yourdomain.com ve api.yourdomain.com çalıştırıyorsanız, bir Wildcard SSL hepsini kapsar. Her alt alan adı için ayrı sertifika satın almanıza gerek yoktur."
+      },
+      "agencies": {
+        "title": "Ajanslar ve danışmanlıklar",
+        "description": "Müşteri sitelerini yönetiyorsanız veya farklı müşteriler için özel portallar oluşturuyorsanız, Wildcard SSL sertifika maliyetlerinin birikmesi konusunda endişelenmeden ölçeklenmenize olanak tanır."
+      },
+      "ecommerce": {
+        "title": "E-ticaret işletmeleri",
+        "description": "shop.yourdomain.com, blog.yourdomain.com ve support.yourdomain.com'unuz varsa, Wildcard SSL hepsini tek bir sertifika altında güvence altına alır, yönetimi çok daha kolay hale getirir."
+      },
+      "development": {
+        "title": "Geliştirme ve staging ortamları",
+        "description": "dev.yourdomain.com, staging.yourdomain.com ve test.yourdomain.com ortamlarınızı her biri için ayrı sertifika satın almadan güvence altına alın."
+      }
+    },
+    "whatYouGet": {
+      "title": "Ne alırsınız",
+      "description": "Positive SSL'deki her şey, artı sınırsız alt alan adı kapsamı.",
+      "unlimitedSubdomains": {
+        "title": "Sınırsız alt alan adını kapsar",
+        "description": "Bir sertifika *.yourdomain.com'u korur, bu da oluşturduğunuz mevcut ve gelecekteki tüm alt alan adlarını içerir."
+      },
+      "domainValidation": {
+        "title": "Alan adı doğrulaması",
+        "description": "Alan adına sahip olduğunuzu doğrulayan hızlı doğrulama süreci. Genellikle dakikalar içinde tamamlanır."
+      },
+      "encryption": {
+        "title": "256-bit şifreleme",
+        "description": "Tüm alt alan adlarınızda endüstri standardı şifreleme, her yerde güvenli veri iletimini sağlar."
+      },
+      "costEffective": {
+        "title": "Maliyet etkin büyüme",
+        "description": "Her alt alan adı için ayrı SSL sertifikası satın almak yerine, bir kez ödersiniz ve her şeyi güvence altına alırsınız. Bu, büyüdükçe para tasarrufu sağlar."
+      },
+      "reissues": {
+        "title": "Ücretsiz yeniden verilme",
+        "description": "Geçerlilik süresi boyunca sertifikanızı yeniden vermeniz gerekirse, bunu ekstra ücret olmadan hallederiz."
+      }
+    },
+    "faq": {
+      "title": "Sık sorulan sorular",
+      "items": [
+        {
+          "question": "\"Sınırsız alt alan adı\" tam olarak ne anlama geliyor?",
+          "answer": "Ana alan adınız yourdomain.com ise, bir Wildcard SSL *.yourdomain.com'daki her şeyi güvence altına alır—blog.yourdomain.com, shop.yourdomain.com, app.yourdomain.com gibi. İstediğiniz kadar alt alan adı oluşturabilirsiniz ve hepsi kapsanacaktır."
+        },
+        {
+          "question": "Ana alan adını da kapsar mı?",
+          "answer": "Wildcard SSL sadece alt alan adlarını (*.yourdomain.com) kapsar. Kök alan adını (yourdomain.com) da güvence altına almak istiyorsanız, bunu ayrı bir giriş olarak dahil etmeniz veya çoklu alan adı sertifikası kullanmanız gerekir. Bu kurulumda size yardımcı olabiliriz."
+        },
+        {
+          "question": "Bu, ayrı sertifika satın almaktan nasıl farklı?",
+          "answer": "Her alt alan adı için ayrı SSL sertifikası satın alsaydınız, her biri için ayrı ayrı öder ve hepsini ayrı ayrı yönetirdiniz. Wildcard SSL bunları tek bir sertifikada birleştirir, size zaman ve para tasarrufu sağlar."
+        },
+        {
+          "question": "Bunu birden fazla farklı alan adı için kullanabilir miyim?",
+          "answer": "Hayır. Wildcard SSL bir alan adını ve alt alan adlarını kapsar. Birden fazla ayrı alan adınız varsa (yourbusiness.com ve anotherbusiness.com gibi), her biri için ayrı sertifikalara ihtiyacınız olacaktır."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Tüm alt alan adlarınızı güvence altına almaya hazır mısınız?",
+      "description": "Bir sertifika, sınırsız alt alan adı, basit yönetim. Kurulumda size yardımcı olacağız.",
+      "primary": "Wildcard SSL Al — $149/yıl",
+      "secondary": "Destekle konuşun"
+    }
+  },
+  "ev": {
+    "hero": {
+      "badge": "E-ticaret ve kuruluşlar için",
+      "title": "Genişletilmiş Doğrulama SSL",
+      "description": "En yüksek güven seviyesi. EV SSL tarayıcıda şirket adınızı gösterir, ziyaretçilere sitenizin meşru ve güvenli olduğuna dair maksimum güven verir.",
+      "imageAlt": "Güvenle çalışan iş profesyoneli",
+      "seePricing": "Fiyatlandırmayı görüntüle",
+      "whatYouGet": "Ne alırsınız"
+    },
+    "pricing": {
+      "title": "Basit, şeffaf fiyatlandırma",
+      "description": "Premium doğrulama ve güven. Tek fiyat, yıllık yenilenir.",
+      "price": "$299",
+      "pricePeriod": "yıllık",
+      "renewalNote": "$299/yıl olarak yenilenir. Süresi dolmadan önce hatırlatmalar alacaksınız.",
+      "actionLabel": "EV SSL Al",
+      "features": [
+        "Bir yıl geçerli",
+        "Genişletilmiş doğrulama",
+        "Şirket adı görüntülenir",
+        "Kapsamlı garanti",
+        "Özel destek"
+      ]
+    },
+    "whoIsFor": {
+      "title": "Bu kimler için",
+      "description": "Güven ve güvenilirlik işiniz için kritik olduğunda EV SSL doğru seçimdir.",
+      "ecommerce": {
+        "title": "E-ticaret ve online mağazalar",
+        "description": "İnsanlar kredi kartı bilgilerini girip satın alma yaparken, adres çubuğunda doğrulanmış şirket adınızı görmek güven yaratır ve sepet terkini azaltır."
+      },
+      "financial": {
+        "title": "Finansal hizmetler ve bankacılık",
+        "description": "Hassas finansal verileri veya işlemleri yönetiyorsanız, EV SSL kuruluşunuzun kapsamlı bir şekilde incelendiğini ve doğrulandığını gösterir. Bu sektörde standart bir beklentidir."
+      },
+      "sensitive": {
+        "title": "Hassas verileri yöneten kuruluşlar",
+        "description": "Sağlık, yasal hizmetler ve özel bilgi toplayan diğer sektörler, EV SSL'nin sağladığı ekstra güven sinyalinden yararlanır."
+      },
+      "brands": {
+        "title": "İtibarını koruyan yerleşik markalar",
+        "description": "Oltalama veya kimlik taklidi bir endişe ise, EV SSL dolandırıcıların sitenizi taklit etmesini çok daha zor hale getirir. Doğrulanmış şirket adı, aynı titiz doğrulamadan geçmeden kopyalanamaz."
+      }
+    },
+    "whatYouGet": {
+      "title": "Ne alırsınız",
+      "description": "Titiz doğrulama ile desteklenen en yüksek doğrulama ve güven seviyesi.",
+      "extendedValidation": {
+        "title": "Genişletilmiş doğrulama süreci",
+        "description": "Sertifika yetkilileri yasal işletme kaydınızı, fiziksel adresinizi, telefon numaranızı ve sertifikayı talep etme yetkiniz olduğunu doğrular. Bu 1-3 iş günü sürer."
+      },
+      "companyName": {
+        "title": "Tarayıcıda görüntülenen şirket adı",
+        "description": "Doğrulanmış kuruluş adınız doğrudan adres çubuğunda görünür, meşruiyetinizin görünür kanıtını sağlar."
+      },
+      "encryption": {
+        "title": "256-bit şifreleme",
+        "description": "Diğer SSL türleriyle aynı endüstri standardı şifreleme, iletim halindeki tüm verileri korur."
+      },
+      "warranty": {
+        "title": "Kapsamlı garanti",
+        "description": "EV SSL sertifikaları genellikle daha yüksek garanti kapsamı içerir, sertifika ile ilgili bir güvenlik ihlali durumunda ek finansal koruma sağlar."
+      },
+      "support": {
+        "title": "Özel destek",
+        "description": "Doğrulama sürecinde size rehberlik eder ve EV SSL sertifikanızı düzgün bir şekilde kurmanıza yardımcı oluruz. Doğrulama süreci karmaşık olabilir ve her adımda yardımcı olmak için buradayız."
+      }
+    },
+    "faq": {
+      "title": "Sık sorulan sorular",
+      "items": [
+        {
+          "question": "Doğrulama süreci ne kadar sürer?",
+          "answer": "Genişletilmiş Doğrulama genellikle 1-3 iş günü sürer. Sertifika yetkilisinin işletme kaydınızı, fiziksel konumunuzu ve iletişim bilgilerinizi doğrulaması gerekir. Hangi belgelere ihtiyacınız olduğunu size rehberlik edeceğiz ve mümkün olduğunca hızlandırmaya yardımcı olacağız."
+        },
+        {
+          "question": "Hangi belgeleri sağlamam gerekiyor?",
+          "answer": "İşletme kayıt kanıtına (kuruluş belgeleri veya işletme lisansı gibi), fiziksel adresinizin kanıtına ve kuruluşunuz adına sertifikayı talep etme yetkiniz olduğunun doğrulanmasına ihtiyacınız olacaktır. Gereksinimler yargı alanına göre biraz değişir, ancak tam olarak neye ihtiyacınız olduğunu size rehberlik edeceğiz."
+        },
+        {
+          "question": "Gerçekten EV SSL'ye ihtiyacım var mı, yoksa Positive veya Wildcard işe yarar mı?",
+          "answer": "E-ticaret yapıyorsanız, finansal işlemleri yönetiyorsanız veya güvenin kritik olduğu bir sektörde faaliyet gösteriyorsanız, EV SSL buna değer. Görünür şirket adı müşteri güveninde gerçek bir fark yaratır. Kişisel siteler veya dahili araçlar için Positive veya Wildcard SSL genellikle yeterlidir. Karar vermenize yardımcı olabiliriz."
+        },
+        {
+          "question": "Daha sonra Positive veya Wildcard SSL'den EV SSL'ye yükseltebilir miyim?",
+          "answer": "Evet. Birçok işletme daha basit bir sertifika ile başlar ve büyüdükçe veya daha hassas işlemleri yönetmeye başladıkça EV SSL'ye yükseltir. Geçişi basit hale getiriyoruz."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Maksimum güven için hazır mısınız?",
+      "description": "Adres çubuğunda şirket adınız. En yüksek doğrulama seviyesi. Her adımda size rehberlik edeceğiz.",
+      "primary": "EV SSL Al — $299/yıl",
+      "secondary": "Destekle konuşun"
+    }
+  }
+}

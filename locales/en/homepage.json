@@ -1,0 +1,184 @@
+{
+  "hero": {
+    "title": "Built for founders who bet on themselves",
+    "description": "Starting something meaningful is hard enough. Getting your idea online shouldn't add to the anxiety.",
+    "searchPlaceholder": "Find your domain name...",
+    "searchButton": "Search",
+    "searchInfo": "Most domains are available. If yours isn't, we'll help you find something even better.",
+    "imageAlt": "Founder working at their desk"
+  },
+  "intro": {
+    "text": "You're not the first person to feel overwhelmed by hosting.",
+    "emphasis": "We've been there. That's why we built this differently."
+  },
+  "stats": {
+    "founders": "Founders who trusted us with their first domain",
+    "responseTime": "Average time to get a real answer from a real person",
+    "since": "Helping people launch ideas that matter"
+  },
+  "story": {
+    "title": "We built this because we were frustrated too",
+    "paragraph1": "You sign up for hosting and immediately hit a wall of confusing options. Basic plan? Pro plan? What even is a \"droplet\"?",
+    "paragraph2": "Then come the hidden fees. SSL certificates cost extra. Backups cost extra. Email costs extra. The $5/month plan somehow becomes $35.",
+    "paragraph3": "And when something goes wrong? You submit a ticket. And wait. And wait. Maybe you get a template response in 48 hours asking you to submit more information.",
+    "emphasis1": "We started Domain Tescil to fix all of that.",
+    "emphasis2": "Clear pricing. Real humans. No jargon. Just help when you need it.",
+    "imageAlt": "Team working together"
+  },
+  "testimonials": {
+    "title": "Founders we've helped",
+    "sarah": {
+      "name": "Sarah Chen",
+      "role": "Building a tutoring marketplace",
+      "quote": "I was terrified of picking the wrong hosting. Their team walked me through everything on a call. No pressure, just clarity. I felt like they actually cared whether I succeeded."
+    },
+    "marcus": {
+      "name": "Marcus Thompson",
+      "role": "Launching a fitness app",
+      "quote": "Every other place hit me with upsells and confusing add-ons. Here, the price I saw was the price I paid. Finally, a company that just tells you the truth."
+    },
+    "amelia": {
+      "name": "Amelia Rodriguez",
+      "role": "Starting an online pottery store",
+      "quote": "When my site went down at 2am, they responded in minutes. Actual humans who cared and knew what they were doing. I almost cried from relief."
+    }
+  },
+  "products": {
+    "title": "Everything you need to launch",
+    "description": "The essentials to get your idea online, without the confusion or the surprises",
+    "domains": {
+      "title": "Domains",
+      "description": "Your own corner of the internet. Register the name people will remember and trust, with full ownership and transparent pricing.",
+      "features": [
+        "Free WHOIS privacy protection included",
+        "Simple DNS management, no technical jargon",
+        "One-click renewals with clear pricing",
+        "You own it—transfer anytime, no lock-in"
+      ],
+      "footer": "No surprise renewal fees. No hidden charges. Just honest domain registration.",
+      "action": "Explore domains"
+    },
+    "hosting": {
+      "title": "Hosting",
+      "description": "A reliable home for your website. Fast, secure, and ready to grow with you—without the constant upselling or confusing tiers.",
+      "features": [
+        "NVMe SSD storage for fast page loads",
+        "Daily automated backups included",
+        "Free SSL certificate and installation",
+        "No traffic caps or surprise overage fees",
+        "Easy upgrades when you're ready to scale"
+      ],
+      "footer": "Start small. Grow at your pace. No pressure, no pushy sales calls.",
+      "action": "View hosting plans"
+    },
+    "ssl": {
+      "title": "SSL Certificates",
+      "description": "That little padlock in the browser. It tells your visitors their data is encrypted and that you take their trust seriously.",
+      "features": [
+        "Automatic installation and renewal",
+        "Works across all modern browsers",
+        "No manual setup or command line required",
+        "Clear validation levels to match your needs"
+      ],
+      "footer": "Set it once, forget it. We handle the renewals so you can focus on your business.",
+      "action": "Learn about SSL"
+    }
+  },
+  "outcomes": {
+    "title": "What are you trying to do?",
+    "description": "No judgment, no pressure. Just pick what sounds closest to where you are right now, and we'll point you in the right direction.",
+    "simpleWebsite": {
+      "title": "I want a simple website",
+      "description": "Just a few pages about your business. Maybe an about page, contact form, and some info about what you do. Nothing fancy, nothing overwhelming. Something you can set up once and not worry about every day.",
+      "recommendation": "What usually works:",
+      "solution": "Basic Hosting + Domain + SSL",
+      "action": "See what this looks like"
+    },
+    "sellOnline": {
+      "title": "I want to sell online",
+      "description": "You've got products or services, and you need a way for people to actually buy them. Shopping cart, secure payments, maybe inventory tracking if you need it. The whole setup that makes online selling work.",
+      "recommendation": "What usually works:",
+      "solution": "E-commerce Hosting + SSL + Support",
+      "action": "See what this looks like"
+    },
+    "professional": {
+      "title": "I want to look professional",
+      "description": "You want email addresses at your domain (not Gmail). You want your site to load fast and look legitimate. Something that makes clients feel confident they're working with a real business.",
+      "recommendation": "What usually works:",
+      "solution": "Pro Hosting + Custom Email + SSL",
+      "action": "See what this looks like"
+    },
+    "custom": {
+      "title": "I'm building something custom",
+      "description": "You have specific technical requirements. Maybe it's an app, a platform, something with users and databases. You probably know what you need—you just need someone who won't make it harder than it has to be.",
+      "recommendation": "What we recommend:",
+      "solution": "Let's talk through it together",
+      "action": "Schedule a conversation"
+    },
+    "unsure": {
+      "title": "I'm not sure yet",
+      "description": "You're still figuring things out. Maybe you're just exploring options, or you have a rough idea but need to talk it through. That's completely normal—most people start here.",
+      "recommendation": "What we recommend:",
+      "solution": "Start with a quick conversation",
+      "action": "Talk to someone helpful"
+    },
+    "migration": {
+      "title": "I'm moving from somewhere else",
+      "description": "Your current host is frustrating, expensive, or both. You need to move your site without breaking anything or losing days of work. We've helped hundreds of people through this exact situation.",
+      "recommendation": "What we recommend:",
+      "solution": "Free migration assistance included",
+      "action": "Learn about migration"
+    }
+  },
+  "faq": {
+    "title": "Questions you might have",
+    "description": "We want you to feel confident, not confused",
+    "pricing": {
+      "question": "Will the price suddenly increase later?",
+      "answer": "No surprises, ever. The price you see when you sign up is the price you'll keep paying. If you choose to add something new later—like email or additional storage—we'll tell you exactly what it costs before you confirm. We never automatically add charges to your account. You're always in control."
+    },
+    "upgrading": {
+      "question": "What if I need to upgrade as I grow?",
+      "answer": "That's a good thing—it means what you're building is working. Upgrading takes one click, and we only charge you the difference for the rest of your billing period. Your site stays online during the upgrade—no downtime, no complicated migration. And if you realize you upgraded too early? You can scale back down just as easily. No penalties, no hassle."
+    },
+    "support": {
+      "question": "Is this real human support or just bots?",
+      "answer": "Real humans, always. When you send a message, it goes directly to our support team—people who work here full time and actually understand hosting. No chatbots trying to guess what you need. No outsourced teams reading from scripts they don't understand. Our average response time is about 2 minutes, and we stay with you until the problem is completely solved. Not just partially fixed—completely solved."
+    },
+    "migration": {
+      "question": "I'm nervous about moving my existing site. Can you help?",
+      "answer": "Absolutely, and we do this all the time. We'll handle the entire migration for you at no extra cost. That includes moving your files, databases, emails—everything. We'll also keep your old site running until we confirm the new one works perfectly. And if anything feels off after the move, we'll fix it immediately. You won't be left alone trying to figure this out on your own."
+    },
+    "commitment": {
+      "question": "Do I have to commit to a long contract?",
+      "answer": "No contracts, no commitments. You can pay month-to-month and cancel anytime. We do offer discounts if you pay annually, but that's completely optional—we never pressure you. We'd rather earn your business every month by doing good work than lock you into something you're unsure about. That's not how trust works."
+    }
+  },
+  "support": {
+    "title": "We answer. We stay.",
+    "paragraph1": "No ticket systems that disappear into a black hole. No chatbots pretending to understand your problem. No offshore teams reading from scripts they barely comprehend.",
+    "paragraph2": "When you reach out, you talk to someone who actually works here. Someone who can make decisions and fix things. Someone who genuinely cares that your site works and your business succeeds.",
+    "emphasis": "We don't just answer questions. We solve problems. And we stay until they're completely solved.",
+    "imageAlt": "Support team member",
+    "responseTime": {
+      "title": "2 minute average response",
+      "description": "Not hours. Not days. Minutes."
+    },
+    "humans": {
+      "title": "Real humans, always available",
+      "description": "24/7, including weekends and holidays"
+    },
+    "stay": {
+      "title": "We stay until it's fixed",
+      "description": "Not just answered. Actually resolved."
+    }
+  },
+  "cta": {
+    "title": "No rush. We're here when you're ready.",
+    "description": "Search for your domain, talk to someone on our team, or just browse around.",
+    "description2": "There's no pressure here. Take your time.",
+    "primary": "Search for a domain",
+    "secondary": "Talk to us first",
+    "footer": "Most people start with a conversation. That's completely normal."
+  }
+}
