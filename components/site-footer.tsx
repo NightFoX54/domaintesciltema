@@ -2,9 +2,14 @@
 
 import Link from "next/link"
 import { useTranslation } from "@/lib/i18n"
+import { useLocale } from "@/hooks/use-locale"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export function SiteFooter() {
   const { t } = useTranslation()
+  const locale = useLocale()
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale)
   return (
     <footer className="bg-[hsl(var(--muted))] border-t border-border py-16">
       <div className="container mx-auto px-4 lg:px-6">
@@ -16,7 +21,7 @@ export function SiteFooter() {
               {t("footer.tagline")}
             </p>
             <div className="pt-2">
-              <Link href="/support" className="text-sm font-medium text-foreground hover:underline underline-offset-4">
+              <Link href={getPath("/support")} className="text-sm font-medium text-foreground hover:underline underline-offset-4">
                 {t("footer.needHelp")} →
               </Link>
             </div>
@@ -28,7 +33,7 @@ export function SiteFooter() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/domains/search"
+                  href={getPath("/domains/search")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.domainSearch")}
@@ -36,7 +41,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/domains/transfer"
+                  href={getPath("/domains/transfer")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.domainTransfer")}
@@ -44,7 +49,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/hosting/linux"
+                  href={getPath("/hosting/linux")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.linuxHosting")}
@@ -52,7 +57,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/hosting/wordpress"
+                  href={getPath("/hosting/wordpress")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.wordpressHosting")}
@@ -60,14 +65,14 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/hosting/joomla"
+                  href={getPath("/hosting/joomla")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.joomlaHosting")}
                 </Link>
               </li>
               <li>
-                <Link href="/ssl" className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors">
+                <Link href={getPath("/ssl")} className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors">
                   {t("footer.ssl")}
                 </Link>
               </li>
@@ -80,7 +85,7 @@ export function SiteFooter() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/support"
+                  href={getPath("/support")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.help")}
@@ -88,7 +93,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/migration"
+                  href={getPath("/migration")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.migrationHelp")}
@@ -96,7 +101,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href={getPath("/contact")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.contactSupport")}
@@ -104,7 +109,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/status"
+                  href={getPath("/status")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.systemStatus")}
@@ -119,20 +124,20 @@ export function SiteFooter() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/about"
+                  href={getPath("/about")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.about")}
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors">
+                <Link href={getPath("/blog")} className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors">
                   {t("footer.blog")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/privacy"
+                  href={getPath("/privacy")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.privacy")}
@@ -140,7 +145,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href={getPath("/terms")}
                   className="text-sm text-muted-foreground/90 hover:text-foreground transition-colors"
                 >
                   {t("footer.terms")}
@@ -155,17 +160,17 @@ export function SiteFooter() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground/80">{t("footer.copyright")}</p>
             <div className="flex gap-8">
-              <Link href="/terms" className="text-sm text-muted-foreground/80 hover:text-foreground transition-colors">
+              <Link href={getPath("/terms")} className="text-sm text-muted-foreground/80 hover:text-foreground transition-colors">
                 {t("footer.terms")}
               </Link>
               <Link
-                href="/privacy"
+                href={getPath("/privacy")}
                 className="text-sm text-muted-foreground/80 hover:text-foreground transition-colors"
               >
                 {t("footer.privacy")}
               </Link>
               <Link
-                href="/cookies"
+                href={getPath("/cookies")}
                 className="text-sm text-muted-foreground/80 hover:text-foreground transition-colors"
               >
                 {t("footer.cookies")}

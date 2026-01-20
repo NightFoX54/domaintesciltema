@@ -13,9 +13,16 @@ import { CTABlock } from "@/components/common/cta-block"
 import { DomainFeatureBadges } from "@/components/domain/domain-feature-badges"
 import Link from "next/link"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export default function DomainsPage() {
   const { t } = useTranslation('domains')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+  
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -30,7 +37,7 @@ export default function DomainsPage() {
         searchInput={{
           placeholder: t("overview.hero.searchPlaceholder"),
           searchButtonLabel: t("overview.hero.searchButton"),
-          searchHref: "/configure/domain?domain=yourdomain.com&tld=.com",
+          searchHref: getPath("/configure/domain?domain=yourdomain.com&tld=.com"),
         }}
         additionalContent={
           <>
@@ -94,7 +101,7 @@ export default function DomainsPage() {
           headingLevel={2}
         />
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/configure/domain?domain=yourdomain.com&tld=.com">
+          <Link href={getPath("/configure/domain?domain=yourdomain.com&tld=.com")}>
             <Button size="lg" className="px-8 shadow-md hover:shadow-lg transition-shadow">
               Search for a domain
             </Button>
@@ -165,7 +172,7 @@ export default function DomainsPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/configure/domain?domain=yourdomain.com&tld=.com">
+              <Link href={getPath("/configure/domain?domain=yourdomain.com&tld=.com")}>
                 <Button size="lg" className="shadow-md hover:shadow-lg transition-shadow">
                   {t("overview.philosophy.findDomain")}
                 </Button>
@@ -200,7 +207,7 @@ export default function DomainsPage() {
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-muted-foreground">
             {t("overview.contextualLink.text")}{" "}
-            <Link href="/hosting" className="text-foreground font-medium hover:underline">
+            <Link href={getPath("/hosting")} className="text-foreground font-medium hover:underline">
               {t("overview.contextualLink.link")}
             </Link>
           </p>

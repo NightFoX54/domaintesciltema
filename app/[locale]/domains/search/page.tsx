@@ -11,6 +11,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 interface DomainResult {
   domain: string
@@ -60,6 +62,10 @@ function generateDomainResults(query: string): DomainResult[] {
 
 export default function DomainSearchPage() {
   const { t } = useTranslation('domains')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+  
   const [searchQuery, setSearchQuery] = useState("")
   const [searchResults, setSearchResults] = useState<DomainResult[]>([])
   const [isSearching, setIsSearching] = useState(false)
@@ -245,7 +251,7 @@ export default function DomainSearchPage() {
                                   <div className="text-xs text-muted-foreground">{t("search.firstYear")}</div>
                                 </div>
                                 <Button asChild>
-                                  <Link href={`/configure/domain?domain=${result.domain}`}>
+                                  <Link href={getPath(`/configure/domain?domain=${result.domain}`)}>
                                     <ShoppingCart className="h-4 w-4 mr-2" />
                                     {t("search.addToCart")}
                                   </Link>
@@ -472,7 +478,7 @@ export default function DomainSearchPage() {
                 {t("search.cta.startSearching")}
               </Button>
               <Button size="lg" variant="outline" className="h-12 px-8 bg-transparent" asChild>
-                <Link href="/domains/transfer">{t("search.cta.transferDomain")}</Link>
+                <Link href={getPath("/domains/transfer")}>{t("search.cta.transferDomain")}</Link>
               </Button>
             </div>
           </div>
@@ -485,7 +491,7 @@ export default function DomainSearchPage() {
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-muted-foreground">
               {t("search.contextualLink.text")}{" "}
-              <Link href="/hosting" className="text-foreground font-medium hover:underline">
+              <Link href={getPath("/hosting")} className="text-foreground font-medium hover:underline">
                 {t("search.contextualLink.link")}
               </Link>
             </p>

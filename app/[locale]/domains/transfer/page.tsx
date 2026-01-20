@@ -11,6 +11,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 interface TransferResult {
   domain: string
@@ -82,6 +84,10 @@ function checkTransferEligibility(domain: string): TransferResult {
 
 export default function DomainTransferPage() {
   const { t } = useTranslation('domains')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+  
   const [domain, setDomain] = useState("")
   const [transferResult, setTransferResult] = useState<TransferResult | null>(null)
   const [isChecking, setIsChecking] = useState(false)
@@ -309,7 +315,7 @@ export default function DomainTransferPage() {
                           </div>
 
                           <Button size="lg" className="w-full h-12" disabled={!authCode.trim()} asChild>
-                            <Link href={`/configure/domain?domain=${transferResult.domain}&transfer=true`}>
+                            <Link href={getPath(`/configure/domain?domain=${transferResult.domain}&transfer=true`)}>
 {t("transfer.status.eligible.startTransfer")}
                               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                             </Link>
@@ -359,7 +365,7 @@ export default function DomainTransferPage() {
                               {t("transfer.helpSection.notFound.message")}
                             </p>
                             <Button variant="outline" className="bg-transparent" asChild>
-                              <Link href={`/domains/search?q=${transferResult.domain}`}>{t("transfer.helpSection.notFound.searchButton")}</Link>
+                              <Link href={getPath(`/domains/search?q=${transferResult.domain}`)}>{t("transfer.helpSection.notFound.searchButton")}</Link>
                             </Button>
                           </div>
                         )}
@@ -367,7 +373,7 @@ export default function DomainTransferPage() {
                         <div className="pt-4 border-t border-border">
                           <p className="text-sm text-muted-foreground">
                             {t("transfer.helpSection.contactSupport.text")}{" "}
-                            <Link href="/contact" className="text-primary hover:underline">
+                            <Link href={getPath("/contact")} className="text-primary hover:underline">
                               {t("transfer.helpSection.contactSupport.link")}
                             </Link>{" "}
                             {t("transfer.helpSection.contactSupport.suffix")}
@@ -572,7 +578,7 @@ export default function DomainTransferPage() {
                 {t("transfer.cta.startTransfer")}
               </Button>
               <Button size="lg" variant="outline" className="h-12 px-8 bg-transparent" asChild>
-                <Link href="/contact">{t("transfer.cta.talkFirst")}</Link>
+                <Link href={getPath("/contact")}>{t("transfer.cta.talkFirst")}</Link>
               </Button>
             </div>
           </div>
@@ -585,7 +591,7 @@ export default function DomainTransferPage() {
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-muted-foreground">
               {t("transfer.contextualLink.text")}{" "}
-              <Link href="/hosting" className="text-foreground font-medium hover:underline">
+              <Link href={getPath("/hosting")} className="text-foreground font-medium hover:underline">
                 {t("transfer.contextualLink.link")}
               </Link>
             </p>

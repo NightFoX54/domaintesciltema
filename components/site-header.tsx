@@ -6,9 +6,14 @@ import { Button } from "@/components/ui/button"
 import { ShoppingCart } from "lucide-react"
 import { useTranslation } from "@/lib/i18n"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { useLocale } from "@/hooks/use-locale"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export function SiteHeader() {
   const { t } = useTranslation()
+  const locale = useLocale()
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null)
   const [cartItemCount, setCartItemCount] = useState(0)
@@ -114,7 +119,7 @@ export function SiteHeader() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="flex h-16 items-center justify-between">
             <Link
-              href="/"
+              href={getPath("/")}
               className="font-semibold text-xl tracking-tight text-foreground hover:opacity-80 transition-opacity"
               aria-label={t("nav.homeLabel")}
             >
@@ -150,7 +155,7 @@ export function SiteHeader() {
                   >
                     <div className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
                       <Link
-                        href="/domains/search"
+                        href={getPath("/domains/search")}
                         className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
                         role="menuitem"
                       >
@@ -158,7 +163,7 @@ export function SiteHeader() {
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.domains.search.description")}</div>
                       </Link>
                       <Link
-                        href="/domains/transfer"
+                        href={getPath("/domains/transfer")}
                         className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
                         role="menuitem"
                       >
@@ -198,7 +203,7 @@ export function SiteHeader() {
                   >
                     <div className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
                       <Link
-                        href="/hosting/linux"
+                        href={getPath("/hosting/linux")}
                         className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
                         role="menuitem"
                       >
@@ -206,7 +211,7 @@ export function SiteHeader() {
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.hosting.linux.description")}</div>
                       </Link>
                       <Link
-                        href="/hosting/wordpress"
+                        href={getPath("/hosting/wordpress")}
                         className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
                         role="menuitem"
                       >
@@ -214,7 +219,7 @@ export function SiteHeader() {
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.hosting.wordpress.description")}</div>
                       </Link>
                       <Link
-                        href="/hosting/joomla"
+                        href={getPath("/hosting/joomla")}
                         className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
                         role="menuitem"
                       >
@@ -253,12 +258,12 @@ export function SiteHeader() {
                     aria-labelledby={dropdownButtonId("ssl")}
                   >
                     <div className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
-                      <Link href="/ssl" className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
+                      <Link href={getPath("/ssl")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
                         <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.overview.title")}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.overview.description")}</div>
                       </Link>
                       <Link
-                        href="/ssl/positive"
+                        href={getPath("/ssl/positive")}
                         className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
                         role="menuitem"
                       >
@@ -266,14 +271,14 @@ export function SiteHeader() {
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.positive.description")}</div>
                       </Link>
                       <Link
-                        href="/ssl/wildcard"
+                        href={getPath("/ssl/wildcard")}
                         className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
                         role="menuitem"
                       >
                         <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.wildcard.title")}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.wildcard.description")}</div>
                       </Link>
-                      <Link href="/ssl/ev" className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
+                      <Link href={getPath("/ssl/ev")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
                         <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.ev.title")}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.ev.description")}</div>
                       </Link>
@@ -309,19 +314,19 @@ export function SiteHeader() {
                     aria-labelledby={dropdownButtonId("support")}
                   >
                     <div className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
-                      <Link href="/support" className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
+                      <Link href={getPath("/support")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
                         <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.help.title")}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.help.description")}</div>
                       </Link>
-                      <Link href="/contact" className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
+                      <Link href={getPath("/contact")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
                         <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.contact.title")}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.contact.description")}</div>
                       </Link>
-                      <Link href="/migration" className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
+                      <Link href={getPath("/migration")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
                         <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.migration.title")}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.migration.description")}</div>
                       </Link>
-                      <Link href="/status" className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
+                      <Link href={getPath("/status")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
                         <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.status.title")}</div>
                         <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.status.description")}</div>
                       </Link>
@@ -334,7 +339,7 @@ export function SiteHeader() {
             <div className="flex items-center gap-3">
               <LanguageSwitcher />
               <Link
-                href="/cart"
+                href={getPath("/cart")}
                 className="relative p-2 text-muted-foreground hover:text-foreground transition-colors"
                 aria-label={`${t("nav.cart")}${cartItemCount > 0 ? `, ${cartItemCount} items` : ""}`}
               >
@@ -347,12 +352,12 @@ export function SiteHeader() {
                 )}
               </Link>
               <Link
-                href="/signin"
+                href={getPath("/signin")}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-2"
               >
                 {t("nav.signIn")}
               </Link>
-              <Link href="/register">
+              <Link href={getPath("/register")}>
                 <Button size="sm" className="h-9 px-5 shadow-sm">
                   {t("nav.getStarted")}
                 </Button>

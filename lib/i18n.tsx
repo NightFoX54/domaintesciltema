@@ -95,25 +95,43 @@ async function loadTranslation(lang: Language, namespace: string): Promise<any> 
   }
 }
 
-export function TranslationProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en')
+export function TranslationProvider({ 
+  children, 
+  initialLocale 
+}: { 
+  children: ReactNode
+  initialLocale?: Language
+}) {
+  const [language, setLanguageState] = useState<Language>(initialLocale || 'tr')
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
     setIsClient(true)
-    // Load language from localStorage or default to 'en'
-    const savedLang = localStorage.getItem('language') as Language
-    if (savedLang && (savedLang === 'en' || savedLang === 'tr')) {
-      setLanguageState(savedLang)
+    // Use initialLocale from URL if provided, otherwise check localStorage
+    if (initialLocale) {
+      setLanguageState(initialLocale)
       if (typeof document !== 'undefined') {
-        document.documentElement.lang = savedLang
+        document.documentElement.lang = initialLocale
+      }
+      // Sync with localStorage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('language', initialLocale)
       }
     } else {
-      if (typeof document !== 'undefined') {
-        document.documentElement.lang = 'en'
+      // Fallback: Load language from localStorage or default to 'tr'
+      const savedLang = localStorage.getItem('language') as Language
+      if (savedLang && (savedLang === 'en' || savedLang === 'tr')) {
+        setLanguageState(savedLang)
+        if (typeof document !== 'undefined') {
+          document.documentElement.lang = savedLang
+        }
+      } else {
+        if (typeof document !== 'undefined') {
+          document.documentElement.lang = 'tr'
+        }
       }
     }
-  }, [])
+  }, [initialLocale])
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang)
