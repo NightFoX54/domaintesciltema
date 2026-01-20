@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, createContext, useContext, ReactNode, useCallback } from 'react'
+import { useEffect, createContext, useContext, ReactNode, useCallback } from 'react'
 import enCommon from '@/locales/en/common.json'
 import trCommon from '@/locales/tr/common.json'
 import enHomepage from '@/locales/en/homepage.json'
@@ -31,8 +31,8 @@ import trConfigure from '@/locales/tr/configure.json'
 export type Language = 'en' | 'tr'
 
 interface TranslationContextType {
-  language: Language
-  setLanguage: (lang: Language) => void
+  language: Language // Derived from URL params, not client state
+  setLanguage: (lang: Language) => void // For API compatibility only
   t: (key: string, namespace?: string, params?: Record<string, string | number>) => any
 }
 
@@ -100,43 +100,24 @@ export function TranslationProvider({
   initialLocale 
 }: { 
   children: ReactNode
-  initialLocale?: Language
+  initialLocale: Language
 }) {
-  const [language, setLanguageState] = useState<Language>(initialLocale || 'tr')
-  const [isClient, setIsClient] = useState(false)
+  // Locale is derived from URL params, no client-side state needed
+  const language = initialLocale
 
   useEffect(() => {
-    setIsClient(true)
-    // Use initialLocale from URL if provided, otherwise check localStorage
-    if (initialLocale) {
-      setLanguageState(initialLocale)
-      if (typeof document !== 'undefined') {
-        document.documentElement.lang = initialLocale
-      }
-      // Sync with localStorage
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('language', initialLocale)
-      }
-    } else {
-      // Fallback: Load language from localStorage or default to 'tr'
-      const savedLang = localStorage.getItem('language') as Language
-      if (savedLang && (savedLang === 'en' || savedLang === 'tr')) {
-        setLanguageState(savedLang)
-        if (typeof document !== 'undefined') {
-          document.documentElement.lang = savedLang
-        }
-      } else {
-        if (typeof document !== 'undefined') {
-          document.documentElement.lang = 'tr'
-        }
-      }
+    // Update HTML lang attribute based on URL locale
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language
     }
-  }, [initialLocale])
+  }, [language])
 
+  // setLanguage is kept for API compatibility but only updates HTML lang
+  // Actual locale change happens via URL navigation in LanguageSwitcher
   const setLanguage = useCallback((lang: Language) => {
-    setLanguageState(lang)
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('language', lang)
+    // Only update HTML lang attribute
+    // URL navigation is handled by LanguageSwitcher component
+    if (typeof document !== 'undefined') {
       document.documentElement.lang = lang
     }
   }, [])
@@ -199,7 +180,8 @@ export function useTranslation(namespace?: string) {
   }
 
   return {
-    ...context,
+    language: context.language, // Derived from URL params
+    setLanguage: context.setLanguage, // For API compatibility (updates HTML lang only)
     t: (key: string, ns?: string, params?: Record<string, string | number>) => 
       context.t(key, ns || namespace || 'common', params),
   }

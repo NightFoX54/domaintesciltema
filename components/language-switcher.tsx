@@ -2,7 +2,7 @@
 
 import { useTranslation } from '@/lib/i18n'
 import { useLocale } from '@/hooks/use-locale'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -14,10 +14,14 @@ import { Globe } from 'lucide-react'
 import { removeLocaleFromPath, addLocaleToPath } from '@/lib/locale-utils'
 
 export function LanguageSwitcher() {
-  const { language, setLanguage, t } = useTranslation()
-  const currentLocale = useLocale()
+  const { language, t } = useTranslation()
+  const currentLocale = useLocale() // Read from URL params
   const pathname = usePathname()
+  const searchParams = useSearchParams()
   const router = useRouter()
+  
+  // language comes from URL params via TranslationProvider
+  // currentLocale is the same, but we use it for comparison
 
   const switchLocale = (newLocale: 'en' | 'tr') => {
     if (newLocale === currentLocale) return
@@ -27,9 +31,12 @@ export function LanguageSwitcher() {
     // Add new locale to pathname
     const newPath = addLocaleToPath(pathWithoutLocale, newLocale)
     
-    // Update language state and navigate
-    setLanguage(newLocale)
-    router.push(newPath)
+    // Preserve query params if present
+    const queryString = searchParams.toString()
+    const finalPath = queryString ? `${newPath}?${queryString}` : newPath
+    
+    // Navigate to new URL - locale will be read from URL params
+    router.push(finalPath)
   }
 
   return (

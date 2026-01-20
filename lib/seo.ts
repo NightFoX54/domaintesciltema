@@ -22,31 +22,41 @@ export function getBaseUrl(): string {
 }
 
 /**
- * Creates metadata with SEO best practices
- * Uses English as default, but includes hreflang for both languages
+ * Creates locale-aware metadata with SEO best practices
+ * Canonical URLs include locale prefix, hreflang tags reference both locales
  */
 export function createMetadata(
   config: SEOConfig,
   translations: {
     en: { title: string; description: string }
     tr: { title: string; description: string }
-  }
+  },
+  locale: 'en' | 'tr' = 'tr'
 ): Metadata {
   const baseUrl = getBaseUrl()
-  const canonicalUrl = `${baseUrl}${config.path}`
   
-  // Use English as default for metadata
-  const title = translations.en.title
-  const description = translations.en.description
+  // Ensure path starts with /
+  const cleanPath = config.path.startsWith('/') ? config.path : `/${config.path}`
   
-  // Create hreflang alternates - pointing to same URL since language is client-side
-  // In a production setup with URL-based routing, these would point to /en/path and /tr/path
+  // Remove any existing locale prefix from path
+  const pathWithoutLocale = cleanPath.replace(/^\/(en|tr)/, '') || '/'
+  
+  // Build locale-specific URLs
+  const enUrl = `${baseUrl}/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
+  const trUrl = `${baseUrl}/tr${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
+  const canonicalUrl = locale === 'en' ? enUrl : trUrl
+  
+  // Use locale-specific translations
+  const title = locale === 'en' ? translations.en.title : translations.tr.title
+  const description = locale === 'en' ? translations.en.description : translations.tr.description
+  
+  // Create hreflang alternates with locale-specific URLs
   const alternates: Metadata['alternates'] = {
     canonical: canonicalUrl,
     languages: {
-      'en': canonicalUrl,
-      'tr': canonicalUrl,
-      'x-default': canonicalUrl,
+      'en': enUrl,
+      'tr': trUrl,
+      'x-default': trUrl, // Default to Turkish
     },
   }
   
@@ -67,8 +77,8 @@ export function createMetadata(
       description,
       url: canonicalUrl,
       siteName: 'Domain Tescil',
-      locale: 'en_US',
-      alternateLocale: 'tr_TR',
+      locale: locale === 'en' ? 'en_US' : 'tr_TR',
+      alternateLocale: locale === 'en' ? 'tr_TR' : 'en_US',
       type: 'website',
     },
     twitter: {

@@ -9,7 +9,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const isEn = locale === 'en'
+  const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
   return createMetadata(
     { path: '/domains' },
@@ -22,7 +22,8 @@ export async function generateMetadata({
         title: trDomains.seo.title,
         description: trDomains.seo.description,
       },
-    }
+    },
+    validLocale
   )
 }
 
