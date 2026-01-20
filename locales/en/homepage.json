@@ -4,8 +4,8 @@
     "description": "Domain registration and hosting for first-time founders. No jargon. No hidden fees. Just real humans helping you start something meaningful. ICANN accredited, transparent pricing, 24/7 support."
   },
   "hero": {
-    "title": "Domain Registration & Hosting for Founders - Built for Those Who Bet on Themselves",
-    "description": "Starting something meaningful is hard enough. Getting your idea online shouldn't add to the anxiety.",
+    "title": "Domain Registration & Hosting for Your Website",
+    "description": "Getting your idea online shouldn't add to the anxiety.",
     "searchPlaceholder": "Find your domain name...",
     "searchButton": "Search",
     "searchInfo": "Most domains are available. If yours isn't, we'll help you find something even better.",
@@ -22,12 +22,13 @@
   },
   "story": {
     "title": "We built this because we were frustrated too",
-    "paragraph1": "You sign up for hosting and immediately hit a wall of confusing options. Basic plan? Pro plan? What even is a \"droplet\"?",
-    "paragraph2": "Then come the hidden fees. SSL certificates cost extra. Backups cost extra. Email costs extra. The $5/month plan somehow becomes $35.",
-    "paragraph3": "And when something goes wrong? You submit a ticket. And wait. And wait. Maybe you get a template response in 48 hours asking you to submit more information.",
+    "paragraph1": "You sign up for hosting and immediately hit a wall of confusing options. Then come the hidden fees—SSL costs extra, backups cost extra, email costs extra. The $5/month plan somehow becomes $35.",
+    "paragraph2": "And when something goes wrong? You submit a ticket. And wait. And wait. Maybe you get a template response in 48 hours asking you to submit more information.",
     "emphasis1": "We started Domain Tescil to fix all of that.",
     "emphasis2": "Clear pricing. Real humans. No jargon. Just help when you need it.",
-    "imageAlt": "Team working together"
+    "imageAlt": "Team working together",
+    "readyToTalk": "Ready to talk?",
+    "weAreHere": "We're here"
   },
   "testimonials": {
     "title": "Founders we've helped",
@@ -183,6 +184,7 @@
     "description2": "There's no pressure here. Take your time.",
     "primary": "Search for a domain",
     "secondary": "Talk to us first",
-    "footer": "Most people start with a conversation. That's completely normal."
+    "footer": "Most people start with a conversation. That's completely normal.",
+    "helperText": "Just browsing? That's fine—no commitment required."
   }
 }

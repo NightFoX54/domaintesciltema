@@ -5,7 +5,7 @@
   },
   "overview": {
     "hero": {
-      "title": "Sorunsuz çalışan hosting",
+      "title": "Web Hosting - Web Siteniz İçin Hızlı, Güvenilir Hosting",
       "description1": "Kurulacak bir web siteniz ve yönetecek bir işiniz var. Sitenizin çevrimiçi kalmasını, hızlı yüklenmesini ve size sorun çıkarmamasını sağlıyoruz.",
       "description2": "Sıfırdan bir şey mi kuruyorsunuz, WordPress mi kullanıyorsunuz, yoksa belirli bir şeye mi ihtiyacınız var—karmaşıklık olmadan sizi kapsıyoruz.",
       "imageAlt": "Düzenli masa düzeninde sakin bir şekilde çalışan geliştirici"
@@ -82,7 +82,10 @@
       "storage": {
         "title": "Depolama alanı",
         "description": "Bu, web sitenizin dosyaları için ne kadar alanınız olduğudur—kod, görseller, videolar, veritabanları. Çoğu sitenin nispeten az depolama alanına ihtiyacı vardır, ancak büyümek için alan olması önemlidir."
-      }
+      },
+      "readyToGetStarted": "Başlamaya hazır mısınız?",
+      "chooseHostingType": "Bir hosting türü seçin",
+      "orTalkToUs": "veya emin değilseniz bizimle konuşun"
     },
     "whichHosting": {
       "title": "Hangi hosting ihtiyaçlarınıza uyuyor?",
@@ -127,9 +130,14 @@
     },
     "cta": {
       "title": "Hala hangi hostinge ihtiyacınız olduğundan emin değil misiniz?",
-      "description": "Bizimle konuşun. İnşa ettiğiniz şey hakkında birkaç soru soracağız ve sizi doğru yöne yönlendireceğiz. Baskı yok, satış konuşması yok—sadece dürüst tavsiye.",
+      "description": "İnşa ettiğiniz şey hakkında birkaç soru soracağız ve sizi doğru yöne yönlendireceğiz. Baskı yok, satış konuşması yok—sadece dürüst tavsiye.",
       "primary": "Yardımcı biriyle konuşun",
-      "secondary": "Tüm hosting seçeneklerini görüntüle"
+      "secondary": "Tüm hosting seçeneklerini görüntüle",
+      "helperText": "Plan ve fiyatları görmek için yukarıdan hosting türlerine göz atın, emin değilseniz bizimle konuşun."
+    },
+    "contextualLink": {
+      "text": "Sitenizi SSL ile güvence altına alın.",
+      "link": "SSL sertifikalarını görüntüle"
     }
   },
   "linux": {
@@ -138,7 +146,8 @@
       "description": "İhtiyacınız olan her şeyi çalıştırma esnekliğiyle hızlı, güvenilir hosting. Gereksiz yük yok, kısıtlama yok—sadece sorunsuz çalışan sağlam altyapı.",
       "imageAlt": "Modern çalışma alanında kod üzerinde çalışan teknik kurucu",
       "configurePlan": "Planı yapılandır",
-      "talkToUs": "Önce bizimle konuşun"
+      "talkToUs": "Önce bizimle konuşun",
+      "helperText": "Toplam fiyatı görmek için planınızı yapılandırın. Taahhüt yok—ödeme sayfasına geçmeden önce her şeyi ayarlayabilirsiniz."
     },
     "whoIsFor": {
       "title": "Linux hosting kimler için",
@@ -282,7 +291,8 @@
       "description": "WordPress için özel olarak optimize edilmiş, güncellenmiş ve güvence altına alınmış. İçerik ve tasarıma odaklanın—sorunsuz çalışmasını sağlayacağız.",
       "imageAlt": "Sakin çalışma alanında blog yazısı yazan içerik oluşturucu",
       "viewPlans": "Planları görüntüle",
-      "talkToUs": "Önce bizimle konuşun"
+      "talkToUs": "Önce bizimle konuşun",
+      "helperText": "Toplam fiyatı görmek için planınızı yapılandırın. Taahhüt yok—ödeme sayfasına geçmeden önce her şeyi ayarlayabilirsiniz."
     },
     "whoIsFor": {
       "title": "WordPress hosting kimler için",
@@ -424,7 +434,8 @@
       "description": "Joomla ile önceden yapılandırılmış, optimize edilmiş ve test edilmiş. Joomla'nın ihtiyaç duyduğu performans ve güvenilirliği tahmin veya ekstra kurulum olmadan alırsınız.",
       "imageAlt": "Profesyonel kurulumda Joomla sitesi üzerinde çalışan web geliştirici",
       "viewPlans": "Planları görüntüle",
-      "talkToUs": "Önce bizimle konuşun"
+      "talkToUs": "Önce bizimle konuşun",
+      "helperText": "Toplam fiyatı görmek için planınızı yapılandırın. Taahhüt yok—ödeme sayfasına geçmeden önce her şeyi ayarlayabilirsiniz."
     },
     "whoIsFor": {
       "title": "Joomla hosting kimler için",

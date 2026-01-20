@@ -91,9 +91,6 @@ export default function HomePage() {
               <p className="text-pretty">
                 {t("story.paragraph2")}
               </p>
-              <p className="text-pretty">
-                {t("story.paragraph3")}
-              </p>
               <p className="text-foreground font-medium text-xl leading-relaxed text-pretty pt-4">
                 {t("story.emphasis1")}
               </p>
@@ -375,6 +372,14 @@ export default function HomePage() {
               </div>
             </div>
             </div>
+            <div className="pt-6">
+              <p className="text-sm text-muted-foreground">
+                {t("story.readyToTalk")}{" "}
+                <Link href={getLocalizedPath("/contact")} className="text-foreground font-medium hover:underline">
+                  {t("story.weAreHere")}
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </SectionWrapper>
@@ -396,6 +401,7 @@ export default function HomePage() {
           href: getLocalizedPath("/contact"),
           icon: <MessageCircle className="h-4 w-4" />,
         }}
+        helperText={t("cta.helperText")}
         footerText={t("cta.footer")}
       />
 

@@ -1,0 +1,62 @@
+{
+  "title": "Billing",
+  "overview": {
+    "title": "Billing Overview",
+    "balance": "Account Balance",
+    "due": "Amount Due",
+    "credit": "Account Credit",
+    "nextInvoice": "Next Invoice",
+    "dueDate": "Due {{date}}",
+    "overdue": "Overdue",
+    "paid": "Paid",
+    "noBalance": "No balance due",
+    "noBalanceDescription": "Your account is up to date"
+  },
+  "invoices": {
+    "title": "Invoices",
+    "empty": "No invoices found",
+    "emptyDescription": "Your invoices will appear here once you have active services",
+    "invoiceNumber": "Invoice #{{number}}",
+    "date": "Date",
+    "dueDate": "Due Date",
+    "amount": "Amount",
+    "status": "Status",
+    "paid": "Paid",
+    "unpaid": "Unpaid",
+    "overdue": "Overdue",
+    "cancelled": "Cancelled",
+    "view": "View",
+    "download": "Download PDF",
+    "payNow": "Pay Now",
+    "viewDetails": "View Details"
+  },
+  "payments": {
+    "title": "Payment History",
+    "empty": "No payment history",
+    "emptyDescription": "Your payment history will appear here",
+    "date": "Date",
+    "amount": "Amount",
+    "method": "Payment Method",
+    "transactionId": "Transaction ID",
+    "invoice": "Invoice",
+    "viewInvoice": "View Invoice"
+  },
+  "payment": {
+    "title": "Make Payment",
+    "description": "Pay your outstanding invoices",
+    "amountDue": "Amount Due",
+    "selectInvoices": "Select invoices to pay",
+    "selectAll": "Select All",
+    "total": "Total",
+    "paymentMethod": "Payment Method",
+    "selectMethod": "Select a payment method",
+    "card": "Credit/Debit Card",
+    "bankTransfer": "Bank Transfer",
+    "paypal": "PayPal",
+    "other": "Other",
+    "payNow": "Pay Now",
+    "processing": "Processing payment...",
+    "success": "Payment successful",
+    "error": "Payment failed. Please try again."
+  }
+}

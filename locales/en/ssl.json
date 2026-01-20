@@ -159,6 +159,10 @@
         {
           "question": "Can I upgrade from one SSL type to another later?",
           "answer": "Absolutely. Many people start with Positive SSL and upgrade to Wildcard or EV as their business grows. You're never locked into one choice. We make upgrading straightforward when you're ready."
+        },
+        {
+          "question": "What happens after I purchase an SSL certificate?",
+          "answer": "After purchase, you'll receive your certificate and installation instructions via email. For Positive SSL and Wildcard SSL, this usually happens within minutes. We'll guide you through installation, or our support team can help if you get stuck. Your certificate is valid for one year, and we'll send renewal reminders before it expires."
         }
       ]
     },
@@ -166,7 +170,12 @@
       "title": "Ready to secure your site?",
       "description": "We'll help you choose the right SSL certificate and get it installed properly. No pressure, no confusing jargon.",
       "primary": "Start with Positive SSL",
-      "secondary": "Talk to us first"
+      "secondary": "Talk to us first",
+      "helperText": "Compare SSL types and pricing. All certificates include free installation—we'll handle it for you."
+    },
+    "contextualLink": {
+      "text": "Need hosting?",
+      "link": "Explore our hosting plans"
     }
   },
   "positive": {

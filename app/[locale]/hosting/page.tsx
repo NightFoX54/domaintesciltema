@@ -11,9 +11,16 @@ import { FAQAccordion } from "@/components/common/faq-accordion"
 import { CTABlock } from "@/components/common/cta-block"
 import { HostingTypeCard } from "@/components/hosting/hosting-type-card"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export default function HostingOverviewPage() {
   const { t } = useTranslation('hosting')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+  
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -215,6 +222,46 @@ export default function HostingOverviewPage() {
             </p>
           </div>
         </div>
+        <p className="text-center text-muted-foreground mt-8">
+          {t("overview.hostingBasics.readyToGetStarted")}{" "}
+          <Link href="#whichHosting" className="text-foreground font-medium hover:underline">
+            {t("overview.hostingBasics.chooseHostingType")}
+          </Link>{" "}
+          <Link href={getPath("/contact")} className="text-foreground font-medium hover:underline">
+            {t("overview.hostingBasics.orTalkToUs")}
+          </Link>
+        </p>
+      </SectionWrapper>
+
+      <SectionWrapper padding="lg" id="whichHosting">
+        <SectionHeader
+          title={t("overview.whichHosting.title")}
+          description={t("overview.whichHosting.description")}
+          headingLevel={2}
+        />
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <HostingTypeCard
+            title={t("overview.whichHosting.linux.title")}
+            description={t("overview.whichHosting.linux.description")}
+            details={t("overview.whichHosting.linux.details")}
+            icon={<Server className="w-7 h-7 text-primary" />}
+            href="/hosting/linux"
+          />
+          <HostingTypeCard
+            title={t("overview.whichHosting.wordpress.title")}
+            description={t("overview.whichHosting.wordpress.description")}
+            details={t("overview.whichHosting.wordpress.details")}
+            icon={<Zap className="w-7 h-7 text-primary" />}
+            href="/hosting/wordpress"
+          />
+          <HostingTypeCard
+            title={t("overview.whichHosting.joomla.title")}
+            description={t("overview.whichHosting.joomla.description")}
+            details={t("overview.whichHosting.joomla.details")}
+            icon={<Users className="w-7 h-7 text-primary" />}
+            href="/hosting/joomla"
+          />
+        </div>
       </SectionWrapper>
 
       <SectionWrapper padding="md">
@@ -249,15 +296,16 @@ export default function HostingOverviewPage() {
           href: "/hosting",
           variant: "outline",
         }}
+        helperText={t("overview.cta.helperText")}
       />
 
       {/* Contextual Link */}
       <SectionWrapper padding="md">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-muted-foreground">
-            Secure your site with SSL.{" "}
-            <Link href="/ssl" className="text-foreground font-medium hover:underline">
-              View SSL certificates
+            {t("overview.contextualLink.text")}{" "}
+            <Link href={getPath("/ssl")} className="text-foreground font-medium hover:underline">
+              {t("overview.contextualLink.link")}
             </Link>
           </p>
         </div>

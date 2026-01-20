@@ -10,9 +10,16 @@ import { MessageCircle, Mail, ArrowRight, HelpCircle } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export default function ContactPage() {
   const { t } = useTranslation('contact')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -112,6 +119,10 @@ export default function ContactPage() {
                   {t("form.submit")} <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                 </Button>
 
+                <p className="text-sm text-muted-foreground text-center leading-relaxed">
+                  {t("form.afterSubmit")}
+                </p>
+
                 <p className="text-xs text-muted-foreground text-center leading-relaxed">
                   {t("form.responseTime")}
                 </p>
@@ -144,7 +155,7 @@ export default function ContactPage() {
                 </Link>
 
                 <Link
-                  href="/migration"
+                  href={getPath("/migration")}
                   className="block p-4 bg-muted/20 rounded-lg border border-border hover:shadow-md transition-all group"
                 >
                   <div className="flex items-start gap-3">
@@ -199,17 +210,17 @@ export default function ContactPage() {
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-2xl md:text-3xl font-semibold text-balance">Browse our products</h2>
-            <p className="text-muted-foreground">Looking for domains, hosting, or SSL certificates?</p>
+            <h2 className="text-2xl md:text-3xl font-semibold text-balance">{t("browseProducts.title")}</h2>
+            <p className="text-muted-foreground">{t("browseProducts.description")}</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="outline" asChild>
-                <Link href="/domains">Domains</Link>
+                <Link href={getPath("/domains")}>{t("browseProducts.domains")}</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/hosting">Hosting</Link>
+                <Link href={getPath("/hosting")}>{t("browseProducts.hosting")}</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/ssl">SSL Certificates</Link>
+                <Link href={getPath("/ssl")}>{t("browseProducts.ssl")}</Link>
               </Button>
             </div>
           </div>

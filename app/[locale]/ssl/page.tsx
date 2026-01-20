@@ -13,9 +13,15 @@ import { FeatureCard } from "@/components/common/feature-card"
 import { FAQAccordion } from "@/components/common/faq-accordion"
 import { CTABlock } from "@/components/common/cta-block"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export default function SSLPage() {
   const { t } = useTranslation('ssl')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -294,15 +300,16 @@ export default function SSLPage() {
           href: "/contact",
           variant: "outline",
         }}
+        helperText={t("overview.cta.helperText")}
       />
 
       {/* Contextual Link */}
       <SectionWrapper padding="md">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-muted-foreground">
-            Need hosting?{" "}
-            <Link href="/hosting" className="text-foreground font-medium hover:underline">
-              Explore our hosting plans
+            {t("overview.contextualLink.text")}{" "}
+            <Link href={getPath("/hosting")} className="text-foreground font-medium hover:underline">
+              {t("overview.contextualLink.link")}
             </Link>
           </p>
         </div>

@@ -6,9 +6,16 @@ import { Button } from "@/components/ui/button"
 import { MessageCircle, Mail, ArrowRight, Clock, Users } from "lucide-react"
 import Link from "next/link"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export default function SupportPage() {
   const { t } = useTranslation('support')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+  
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -31,12 +38,12 @@ export default function SupportPage() {
 
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="h-12 px-8 text-base shadow-md">
-                  <Link href="/contact">
+                  <Link href={getPath("/contact")}>
                     {t("hero.talkToHuman")} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="h-12 px-8 text-base bg-transparent">
-                  <Link href="/migration">{t("hero.getMigrationHelp")}</Link>
+                  <Link href={getPath("/migration")}>{t("hero.getMigrationHelp")}</Link>
                 </Button>
               </div>
             </div>
@@ -109,7 +116,7 @@ export default function SupportPage() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Link
-              href="/contact"
+              href={getPath("/contact")}
               className="group bg-background rounded-xl p-8 space-y-6 border border-border hover:shadow-lg transition-all duration-200"
             >
               <div className="h-14 w-14 rounded-xl bg-foreground text-background flex items-center justify-center group-hover:scale-105 transition-transform" aria-hidden="true">
@@ -120,6 +127,9 @@ export default function SupportPage() {
                 <p className="text-[15px] text-muted-foreground leading-relaxed">
                   {t("channels.liveChat.description")}
                 </p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  {t("channels.liveChat.nextStep")}
+                </p>
               </div>
               <div className="text-sm font-medium text-foreground group-hover:gap-2 flex items-center gap-1 transition-all">
                 {t("channels.liveChat.action")} <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -127,7 +137,7 @@ export default function SupportPage() {
             </Link>
 
             <Link
-              href="/contact"
+              href={getPath("/contact")}
               className="group bg-background rounded-xl p-8 space-y-6 border border-border hover:shadow-lg transition-all duration-200"
             >
               <div className="h-14 w-14 rounded-xl bg-foreground text-background flex items-center justify-center group-hover:scale-105 transition-transform" aria-hidden="true">
@@ -138,6 +148,9 @@ export default function SupportPage() {
                 <p className="text-[15px] text-muted-foreground leading-relaxed">
                   {t("channels.email.description")}
                 </p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  {t("channels.email.nextStep")}
+                </p>
               </div>
               <div className="text-sm font-medium text-foreground group-hover:gap-2 flex items-center gap-1 transition-all">
                 {t("channels.email.action")} <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -145,7 +158,7 @@ export default function SupportPage() {
             </Link>
 
             <Link
-              href="/migration"
+              href={getPath("/migration")}
               className="group bg-background rounded-xl p-8 space-y-6 border border-border hover:shadow-lg transition-all duration-200"
             >
               <div className="h-14 w-14 rounded-xl bg-foreground text-background flex items-center justify-center group-hover:scale-105 transition-transform" aria-hidden="true">
@@ -244,7 +257,7 @@ export default function SupportPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="h-12 px-8 text-base shadow-md">
-                <Link href="/contact">
+                <Link href={getPath("/contact")}>
                   {t("cta.contactSupport")} <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                 </Link>
               </Button>
@@ -257,17 +270,17 @@ export default function SupportPage() {
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-2xl md:text-3xl font-semibold text-balance">Browse our products</h2>
-            <p className="text-muted-foreground">Looking for domains, hosting, or SSL certificates?</p>
+            <h2 className="text-2xl md:text-3xl font-semibold text-balance">{t("browseProducts.title")}</h2>
+            <p className="text-muted-foreground">{t("browseProducts.description")}</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="outline" asChild>
-                <Link href="/domains">Domains</Link>
+                <Link href={getPath("/domains")}>{t("browseProducts.domains")}</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/hosting">Hosting</Link>
+                <Link href={getPath("/hosting")}>{t("browseProducts.hosting")}</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/ssl">SSL Certificates</Link>
+                <Link href={getPath("/ssl")}>{t("browseProducts.ssl")}</Link>
               </Button>
             </div>
           </div>

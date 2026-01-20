@@ -32,12 +32,14 @@
     "liveChat": {
       "title": "Live chat",
       "description": "Talk to a real person right now. Average response time: 2 minutes.",
-      "action": "Start a conversation"
+      "action": "Start a conversation",
+      "nextStep": "Click to start a conversation. We'll respond within 2 minutes."
     },
     "email": {
       "title": "Email support",
       "description": "Prefer writing things out? We respond to every email, usually within an hour.",
-      "action": "Send us an email"
+      "action": "Send us an email",
+      "nextStep": "Click to send us an email. We'll reply within an hour."
     },
     "migration": {
       "title": "Migration help",
@@ -69,5 +71,12 @@
     "title": "Need help right now?",
     "description": "We're here. No automated systems, no waiting—just real people ready to help.",
     "contactSupport": "Contact support"
+  },
+  "browseProducts": {
+    "title": "Browse our products",
+    "description": "Looking for domains, hosting, or SSL certificates?",
+    "domains": "Domains",
+    "hosting": "Hosting",
+    "ssl": "SSL Certificates"
   }
 }

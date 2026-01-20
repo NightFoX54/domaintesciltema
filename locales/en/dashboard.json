@@ -1,0 +1,87 @@
+{
+  "title": "Dashboard",
+  "greeting": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "default": "Welcome back"
+  },
+  "status": {
+    "title": "Everything looks good",
+    "subtitle": "All your services are running smoothly",
+    "allGood": "All systems operational",
+    "attentionNeeded": "Attention needed",
+    "issues": "issues require attention",
+    "issue": "issue requires attention",
+    "viewDetails": "View details"
+  },
+  "quickActions": {
+    "title": "Quick actions",
+    "manageDomains": "Manage domains",
+    "viewHosting": "View hosting",
+    "openTicket": "Open support ticket",
+    "viewBilling": "View billing",
+    "checkStatus": "System status"
+  },
+  "services": {
+    "title": "Your services",
+    "active": "Active",
+    "expiringSoon": "Expiring soon",
+    "expired": "Expired",
+    "suspended": "Suspended",
+    "pending": "Pending",
+    "domains": "Domains",
+    "hosting": "Hosting plans",
+    "ssl": "SSL certificates",
+    "viewAll": "View all",
+    "renewNow": "Renew now",
+    "daysRemaining": "{{days}} days remaining",
+    "expiredDaysAgo": "Expired {{days}} days ago",
+    "expiresToday": "Expires today",
+    "noServices": "No active services",
+    "noServicesDescription": "Get started by purchasing a domain or hosting plan"
+  },
+  "recentActivity": {
+    "title": "Recent activity",
+    "empty": "No recent activity",
+    "emptyDescription": "Your recent actions and updates will appear here",
+    "domainRenewed": "Domain renewed",
+    "domainRegistered": "Domain registered",
+    "hostingActivated": "Hosting activated",
+    "sslInstalled": "SSL certificate installed",
+    "ticketOpened": "Support ticket opened",
+    "ticketReplied": "Reply received",
+    "paymentReceived": "Payment received",
+    "invoiceGenerated": "Invoice generated",
+    "ago": "{{time}} ago",
+    "justNow": "Just now"
+  },
+  "billing": {
+    "title": "Billing overview",
+    "balance": "Account balance",
+    "due": "Amount due",
+    "nextInvoice": "Next invoice",
+    "dueDate": "Due {{date}}",
+    "overdue": "Overdue",
+    "paid": "Paid",
+    "viewInvoices": "View all invoices",
+    "makePayment": "Make payment",
+    "noBalance": "No balance due",
+    "noBalanceDescription": "Your account is up to date"
+  },
+  "support": {
+    "title": "Need help?",
+    "description": "We're here to help. Get in touch whenever you need assistance.",
+    "openTicket": "Open a ticket",
+    "viewTickets": "View tickets",
+    "knowledgeBase": "Knowledge base",
+    "contactUs": "Contact us",
+    "activeTickets": "Active tickets",
+    "noActiveTickets": "No active tickets"
+  },
+  "empty": {
+    "title": "Welcome to your dashboard",
+    "description": "Once you have active services, they'll appear here. Get started by purchasing a domain or hosting plan.",
+    "getStarted": "Get started"
+  }
+}

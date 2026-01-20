@@ -108,7 +108,8 @@
       "title": "Alan adınızı bulmaya hazır mısınız?",
       "description": "Müsaitliği kontrol etmek için yukarıda arama yapın veya zaten bir tane sahipseniz alan adı transfer seçeneklerimizi keşfedin.",
       "startSearching": "Aramaya başla",
-      "transferDomain": "Alan adı transfer et"
+      "transferDomain": "Alan adı transfer et",
+      "helperText": "Yukarıya bir alan adı yazarak müsaitliği kontrol edebilirsiniz. Satın alma zorunlu değil."
     },
     "contextualLink": {
       "text": "Hosting'e de mi ihtiyacınız var?",
@@ -164,7 +165,9 @@
     },
     "findDomain": {
       "title": "Alan adınızı bulun.\nÖnemli bir şey inşa edin.",
-      "description": "Fikriniz bir ismi hak ediyor. Birlikte bulalım."
+      "description": "Fikriniz bir ismi hak ediyor. Birlikte bulalım.",
+      "searchButton": "Alan adı ara",
+      "talkToUs": "Önce bizimle konuşun"
     },
     "noPressure": "Baskı yok. Hile yok. Her durumda yardımcı oluruz.",
     "whatYouGet": {
@@ -388,7 +391,8 @@
       "title": "Transfer etmeye hazır mısınız?",
       "description": "Başlamak için yukarıdaki alan adınızı girin veya önce süreç hakkında konuşmak isterseniz bizimle iletişime geçin.",
       "startTransfer": "Transferinizi başlatın",
-      "talkFirst": "Önce biriyle konuşun"
+      "talkFirst": "Önce biriyle konuşun",
+      "helperText": "Önce uygunluğu kontrol edeceğiz, sonra her adımda size rehberlik edeceğiz. Çoğu transfer 5-7 gün içinde tamamlanır."
     },
     "helpSection": {
       "title": "Yapabilecekleriniz",

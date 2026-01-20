@@ -32,12 +32,14 @@
     "liveChat": {
       "title": "Canlı sohbet",
       "description": "Şimdi gerçek bir kişiyle konuşun. Ortalama yanıt süresi: 2 dakika.",
-      "action": "Bir konuşma başlatın"
+      "action": "Bir konuşma başlatın",
+      "nextStep": "Tıklayarak bir konuşma başlatın. 2 dakika içinde yanıt vereceğiz."
     },
     "email": {
       "title": "E-posta desteği",
       "description": "Yazmayı mı tercih ediyorsunuz? Her e-postaya yanıt veriyoruz, genellikle bir saat içinde.",
-      "action": "Bize bir e-posta gönderin"
+      "action": "Bize bir e-posta gönderin",
+      "nextStep": "Tıklayarak bize bir e-posta gönderin. Bir saat içinde yanıt vereceğiz."
     },
     "migration": {
       "title": "Taşıma yardımı",
@@ -69,5 +71,12 @@
     "title": "Şu anda yardıma mı ihtiyacınız var?",
     "description": "Buradayız. Otomatik sistem yok, bekleme yok—sadece yardıma hazır gerçek insanlar.",
     "contactSupport": "Destekle iletişime geçin"
+  },
+  "browseProducts": {
+    "title": "Ürünlerimizi keşfedin",
+    "description": "Alan adı, hosting veya SSL sertifikası mı arıyorsunuz?",
+    "domains": "Alan Adları",
+    "hosting": "Hosting",
+    "ssl": "SSL Sertifikaları"
   }
 }

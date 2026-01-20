@@ -13,9 +13,16 @@ import { FAQAccordion } from "@/components/common/faq-accordion"
 import { CTABlock } from "@/components/common/cta-block"
 import Link from "next/link"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export default function LinuxHostingPage() {
   const { t } = useTranslation('hosting')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+  
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -45,6 +52,7 @@ export default function LinuxHostingPage() {
                   </Button>
                 </Link>
               </div>
+              <p className="text-sm text-muted-foreground/70 pt-2">{t("linux.hero.helperText")}</p>
             </div>
             <div className="relative">
               <img
@@ -313,9 +321,9 @@ export default function LinuxHostingPage() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Secure your site with SSL.{" "}
-              <Link href="/ssl" className="text-foreground font-medium hover:underline">
-                View SSL certificates
+              {t("overview.contextualLink.text")}{" "}
+              <Link href={getPath("/ssl")} className="text-foreground font-medium hover:underline">
+                {t("overview.contextualLink.link")}
               </Link>
             </p>
           </div>

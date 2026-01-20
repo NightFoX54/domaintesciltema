@@ -27,6 +27,14 @@ import enSSL from '@/locales/en/ssl.json'
 import trSSL from '@/locales/tr/ssl.json'
 import enConfigure from '@/locales/en/configure.json'
 import trConfigure from '@/locales/tr/configure.json'
+import enDashboard from '@/locales/en/dashboard.json'
+import trDashboard from '@/locales/tr/dashboard.json'
+import enBilling from '@/locales/en/billing.json'
+import trBilling from '@/locales/tr/billing.json'
+import enServices from '@/locales/en/services.json'
+import trServices from '@/locales/tr/services.json'
+import enTickets from '@/locales/en/tickets.json'
+import trTickets from '@/locales/tr/tickets.json'
 
 export type Language = 'en' | 'tr'
 
@@ -54,6 +62,10 @@ const translationCache: Record<Language, Record<string, any>> = {
     hosting: enHosting,
     ssl: enSSL,
     configure: enConfigure,
+    dashboard: enDashboard,
+    billing: enBilling,
+    services: enServices,
+    tickets: enTickets,
   },
   tr: { 
     common: trCommon, 
@@ -69,6 +81,10 @@ const translationCache: Record<Language, Record<string, any>> = {
     hosting: trHosting,
     ssl: trSSL,
     configure: trConfigure,
+    dashboard: trDashboard,
+    billing: trBilling,
+    services: trServices,
+    tickets: trTickets,
   },
 }
 

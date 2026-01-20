@@ -481,6 +481,7 @@ export default function DomainSearchPage() {
                 <Link href={getPath("/domains/transfer")}>{t("search.cta.transferDomain")}</Link>
               </Button>
             </div>
+            <p className="text-sm text-muted-foreground/70 pt-2 text-center">{t("search.cta.helperText")}</p>
           </div>
         </div>
       </section>

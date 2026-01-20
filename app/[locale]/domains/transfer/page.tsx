@@ -581,6 +581,7 @@ export default function DomainTransferPage() {
                 <Link href={getPath("/contact")}>{t("transfer.cta.talkFirst")}</Link>
               </Button>
             </div>
+            <p className="text-sm text-muted-foreground/70 pt-2 text-center">{t("transfer.cta.helperText")}</p>
           </div>
         </div>
       </section>

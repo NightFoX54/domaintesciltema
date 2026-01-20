@@ -28,6 +28,7 @@
       "placeholder": "Teknik olmaktan endişelenmeyin. Sadece ne yapmaya çalıştığınızı veya neyin çalışmadığını açıklayın."
     },
     "submit": "Mesaj gönder",
+    "afterSubmit": "Gönderdikten sonra bir onay e-postası alacaksınız. Mesajınızı inceleyeceğiz ve iş saatleri içinde bir saat içinde yanıt vereceğiz.",
     "responseTime": "Genellikle bir saat içinde yanıt veriyoruz. Acil ise, mesajınızda bundan bahsedin ve önceliklendirelim."
   },
   "quickHelp": {
@@ -53,5 +54,12 @@
   "reassurance": {
     "title": "Size rehberlik edeceğiz",
     "description": "Teknik bir şeyde takılı kalmış olsanız da sadece seçenekleri keşfediyor olsanız da, bunu çözmenize yardımcı olmak için buradayız. Yargı yok, baskı yok, acele yok. İhtiyacınız olan zamanı ayıracağız."
+  },
+  "browseProducts": {
+    "title": "Ürünlerimizi keşfedin",
+    "description": "Alan adı, hosting veya SSL sertifikası mı arıyorsunuz?",
+    "domains": "Alan Adları",
+    "hosting": "Hosting",
+    "ssl": "SSL Sertifikaları"
   }
 }

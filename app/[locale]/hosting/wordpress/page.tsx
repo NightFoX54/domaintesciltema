@@ -7,9 +7,16 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export default function WordPressHostingPage() {
   const { t } = useTranslation('hosting')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+  
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -36,6 +43,7 @@ export default function WordPressHostingPage() {
                   <Link href="/contact">{t("wordpress.hero.talkToUs")}</Link>
                 </Button>
               </div>
+              <p className="text-sm text-muted-foreground/70 pt-2">{t("wordpress.hero.helperText")}</p>
             </div>
             <div className="relative">
               <img
@@ -358,9 +366,9 @@ export default function WordPressHostingPage() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Secure your site with SSL.{" "}
-              <Link href="/ssl" className="text-foreground font-medium hover:underline">
-                View SSL certificates
+              {t("overview.contextualLink.text")}{" "}
+              <Link href={getPath("/ssl")} className="text-foreground font-medium hover:underline">
+                {t("overview.contextualLink.link")}
               </Link>
             </p>
           </div>

@@ -108,7 +108,8 @@
       "title": "Ready to find your domain?",
       "description": "Search above to check availability, or explore our domain transfer options if you already own one.",
       "startSearching": "Start searching",
-      "transferDomain": "Transfer a domain"
+      "transferDomain": "Transfer a domain",
+      "helperText": "Type a domain name above to check availability. No purchase required."
     },
     "contextualLink": {
       "text": "Need hosting too?",
@@ -164,7 +165,9 @@
     },
     "findDomain": {
       "title": "Find your domain.\nBuild something that matters.",
-      "description": "Your idea deserves a name. Let's find it together."
+      "description": "Your idea deserves a name. Let's find it together.",
+      "searchButton": "Search for a domain",
+      "talkToUs": "Talk to us first"
     },
     "noPressure": "No pressure. No tricks. We'll help either way.",
     "whatYouGet": {
@@ -370,7 +373,8 @@
       "title": "Ready to transfer?",
       "description": "Enter your domain above to get started, or contact us if you'd like to talk through the process first.",
       "startTransfer": "Start your transfer",
-      "talkFirst": "Talk to someone first"
+      "talkFirst": "Talk to someone first",
+      "helperText": "We'll check eligibility first, then guide you through each step. Most transfers complete in 5-7 days."
     },
     "helpSection": {
       "title": "What you can do",

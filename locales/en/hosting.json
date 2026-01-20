@@ -5,7 +5,7 @@
   },
   "overview": {
     "hero": {
-      "title": "Hosting that just works",
+      "title": "Web Hosting - Fast, Reliable Hosting for Your Website",
       "description1": "You've got a website to build and a business to run. We make sure your site stays online, loads fast, and doesn't give you headaches.",
       "description2": "Whether you're building from scratch, running WordPress, or need something specific—we've got you covered without the complexity.",
       "imageAlt": "Developer working calmly at organized desk setup"
@@ -82,7 +82,10 @@
       "storage": {
         "title": "Storage space",
         "description": "This is how much space you have for your website files—code, images, videos, databases. Most sites need relatively little storage, but it's important to have room to grow."
-      }
+      },
+      "readyToGetStarted": "Ready to get started?",
+      "chooseHostingType": "Choose a hosting type",
+      "orTalkToUs": "or talk to us if you're not sure"
     },
     "whichHosting": {
       "title": "Which hosting fits your needs?",
@@ -127,9 +130,14 @@
     },
     "cta": {
       "title": "Still not sure which hosting you need?",
-      "description": "Talk to us. We'll ask a few questions about what you're building and point you in the right direction. No pressure, no sales pitch—just honest advice.",
+      "description": "We'll ask a few questions and point you in the right direction. No pressure, no sales pitch—just honest advice.",
       "primary": "Talk to someone helpful",
-      "secondary": "View all hosting options"
+      "secondary": "View all hosting options",
+      "helperText": "Browse hosting types above to see plans and pricing, or talk to us if you're not sure."
+    },
+    "contextualLink": {
+      "text": "Secure your site with SSL.",
+      "link": "View SSL certificates"
     }
   },
   "linux": {
@@ -138,7 +146,8 @@
       "description": "Fast, reliable hosting with the flexibility to run whatever you need. No bloat, no restrictions—just solid infrastructure that works.",
       "imageAlt": "Technical founder working on code in modern workspace",
       "configurePlan": "Configure plan",
-      "talkToUs": "Talk to us first"
+      "talkToUs": "Talk to us first",
+      "helperText": "Configure your plan to see the total price. No commitment—you can adjust everything before checkout."
     },
     "whoIsFor": {
       "title": "Who Linux hosting is for",
@@ -282,7 +291,8 @@
       "description": "Optimized, updated, and secured specifically for WordPress. You focus on content and design—we'll make sure it runs smoothly.",
       "imageAlt": "Content creator writing blog post in calm workspace",
       "viewPlans": "View plans",
-      "talkToUs": "Talk to us first"
+      "talkToUs": "Talk to us first",
+      "helperText": "Configure your plan to see the total price. No commitment—you can adjust everything before checkout."
     },
     "whoIsFor": {
       "title": "Who WordPress hosting is for",
@@ -424,7 +434,8 @@
       "description": "Pre-configured, optimized, and tested with Joomla. You get the performance and reliability Joomla needs without guesswork or extra setup.",
       "imageAlt": "Web developer working on Joomla site in professional setup",
       "viewPlans": "View plans",
-      "talkToUs": "Talk to us first"
+      "talkToUs": "Talk to us first",
+      "helperText": "Configure your plan to see the total price. No commitment—you can adjust everything before checkout."
     },
     "whoIsFor": {
       "title": "Who Joomla hosting is for",

@@ -4,8 +4,8 @@
     "description": "İlk kez girişim yapanlar için alan adı kaydı ve hosting. Jargon yok. Gizli ücret yok. Sadece anlamlı bir şey başlatmanıza yardımcı olan gerçek insanlar. ICANN akrediteli, şeffaf fiyatlandırma, 7/24 destek."
   },
   "hero": {
-    "title": "Girişimciler İçin Alan Adı Kaydı ve Hosting - Kendine İnananlar İçin Tasarlandı",
-    "description": "Anlamlı bir şey başlatmak zaten yeterince zor. Fikrinizi çevrimiçi hale getirmek daha da zorlaşmamalı.",
+    "title": "Web Siteniz İçin Alan Adı Kaydı ve Hosting",
+    "description": "Fikrinizi çevrimiçi hale getirmek daha da zorlaşmamalı.",
     "searchPlaceholder": "Alan adınızı bulun...",
     "searchButton": "Ara",
     "searchInfo": "Çoğu alan adı müsait. Sizinki değilse, size daha iyi bir alternatif bulmanıza yardımcı oluruz.",
@@ -22,12 +22,13 @@
   },
   "story": {
     "title": "Aynı hayal kırıklığını yaşadığımız için bunu kurduk",
-    "paragraph1": "Hosting için kaydolursunuz ve karşınıza kafa karıştırıcı seçenekler çıkar. Temel plan mı? Profesyonel plan mı? \"Droplet\" ne demek?",
-    "paragraph2": "Sonra gizli ücretler başlar. SSL sertifikası ayrı ücret. Yedekleme ayrı ücret. E-posta ayrı ücret. 5$/ay plan bir anda 35$ olur.",
-    "paragraph3": "Peki bir şeyler ters gittiğinde? Destek bileti açarsınız. Beklersiniz. Beklersiniz. Belki 48 saat sonra daha fazla bilgi isteyen otomatik bir yanıt gelir.",
+    "paragraph1": "Hosting için kaydolursunuz ve karşınıza kafa karıştırıcı seçenekler çıkar. Sonra gizli ücretler başlar—SSL ayrı ücret, yedekleme ayrı ücret, e-posta ayrı ücret. 5$/ay plan bir anda 35$ olur.",
+    "paragraph2": "Peki bir şeyler ters gittiğinde? Destek bileti açarsınız. Beklersiniz. Beklersiniz. Belki 48 saat sonra daha fazla bilgi isteyen otomatik bir yanıt gelir.",
     "emphasis1": "Tüm bunları düzeltmek için Domain Tescil'i kurduk.",
     "emphasis2": "Şeffaf fiyatlandırma. Gerçek insanlar. Karmaşık terimler yok. Sadece ihtiyacınız olduğunda samimi destek.",
-    "imageAlt": "Birlikte çalışan ekip"
+    "imageAlt": "Birlikte çalışan ekip",
+    "readyToTalk": "Konuşmaya hazır mısınız?",
+    "weAreHere": "Buradayız"
   },
   "testimonials": {
     "title": "Yardımcı olduğumuz girişimciler",
@@ -183,6 +184,7 @@
     "description2": "Burada baskı yok. Acele etmeyin.",
     "primary": "Alan adı arayın",
     "secondary": "Önce bizimle konuşun",
-    "footer": "Çoğu insan bir konuşma ile başlar. Bu tamamen normal."
+    "footer": "Çoğu insan bir konuşma ile başlar. Bu tamamen normal.",
+    "helperText": "Sadece bakıyorsanız sorun değil—herhangi bir taahhüt gerekmez."
   }
 }

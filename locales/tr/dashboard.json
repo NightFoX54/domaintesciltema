@@ -1,0 +1,87 @@
+{
+  "title": "Kontrol Paneli",
+  "greeting": {
+    "morning": "Günaydın",
+    "afternoon": "İyi öğleden sonralar",
+    "evening": "İyi akşamlar",
+    "default": "Tekrar hoş geldiniz"
+  },
+  "status": {
+    "title": "Her şey yolunda görünüyor",
+    "subtitle": "Tüm hizmetleriniz sorunsuz çalışıyor",
+    "allGood": "Tüm sistemler çalışıyor",
+    "attentionNeeded": "Dikkat gerekiyor",
+    "issues": "sorun dikkat gerektiriyor",
+    "issue": "sorun dikkat gerektiriyor",
+    "viewDetails": "Detayları görüntüle"
+  },
+  "quickActions": {
+    "title": "Hızlı işlemler",
+    "manageDomains": "Alan adlarını yönet",
+    "viewHosting": "Hosting'i görüntüle",
+    "openTicket": "Destek talebi aç",
+    "viewBilling": "Faturalamayı görüntüle",
+    "checkStatus": "Sistem durumu"
+  },
+  "services": {
+    "title": "Hizmetleriniz",
+    "active": "Aktif",
+    "expiringSoon": "Yakında sona erecek",
+    "expired": "Süresi doldu",
+    "suspended": "Askıya alındı",
+    "pending": "Beklemede",
+    "domains": "Alan adları",
+    "hosting": "Hosting planları",
+    "ssl": "SSL sertifikaları",
+    "viewAll": "Tümünü görüntüle",
+    "renewNow": "Şimdi yenile",
+    "daysRemaining": "{{days}} gün kaldı",
+    "expiredDaysAgo": "{{days}} gün önce süresi doldu",
+    "expiresToday": "Bugün sona eriyor",
+    "noServices": "Aktif hizmet yok",
+    "noServicesDescription": "Bir alan adı veya hosting planı satın alarak başlayın"
+  },
+  "recentActivity": {
+    "title": "Son aktiviteler",
+    "empty": "Son aktivite yok",
+    "emptyDescription": "Son işlemleriniz ve güncellemeleriniz burada görünecek",
+    "domainRenewed": "Alan adı yenilendi",
+    "domainRegistered": "Alan adı kaydedildi",
+    "hostingActivated": "Hosting etkinleştirildi",
+    "sslInstalled": "SSL sertifikası yüklendi",
+    "ticketOpened": "Destek talebi açıldı",
+    "ticketReplied": "Yanıt alındı",
+    "paymentReceived": "Ödeme alındı",
+    "invoiceGenerated": "Fatura oluşturuldu",
+    "ago": "{{time}} önce",
+    "justNow": "Az önce"
+  },
+  "billing": {
+    "title": "Faturalama özeti",
+    "balance": "Hesap bakiyesi",
+    "due": "Ödenecek tutar",
+    "nextInvoice": "Sonraki fatura",
+    "dueDate": "{{date}} tarihine kadar ödenmeli",
+    "overdue": "Gecikmiş",
+    "paid": "Ödendi",
+    "viewInvoices": "Tüm faturaları görüntüle",
+    "makePayment": "Ödeme yap",
+    "noBalance": "Ödenecek bakiye yok",
+    "noBalanceDescription": "Hesabınız güncel"
+  },
+  "support": {
+    "title": "Yardıma mı ihtiyacınız var?",
+    "description": "Yardımcı olmak için buradayız. İhtiyacınız olduğunda bizimle iletişime geçin.",
+    "openTicket": "Talep aç",
+    "viewTickets": "Talepleri görüntüle",
+    "knowledgeBase": "Yardım merkezi",
+    "contactUs": "Bize ulaşın",
+    "activeTickets": "Aktif talepler",
+    "noActiveTickets": "Aktif talep yok"
+  },
+  "empty": {
+    "title": "Kontrol paneline hoş geldiniz",
+    "description": "Aktif hizmetleriniz olduğunda burada görünecekler. Bir alan adı veya hosting planı satın alarak başlayın.",
+    "getStarted": "Başlayın"
+  }
+}

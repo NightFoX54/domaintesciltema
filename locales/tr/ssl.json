@@ -159,6 +159,10 @@
         {
           "question": "Daha sonra bir SSL türünden diğerine yükseltebilir miyim?",
           "answer": "Kesinlikle. Birçok kişi Positive SSL ile başlar ve işleri büyüdükçe Wildcard veya EV'ye yükseltir. Asla bir seçime kilitlenmezsiniz. Hazır olduğunuzda yükseltmeyi basit hale getiriyoruz."
+        },
+        {
+          "question": "SSL sertifikası satın aldıktan sonra ne olur?",
+          "answer": "Satın alma işleminden sonra, sertifikanızı ve kurulum talimatlarınızı e-posta ile alacaksınız. Positive SSL ve Wildcard SSL için bu genellikle birkaç dakika içinde gerçekleşir. Kurulumda size rehberlik edeceğiz veya takılırsanız destek ekibimiz yardımcı olabilir. Sertifikanız bir yıl geçerlidir ve süresi dolmadan önce yenileme hatırlatmaları göndereceğiz."
         }
       ]
     },
@@ -166,7 +170,12 @@
       "title": "Sitenizi güvence altına almaya hazır mısınız?",
       "description": "Size doğru SSL sertifikasını seçmenize ve düzgün bir şekilde kurmanıza yardımcı olacağız. Baskı yok, kafa karıştırıcı jargon yok.",
       "primary": "Positive SSL ile başlayın",
-      "secondary": "Önce bizimle konuşun"
+      "secondary": "Önce bizimle konuşun",
+      "helperText": "SSL türlerini ve fiyatlarını karşılaştırın. Tüm sertifikalar ücretsiz kurulum içerir—biz hallederiz."
+    },
+    "contextualLink": {
+      "text": "Hosting'e mi ihtiyacınız var?",
+      "link": "Hosting planlarımıza göz atın"
     }
   },
   "positive": {

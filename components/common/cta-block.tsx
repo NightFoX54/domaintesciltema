@@ -17,6 +17,7 @@ interface CTABlockProps {
   primaryAction: CTAButton
   secondaryAction?: CTAButton
   footerText?: string
+  helperText?: string
   className?: string
   containerClassName?: string
 }
@@ -27,6 +28,7 @@ export function CTABlock({
   primaryAction,
   secondaryAction,
   footerText,
+  helperText,
   className,
   containerClassName,
 }: CTABlockProps) {
@@ -61,6 +63,7 @@ export function CTABlock({
           )}
         </div>
 
+        {helperText && <p className="text-sm text-muted-foreground/70 pt-2 text-center">{helperText}</p>}
         {footerText && <p className="text-sm text-muted-foreground/70 pt-4">{footerText}</p>}
       </div>
     </section>

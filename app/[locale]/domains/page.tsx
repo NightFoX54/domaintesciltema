@@ -103,12 +103,14 @@ export default function DomainsPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href={getPath("/configure/domain?domain=yourdomain.com&tld=.com")}>
             <Button size="lg" className="px-8 shadow-md hover:shadow-lg transition-shadow">
-              Search for a domain
+              {t("overview.findDomain.searchButton")}
             </Button>
           </Link>
-          <Button size="lg" variant="outline" className="px-8 border-2 hover:bg-muted/50 bg-transparent">
-            Talk to us first
-          </Button>
+          <Link href={getPath("/contact")}>
+            <Button size="lg" variant="outline" className="px-8 border-2 hover:bg-muted/50 bg-transparent">
+              {t("overview.findDomain.talkToUs")}
+            </Button>
+          </Link>
         </div>
         <p className="text-sm text-muted-foreground/70 pt-2 text-center">{t("overview.noPressure")}</p>
       </SectionWrapper>
