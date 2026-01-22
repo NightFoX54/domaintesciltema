@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import { Globe, ExternalLink, AlertCircle, RefreshCw } from 'lucide-react'
-import { format } from 'date-fns'
+import { formatDate, isExpiringSoon as checkExpiringSoon } from '@/lib/format-utils'
 
 interface DomainCardProps {
   id: string
@@ -37,7 +37,7 @@ export function DomainCard({
   }
 
   const config = statusConfig[status] || statusConfig.active
-  const isExpiringSoon = expiresDate && new Date(expiresDate) < new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
+  const isExpiringSoon = checkExpiringSoon(expiresDate)
 
   return (
     <div className="rounded-lg border bg-card p-6 hover:shadow-md transition-shadow">
@@ -68,7 +68,7 @@ export function DomainCard({
             {t('domains.expires')}:
           </span>
           <span className="font-medium">
-            {format(new Date(expiresDate), 'MMM d, yyyy')}
+            {formatDate(expiresDate, locale)}
             {isExpiringSoon && (
               <AlertCircle className="inline-block h-4 w-4 ml-1" aria-hidden="true" />
             )}

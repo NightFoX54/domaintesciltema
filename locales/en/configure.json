@@ -137,5 +137,10 @@
       "label": "Add domain to cart"
     },
     "note": "You can review everything before checkout. No commitment yet."
+  },
+  "sslDescriptions": {
+    "positive": "Perfect for personal sites and blogs",
+    "wildcard": "Protects unlimited subdomains",
+    "ev": "Maximum trust for businesses"
   }
 }

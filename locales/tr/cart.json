@@ -11,6 +11,10 @@
     "browseButton": "Ürünlere göz atın"
   },
   "removeItem": "Ürünü kaldır",
+  "removeConfirmTitle": "Bu ürünü kaldır?",
+  "removeConfirmDescription": "Bu ürün sepetinizden kaldırılacak. İstediğiniz zaman tekrar ekleyebilirsiniz.",
+  "removeConfirmAction": "Ürünü kaldır",
+  "removeConfirmCancel": "Ürünü koru",
   "price": "Fiyat",
   "edit": "Düzenle",
   "orderSummary": "Sipariş özeti",

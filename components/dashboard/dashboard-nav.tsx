@@ -38,7 +38,7 @@ export function DashboardNav() {
   }
 
   return (
-    <nav className="flex flex-col gap-1" aria-label="Dashboard navigation">
+    <nav className="flex flex-col gap-1" aria-label={t("accessibility.dashboardNavigation", "common")}>
       {navItems.map((item) => {
         const Icon = item.icon
         const active = isActive(item.href)
@@ -67,7 +67,7 @@ export function DashboardNav() {
           className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors w-full focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           onClick={() => {
             // TODO: Implement logout - this would call WHMCS logout API
-            console.log('Logout clicked')
+            // TODO: Implement logout - this would call WHMCS logout API
           }}
         >
           <LogOut className="h-5 w-5" aria-hidden="true" />

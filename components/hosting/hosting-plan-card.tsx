@@ -2,6 +2,7 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { useTranslation } from "@/lib/i18n"
 
 interface HostingPlanFeature {
   text: string
@@ -31,9 +32,12 @@ export function HostingPlanCard({
   actionLabel,
   actionHref,
   isPopular = false,
-  popularLabel = "Most popular",
+  popularLabel,
   className,
 }: HostingPlanCardProps) {
+  const { t } = useTranslation('common')
+  const displayPopularLabel = popularLabel || t('ui.mostPopular')
+  
   // TODO: Add analytics tracking for plan selections
 
   return (
@@ -45,8 +49,8 @@ export function HostingPlanCard({
       )}
     >
       {isPopular && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium" aria-label={popularLabel}>
-          {popularLabel}
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium" aria-label={displayPopularLabel}>
+          {displayPopularLabel}
         </div>
       )}
 

@@ -26,7 +26,7 @@ export default function ForgotPasswordPage() {
     <div className="min-h-screen bg-background flex flex-col">
       <SiteHeader />
 
-      <main className="flex-1 container mx-auto px-4 py-16 md:py-24">
+      <main id="main-content" className="flex-1 container mx-auto px-4 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
           {/* Left side - Form */}
           <div className="order-2 lg:order-1">
@@ -61,8 +61,9 @@ export default function ForgotPasswordPage() {
                           className="h-12"
                           autoComplete="email"
                           required
+                          aria-describedby="email-hint"
                         />
-                        <p className="text-xs text-muted-foreground/70">
+                        <p id="email-hint" className="text-xs text-muted-foreground/70">
                           {t("forgotPassword.email.hint")}
                         </p>
                       </div>
@@ -82,8 +83,12 @@ export default function ForgotPasswordPage() {
                     </form>
                   ) : (
                     <div className="space-y-6 py-4">
-                      <div className="bg-muted/30 border border-border/50 rounded-lg p-6 flex items-start gap-4">
-                        <div className="bg-background border border-border rounded-full p-3">
+                      <div 
+                        role="alert" 
+                        aria-live="polite"
+                        className="bg-muted/30 border border-border/50 rounded-lg p-6 flex items-start gap-4"
+                      >
+                        <div className="bg-background border border-border rounded-full p-3" aria-hidden="true">
                           <Mail className="h-6 w-6 text-foreground" />
                         </div>
                         <div className="space-y-2 flex-1">

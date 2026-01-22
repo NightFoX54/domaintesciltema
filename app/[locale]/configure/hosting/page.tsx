@@ -10,11 +10,12 @@ import { Check, Server, Shield, ArrowLeft } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
+import { formatCurrency } from "@/lib/format-utils"
 
 export const dynamic = "force-dynamic"
 
 export default function ConfigureHostingPage() {
-  const { t } = useTranslation('configure')
+  const { t, language } = useTranslation('configure')
   const router = useRouter()
   const searchParams = useSearchParams()
   const planType = searchParams.get("plan") || "starter"
@@ -153,40 +154,40 @@ export default function ConfigureHostingPage() {
                 <Label className="text-lg font-semibold mb-4 block">{t("hosting.billingCycle.title")}</Label>
                 <p className="text-sm text-muted-foreground mb-4">{t("hosting.billingCycle.description")}</p>
                 <RadioGroup value={billingCycle} onValueChange={setBillingCycle} className="space-y-3">
-                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors cursor-pointer">
+                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors">
                     <div className="flex items-center space-x-3">
                       <RadioGroupItem value="1" id="1month" />
-                      <Label htmlFor="1month" className="cursor-pointer font-medium">
+                      <Label htmlFor="1month" className="font-medium">
                         {t("hosting.billingCycle.oneMonth")}
                       </Label>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold">${monthlyPrice.toFixed(2)}{t("hosting.billingCycle.perMonth")}</div>
+                      <div className="font-semibold">{formatCurrency(monthlyPrice, language)}{t("hosting.billingCycle.perMonth")}</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors cursor-pointer">
+                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors">
                     <div className="flex items-center space-x-3">
                       <RadioGroupItem value="12" id="12month" />
-                      <Label htmlFor="12month" className="cursor-pointer font-medium">
+                      <Label htmlFor="12month" className="font-medium">
                         {t("hosting.billingCycle.twelveMonths")}
                       </Label>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold">${(monthlyPrice * 12).toFixed(2)}</div>
+                      <div className="font-semibold">{formatCurrency(monthlyPrice * 12, language)}</div>
                       <div className="text-xs text-primary">{t("hosting.billingCycle.save", { months: 2 })}</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors cursor-pointer">
+                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors">
                     <div className="flex items-center space-x-3">
                       <RadioGroupItem value="24" id="24month" />
-                      <Label htmlFor="24month" className="cursor-pointer font-medium">
+                      <Label htmlFor="24month" className="font-medium">
                         {t("hosting.billingCycle.twentyFourMonths")}
                       </Label>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold">${(monthlyPrice * 24).toFixed(2)}</div>
+                      <div className="font-semibold">{formatCurrency(monthlyPrice * 24, language)}</div>
                       <div className="text-xs text-primary">{t("hosting.billingCycle.save", { months: 4 })}</div>
                     </div>
                   </div>
@@ -210,7 +211,7 @@ export default function ConfigureHostingPage() {
                     <div className="flex-1">
                       <Label htmlFor="backups" className="cursor-pointer font-medium flex items-center justify-between">
                         <span>{t("hosting.addons.backups.label")}</span>
-                        <span className="text-sm text-muted-foreground">+${(2.99 * months).toFixed(2)}</span>
+                        <span className="text-sm text-muted-foreground">+{formatCurrency(2.99 * months, language)}</span>
                       </Label>
                       <p className="text-sm text-muted-foreground mt-1">
                         {t("hosting.addons.backups.description")}
@@ -231,7 +232,7 @@ export default function ConfigureHostingPage() {
                         className="cursor-pointer font-medium flex items-center justify-between"
                       >
                         <span>{t("hosting.addons.priority.label")}</span>
-                        <span className="text-sm text-muted-foreground">+${(4.99 * months).toFixed(2)}</span>
+                        <span className="text-sm text-muted-foreground">+{formatCurrency(4.99 * months, language)}</span>
                       </Label>
                       <p className="text-sm text-muted-foreground mt-1">
                         {t("hosting.addons.priority.description")}
@@ -281,8 +282,8 @@ export default function ConfigureHostingPage() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold">${totalPrice.toFixed(2)}</div>
-                  <div className="text-xs text-muted-foreground">${(totalPrice / months).toFixed(2)}{t("hosting.total.perMonth")}</div>
+                  <div className="text-3xl font-bold">{formatCurrency(totalPrice, language)}</div>
+                  <div className="text-xs text-muted-foreground">{formatCurrency(totalPrice / months, language)}{t("hosting.total.perMonth")}</div>
                 </div>
               </div>
 

@@ -2,6 +2,7 @@ import type React from "react"
 import { DashboardNav } from "@/components/dashboard/dashboard-nav"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { ErrorBoundaryWrapper } from "@/components/error-boundary-wrapper"
 
 export default function DashboardLayout({
   children,
@@ -16,8 +17,10 @@ export default function DashboardLayout({
           <aside className="lg:sticky lg:top-24 lg:h-fit">
             <DashboardNav />
           </aside>
-          <main className="min-w-0">
-            {children}
+          <main id="main-content" className="min-w-0">
+            <ErrorBoundaryWrapper>
+              {children}
+            </ErrorBoundaryWrapper>
           </main>
         </div>
       </div>

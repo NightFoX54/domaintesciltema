@@ -58,7 +58,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <form className="space-y-6">
+              <form className="space-y-6" noValidate>
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-sm font-medium">
                     {t("form.name.label")}
@@ -70,6 +70,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="h-11"
+                    aria-required="true"
                   />
                 </div>
 
@@ -84,6 +85,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="h-11"
+                    aria-required="true"
                   />
                 </div>
 
@@ -112,6 +114,7 @@ export default function ContactPage() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={8}
                     className="resize-none"
+                    aria-required="true"
                   />
                 </div>
 

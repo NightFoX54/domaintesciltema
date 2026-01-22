@@ -11,6 +11,10 @@
     "browseButton": "Browse products"
   },
   "removeItem": "Remove item",
+  "removeConfirmTitle": "Remove this item?",
+  "removeConfirmDescription": "This item will be removed from your cart. You can add it back anytime.",
+  "removeConfirmAction": "Remove item",
+  "removeConfirmCancel": "Keep item",
   "price": "Price",
   "edit": "Edit",
   "orderSummary": "Order summary",

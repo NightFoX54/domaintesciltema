@@ -4,8 +4,15 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { createMetadata } from "@/lib/seo"
 import { addLocaleToPath } from "@/lib/locale-utils"
-import { ArrowLeft, MessageSquare } from "lucide-react"
-import { format } from "date-fns"
+import { formatDateTime } from "@/lib/format-utils"
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb"
 import enDashboard from "@/locales/en/dashboard.json"
 import trDashboard from "@/locales/tr/dashboard.json"
 
@@ -18,15 +25,15 @@ export async function generateMetadata({
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
   return createMetadata(
-    { path: '/dashboard/tickets/[id]' },
+    { path: '/dashboard/tickets/[id]', noindex: true, nofollow: true },
     {
       en: {
-        title: 'Ticket Details - Dashboard',
-        description: 'View ticket details and replies',
+        title: `${enDashboard.placeholderData.ticketSubjects.sslSetup} - ${enDashboard.seo.ticketsDetail.title}`,
+        description: enDashboard.seo.ticketsDetail.description,
       },
       tr: {
-        title: 'Talep Detayları - Kontrol Paneli',
-        description: 'Talep detaylarını ve yanıtları görüntüleyin',
+        title: `${trDashboard.placeholderData.ticketSubjects.sslSetup} - ${trDashboard.seo.ticketsDetail.title}`,
+        description: trDashboard.seo.ticketsDetail.description,
       },
     },
     validLocale
@@ -34,27 +41,31 @@ export async function generateMetadata({
 }
 
 // PLACEHOLDER DATA - Replace with WHMCS API: GetTicket
-const placeholderTicket = {
-  id: '1',
-  ticketNumber: 'TKT-2024-001',
-  subject: 'Need help with SSL setup',
-  status: 'answered' as const,
-  created: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-  lastReply: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-  messages: [
-    {
-      id: '1',
-      author: 'You',
-      date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-      message: 'I need help setting up SSL for my domain. Can you guide me through the process?',
-    },
-    {
-      id: '2',
-      author: 'Support Team',
-      date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-      message: 'We\'d be happy to help! SSL setup is automatic for most hosting plans. Let me check your account and get back to you with specific instructions.',
-    },
-  ],
+function getPlaceholderTicket(locale: 'en' | 'tr') {
+  const t = locale === 'en' ? enDashboard : trDashboard
+  
+  return {
+    id: '1',
+    ticketNumber: 'TKT-2024-001',
+    subject: t.placeholderData.ticketSubjects.sslSetup,
+    status: 'answered' as const,
+    created: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+    lastReply: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+    messages: [
+      {
+        id: '1',
+        author: 'You',
+        date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+        message: t.placeholderData.ticketMessages.sslRequest,
+      },
+      {
+        id: '2',
+        author: 'Support Team',
+        date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+        message: t.placeholderData.ticketMessages.sslResponse,
+      },
+    ],
+  }
 }
 
 export default async function TicketDetailPage({
@@ -67,6 +78,9 @@ export default async function TicketDetailPage({
   const getPath = (path: string) => addLocaleToPath(path, validLocale)
   const t = validLocale === 'en' ? enDashboard : trDashboard
 
+  // PLACEHOLDER DATA - Replace with WHMCS API: GetTicket
+  const placeholderTicket = getPlaceholderTicket(validLocale)
+
   const statusConfig = {
     open: { label: t.tickets.open, variant: 'default' as const },
     answered: { label: t.tickets.answered, variant: 'secondary' as const },
@@ -77,13 +91,25 @@ export default async function TicketDetailPage({
 
   return (
     <>
-      <Link 
-        href={getPath('/dashboard/tickets')}
-        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
-      >
-        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-        {t.ticketsPage.backToTickets}
-      </Link>
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href={getPath('/dashboard')}>{t.navigation.dashboard}</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href={getPath('/dashboard/tickets')}>{t.navigation.tickets}</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{placeholderTicket.subject}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
       <div className="mb-8">
         <div className="flex items-start justify-between gap-4 mb-4">
@@ -101,19 +127,17 @@ export default async function TicketDetailPage({
         </div>
       </div>
 
-      <div className="space-y-6">
+      <ul className="space-y-6">
         {placeholderTicket.messages.map((message) => (
-          <div
-            key={message.id}
-            className="rounded-lg border bg-card p-6"
-          >
+          <li key={message.id}>
+            <article className="rounded-lg border bg-card p-6">
             <div className="flex items-start justify-between gap-4 mb-4">
               <div>
                 <h3 className="font-semibold text-foreground mb-1">
                   {message.author === 'You' ? t.ticketDetail.you : t.ticketDetail.supportTeam}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {format(new Date(message.date), 'MMMM d, yyyy \'at\' h:mm a')}
+                  {formatDateTime(message.date, validLocale)}
                 </p>
               </div>
             </div>
@@ -122,23 +146,32 @@ export default async function TicketDetailPage({
                 {message.message}
               </p>
             </div>
-          </div>
+            </article>
+          </li>
         ))}
+      </ul>
 
         {/* Reply Form */}
-        <div className="rounded-lg border bg-card p-6">
-          <h2 className="text-lg font-semibold text-foreground mb-4">
+        <section className="rounded-lg border bg-card p-6" aria-labelledby="reply-heading">
+          <h2 id="reply-heading" className="text-lg font-semibold text-foreground mb-4">
             {t.ticketDetail.addReply}
           </h2>
-          <div className="space-y-4">
-            <textarea
-              className="w-full min-h-[120px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              placeholder={t.ticketDetail.typeReplyPlaceholder}
-            />
-            <Button>{t.ticketDetail.sendReply}</Button>
-          </div>
-        </div>
-      </div>
+          <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); /* TODO: Handle submit */ }}>
+            <div>
+              <label htmlFor="reply-textarea" className="sr-only">
+                {t.ticketDetail.typeReplyPlaceholder}
+              </label>
+              <textarea
+                id="reply-textarea"
+                name="reply"
+                className="w-full min-h-[120px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                placeholder={t.ticketDetail.typeReplyPlaceholder}
+                required
+              />
+            </div>
+            <Button type="submit">{t.ticketDetail.sendReply}</Button>
+          </form>
+        </section>
     </>
   )
 }

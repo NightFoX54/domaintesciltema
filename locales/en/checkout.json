@@ -111,5 +111,12 @@
       "email": "Questions? Email us at support@domaintescil.com",
       "responseTime": "We typically respond within an hour, often much faster."
     }
+  },
+  "whatsIncluded": {
+    "title": "What's included:",
+    "whoisPrivacy": "Free WHOIS privacy protection",
+    "support": "24/7 human support access",
+    "guarantee": "30-day money-back guarantee",
+    "cancellation": "Easy cancellation anytime"
   }
 }

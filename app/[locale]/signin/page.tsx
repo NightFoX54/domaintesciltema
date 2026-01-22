@@ -19,7 +19,7 @@ export default function SignInPage() {
     <div className="min-h-screen bg-background flex flex-col">
       <SiteHeader />
 
-      <main className="flex-1 container mx-auto px-4 py-16 md:py-24">
+      <main id="main-content" className="flex-1 container mx-auto px-4 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
           {/* Left side - Form */}
           <div className="order-2 lg:order-1">

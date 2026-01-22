@@ -111,5 +111,12 @@
       "email": "Sorularınız mı var? Bize support@domaintescil.com adresinden e-posta gönderin",
       "responseTime": "Genellikle bir saat içinde yanıt veriyoruz, çoğu zaman çok daha hızlı."
     }
+  },
+  "whatsIncluded": {
+    "title": "Dahil olanlar:",
+    "whoisPrivacy": "Ücretsiz WHOIS gizlilik koruması",
+    "support": "7/24 insan desteği erişimi",
+    "guarantee": "30 gün para iade garantisi",
+    "cancellation": "İstediğiniz zaman kolay iptal"
   }
 }

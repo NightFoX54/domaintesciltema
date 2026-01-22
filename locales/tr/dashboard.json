@@ -1,7 +1,43 @@
 {
   "seo": {
     "title": "Kontrol Paneli",
-    "description": "Hizmetlerinizi, alan adlarınızı ve hesabınızı yönetin"
+    "description": "Hizmetlerinizi, alan adlarınızı ve hesabınızı yönetin",
+    "services": {
+      "title": "Hizmetler - Kontrol Paneli",
+      "description": "Tüm hosting ve ilgili hizmetlerinizi yönetin"
+    },
+    "servicesDetail": {
+      "title": "Hizmet Detayları - Kontrol Paneli",
+      "description": "Hizmetinizi görüntüleyin ve yönetin"
+    },
+    "domains": {
+      "title": "Alan Adları - Kontrol Paneli",
+      "description": "Bizde kayıtlı tüm alan adlarını yönetin"
+    },
+    "domainsDetail": {
+      "title": "Alan Adı Detayları - Kontrol Paneli",
+      "description": "Alan adınızı görüntüleyin ve yönetin"
+    },
+    "billing": {
+      "title": "Faturalama - Kontrol Paneli",
+      "description": "Faturaları ve ödeme bilgilerini görüntüleyin"
+    },
+    "tickets": {
+      "title": "Destek Talepleri - Kontrol Paneli",
+      "description": "Destek taleplerinizi görüntüleyin ve yönetin"
+    },
+    "ticketsDetail": {
+      "title": "Talep Detayları - Kontrol Paneli",
+      "description": "Talep detaylarını ve yanıtları görüntüleyin"
+    },
+    "ticketsNew": {
+      "title": "Destek Talebi Oluştur - Kontrol Paneli",
+      "description": "Yeni bir destek talebi oluşturun"
+    },
+    "profile": {
+      "title": "Profil - Kontrol Paneli",
+      "description": "Hesap ayarlarınızı yönetin"
+    }
   },
   "greeting": {
     "welcome": "Tekrar hoş geldiniz",
@@ -40,6 +76,7 @@
     "subtitle": "Tüm hosting ve ilgili hizmetleriniz",
     "empty": "Henüz hizmet yok",
     "emptyDescription": "Bir hizmet satın aldığınızda burada görünecek",
+    "emptyAction": "Hosting planlarına göz atın",
     "viewAll": "Tüm hizmetleri görüntüle",
     "renewalDate": "Yenilenme",
     "expires": "Süresi doluyor",
@@ -51,6 +88,7 @@
     "subtitle": "Bizde kayıtlı tüm alan adları",
     "empty": "Henüz alan adı yok",
     "emptyDescription": "Bir alan adı kaydettiğinizde burada görünecek",
+    "emptyAction": "Alan adı ara",
     "viewAll": "Tüm alan adlarını görüntüle",
     "expires": "Süresi doluyor",
     "autoRenew": "Otomatik yenileme",
@@ -67,7 +105,8 @@
     "paid": "Ödendi",
     "unpaid": "Ödenmedi",
     "viewAll": "Tüm faturaları görüntüle",
-    "noInvoices": "Henüz fatura yok"
+    "noInvoices": "Henüz fatura yok",
+    "emptyDescription": "Faturalarınız olduğunda burada görünecek"
   },
   "tickets": {
     "title": "Destek talepleri",
@@ -122,6 +161,10 @@
     "renewService": "Hizmeti Yenile",
     "upgradePlan": "Planı Yükselt",
     "requestCancellation": "İptal Talebi",
+    "cancellationConfirmTitle": "Hizmet iptali talep edilsin mi?",
+    "cancellationConfirmDescription": "Bu, bu hizmet için bir iptal talebi gönderecektir. İptal işlenene kadar hizmeti kullanmaya devam edebilirsiniz.",
+    "cancellationConfirmAction": "İptal talep et",
+    "cancellationCancel": "Hizmeti koru",
     "quickLinks": "Hızlı Bağlantılar",
     "controlPanel": "Kontrol Paneli",
     "openSupportTicket": "Destek Talebi Aç"
@@ -143,7 +186,8 @@
     "renewDomain": "Alan Adını Yenile",
     "manageDns": "DNS Yönet",
     "transferDomain": "Alan Adını Transfer Et",
-    "dnsManagement": "DNS Yönetimi"
+    "dnsManagement": "DNS Yönetimi",
+    "actions": "İşlemler"
   },
   "billingPage": {
     "title": "Faturalama",
@@ -197,6 +241,47 @@
     "zipCode": "Posta Kodu",
     "country": "Ülke",
     "saveChanges": "Değişiklikleri Kaydet",
-    "cancel": "İptal"
+    "cancel": "İptal",
+    "messages": {
+      "saving": "Kaydediliyor...",
+      "saveSuccess": "Profil başarıyla kaydedildi",
+      "saveError": "Profil kaydedilirken hata oluştu. Lütfen formu kontrol edin."
+    },
+    "errors": {
+      "required": "Bu alan zorunludur",
+      "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
+      "invalidPhone": "Lütfen geçerli bir telefon numarası girin"
+    }
+  },
+  "errorBoundary": {
+    "title": "Bir şeyler ters gitti",
+    "description": "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin veya panoya dönün.",
+    "tryAgain": "Tekrar dene",
+    "goToDashboard": "Panele git"
+  },
+  "ticketForm": {
+    "placeholder": "Talep oluşturma formu burada uygulanacak.",
+    "apiNote": "Bu, WHMCS OpenTicket API'si ile entegre edilecektir."
+  },
+  "placeholderData": {
+    "ticketSubjects": {
+      "sslSetup": "SSL kurulumu için yardıma ihtiyacım var",
+      "domainTransfer": "Alan adı transferi sorusu",
+      "hostingUpgrade": "Hosting planı yükseltme"
+    },
+    "ticketMessages": {
+      "sslRequest": "Alan adım için SSL kurulumunda yardıma ihtiyacım var. Süreç boyunca bana rehberlik edebilir misiniz?",
+      "sslResponse": "Yardımcı olmaktan memnuniyet duyarız! SSL kurulumu çoğu hosting planı için otomatiktir. Hesabınızı kontrol edip size özel talimatlarla geri döneceğim."
+    },
+    "serviceNames": {
+      "wordpressStarter": "WordPress Hosting - Başlangıç",
+      "linuxPro": "Linux Hosting - Pro",
+      "joomlaBasic": "Joomla Hosting - Temel"
+    },
+    "billingCycles": {
+      "monthly": "Aylık",
+      "yearly": "Yıllık",
+      "annual": "Yıllık"
+    }
   }
 }

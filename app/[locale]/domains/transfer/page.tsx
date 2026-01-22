@@ -153,6 +153,7 @@ export default function DomainTransferPage() {
                     }}
                     className="h-14 px-4 text-base flex-1"
                     aria-label={t("transfer.hero.inputLabel")}
+                    aria-describedby="transfer-hint"
                   />
                   <Button size="lg" className="h-14 px-8" onClick={handleCheck} disabled={isChecking || !domain.trim()}>
                     {isChecking ? (
@@ -165,7 +166,7 @@ export default function DomainTransferPage() {
                     )}
                   </Button>
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p id="transfer-hint" className="text-xs text-muted-foreground">
                   {t("transfer.hero.hint")}
                 </p>
               </div>
@@ -293,8 +294,9 @@ export default function DomainTransferPage() {
                               value={authCode}
                               onChange={(e) => setAuthCode(e.target.value)}
                               className="h-12"
+                              aria-describedby="authCode-hint"
                             />
-                            <p className="text-xs text-muted-foreground mt-2">
+                            <p id="authCode-hint" className="text-xs text-muted-foreground mt-2">
                               {t("transfer.authCode.hint")}
                             </p>
                           </div>

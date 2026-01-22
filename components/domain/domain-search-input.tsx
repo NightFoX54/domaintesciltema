@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Search } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { useTranslation } from "@/lib/i18n"
 
 interface DomainSearchInputProps {
   placeholder?: string
@@ -16,8 +17,8 @@ interface DomainSearchInputProps {
 }
 
 export function DomainSearchInput({
-  placeholder = "Find your domain name...",
-  searchButtonLabel = "Search",
+  placeholder,
+  searchButtonLabel,
   searchHref,
   className,
   helperText,
@@ -25,6 +26,12 @@ export function DomainSearchInput({
   value,
   onChange,
 }: DomainSearchInputProps) {
+  const { t } = useTranslation('common')
+  const { t: tDomains } = useTranslation('domains')
+  const domainSearchLabel = t('accessibility.domainNameSearch')
+  const defaultPlaceholder = placeholder || tDomains('search.searchPlaceholder')
+  const defaultSearchLabel = searchButtonLabel || t('buttons.search')
+  
   // TODO: Add analytics tracking for domain searches
   // TODO: Add accessibility improvements (ARIA labels, keyboard navigation)
 
@@ -36,12 +43,12 @@ export function DomainSearchInput({
       <div className="flex gap-2">
         <div className="relative flex-1">
           <label htmlFor={inputId} id={labelId} className="sr-only">
-            Domain name search
+            {domainSearchLabel}
           </label>
           <Input
             id={inputId}
             type="text"
-            placeholder={placeholder}
+            placeholder={defaultPlaceholder}
             className="pr-10 h-14 text-base shadow-sm"
             value={value}
             onChange={(e) => onChange?.(e.target.value)}
@@ -51,19 +58,18 @@ export function DomainSearchInput({
                 onSearch()
               }
             }}
-            aria-label="Domain name search"
             aria-describedby={helperText ? `${inputId}-helper` : undefined}
           />
           <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" aria-hidden="true" />
         </div>
         {onSearch ? (
           <Button size="lg" className="h-14 px-7 shadow-md hover:shadow-lg transition-shadow" onClick={onSearch}>
-            {searchButtonLabel}
+            {defaultSearchLabel}
           </Button>
         ) : (
           <Link href={searchHref}>
             <Button size="lg" className="h-14 px-7 shadow-md hover:shadow-lg transition-shadow">
-              {searchButtonLabel}
+              {defaultSearchLabel}
             </Button>
           </Link>
         )}

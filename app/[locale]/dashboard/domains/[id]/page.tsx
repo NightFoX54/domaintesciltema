@@ -4,8 +4,16 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { createMetadata } from "@/lib/seo"
 import { addLocaleToPath } from "@/lib/locale-utils"
-import { ArrowLeft, Globe, ExternalLink, RefreshCw } from "lucide-react"
-import { format } from "date-fns"
+import { ExternalLink, RefreshCw } from "lucide-react"
+import { formatDate, isExpiringSoon as checkExpiringSoon } from "@/lib/format-utils"
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb"
 import enDashboard from "@/locales/en/dashboard.json"
 import trDashboard from "@/locales/tr/dashboard.json"
 
@@ -17,16 +25,19 @@ export async function generateMetadata({
   const { locale } = await params
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
+  // PLACEHOLDER: In production, fetch domain name from WHMCS API
+  const domainName = 'example.com'
+  
   return createMetadata(
-    { path: '/dashboard/domains/[id]' },
+    { path: '/dashboard/domains/[id]', noindex: true, nofollow: true },
     {
       en: {
-        title: 'Domain Details',
-        description: 'View and manage your domain',
+        title: `${domainName} - ${enDashboard.seo.domainsDetail.title}`,
+        description: enDashboard.seo.domainsDetail.description,
       },
       tr: {
-        title: 'Alan Adı Detayları',
-        description: 'Alan adınızı görüntüleyin ve yönetin',
+        title: `${domainName} - ${trDashboard.seo.domainsDetail.title}`,
+        description: trDashboard.seo.domainsDetail.description,
       },
     },
     validLocale
@@ -62,18 +73,29 @@ export default async function DomainDetailPage({
   }
 
   const config = statusConfig[placeholderDomain.status] || statusConfig.active
-  const isExpiringSoon = placeholderDomain.expiresDate && 
-    new Date(placeholderDomain.expiresDate) < new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
+  const isExpiringSoon = checkExpiringSoon(placeholderDomain.expiresDate)
 
   return (
     <>
-      <Link 
-        href={getPath('/dashboard/domains')}
-        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
-      >
-        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-        {t.domainDetail.backToDomains}
-      </Link>
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href={getPath('/dashboard')}>{t.navigation.dashboard}</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href={getPath('/dashboard/domains')}>{t.navigation.domains}</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{placeholderDomain.domain}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
       <div className="mb-8">
         <div className="flex items-start justify-between gap-4 mb-4">
@@ -105,13 +127,13 @@ export default async function DomainDetailPage({
               <div>
                 <dt className="text-sm text-muted-foreground mb-1">{t.domainDetail.registrationDate}</dt>
                 <dd className="font-medium text-foreground">
-                  {format(new Date(placeholderDomain.registrationDate), 'MMMM d, yyyy')}
+                  {formatDate(placeholderDomain.registrationDate, validLocale, { month: 'long', day: 'numeric', year: 'numeric' })}
                 </dd>
               </div>
               <div>
                 <dt className="text-sm text-muted-foreground mb-1">{t.domainDetail.expiryDate}</dt>
                 <dd className={`font-medium ${isExpiringSoon ? 'text-amber-600 dark:text-amber-500' : 'text-foreground'}`}>
-                  {format(new Date(placeholderDomain.expiresDate), 'MMMM d, yyyy')}
+                  {formatDate(placeholderDomain.expiresDate, validLocale, { month: 'long', day: 'numeric', year: 'numeric' })}
                   {isExpiringSoon && ` (${t.domainDetail.expiringSoon})`}
                 </dd>
               </div>
@@ -127,7 +149,7 @@ export default async function DomainDetailPage({
           {/* Actions */}
           <section className="rounded-lg border bg-card p-6">
             <h2 className="text-lg font-semibold text-foreground mb-4">
-              {t.serviceDetail.actions}
+              {t.domainDetail.actions}
             </h2>
             <div className="space-y-3">
               {!placeholderDomain.autoRenew && (
@@ -157,8 +179,13 @@ export default async function DomainDetailPage({
               {t.serviceDetail.quickLinks}
             </h2>
             <div className="space-y-2">
-              <Button variant="ghost" className="w-full justify-start" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+              {/* TODO: Replace with WHMCS DNS management URL when available */}
+              <Button variant="ghost" className="w-full justify-start opacity-50 cursor-not-allowed" asChild>
+                <a 
+                  aria-disabled="true" 
+                  onClick={(e) => e.preventDefault()}
+                  aria-label={t.domainDetail.dnsManagement}
+                >
                   <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
                   {t.domainDetail.dnsManagement}
                 </a>

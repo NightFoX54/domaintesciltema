@@ -13,8 +13,9 @@ export default function RootLayout({
 }>) {
   // Root layout - middleware handles locale routing
   // HTML structure is here, locale-specific logic is in [locale]/layout.tsx
+  // lang attribute is set dynamically by HtmlLangUpdater component in [locale]/layout.tsx
   return (
-    <html lang="tr" suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />

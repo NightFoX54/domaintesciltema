@@ -7,11 +7,14 @@ import { Check, Shield, ArrowLeft, Lock } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
+import { formatCurrency } from "@/lib/format-utils"
+import enConfigure from "@/locales/en/configure.json"
+import trConfigure from "@/locales/tr/configure.json"
 
 export const dynamic = "force-dynamic"
 
 export default function ConfigureSSLPage() {
-  const { t } = useTranslation('configure')
+  const { t, language } = useTranslation('configure')
   const router = useRouter()
   const searchParams = useSearchParams()
   const sslType = searchParams.get("type") || "positive"
@@ -23,17 +26,17 @@ export default function ConfigureSSLPage() {
     positive: {
       name: "Positive SSL",
       price: 9.99,
-      description: "Perfect for personal sites and blogs",
+      description: t("sslDescriptions.positive"),
     },
     wildcard: {
       name: "Wildcard SSL",
       price: 79.99,
-      description: "Protects unlimited subdomains",
+      description: t("sslDescriptions.wildcard"),
     },
     ev: {
       name: "EV SSL Certificate",
       price: 199.99,
-      description: "Maximum trust for businesses",
+      description: t("sslDescriptions.ev"),
     },
   }
 
@@ -205,7 +208,7 @@ export default function ConfigureSSLPage() {
                   <div className="text-sm text-muted-foreground">{t("ssl.total.annual")}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold">${ssl.price.toFixed(2)}</div>
+                  <div className="text-3xl font-bold">{formatCurrency(ssl.price, language)}</div>
                   <div className="text-xs text-muted-foreground">{t("ssl.total.perYear")}</div>
                 </div>
               </div>

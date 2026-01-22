@@ -7,7 +7,7 @@ import { addLocaleToPath } from '@/lib/locale-utils'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { MessageSquare, Plus, ArrowRight } from 'lucide-react'
-import { format } from 'date-fns'
+import { formatDate } from '@/lib/format-utils'
 
 interface Ticket {
   id: string
@@ -89,7 +89,7 @@ export function TicketsSummary({ tickets }: TicketsSummaryProps) {
                     </h3>
                     {ticket.lastReply && (
                       <p className="text-sm text-muted-foreground">
-                        {format(new Date(ticket.lastReply), 'MMM d, yyyy')}
+                        {formatDate(ticket.lastReply, locale)}
                       </p>
                     )}
                   </div>

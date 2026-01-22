@@ -7,9 +7,14 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslation } from "@/lib/i18n"
+import { useParams } from "next/navigation"
+import { addLocaleToPath } from "@/lib/locale-utils"
 
 export default function EVSSLPage() {
   const { t } = useTranslation('ssl')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -243,9 +248,9 @@ export default function EVSSLPage() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-muted-foreground">
-              Need hosting?{" "}
-              <Link href="/hosting" className="text-foreground font-medium hover:underline">
-                Explore our hosting plans
+              {t("overview.contextualLink.text")}{" "}
+              <Link href={getPath("/hosting")} className="text-foreground font-medium hover:underline">
+                {t("overview.contextualLink.link")}
               </Link>
             </p>
           </div>

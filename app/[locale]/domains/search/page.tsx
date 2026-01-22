@@ -131,7 +131,7 @@ export default function DomainSearchPage() {
                         }
                       }}
                       className="h-14 pl-12 pr-4 text-base"
-                      aria-label={t("search.searchPlaceholder")}
+                      aria-describedby="search-hint"
                     />
                   </div>
                   <Button
@@ -142,7 +142,7 @@ export default function DomainSearchPage() {
                   >
                     {isSearching ? (
                       <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
                         {t("search.searching")}
                       </>
                     ) : (
@@ -150,7 +150,7 @@ export default function DomainSearchPage() {
                     )}
                   </Button>
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p id="search-hint" className="text-xs text-muted-foreground">
                   {t("search.searchHint")}
                 </p>
               </div>

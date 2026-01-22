@@ -9,11 +9,12 @@ import { Check, Globe, Shield, ArrowLeft } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
+import { formatCurrency } from "@/lib/format-utils"
 
 export const dynamic = "force-dynamic"
 
 export default function ConfigureDomainPage() {
-  const { t } = useTranslation('configure')
+  const { t, language } = useTranslation('configure')
   const router = useRouter()
   const searchParams = useSearchParams()
   const domainName = searchParams.get("domain") || "yourdomain.com"
@@ -127,42 +128,42 @@ export default function ConfigureDomainPage() {
               <div>
                 <Label className="text-lg font-semibold mb-4 block">{t("domain.registrationPeriod.title")}</Label>
                 <RadioGroup value={registrationPeriod} onValueChange={setRegistrationPeriod} className="space-y-3">
-                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors cursor-pointer">
+                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors">
                     <div className="flex items-center space-x-3">
                       <RadioGroupItem value="1" id="1year" />
-                      <Label htmlFor="1year" className="cursor-pointer font-medium">
+                      <Label htmlFor="1year" className="font-medium">
                         {t("domain.registrationPeriod.oneYear")}
                       </Label>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold">${basePrice.toFixed(2)}</div>
-                      <div className="text-xs text-muted-foreground">{t("domain.registrationPeriod.renewsAt", "configure", { price: renewalPrice.toFixed(2) })}</div>
+                      <div className="font-semibold">{formatCurrency(basePrice, language)}</div>
+                      <div className="text-xs text-muted-foreground">{t("domain.registrationPeriod.renewsAt", "configure", { price: formatCurrency(renewalPrice, language) })}</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors cursor-pointer">
+                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors">
                     <div className="flex items-center space-x-3">
                       <RadioGroupItem value="2" id="2year" />
-                      <Label htmlFor="2year" className="cursor-pointer font-medium">
+                      <Label htmlFor="2year" className="font-medium">
                         {t("domain.registrationPeriod.twoYears")}
                       </Label>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold">${(basePrice * 2).toFixed(2)}</div>
-                      <div className="text-xs text-muted-foreground">{t("domain.registrationPeriod.renewsAt", "configure", { price: renewalPrice.toFixed(2) })}</div>
+                      <div className="font-semibold">{formatCurrency(basePrice * 2, language)}</div>
+                      <div className="text-xs text-muted-foreground">{t("domain.registrationPeriod.renewsAt", "configure", { price: formatCurrency(renewalPrice, language) })}</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors cursor-pointer">
+                  <div className="flex items-center justify-between rounded-xl border-2 border-border p-5 hover:bg-muted/30 transition-colors">
                     <div className="flex items-center space-x-3">
                       <RadioGroupItem value="3" id="3year" />
-                      <Label htmlFor="3year" className="cursor-pointer font-medium">
+                      <Label htmlFor="3year" className="font-medium">
                         {t("domain.registrationPeriod.threeYears")}
                       </Label>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold">${(basePrice * 3).toFixed(2)}</div>
-                      <div className="text-xs text-muted-foreground">{t("domain.registrationPeriod.renewsAt", "configure", { price: renewalPrice.toFixed(2) })}</div>
+                      <div className="font-semibold">{formatCurrency(basePrice * 3, language)}</div>
+                      <div className="text-xs text-muted-foreground">{t("domain.registrationPeriod.renewsAt", "configure", { price: formatCurrency(renewalPrice, language) })}</div>
                     </div>
                   </div>
                 </RadioGroup>
@@ -208,8 +209,8 @@ export default function ConfigureDomainPage() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold">${totalPrice.toFixed(2)}</div>
-                  <div className="text-xs text-muted-foreground">{t("domain.total.renewsAt", "configure", { price: renewalPrice.toFixed(2) })}</div>
+                  <div className="text-3xl font-bold">{formatCurrency(totalPrice, language)}</div>
+                  <div className="text-xs text-muted-foreground">{t("domain.total.renewsAt", "configure", { price: formatCurrency(renewalPrice, language) })}</div>
                 </div>
               </div>
 

@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Sistem Durumu - Hizmet Çalışma Süresi ve Olay Geçmişi",
+    "description": "Hizmetlerimiz hakkında gerçek zamanlı güncellemeler. Çalışma süresi istatistikleri ve olay geçmişinin şeffaf raporlanması. Tüm sistemler çalışıyor."
+  },
   "hero": {
     "title": "Sistem Durumu",
     "description": "Hizmetlerimiz hakkında gerçek zamanlı güncellemeler. Şeffaflığa inanıyoruz, özellikle bir şeyler ters gittiğinde."

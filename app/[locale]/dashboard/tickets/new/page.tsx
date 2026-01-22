@@ -16,15 +16,15 @@ export async function generateMetadata({
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
   return createMetadata(
-    { path: '/dashboard/tickets/new' },
+    { path: '/dashboard/tickets/new', noindex: true, nofollow: true },
     {
       en: {
-        title: 'Create Support Ticket - Dashboard',
-        description: 'Create a new support ticket',
+        title: enDashboard.seo.ticketsNew.title,
+        description: enDashboard.seo.ticketsNew.description,
       },
       tr: {
-        title: 'Destek Talebi Oluştur - Kontrol Paneli',
-        description: 'Yeni bir destek talebi oluşturun',
+        title: trDashboard.seo.ticketsNew.title,
+        description: trDashboard.seo.ticketsNew.description,
       },
     },
     validLocale
@@ -63,9 +63,9 @@ export default async function NewTicketPage({
       <div className="max-w-2xl">
         <div className="rounded-lg border bg-card p-8">
           <p className="text-muted-foreground text-center">
-            Ticket creation form will be implemented here.
+            {t.ticketForm.placeholder}
             <br />
-            This would integrate with WHMCS OpenTicket API.
+            {t.ticketForm.apiNote}
           </p>
         </div>
       </div>

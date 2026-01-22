@@ -38,8 +38,15 @@ export default function RegisterPage() {
                       <Label htmlFor="name" className="text-sm font-medium">
                         {t("register.name.label")}
                       </Label>
-                      <Input id="name" type="text" placeholder={t("register.name.placeholder")} className="h-12" autoComplete="name" />
-                      <p className="text-xs text-muted-foreground/70">
+                      <Input 
+                        id="name" 
+                        type="text" 
+                        placeholder={t("register.name.placeholder")} 
+                        className="h-12" 
+                        autoComplete="name"
+                        aria-describedby="name-hint"
+                      />
+                      <p id="name-hint" className="text-xs text-muted-foreground/70">
                         {t("register.name.hint")}
                       </p>
                     </div>
@@ -54,8 +61,9 @@ export default function RegisterPage() {
                         placeholder={t("register.email.placeholder")}
                         className="h-12"
                         autoComplete="email"
+                        aria-describedby="email-hint"
                       />
-                      <p className="text-xs text-muted-foreground/70">
+                      <p id="email-hint" className="text-xs text-muted-foreground/70">
                         {t("register.email.hint")}
                       </p>
                     </div>
@@ -71,6 +79,7 @@ export default function RegisterPage() {
                           placeholder={t("register.password.placeholder")}
                           className="h-12 pr-10"
                           autoComplete="new-password"
+                          aria-describedby="password-hint"
                         />
                         <button
                           type="button"
@@ -81,7 +90,7 @@ export default function RegisterPage() {
                           {showPassword ? <EyeOff className="h-5 w-5" aria-hidden="true" /> : <Eye className="h-5 w-5" aria-hidden="true" />}
                         </button>
                       </div>
-                      <p className="text-xs text-muted-foreground/70">
+                      <p id="password-hint" className="text-xs text-muted-foreground/70">
                         {t("register.password.hint")}
                       </p>
                     </div>

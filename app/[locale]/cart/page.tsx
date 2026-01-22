@@ -10,6 +10,17 @@ import Link from "next/link"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { useTranslation } from "@/lib/i18n"
+import { formatCurrency } from "@/lib/format-utils"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 
 interface CartItem {
   id: string
@@ -32,7 +43,7 @@ interface CartItem {
 }
 
 export default function CartPage() {
-  const { t } = useTranslation('cart')
+  const { t, language } = useTranslation('cart')
   const router = useRouter()
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -40,6 +51,7 @@ export default function CartPage() {
   const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number } | null>(null)
   const [couponError, setCouponError] = useState("")
   const [isApplyingCoupon, setIsApplyingCoupon] = useState(false)
+  const [itemToRemove, setItemToRemove] = useState<string | null>(null)
 
   useEffect(() => {
     loadCart()
@@ -58,6 +70,7 @@ export default function CartPage() {
     setCartItems(updatedCart)
     localStorage.setItem("cart", JSON.stringify(updatedCart))
     window.dispatchEvent(new Event("cartUpdated"))
+    setItemToRemove(null)
   }
 
   const applyCoupon = async () => {
@@ -146,7 +159,7 @@ export default function CartPage() {
         const periodText = item.period === 1 ? t("periods.year") : t("periods.years")
         return t("descriptions.domain", "cart", {
           period: `${item.period} ${periodText}`,
-          price: `$${item.renewalPrice?.toFixed(2)}`
+          price: formatCurrency(item.renewalPrice || 0, language)
         })
       case "hosting":
         const addons = []
@@ -230,13 +243,12 @@ export default function CartPage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="lg:col-span-2 space-y-4">
-              {cartItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="rounded-2xl border-2 border-border bg-card p-6 hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-4">
+            <div className="lg:col-span-2">
+              <ul className="space-y-4" role="list">
+                {cartItems.map((item) => (
+                  <li key={item.id}>
+                    <div className="rounded-2xl border-2 border-border bg-card p-6 hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 flex-shrink-0" aria-hidden="true">
                       {getItemIcon(item.type)}
                     </div>
@@ -244,7 +256,7 @@ export default function CartPage() {
                       <div className="flex items-start justify-between gap-4 mb-2">
                         <h3 className="text-lg font-semibold">{getItemTitle(item)}</h3>
                         <button
-                          onClick={() => removeItem(item.id)}
+                          onClick={() => setItemToRemove(item.id)}
                           className="text-muted-foreground hover:text-foreground transition-colors p-1 -mr-1"
                           aria-label={t("removeItem")}
                         >
@@ -258,16 +270,18 @@ export default function CartPage() {
                           <button
                             onClick={() => editItem(item)}
                             className="text-sm text-primary hover:underline font-medium"
+                            aria-label={`${t("edit")} ${getItemTitle(item)}`}
                           >
                             {t("edit")}
                           </button>
                         </div>
-                        <span className="text-xl font-semibold">${item.price.toFixed(2)}</span>
+                        <span className="text-xl font-semibold">{formatCurrency(item.price, language)}</span>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                      </div>
+                    </div>
+                  </li>
+                ))}
 
               <div className="pt-4">
                 <Button variant="outline" onClick={() => router.push("/")} className="w-full border-2">
@@ -331,13 +345,13 @@ export default function CartPage() {
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">{t("subtotal")}</span>
                     <span className={`font-medium ${appliedCoupon ? "line-through text-muted-foreground" : ""}`}>
-                      ${subtotal.toFixed(2)}
+                      {formatCurrency(subtotal, language)}
                     </span>
                   </div>
                   {appliedCoupon && (
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-primary">{t("discount", "cart", { discount: appliedCoupon.discount })}</span>
-                      <span className="font-medium text-primary">-${discountAmount.toFixed(2)}</span>
+                      <span className="font-medium text-primary">-{formatCurrency(discountAmount, language)}</span>
                     </div>
                   )}
                   <div className="flex items-center justify-between text-sm">
@@ -349,7 +363,7 @@ export default function CartPage() {
 
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-semibold">{t("totalToday")}</span>
-                    <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span>
+                    <span className="text-2xl font-bold">{formatCurrency(totalPrice, language)}</span>
                   </div>
                 </div>
 
@@ -382,6 +396,23 @@ export default function CartPage() {
       </main>
 
       <SiteFooter />
+
+      <AlertDialog open={itemToRemove !== null} onOpenChange={(open) => !open && setItemToRemove(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t("removeConfirmTitle")}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t("removeConfirmDescription")}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>{t("removeConfirmCancel")}</AlertDialogCancel>
+            <AlertDialogAction onClick={() => itemToRemove && removeItem(itemToRemove)}>
+              {t("removeConfirmAction")}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }

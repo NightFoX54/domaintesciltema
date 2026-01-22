@@ -1,6 +1,10 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { DashboardHeader, StatusCard, QuickActions, ServiceCard, DomainCard, BillingSummary, TicketsSummary } from "@/components/dashboard"
 import { createMetadata } from "@/lib/seo"
+import { addLocaleToPath } from "@/lib/locale-utils"
+import { isExpiringSoon } from "@/lib/format-utils"
+import { Button } from "@/components/ui/button"
 import enDashboard from "@/locales/en/dashboard.json"
 import trDashboard from "@/locales/tr/dashboard.json"
 
@@ -13,7 +17,7 @@ export async function generateMetadata({
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
   return createMetadata(
-    { path: '/dashboard' },
+    { path: '/dashboard', noindex: true, nofollow: true },
     {
       en: {
         title: enDashboard.seo.title,
@@ -30,55 +34,59 @@ export async function generateMetadata({
 
 // PLACEHOLDER DATA - Replace with WHMCS API calls
 // This data structure represents what WHMCS would return
-const placeholderData = {
-  services: [
-    {
-      id: '1',
-      name: 'WordPress Hosting - Starter',
-      domain: 'example.com',
-      status: 'active' as const,
-      renewalDate: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-      expiresDate: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+function getPlaceholderData(locale: 'en' | 'tr') {
+  const t = locale === 'en' ? enDashboard : trDashboard
+  
+  return {
+    services: [
+      {
+        id: '1',
+        name: t.placeholderData.serviceNames.wordpressStarter,
+        domain: 'example.com',
+        status: 'active' as const,
+        renewalDate: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+        expiresDate: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+      },
+      {
+        id: '2',
+        name: t.placeholderData.serviceNames.linuxPro,
+        domain: 'mysite.com',
+        status: 'active' as const,
+        renewalDate: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000),
+        expiresDate: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000),
+      },
+    ],
+    domains: [
+      {
+        id: '1',
+        domain: 'example.com',
+        status: 'active' as const,
+        expiresDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
+        autoRenew: true,
+      },
+      {
+        id: '2',
+        domain: 'mysite.com',
+        status: 'active' as const,
+        expiresDate: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000),
+        autoRenew: false,
+      },
+    ],
+    billing: {
+      balance: 0,
+      nextInvoiceDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+      nextInvoiceAmount: 29.99,
+      overdueInvoices: 0,
     },
-    {
-      id: '2',
-      name: 'Linux Hosting - Pro',
-      domain: 'mysite.com',
-      status: 'active' as const,
-      renewalDate: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000),
-      expiresDate: new Date(Date.now() + 45 * 24 * 60 * 60 * 1000),
-    },
-  ],
-  domains: [
-    {
-      id: '1',
-      domain: 'example.com',
-      status: 'active' as const,
-      expiresDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
-      autoRenew: true,
-    },
-    {
-      id: '2',
-      domain: 'mysite.com',
-      status: 'active' as const,
-      expiresDate: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000),
-      autoRenew: false,
-    },
-  ],
-  billing: {
-    balance: 0,
-    nextInvoiceDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
-    nextInvoiceAmount: 29.99,
-    overdueInvoices: 0,
-  },
-  tickets: [
-    {
-      id: '1',
-      subject: 'Need help with SSL setup',
-      status: 'answered' as const,
-      lastReply: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-    },
-  ],
+    tickets: [
+      {
+        id: '1',
+        subject: t.placeholderData.ticketSubjects.sslSetup,
+        status: 'answered' as const,
+        lastReply: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+      },
+    ],
+  }
 }
 
 export default async function DashboardPage({
@@ -88,12 +96,16 @@ export default async function DashboardPage({
 }) {
   const { locale } = await params
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
+  const getPath = (path: string) => addLocaleToPath(path, validLocale)
   const t = validLocale === 'en' ? enDashboard : trDashboard
+
+  // PLACEHOLDER DATA - Replace with WHMCS API calls
+  const placeholderData = getPlaceholderData(validLocale)
 
   // Calculate overall status
   const hasExpiringSoon = 
-    placeholderData.services.some(s => s.expiresDate && new Date(s.expiresDate) < new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)) ||
-    placeholderData.domains.some(d => d.expiresDate && new Date(d.expiresDate) < new Date(Date.now() + 30 * 24 * 60 * 60 * 1000))
+    placeholderData.services.some(s => isExpiringSoon(s.expiresDate)) ||
+    placeholderData.domains.some(d => isExpiringSoon(d.expiresDate))
   
   const hasOverdue = placeholderData.billing.overdueInvoices > 0
   const hasSuspended = placeholderData.services.some(s => (s.status as string) === 'suspended')
@@ -147,15 +159,23 @@ export default async function DashboardPage({
             </p>
           </div>
           {placeholderData.services.length === 0 ? (
-            <div className="rounded-lg border bg-card p-8 text-center">
+            <div className="rounded-lg border bg-card p-8 text-center space-y-4">
               <p className="text-sm text-muted-foreground">{t.services.empty}</p>
+              <p className="text-xs text-muted-foreground">{t.services.emptyDescription}</p>
+              <Link href={getPath('/hosting')}>
+                <Button variant="outline" size="sm">
+                  {t.services.emptyAction}
+                </Button>
+              </Link>
             </div>
           ) : (
-            <div className="space-y-4">
+            <ul className="space-y-4">
               {placeholderData.services.map((service) => (
-                <ServiceCard key={service.id} {...service} />
+                <li key={service.id}>
+                  <ServiceCard {...service} />
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </section>
 
@@ -170,15 +190,23 @@ export default async function DashboardPage({
             </p>
           </div>
           {placeholderData.domains.length === 0 ? (
-            <div className="rounded-lg border bg-card p-8 text-center">
+            <div className="rounded-lg border bg-card p-8 text-center space-y-4">
               <p className="text-sm text-muted-foreground">{t.domains.empty}</p>
+              <p className="text-xs text-muted-foreground">{t.domains.emptyDescription}</p>
+              <Link href={getPath('/domains/search')}>
+                <Button variant="outline" size="sm">
+                  {t.domains.emptyAction}
+                </Button>
+              </Link>
             </div>
           ) : (
-            <div className="space-y-4">
+            <ul className="space-y-4">
               {placeholderData.domains.map((domain) => (
-                <DomainCard key={domain.id} {...domain} />
+                <li key={domain.id}>
+                  <DomainCard {...domain} />
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </section>
       </div>

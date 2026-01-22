@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import { Server, ExternalLink, AlertCircle } from 'lucide-react'
-import { format } from 'date-fns'
+import { formatDate, isExpiringSoon as checkExpiringSoon } from '@/lib/format-utils'
 
 interface ServiceCardProps {
   id: string
@@ -41,7 +41,7 @@ export function ServiceCard({
   }
 
   const config = statusConfig[status] || statusConfig.active
-  const isExpiringSoon = expiresDate && new Date(expiresDate) < new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
+  const isExpiringSoon = checkExpiringSoon(expiresDate)
 
   return (
     <div className="rounded-lg border bg-card p-6 hover:shadow-md transition-shadow">
@@ -66,7 +66,7 @@ export function ServiceCard({
             <div className="flex items-center justify-between text-sm">
               <span className="text-muted-foreground">{t('services.renewalDate')}:</span>
               <span className="font-medium text-foreground">
-                {format(new Date(renewalDate), 'MMM d, yyyy')}
+                {formatDate(renewalDate, locale)}
               </span>
             </div>
           )}
@@ -79,7 +79,7 @@ export function ServiceCard({
                 {t('services.expires')}:
               </span>
               <span className="font-medium">
-                {format(new Date(expiresDate), 'MMM d, yyyy')}
+                {formatDate(expiresDate, locale)}
                 {isExpiringSoon && (
                   <AlertCircle className="inline-block h-4 w-4 ml-1" aria-hidden="true" />
                 )}
@@ -96,9 +96,13 @@ export function ServiceCard({
           </Button>
         </Link>
         <Link href={getPath(`/dashboard/services/${id}`)}>
-          <Button variant="ghost" size="sm" className="px-3">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="px-3"
+            aria-label={t('services.viewDetails')}
+          >
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
-            <span className="sr-only">{t('services.viewDetails')}</span>
           </Button>
         </Link>
       </div>

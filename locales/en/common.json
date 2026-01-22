@@ -131,11 +131,42 @@
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email address",
     "invalidFormat": "Invalid format",
-    "tryAgain": "Try again"
+    "tryAgain": "Try again",
+    "formHasErrors": "Form has errors. Please review and correct."
   },
   "free": "Free",
   "included": "Included",
   "periods": {
     "days": "days"
+  },
+  "accessibility": {
+    "mainNavigation": "Main navigation",
+    "dashboardNavigation": "Dashboard navigation",
+    "domainNameSearch": "Domain name search",
+    "loading": "Loading",
+    "close": "Close",
+    "toggleSidebar": "Toggle Sidebar",
+    "previousPage": "Go to previous page",
+    "nextPage": "Go to next page",
+    "morePages": "More pages",
+    "pagination": "pagination",
+    "breadcrumb": "breadcrumb",
+    "more": "More",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "searchCommand": "Search for a command to run...",
+    "commandPalette": "Command Palette",
+    "sidebar": "Sidebar",
+    "sidebarDescription": "Displays the mobile sidebar."
+  },
+  "ui": {
+    "mostPopular": "Most popular",
+    "items": "items",
+    "item": "item",
+    "invoice": "invoice",
+    "invoices": "invoices"
+  },
+  "brand": {
+    "logoAlt": "Domain Tescil"
   }
 }

@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "System Status - Service Uptime & Incident History",
+    "description": "Real-time updates on our services. Transparent reporting of uptime statistics and incident history. All systems operational."
+  },
   "hero": {
     "title": "System Status",
     "description": "Real-time updates on our services. We believe in transparency, especially when things go wrong."

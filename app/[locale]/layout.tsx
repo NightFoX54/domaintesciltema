@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { SkipToContent } from "@/components/skip-to-content"
 import { TranslationProvider } from "@/lib/i18n"
 import { HtmlLangUpdater } from "@/components/html-lang-updater"
+import { ErrorBoundaryWrapper } from "@/components/error-boundary-wrapper"
 import { createMetadata } from "@/lib/seo"
 import enHomepage from "@/locales/en/homepage.json"
 import trHomepage from "@/locales/tr/homepage.json"
@@ -46,7 +47,9 @@ export default async function LocaleLayout({
       <TranslationProvider initialLocale={validLocale}>
         <HtmlLangUpdater />
         <SkipToContent />
-        {children}
+        <ErrorBoundaryWrapper>
+          {children}
+        </ErrorBoundaryWrapper>
       </TranslationProvider>
     </>
   )

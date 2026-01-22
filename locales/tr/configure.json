@@ -137,5 +137,10 @@
       "label": "Alan adını sepete ekle"
     },
     "note": "Ödeme yapmadan önce her şeyi inceleyebilirsiniz. Henüz taahhüt yok."
+  },
+  "sslDescriptions": {
+    "positive": "Kişisel siteler ve bloglar için mükemmel",
+    "wildcard": "Sınırsız alt alan adı koruması",
+    "ev": "İşletmeler için en yüksek güven"
   }
 }

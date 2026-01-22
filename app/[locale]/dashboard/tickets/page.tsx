@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { createMetadata } from "@/lib/seo"
 import { addLocaleToPath } from "@/lib/locale-utils"
 import { MessageSquare, Plus, ArrowRight } from "lucide-react"
-import { format } from "date-fns"
+import { formatDate } from "@/lib/format-utils"
 import enDashboard from "@/locales/en/dashboard.json"
 import trDashboard from "@/locales/tr/dashboard.json"
 
@@ -18,15 +18,15 @@ export async function generateMetadata({
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
   return createMetadata(
-    { path: '/dashboard/tickets' },
+    { path: '/dashboard/tickets', noindex: true, nofollow: true },
     {
       en: {
-        title: 'Support Tickets - Dashboard',
-        description: 'View and manage your support tickets',
+        title: enDashboard.seo.tickets.title,
+        description: enDashboard.seo.tickets.description,
       },
       tr: {
-        title: 'Destek Talepleri - Kontrol Paneli',
-        description: 'Destek taleplerinizi görüntüleyin ve yönetin',
+        title: trDashboard.seo.tickets.title,
+        description: trDashboard.seo.tickets.description,
       },
     },
     validLocale
@@ -34,32 +34,36 @@ export async function generateMetadata({
 }
 
 // PLACEHOLDER DATA - Replace with WHMCS API: GetTickets
-const placeholderTickets = [
-  {
-    id: '1',
-    ticketNumber: 'TKT-2024-001',
-    subject: 'Need help with SSL setup',
-    status: 'answered' as const,
-    lastReply: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-    created: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-  },
-  {
-    id: '2',
-    ticketNumber: 'TKT-2024-002',
-    subject: 'Domain transfer question',
-    status: 'open' as const,
-    lastReply: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-    created: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
-  },
-  {
-    id: '3',
-    ticketNumber: 'TKT-2024-003',
-    subject: 'Hosting plan upgrade',
-    status: 'closed' as const,
-    lastReply: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
-    created: new Date(Date.now() - 35 * 24 * 60 * 60 * 1000),
-  },
-]
+function getPlaceholderTickets(locale: 'en' | 'tr') {
+  const t = locale === 'en' ? enDashboard : trDashboard
+  
+  return [
+    {
+      id: '1',
+      ticketNumber: 'TKT-2024-001',
+      subject: t.placeholderData.ticketSubjects.sslSetup,
+      status: 'answered' as const,
+      lastReply: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+      created: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+    },
+    {
+      id: '2',
+      ticketNumber: 'TKT-2024-002',
+      subject: t.placeholderData.ticketSubjects.domainTransfer,
+      status: 'open' as const,
+      lastReply: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
+      created: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
+    },
+    {
+      id: '3',
+      ticketNumber: 'TKT-2024-003',
+      subject: t.placeholderData.ticketSubjects.hostingUpgrade,
+      status: 'closed' as const,
+      lastReply: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+      created: new Date(Date.now() - 35 * 24 * 60 * 60 * 1000),
+    },
+  ]
+}
 
 export default async function TicketsPage({
   params,
@@ -70,6 +74,9 @@ export default async function TicketsPage({
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   const getPath = (path: string) => addLocaleToPath(path, validLocale)
   const t = validLocale === 'en' ? enDashboard : trDashboard
+
+  // PLACEHOLDER DATA - Replace with WHMCS API: GetTickets
+  const placeholderTickets = getPlaceholderTickets(validLocale)
 
   const statusConfig = {
     open: { label: t.tickets.open, variant: 'default' as const },
@@ -115,15 +122,15 @@ export default async function TicketsPage({
           </Link>
         </div>
       ) : (
-        <div className="space-y-4">
+        <ul className="space-y-4">
           {placeholderTickets.map((ticket) => {
             const config = statusConfig[ticket.status] || statusConfig.open
             return (
-              <Link
-                key={ticket.id}
-                href={getPath(`/dashboard/tickets/${ticket.id}`)}
-                className="block rounded-lg border bg-card p-6 hover:shadow-md transition-shadow"
-              >
+              <li key={ticket.id}>
+                <Link
+                  href={getPath(`/dashboard/tickets/${ticket.id}`)}
+                  className="block rounded-lg border bg-card p-6 hover:shadow-md transition-shadow"
+                >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-2">
@@ -134,18 +141,19 @@ export default async function TicketsPage({
                     </div>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <span>{ticket.ticketNumber}</span>
-                      <span>{t.ticketsPage.created} {format(new Date(ticket.created), 'MMM d, yyyy')}</span>
+                      <span>{t.ticketsPage.created} {formatDate(ticket.created, validLocale)}</span>
                       {ticket.lastReply && (
-                        <span>{t.ticketsPage.lastReply} {format(new Date(ticket.lastReply), 'MMM d, yyyy')}</span>
+                        <span>{t.ticketsPage.lastReply} {formatDate(ticket.lastReply, validLocale)}</span>
                       )}
                     </div>
                   </div>
                   <ArrowRight className="h-5 w-5 text-muted-foreground flex-shrink-0" aria-hidden="true" />
                 </div>
-              </Link>
+                </Link>
+              </li>
             )
           })}
-        </div>
+        </ul>
       )}
     </>
   )

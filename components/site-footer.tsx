@@ -19,7 +19,7 @@ export function SiteFooter() {
           <div className="lg:col-span-2 space-y-5">
             <Image
               src="/logo.png"
-              alt="Domain Tescil"
+              alt={t("brand.logoAlt", "common")}
               width={180}
               height={50}
               className="h-10 w-auto"

@@ -35,14 +35,18 @@ export function StatusCard({ status, title, description, icon, action }: StatusC
   const StatusIcon = config.icon
 
   return (
-    <div className={cn(
-      "rounded-lg border p-6 transition-colors",
-      config.bgClassName
-    )}>
+    <section 
+      className={cn(
+        "rounded-lg border p-6 transition-colors",
+        config.bgClassName
+      )}
+      aria-live="polite"
+      aria-atomic="true"
+    >
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-start gap-4 flex-1">
-          <div className={cn("flex-shrink-0", config.className)}>
-            {icon || <StatusIcon className="h-6 w-6" aria-hidden="true" />}
+          <div className={cn("flex-shrink-0", config.className)} aria-hidden="true">
+            {icon || <StatusIcon className="h-6 w-6" />}
           </div>
           <div className="flex-1 min-w-0">
             <h3 className="font-semibold text-foreground mb-1">{title}</h3>
@@ -55,6 +59,6 @@ export function StatusCard({ status, title, description, icon, action }: StatusC
           </div>
         )}
       </div>
-    </div>
+    </section>
   )
 }

@@ -115,7 +115,7 @@ export function SiteHeader() {
     <header>
       <nav
         className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70 border-b border-border/60 shadow-sm"
-        aria-label="Main navigation"
+        aria-label={t("accessibility.mainNavigation", "common")}
       >
         <div className="container mx-auto px-4 lg:px-6">
           <div className="flex h-16 items-center justify-between">
@@ -126,7 +126,7 @@ export function SiteHeader() {
             >
               <Image
                 src="/logo.png"
-                alt="Domain Tescil"
+                alt={t("brand.logoAlt", "common")}
                 width={140}
                 height={40}
                 className="h-8 w-auto"
@@ -143,8 +143,8 @@ export function SiteHeader() {
               >
                 <button
                   id={dropdownButtonId("domains")}
-                  ref={(el) => (buttonRefs.current["domains"] = el)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                  ref={(el) => { buttonRefs.current["domains"] = el }}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
                   aria-expanded={activeDropdown === "domains"}
                   aria-controls={dropdownMenuId("domains")}
                   aria-haspopup="true"
@@ -156,29 +156,33 @@ export function SiteHeader() {
                 {activeDropdown === "domains" && (
                   <div
                     id={dropdownMenuId("domains")}
-                    ref={(el) => (dropdownRefs.current["domains"] = el)}
+                    ref={(el) => { dropdownRefs.current["domains"] = el }}
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                     role="menu"
                     aria-labelledby={dropdownButtonId("domains")}
                   >
-                    <div className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
-                      <Link
-                        href={getPath("/domains/search")}
-                        className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
-                        role="menuitem"
-                      >
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.domains.search.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.domains.search.description")}</div>
-                      </Link>
-                      <Link
-                        href={getPath("/domains/transfer")}
-                        className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
-                        role="menuitem"
-                      >
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.domains.transfer.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.domains.transfer.description")}</div>
-                      </Link>
-                    </div>
+                    <ul className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
+                      <li>
+                        <Link
+                          href={getPath("/domains/search")}
+                          className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          role="menuitem"
+                        >
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.domains.search.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.domains.search.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={getPath("/domains/transfer")}
+                          className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          role="menuitem"
+                        >
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.domains.transfer.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.domains.transfer.description")}</div>
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 )}
               </div>
@@ -191,8 +195,8 @@ export function SiteHeader() {
               >
                 <button
                   id={dropdownButtonId("hosting")}
-                  ref={(el) => (buttonRefs.current["hosting"] = el)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                  ref={(el) => { buttonRefs.current["hosting"] = el }}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
                   aria-expanded={activeDropdown === "hosting"}
                   aria-controls={dropdownMenuId("hosting")}
                   aria-haspopup="true"
@@ -204,37 +208,43 @@ export function SiteHeader() {
                 {activeDropdown === "hosting" && (
                   <div
                     id={dropdownMenuId("hosting")}
-                    ref={(el) => (dropdownRefs.current["hosting"] = el)}
+                    ref={(el) => { dropdownRefs.current["hosting"] = el }}
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                     role="menu"
                     aria-labelledby={dropdownButtonId("hosting")}
                   >
-                    <div className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
-                      <Link
-                        href={getPath("/hosting/linux")}
-                        className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
-                        role="menuitem"
-                      >
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.hosting.linux.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.hosting.linux.description")}</div>
-                      </Link>
-                      <Link
-                        href={getPath("/hosting/wordpress")}
-                        className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
-                        role="menuitem"
-                      >
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.hosting.wordpress.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.hosting.wordpress.description")}</div>
-                      </Link>
-                      <Link
-                        href={getPath("/hosting/joomla")}
-                        className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
-                        role="menuitem"
-                      >
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.hosting.joomla.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.hosting.joomla.description")}</div>
-                      </Link>
-                    </div>
+                    <ul className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
+                      <li>
+                        <Link
+                          href={getPath("/hosting/linux")}
+                          className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          role="menuitem"
+                        >
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.hosting.linux.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.hosting.linux.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={getPath("/hosting/wordpress")}
+                          className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          role="menuitem"
+                        >
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.hosting.wordpress.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.hosting.wordpress.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={getPath("/hosting/joomla")}
+                          className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          role="menuitem"
+                        >
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.hosting.joomla.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.hosting.joomla.description")}</div>
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 )}
               </div>
@@ -247,8 +257,8 @@ export function SiteHeader() {
               >
                 <button
                   id={dropdownButtonId("ssl")}
-                  ref={(el) => (buttonRefs.current["ssl"] = el)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                  ref={(el) => { buttonRefs.current["ssl"] = el }}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
                   aria-expanded={activeDropdown === "ssl"}
                   aria-controls={dropdownMenuId("ssl")}
                   aria-haspopup="true"
@@ -260,37 +270,45 @@ export function SiteHeader() {
                 {activeDropdown === "ssl" && (
                   <div
                     id={dropdownMenuId("ssl")}
-                    ref={(el) => (dropdownRefs.current["ssl"] = el)}
+                    ref={(el) => { dropdownRefs.current["ssl"] = el }}
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                     role="menu"
                     aria-labelledby={dropdownButtonId("ssl")}
                   >
-                    <div className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
-                      <Link href={getPath("/ssl")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.overview.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.overview.description")}</div>
-                      </Link>
-                      <Link
-                        href={getPath("/ssl/positive")}
-                        className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
-                        role="menuitem"
-                      >
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.positive.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.positive.description")}</div>
-                      </Link>
-                      <Link
-                        href={getPath("/ssl/wildcard")}
-                        className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors"
-                        role="menuitem"
-                      >
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.wildcard.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.wildcard.description")}</div>
-                      </Link>
-                      <Link href={getPath("/ssl/ev")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.ev.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.ev.description")}</div>
-                      </Link>
-                    </div>
+                    <ul className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
+                      <li>
+                        <Link href={getPath("/ssl")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" role="menuitem">
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.overview.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.overview.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={getPath("/ssl/positive")}
+                          className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          role="menuitem"
+                        >
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.positive.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.positive.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={getPath("/ssl/wildcard")}
+                          className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                          role="menuitem"
+                        >
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.wildcard.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.wildcard.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href={getPath("/ssl/ev")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" role="menuitem">
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.ssl.ev.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.ssl.ev.description")}</div>
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 )}
               </div>
@@ -303,8 +321,8 @@ export function SiteHeader() {
               >
                 <button
                   id={dropdownButtonId("support")}
-                  ref={(el) => (buttonRefs.current["support"] = el)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                  ref={(el) => { buttonRefs.current["support"] = el }}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
                   aria-expanded={activeDropdown === "support"}
                   aria-controls={dropdownMenuId("support")}
                   aria-haspopup="true"
@@ -316,29 +334,37 @@ export function SiteHeader() {
                 {activeDropdown === "support" && (
                   <div
                     id={dropdownMenuId("support")}
-                    ref={(el) => (dropdownRefs.current["support"] = el)}
+                    ref={(el) => { dropdownRefs.current["support"] = el }}
                     className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                     role="menu"
                     aria-labelledby={dropdownButtonId("support")}
                   >
-                    <div className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
-                      <Link href={getPath("/support")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.help.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.help.description")}</div>
-                      </Link>
-                      <Link href={getPath("/contact")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.contact.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.contact.description")}</div>
-                      </Link>
-                      <Link href={getPath("/migration")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.migration.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.migration.description")}</div>
-                      </Link>
-                      <Link href={getPath("/status")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors" role="menuitem">
-                        <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.status.title")}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.status.description")}</div>
-                      </Link>
-                    </div>
+                    <ul className="w-64 bg-background border border-border rounded-lg shadow-lg p-2 animate-in fade-in-0 slide-in-from-top-1 duration-150">
+                      <li>
+                        <Link href={getPath("/support")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" role="menuitem">
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.help.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.help.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href={getPath("/contact")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" role="menuitem">
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.contact.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.contact.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href={getPath("/migration")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" role="menuitem">
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.migration.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.migration.description")}</div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href={getPath("/status")} className="block px-4 py-3 rounded-md hover:bg-muted/50 transition-colors focus:bg-muted/50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" role="menuitem">
+                          <div className="font-medium text-sm text-foreground">{t("nav.dropdowns.support.status.title")}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5">{t("nav.dropdowns.support.status.description")}</div>
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 )}
               </div>
@@ -349,7 +375,7 @@ export function SiteHeader() {
               <Link
                 href={getPath("/cart")}
                 className="relative p-2 text-muted-foreground hover:text-foreground transition-colors"
-                aria-label={`${t("nav.cart")}${cartItemCount > 0 ? `, ${cartItemCount} items` : ""}`}
+                aria-label={`${t("nav.cart")}${cartItemCount > 0 ? `, ${cartItemCount} ${cartItemCount === 1 ? t("ui.item", "common") : t("ui.items", "common")}` : ""}`}
               >
                 <ShoppingCart className="h-5 w-5" aria-hidden="true" />
                 {cartItemCount > 0 && (

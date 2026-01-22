@@ -131,11 +131,42 @@
     "required": "Bu alan zorunludur",
     "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
     "invalidFormat": "Geçersiz format",
-    "tryAgain": "Tekrar dene"
+    "tryAgain": "Tekrar dene",
+    "formHasErrors": "Formda hatalar var. Lütfen gözden geçirin ve düzeltin."
   },
   "free": "Ücretsiz",
   "included": "Dahil",
   "periods": {
     "days": "gün"
+  },
+  "accessibility": {
+    "mainNavigation": "Ana navigasyon",
+    "dashboardNavigation": "Kontrol paneli navigasyonu",
+    "domainNameSearch": "Alan adı arama",
+    "loading": "Yükleniyor",
+    "close": "Kapat",
+    "toggleSidebar": "Kenar çubuğunu aç/kapat",
+    "previousPage": "Önceki sayfaya git",
+    "nextPage": "Sonraki sayfaya git",
+    "morePages": "Daha fazla sayfa",
+    "pagination": "sayfalama",
+    "breadcrumb": "breadcrumb",
+    "more": "Daha fazla",
+    "previousSlide": "Önceki slayt",
+    "nextSlide": "Sonraki slayt",
+    "searchCommand": "Çalıştırılacak bir komut ara...",
+    "commandPalette": "Komut Paleti",
+    "sidebar": "Kenar çubuğu",
+    "sidebarDescription": "Mobil kenar çubuğunu gösterir."
+  },
+  "ui": {
+    "mostPopular": "En popüler",
+    "items": "ürün",
+    "item": "ürün",
+    "invoice": "fatura",
+    "invoices": "faturalar"
+  },
+  "brand": {
+    "logoAlt": "Domain Tescil"
   }
 }

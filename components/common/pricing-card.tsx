@@ -27,7 +27,7 @@ export function PricingCard({
   actionLabel,
   actionHref,
   isPopular = false,
-  popularLabel = "Most popular",
+  popularLabel,
   variant = "default",
   className,
 }: PricingCardProps) {

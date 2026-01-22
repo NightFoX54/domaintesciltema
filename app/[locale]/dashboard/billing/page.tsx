@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { createMetadata } from "@/lib/seo"
 import { addLocaleToPath } from "@/lib/locale-utils"
 import { CreditCard, Download, ExternalLink, ArrowRight } from "lucide-react"
-import { format } from "date-fns"
+import { formatDate, formatCurrency } from "@/lib/format-utils"
 import enDashboard from "@/locales/en/dashboard.json"
 import trDashboard from "@/locales/tr/dashboard.json"
 
@@ -18,15 +18,15 @@ export async function generateMetadata({
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
   return createMetadata(
-    { path: '/dashboard/billing' },
+    { path: '/dashboard/billing', noindex: true, nofollow: true },
     {
       en: {
-        title: 'Billing - Dashboard',
-        description: 'View invoices and payment information',
+        title: enDashboard.seo.billing.title,
+        description: enDashboard.seo.billing.description,
       },
       tr: {
-        title: 'Faturalama - Kontrol Paneli',
-        description: 'Faturaları ve ödeme bilgilerini görüntüleyin',
+        title: trDashboard.seo.billing.title,
+        description: trDashboard.seo.billing.description,
       },
     },
     validLocale
@@ -102,7 +102,7 @@ export default async function BillingPage({
             <span className="text-sm text-muted-foreground">{t.billingPage.accountBalance}</span>
           </div>
           <p className="text-2xl font-semibold text-foreground">
-            ${placeholderBalance.toFixed(2)}
+            {formatCurrency(placeholderBalance, validLocale)}
           </p>
         </div>
         <div className="rounded-lg border bg-card p-6">
@@ -110,10 +110,10 @@ export default async function BillingPage({
             <span className="text-sm text-muted-foreground">{t.billingPage.nextInvoice}</span>
           </div>
           <p className="text-2xl font-semibold text-foreground">
-            ${placeholderNextInvoice.amount.toFixed(2)}
+            {formatCurrency(placeholderNextInvoice.amount, validLocale)}
           </p>
           <p className="text-sm text-muted-foreground mt-1">
-            {t.billingPage.due} {format(new Date(placeholderNextInvoice.date), 'MMM d, yyyy')}
+            {t.billingPage.due} {formatDate(placeholderNextInvoice.date, validLocale)}
           </p>
         </div>
         <div className="rounded-lg border bg-card p-6">
@@ -127,36 +127,34 @@ export default async function BillingPage({
       </div>
 
       {/* Invoices List */}
-      <section>
+      <section aria-labelledby="invoices-heading">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-foreground">{t.billingPage.invoices}</h2>
-          <Button variant="outline" size="sm">
+          <h2 id="invoices-heading" className="text-xl font-semibold text-foreground">{t.billingPage.invoices}</h2>
+          <Button variant="outline" size="sm" aria-label={t.billingPage.downloadAll}>
             <Download className="h-4 w-4 mr-2" aria-hidden="true" />
             {t.billingPage.downloadAll}
           </Button>
         </div>
 
         {placeholderInvoices.length === 0 ? (
-          <div className="rounded-lg border bg-card p-12 text-center">
-            <p className="text-lg font-medium text-foreground mb-2">
+          <div className="rounded-lg border bg-card p-12 text-center space-y-2">
+            <p className="text-lg font-medium text-foreground">
               {t.billing.noInvoices}
             </p>
             <p className="text-sm text-muted-foreground">
-              {t.billingPage.noInvoicesDescription}
+              {t.billing.emptyDescription}
             </p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <ul className="space-y-4">
             {placeholderInvoices.map((invoice) => {
               const config = statusConfig[invoice.status] || statusConfig.unpaid
               const isOverdue = invoice.status === 'unpaid' && 
                 new Date(invoice.dueDate) < new Date()
               
               return (
-                <div
-                  key={invoice.id}
-                  className="rounded-lg border bg-card p-6 hover:shadow-md transition-shadow"
-                >
+                <li key={invoice.id}>
+                  <div className="rounded-lg border bg-card p-6 hover:shadow-md transition-shadow">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -171,41 +169,47 @@ export default async function BillingPage({
                         <div>
                           <span className="text-muted-foreground">{t.billingPage.date}: </span>
                           <span className="text-foreground">
-                            {format(new Date(invoice.date), 'MMM d, yyyy')}
+                            {formatDate(invoice.date, validLocale)}
                           </span>
                         </div>
                         <div>
                           <span className="text-muted-foreground">{t.billingPage.due}: </span>
                           <span className={isOverdue ? 'text-red-600 dark:text-red-500 font-medium' : 'text-foreground'}>
-                            {format(new Date(invoice.dueDate), 'MMM d, yyyy')}
+                            {formatDate(invoice.dueDate, validLocale)}
                           </span>
                         </div>
                         <div>
                           <span className="text-muted-foreground">{t.billingPage.amount}: </span>
                           <span className="font-semibold text-foreground">
-                            ${invoice.amount.toFixed(2)}
+                            {formatCurrency(invoice.amount, validLocale)}
                           </span>
                         </div>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Button variant="outline" size="sm" asChild>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                      {/* TODO: Replace with WHMCS invoice download URL when available */}
+                      <Button variant="outline" size="sm" className="opacity-50 cursor-not-allowed" asChild>
+                        <a 
+                          aria-disabled="true" 
+                          onClick={(e) => e.preventDefault()}
+                          aria-label={`${t.billingPage.download} ${invoice.invoiceNumber}`}
+                        >
                           <Download className="h-4 w-4 mr-2" aria-hidden="true" />
                           {t.billingPage.download}
                         </a>
                       </Button>
                       {invoice.status === 'unpaid' && (
-                        <Button size="sm">
+                        <Button size="sm" aria-label={`${t.billingPage.payNow} ${invoice.invoiceNumber}`}>
                           {t.billingPage.payNow}
                         </Button>
                       )}
                     </div>
                   </div>
-                </div>
+                  </div>
+                </li>
               )
             })}
-          </div>
+          </ul>
         )}
       </section>
     </>

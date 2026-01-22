@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { DomainCard } from "@/components/dashboard"
 import { createMetadata } from "@/lib/seo"
+import { addLocaleToPath } from "@/lib/locale-utils"
+import { Button } from "@/components/ui/button"
 import enDashboard from "@/locales/en/dashboard.json"
 import trDashboard from "@/locales/tr/dashboard.json"
 
@@ -13,15 +16,15 @@ export async function generateMetadata({
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
   return createMetadata(
-    { path: '/dashboard/domains' },
+    { path: '/dashboard/domains', noindex: true, nofollow: true },
     {
       en: {
-        title: `${enDashboard.navigation.domains} - ${enDashboard.seo.title}`,
-        description: enDashboard.domains.subtitle,
+        title: enDashboard.seo.domains.title,
+        description: enDashboard.seo.domains.description,
       },
       tr: {
-        title: `${trDashboard.navigation.domains} - ${trDashboard.seo.title}`,
-        description: trDashboard.domains.subtitle,
+        title: trDashboard.seo.domains.title,
+        description: trDashboard.seo.domains.description,
       },
     },
     validLocale
@@ -60,6 +63,7 @@ export default async function DomainsPage({
 }) {
   const { locale } = await params
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
+  const getPath = (path: string) => addLocaleToPath(path, validLocale)
   const t = validLocale === 'en' ? enDashboard : trDashboard
 
   return (
@@ -74,20 +78,29 @@ export default async function DomainsPage({
       </div>
 
       {placeholderDomains.length === 0 ? (
-        <div className="rounded-lg border bg-card p-12 text-center">
-          <p className="text-lg font-medium text-foreground mb-2">
-            {t.domains.empty}
-          </p>
-          <p className="text-sm text-muted-foreground mb-6">
-            {t.domains.emptyDescription}
-          </p>
+        <div className="rounded-lg border bg-card p-12 text-center space-y-6">
+          <div className="space-y-2">
+            <p className="text-lg font-medium text-foreground">
+              {t.domains.empty}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {t.domains.emptyDescription}
+            </p>
+          </div>
+          <Link href={getPath('/domains/search')}>
+            <Button variant="outline">
+              {t.domains.emptyAction}
+            </Button>
+          </Link>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {placeholderDomains.map((domain) => (
-            <DomainCard key={domain.id} {...domain} />
+            <li key={domain.id}>
+              <DomainCard {...domain} />
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </>
   )

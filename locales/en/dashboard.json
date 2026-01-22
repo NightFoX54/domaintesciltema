@@ -1,7 +1,43 @@
 {
   "seo": {
     "title": "Dashboard",
-    "description": "Manage your services, domains, and account"
+    "description": "Manage your services, domains, and account",
+    "services": {
+      "title": "Services - Dashboard",
+      "description": "Manage all your hosting and related services"
+    },
+    "servicesDetail": {
+      "title": "Service Details - Dashboard",
+      "description": "View and manage your service"
+    },
+    "domains": {
+      "title": "Domains - Dashboard",
+      "description": "Manage all domains registered with us"
+    },
+    "domainsDetail": {
+      "title": "Domain Details - Dashboard",
+      "description": "View and manage your domain"
+    },
+    "billing": {
+      "title": "Billing - Dashboard",
+      "description": "View invoices and payment information"
+    },
+    "tickets": {
+      "title": "Support Tickets - Dashboard",
+      "description": "View and manage your support tickets"
+    },
+    "ticketsDetail": {
+      "title": "Ticket Details - Dashboard",
+      "description": "View ticket details and replies"
+    },
+    "ticketsNew": {
+      "title": "Create Support Ticket - Dashboard",
+      "description": "Create a new support ticket"
+    },
+    "profile": {
+      "title": "Profile - Dashboard",
+      "description": "Manage your account settings"
+    }
   },
   "greeting": {
     "welcome": "Welcome back",
@@ -40,6 +76,7 @@
     "subtitle": "All your hosting and related services",
     "empty": "No services yet",
     "emptyDescription": "When you purchase a service, it will appear here",
+    "emptyAction": "Browse hosting plans",
     "viewAll": "View all services",
     "renewalDate": "Renews",
     "expires": "Expires",
@@ -51,6 +88,7 @@
     "subtitle": "All domains registered with us",
     "empty": "No domains yet",
     "emptyDescription": "When you register a domain, it will appear here",
+    "emptyAction": "Search for a domain",
     "viewAll": "View all domains",
     "expires": "Expires",
     "autoRenew": "Auto-renew",
@@ -67,7 +105,8 @@
     "paid": "Paid",
     "unpaid": "Unpaid",
     "viewAll": "View all invoices",
-    "noInvoices": "No invoices yet"
+    "noInvoices": "No invoices yet",
+    "emptyDescription": "When you have invoices, they will appear here"
   },
   "tickets": {
     "title": "Support tickets",
@@ -122,6 +161,10 @@
     "renewService": "Renew Service",
     "upgradePlan": "Upgrade Plan",
     "requestCancellation": "Request Cancellation",
+    "cancellationConfirmTitle": "Request service cancellation?",
+    "cancellationConfirmDescription": "This will submit a cancellation request for this service. You can still use it until the cancellation is processed.",
+    "cancellationConfirmAction": "Request cancellation",
+    "cancellationCancel": "Keep service",
     "quickLinks": "Quick Links",
     "controlPanel": "Control Panel",
     "openSupportTicket": "Open Support Ticket"
@@ -143,7 +186,8 @@
     "renewDomain": "Renew Domain",
     "manageDns": "Manage DNS",
     "transferDomain": "Transfer Domain",
-    "dnsManagement": "DNS Management"
+    "dnsManagement": "DNS Management",
+    "actions": "Actions"
   },
   "billingPage": {
     "title": "Billing",
@@ -197,6 +241,47 @@
     "zipCode": "ZIP Code",
     "country": "Country",
     "saveChanges": "Save Changes",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "messages": {
+      "saving": "Saving...",
+      "saveSuccess": "Profile saved successfully",
+      "saveError": "Error saving profile. Please check the form."
+    },
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPhone": "Please enter a valid phone number"
+    }
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "description": "We encountered an unexpected error. Please try again or return to the dashboard.",
+    "tryAgain": "Try again",
+    "goToDashboard": "Go to dashboard"
+  },
+  "ticketForm": {
+    "placeholder": "Ticket creation form will be implemented here.",
+    "apiNote": "This would integrate with WHMCS OpenTicket API."
+  },
+  "placeholderData": {
+    "ticketSubjects": {
+      "sslSetup": "Need help with SSL setup",
+      "domainTransfer": "Domain transfer question",
+      "hostingUpgrade": "Hosting plan upgrade"
+    },
+    "ticketMessages": {
+      "sslRequest": "I need help setting up SSL for my domain. Can you guide me through the process?",
+      "sslResponse": "We'd be happy to help! SSL setup is automatic for most hosting plans. Let me check your account and get back to you with specific instructions."
+    },
+    "serviceNames": {
+      "wordpressStarter": "WordPress Hosting - Starter",
+      "linuxPro": "Linux Hosting - Pro",
+      "joomlaBasic": "Joomla Hosting - Basic"
+    },
+    "billingCycles": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "annual": "Annual"
+    }
   }
 }

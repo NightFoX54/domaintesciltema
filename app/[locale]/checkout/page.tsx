@@ -13,6 +13,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import Link from "next/link"
 import { useTranslation } from "@/lib/i18n"
+import { formatCurrency } from "@/lib/format-utils"
 
 interface CartItem {
   id: string
@@ -35,7 +36,7 @@ interface CartItem {
 }
 
 export default function CheckoutPage() {
-  const { t } = useTranslation('checkout')
+  const { t, language } = useTranslation('checkout')
   const router = useRouter()
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -135,6 +136,11 @@ export default function CheckoutPage() {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
       setIsProcessing(false)
+      // Focus first error field
+      const firstErrorField = document.querySelector('[aria-invalid="true"]') as HTMLElement
+      if (firstErrorField) {
+        firstErrorField.focus()
+      }
       return
     }
 
@@ -164,7 +170,12 @@ export default function CheckoutPage() {
       <SiteHeader />
 
       <main id="main-content">
-      <section className="container mx-auto px-4 lg:px-6 py-12 md:py-16">
+        <div aria-live="polite" aria-atomic="true" className="sr-only">
+          {Object.keys(errors).length > 0 && (
+            <span>{t("errors.formHasErrors", "common")}</span>
+          )}
+        </div>
+      <section className="container mx-auto px-4 lg:px-6 py-12 md:py-16" aria-labelledby="checkout-heading">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <Link
@@ -174,18 +185,18 @@ export default function CheckoutPage() {
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               {t("backToCart")}
             </Link>
-            <h1 className="text-4xl md:text-5xl font-semibold mb-3">{t("title")}</h1>
+            <h1 id="checkout-heading" className="text-4xl md:text-5xl font-semibold mb-3">{t("title")}</h1>
             <p className="text-xl text-muted-foreground">{t("description")}</p>
           </div>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate>
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
               {/* Left column - Form */}
               <div className="lg:col-span-2 space-y-8">
                 {/* Customer details */}
-                <div className="rounded-2xl border-2 border-border bg-card p-6 md:p-8 space-y-6">
+                <section className="rounded-2xl border-2 border-border bg-card p-6 md:p-8 space-y-6" aria-labelledby="your-details-heading">
                   <div>
-                    <h2 className="text-2xl font-semibold mb-2">{t("yourDetails.title")}</h2>
+                    <h2 id="your-details-heading" className="text-2xl font-semibold mb-2">{t("yourDetails.title")}</h2>
                     <p className="text-sm text-muted-foreground">
                       {t("yourDetails.description")}
                     </p>
@@ -202,9 +213,15 @@ export default function CheckoutPage() {
                         type="email"
                         placeholder={t("yourDetails.email.placeholder")}
                         className={`mt-1.5 h-12 ${errors.email ? "border-destructive" : ""}`}
+                        aria-invalid={!!errors.email}
+                        aria-describedby={errors.email ? "email-error" : "email-hint"}
                       />
-                      {errors.email && <p className="text-sm text-destructive mt-1.5">{errors.email}</p>}
-                      <p className="text-xs text-muted-foreground mt-1.5">
+                      {errors.email && (
+                        <p id="email-error" className="text-sm text-destructive mt-1.5" role="alert">
+                          {errors.email}
+                        </p>
+                      )}
+                      <p id="email-hint" className="text-xs text-muted-foreground mt-1.5">
                         {t("yourDetails.email.hint")}
                       </p>
                     </div>
@@ -220,8 +237,14 @@ export default function CheckoutPage() {
                           type="text"
                           placeholder={t("yourDetails.firstName.placeholder")}
                           className={`mt-1.5 h-12 ${errors.firstName ? "border-destructive" : ""}`}
+                          aria-invalid={!!errors.firstName}
+                          aria-describedby={errors.firstName ? "firstName-error" : undefined}
                         />
-                        {errors.firstName && <p className="text-sm text-destructive mt-1.5">{errors.firstName}</p>}
+                        {errors.firstName && (
+                          <p id="firstName-error" className="text-sm text-destructive mt-1.5" role="alert">
+                            {errors.firstName}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <Label htmlFor="lastName" className="text-sm font-medium">
@@ -233,43 +256,49 @@ export default function CheckoutPage() {
                           type="text"
                           placeholder={t("yourDetails.lastName.placeholder")}
                           className={`mt-1.5 h-12 ${errors.lastName ? "border-destructive" : ""}`}
+                          aria-invalid={!!errors.lastName}
+                          aria-describedby={errors.lastName ? "lastName-error" : undefined}
                         />
-                        {errors.lastName && <p className="text-sm text-destructive mt-1.5">{errors.lastName}</p>}
+                        {errors.lastName && (
+                          <p id="lastName-error" className="text-sm text-destructive mt-1.5" role="alert">
+                            {errors.lastName}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>
-                </div>
+                </section>
 
                 {/* Payment method */}
-                <div className="rounded-2xl border-2 border-border bg-card p-6 md:p-8 space-y-6">
+                <section className="rounded-2xl border-2 border-border bg-card p-6 md:p-8 space-y-6" aria-labelledby="payment-method-heading">
                   <div>
-                    <h2 className="text-2xl font-semibold mb-2">{t("paymentMethod.title")}</h2>
+                    <h2 id="payment-method-heading" className="text-2xl font-semibold mb-2">{t("paymentMethod.title")}</h2>
                     <p className="text-sm text-muted-foreground">{t("paymentMethod.description")}</p>
                   </div>
 
                   <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod} className="space-y-3">
                     <div
-                      className={`flex items-center space-x-3 rounded-xl border-2 p-4 cursor-pointer transition-colors ${
+                      className={`flex items-center space-x-3 rounded-xl border-2 p-4 transition-colors ${
                         paymentMethod === "card"
                           ? "border-primary bg-primary/5"
                           : "border-border hover:border-border/60"
                       }`}
                     >
                       <RadioGroupItem value="card" id="card" />
-                      <Label htmlFor="card" className="flex items-center gap-2 cursor-pointer flex-1">
+                      <Label htmlFor="card" className="flex items-center gap-2 flex-1">
                         <CreditCard className="h-4 w-4" aria-hidden="true" />
                         <span className="font-medium">{t("paymentMethod.card")}</span>
                       </Label>
                     </div>
                     <div
-                      className={`flex items-center space-x-3 rounded-xl border-2 p-4 cursor-pointer transition-colors ${
+                      className={`flex items-center space-x-3 rounded-xl border-2 p-4 transition-colors ${
                         paymentMethod === "bank"
                           ? "border-primary bg-primary/5"
                           : "border-border hover:border-border/60"
                       }`}
                     >
                       <RadioGroupItem value="bank" id="bank" />
-                      <Label htmlFor="bank" className="flex items-center gap-2 cursor-pointer flex-1">
+                      <Label htmlFor="bank" className="flex items-center gap-2 flex-1">
                         <Building2 className="h-4 w-4" aria-hidden="true" />
                         <span className="font-medium">{t("paymentMethod.bank")}</span>
                       </Label>
@@ -288,8 +317,14 @@ export default function CheckoutPage() {
                           type="text"
                           placeholder={t("paymentMethod.cardNumber.placeholder")}
                           className={`mt-1.5 h-12 ${errors.cardNumber ? "border-destructive" : ""}`}
+                          aria-invalid={!!errors.cardNumber}
+                          aria-describedby={errors.cardNumber ? "cardNumber-error" : undefined}
                         />
-                        {errors.cardNumber && <p className="text-sm text-destructive mt-1.5">{errors.cardNumber}</p>}
+                        {errors.cardNumber && (
+                          <p id="cardNumber-error" className="text-sm text-destructive mt-1.5" role="alert">
+                            {errors.cardNumber}
+                          </p>
+                        )}
                       </div>
 
                       <div className="grid grid-cols-2 gap-4">
@@ -303,8 +338,14 @@ export default function CheckoutPage() {
                             type="text"
                             placeholder={t("paymentMethod.expiry.placeholder")}
                             className={`mt-1.5 h-12 ${errors.expiry ? "border-destructive" : ""}`}
+                            aria-invalid={!!errors.expiry}
+                            aria-describedby={errors.expiry ? "expiry-error" : undefined}
                           />
-                          {errors.expiry && <p className="text-sm text-destructive mt-1.5">{errors.expiry}</p>}
+                          {errors.expiry && (
+                            <p id="expiry-error" className="text-sm text-destructive mt-1.5" role="alert">
+                              {errors.expiry}
+                            </p>
+                          )}
                         </div>
                         <div>
                           <Label htmlFor="cvv" className="text-sm font-medium">
@@ -316,8 +357,14 @@ export default function CheckoutPage() {
                             type="text"
                             placeholder={t("paymentMethod.cvv.placeholder")}
                             className={`mt-1.5 h-12 ${errors.cvv ? "border-destructive" : ""}`}
+                            aria-invalid={!!errors.cvv}
+                            aria-describedby={errors.cvv ? "cvv-error" : undefined}
                           />
-                          {errors.cvv && <p className="text-sm text-destructive mt-1.5">{errors.cvv}</p>}
+                          {errors.cvv && (
+                            <p id="cvv-error" className="text-sm text-destructive mt-1.5" role="alert">
+                              {errors.cvv}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -342,7 +389,7 @@ export default function CheckoutPage() {
                       </div>
                     </div>
                   )}
-                </div>
+                </section>
 
                 {/* Legal */}
                 <div className="text-sm text-muted-foreground space-y-3 px-1">
@@ -362,37 +409,39 @@ export default function CheckoutPage() {
               </div>
 
               {/* Right column - Order summary */}
-              <div className="lg:col-span-1">
+              <aside className="lg:col-span-1" aria-labelledby="order-summary-heading">
                 <div className="rounded-2xl border-2 border-border bg-card p-6 md:p-8 space-y-6 lg:sticky lg:top-24">
-                  <h2 className="text-2xl font-semibold">{t("orderSummary")}</h2>
+                  <h2 id="order-summary-heading" className="text-2xl font-semibold">{t("orderSummary")}</h2>
 
-                  <div className="space-y-4">
+                  <ul className="space-y-4" role="list">
                     {cartItems.map((item) => (
-                      <div key={item.id} className="flex items-start gap-3 pb-4 border-b border-border last:border-0">
+                      <li key={item.id} className="flex items-start gap-3 pb-4 border-b border-border last:border-0">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0" aria-hidden="true">
                           {getItemIcon(item.type)}
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="text-sm font-semibold leading-tight mb-1">{getItemTitle(item)}</h3>
                           <p className="text-xs text-muted-foreground mb-2">{getItemPeriod(item)}</p>
-                          <p className="text-sm font-semibold">${item.price.toFixed(2)}</p>
+                          <p className="text-sm font-semibold">{formatCurrency(item.price, language)}</p>
                           {item.renewalPrice && (
                             <p className="text-xs text-muted-foreground mt-1">
                               {t("renewsAt", "checkout", { 
-                                price: item.renewalPrice.toFixed(2),
+                                price: formatCurrency(item.renewalPrice, language),
                                 period: item.type === "domain" ? "year" : item.type === "hosting" ? "month" : "year"
                               })}
                             </p>
                           )}
                         </div>
-                      </div>
-                    ))}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
                   <div className="space-y-3 pt-2">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">{t("subtotal")}</span>
-                      <span className="font-medium">${totalPrice.toFixed(2)}</span>
+                      <span className="font-medium">{formatCurrency(totalPrice, language)}</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">{t("setupFees")}</span>
@@ -403,7 +452,7 @@ export default function CheckoutPage() {
 
                     <div className="flex items-center justify-between">
                       <span className="text-lg font-semibold">{t("totalToday")}</span>
-                      <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span>
+                      <span className="text-2xl font-bold">{formatCurrency(totalPrice, language)}</span>
                     </div>
                   </div>
 
@@ -411,31 +460,35 @@ export default function CheckoutPage() {
                     <div className="flex gap-2">
                       <Info className="h-4 w-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                       <div className="space-y-1 text-xs text-blue-900 dark:text-blue-100">
-                        <p className="font-medium">What's included:</p>
-                        <ul className="space-y-1 ml-1">
-                          <li>• Free WHOIS privacy protection</li>
-                          <li>• 24/7 human support access</li>
-                          <li>• 30-day money-back guarantee</li>
-                          <li>• Easy cancellation anytime</li>
+                        <p className="font-medium">{t("whatsIncluded.title")}</p>
+                        <ul className="space-y-1 ml-1" role="list">
+                          <li>{t("whatsIncluded.whoisPrivacy")}</li>
+                          <li>{t("whatsIncluded.support")}</li>
+                          <li>{t("whatsIncluded.guarantee")}</li>
+                          <li>{t("whatsIncluded.cancellation")}</li>
                         </ul>
                       </div>
                     </div>
                   </div>
 
+                  <div aria-live="polite" aria-atomic="true" className="sr-only">
+                    {isProcessing && <span>{t("loading.processing", "common")}</span>}
+                  </div>
                   <Button
                     type="submit"
                     size="lg"
                     className="w-full h-14 text-base shadow-md hover:shadow-lg transition-shadow"
                     disabled={isProcessing}
+                    aria-busy={isProcessing}
                   >
-                    {isProcessing ? t("loading.processing", "common") : `${t("buttons.submit", "common")} • $${totalPrice.toFixed(2)}`}
+                    {isProcessing ? t("loading.processing", "common") : `${t("buttons.submit", "common")} • ${formatCurrency(totalPrice, language)}`}
                   </Button>
 
                   <p className="text-xs text-center text-muted-foreground">
                     {t("legal.dataProtection")}
                   </p>
                 </div>
-              </div>
+              </aside>
             </div>
           </form>
         </div>

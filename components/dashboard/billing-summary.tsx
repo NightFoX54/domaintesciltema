@@ -7,7 +7,7 @@ import { addLocaleToPath } from '@/lib/locale-utils'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { CreditCard, ArrowRight } from 'lucide-react'
-import { format } from 'date-fns'
+import { formatDate, formatCurrency } from '@/lib/format-utils'
 
 interface BillingSummaryProps {
   balance?: number
@@ -50,7 +50,7 @@ export function BillingSummary({
                   {t('billing.overdue')}
                 </p>
                 <p className="text-sm text-red-700 dark:text-red-300">
-                  {overdueInvoices} {overdueInvoices === 1 ? 'invoice' : 'invoices'} {t('billing.overdue')}
+                  {overdueInvoices} {overdueInvoices === 1 ? t('ui.invoice', 'common') : t('ui.invoices', 'common')} {t('billing.overdue')}
                 </p>
               </div>
               <Link href={getPath('/dashboard/billing')}>
@@ -69,7 +69,7 @@ export function BillingSummary({
               <span className="text-sm text-muted-foreground">{t('billing.balance')}</span>
             </div>
             <p className="text-2xl font-semibold text-foreground">
-              ${balance.toFixed(2)}
+              {formatCurrency(balance, locale)}
             </p>
           </div>
 
@@ -80,10 +80,10 @@ export function BillingSummary({
               </div>
               <div className="flex items-baseline gap-2">
                 <p className="text-2xl font-semibold text-foreground">
-                  ${nextInvoiceAmount.toFixed(2)}
+                  {formatCurrency(nextInvoiceAmount, locale)}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  {t('billing.due')} {format(new Date(nextInvoiceDate), 'MMM d')}
+                  {t('billing.due')} {formatDate(nextInvoiceDate, locale, { month: 'short', day: 'numeric' })}
                 </p>
               </div>
             </div>
