@@ -282,6 +282,7 @@ export default function CartPage() {
                     </div>
                   </li>
                 ))}
+              </ul>
 
               <div className="pt-4">
                 <Button variant="outline" onClick={() => router.push("/")} className="w-full border-2">

@@ -432,11 +432,9 @@ export default function CheckoutPage() {
                             </p>
                           )}
                         </div>
-                          </div>
                         </li>
                       ))}
                     </ul>
-                  </div>
 
                   <div className="space-y-3 pt-2">
                     <div className="flex items-center justify-between text-sm">
