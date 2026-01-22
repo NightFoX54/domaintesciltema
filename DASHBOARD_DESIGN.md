@@ -1,245 +1,210 @@
-# Dashboard Design: A Reimagined Customer Experience
+# Dashboard Design Documentation
 
 ## Design Philosophy
 
-This dashboard breaks away from traditional WHMCS patterns by prioritizing **calm, clarity, and trust** over information density and feature completeness.
+This dashboard is designed to be **calm, clear, and trustworthy** - the opposite of typical hosting dashboards that overwhelm users with information, urgency, and complexity.
 
-### Core Principles
+### Key Principles
 
-1. **Status First**: Users see immediately if everything is okay
-2. **No Surprises**: Important information is visible, but not alarming
-3. **Human Language**: No jargon, no technical terms, no fear-based messaging
-4. **Progressive Disclosure**: Most important information first, details available on demand
-5. **Reassurance**: The dashboard should make users feel safe, not stressed
+1. **Reduce Stress, Not Create It**
+   - Users often log in when something is wrong or they're worried
+   - The dashboard should immediately show: "Everything is okay" or "Here's what needs attention"
+   - No fear-based language, no urgency unless truly urgent
 
-## What Makes This Different
+2. **Clarity Over Completeness**
+   - Show what matters most first
+   - Hide complexity until needed
+   - Use plain language, no jargon
 
-### Traditional WHMCS Dashboards
-- Overwhelming lists of services
-- Technical status indicators
-- Billing warnings prominently displayed
-- Dense information grids
-- Multiple navigation levels
-- Sales/upsell messaging
-
-### This Dashboard
-- **Status hero** at the top: "Everything looks good" or clear issue count
-- **Visual hierarchy** that guides the eye naturally
-- **Calm color palette** with green for "all good", amber for attention
-- **Human greetings** (Good morning/afternoon/evening)
-- **No urgency language** unless truly urgent
-- **Support access** always visible but not pushy
-- **Recent activity** shows transparency without overwhelming
+3. **Progressive Disclosure**
+   - Overview first (dashboard)
+   - Details on demand (individual pages)
+   - Actions are clear and accessible
 
 ## Dashboard Structure
 
-### 1. Status Hero (Top Priority)
-**Purpose**: Immediate reassurance or clear problem identification
+### Main Dashboard (`/dashboard`)
 
-- Large, friendly status message
-- Green checkmark when all is well
-- Clear issue count if problems exist
-- No red warnings unless critical
+**First 10 seconds experience:**
+1. Greeting based on time of day (calm, human)
+2. Overall status card (green = all good, yellow = attention needed, red = action required)
+3. Quick actions (most common tasks)
+4. Services and domains side-by-side (what you own)
+5. Billing and tickets summary (what needs attention)
 
-**WHMCS Data**: Overall client status summary
+**Sections:**
 
-### 2. Quick Actions
-**Purpose**: Reduce cognitive load for common tasks
+1. **Header with Greeting**
+   - Time-aware greeting (Good morning/afternoon/evening)
+   - Subtitle: "Here's everything you need to know at a glance"
 
-- 5 most common actions
-- Icon-based for quick scanning
-- No overwhelming dropdowns
-- Direct links to key areas
+2. **Overall Status Card**
+   - Single card showing system health
+   - Green: Everything looks good
+   - Yellow: Needs attention (expiring soon, etc.)
+   - Red: Action required (suspended, overdue)
 
-**WHMCS Data**: None (static navigation)
+3. **Quick Actions**
+   - Most common tasks users need
+   - Open ticket, view invoices, add domain, renew service, upgrade plan
 
-### 3. Services Overview
-**Purpose**: Show what you have, highlight what needs attention
+4. **Services & Domains Grid**
+   - Two-column layout on desktop
+   - Shows active services and domains
+   - Each card shows: name, status, renewal/expiry date
+   - Visual indicators for expiring soon
 
-- Visual service cards with icons
-- Status badges (Active, Expiring Soon, etc.)
-- Days remaining clearly shown
-- Renewal actions only when needed
-- Limited to 5 items (view all for more)
+5. **Billing & Tickets Summary**
+   - Account balance, next invoice
+   - Recent tickets (if any)
+   - Clear call-to-action if action needed
 
-**WHMCS Data**: 
-- `GetClientsProducts` (hosting, SSL)
-- `GetClientsDomains` (domains)
-- Service status, expiry dates
+### Services Page (`/dashboard/services`)
 
-### 4. Recent Activity
-**Purpose**: Transparency and reassurance
+- List view of all services
+- Each service card shows:
+  - Service name and domain
+  - Status badge
+  - Renewal/expiry date
+  - Manage button
+- Service detail page shows:
+  - Full service information
+  - Actions (renew, upgrade, cancel)
+  - Quick links (control panel, support)
 
-- Human-readable activity descriptions
-- Relative time ("2 hours ago")
-- Icons for quick recognition
-- Shows system is working, things are happening
+### Domains Page (`/dashboard/domains`)
 
-**WHMCS Data**: 
-- `GetActivityLog` or similar
-- Recent transactions, renewals, tickets
+- List view of all domains
+- Each domain card shows:
+  - Domain name
+  - Status badge
+  - Expiry date
+  - Auto-renew indicator
+  - Renew button if expiring soon
+- Domain detail page shows:
+  - Registration and expiry dates
+  - Auto-renew status
+  - Actions (enable auto-renew, renew, manage DNS, transfer)
 
-### 5. Billing Overview (Sidebar)
-**Purpose**: Financial status without anxiety
+### Billing Page (`/dashboard/billing`)
 
-- Only shows if there's something to show
-- "No balance due" message when clear
-- Overdue clearly marked but not alarming
-- Next invoice date for planning
+- Summary cards: balance, next invoice, unpaid count
+- Invoice list with:
+  - Invoice number and date
+  - Due date (highlighted if overdue)
+  - Amount
+  - Status badge
+  - Download and pay buttons
 
-**WHMCS Data**:
-- `GetClientsDetails` (account balance)
-- `GetInvoices` (outstanding, next invoice)
+### Tickets Page (`/dashboard/tickets`)
 
-### 6. Support Section (Sidebar)
-**Purpose**: Easy help access, reduces anxiety
+- List of all support tickets
+- Each ticket shows:
+  - Subject
+  - Status badge
+  - Ticket number
+  - Created and last reply dates
+- Create ticket button prominent
+- Ticket detail page shows:
+  - Full conversation thread
+  - Reply form
 
-- Always visible but not pushy
-- Active ticket count if any
-- Multiple ways to get help
-- Reassuring tone
+### Profile Page (`/dashboard/profile`)
 
-**WHMCS Data**:
-- `GetTickets` (active ticket count)
-- `GetSupportStatus` (if available)
-
-## User Experience Walkthrough
-
-### First 10 Seconds
-
-1. **Greeting**: "Good morning" (time-aware, human)
-2. **Status**: Large "Everything looks good" with green checkmark
-3. **Scan**: Quick actions visible, services list below
-4. **Reassurance**: No red warnings, no urgent messages
-5. **Understanding**: User knows immediately: "I'm okay, nothing urgent"
-
-### What Users Understand Without Reading
-
-- ✅ All systems operational (green checkmark)
-- ✅ Services are active (status badges)
-- ✅ No urgent billing issues (sidebar shows clear status)
-- ✅ Help is available (support section visible)
-- ✅ Recent activity shows system is working
-
-### Information Hierarchy
-
-1. **Critical**: System status, urgent issues
-2. **Important**: Services expiring soon, overdue payments
-3. **Useful**: Recent activity, next invoice
-4. **Available**: Detailed views, full lists
+- Personal information form
+- Address information form
+- Save/Cancel actions
 
 ## Component System
 
-### Components Created
+### Layout Components
 
-1. **DashboardStatusHero**
-   - Shows overall status
-   - Handles issue count display
-   - Green/amber color coding
+- **DashboardLayout**: Wraps all dashboard pages with sidebar navigation
+- **DashboardNav**: Sidebar navigation with active state indicators
+- **DashboardHeader**: Time-aware greeting component
 
-2. **DashboardQuickActions**
-   - Grid of 5 common actions
-   - Icon + label pattern
-   - Responsive layout
+### Status Components
 
-3. **DashboardServicesOverview**
-   - Service cards with status
-   - Expiry information
-   - Renewal actions when needed
+- **StatusCard**: Large status indicator (healthy/warning/critical)
+- **ServiceCard**: Individual service display card
+- **DomainCard**: Individual domain display card
 
-4. **DashboardRecentActivity**
-   - Timeline-style activity list
-   - Human-readable descriptions
-   - Relative timestamps
+### Summary Components
 
-5. **DashboardBillingOverview**
-   - Balance and due amounts
-   - Overdue indicators
-   - Next invoice information
+- **BillingSummary**: Account balance and invoice summary
+- **TicketsSummary**: Recent tickets list
+- **QuickActions**: Grid of common action buttons
 
-6. **DashboardSupportSection**
-   - Support access points
-   - Active ticket count
-   - Multiple help channels
+## Data Structure (WHMCS Integration Points)
 
-### Data Flow (Conceptual)
+All placeholder data is clearly marked with comments indicating:
+- Which WHMCS API endpoint to use
+- What data structure is expected
+- What is conditional/optional
 
-```
-WHMCS API
-  ├── GetClientStatusSummary → DashboardStatusHero
-  ├── GetClientsProducts → DashboardServicesOverview
-  ├── GetClientsDomains → DashboardServicesOverview
-  ├── GetActivityLog → DashboardRecentActivity
-  ├── GetClientsDetails → DashboardBillingOverview
-  ├── GetInvoices → DashboardBillingOverview
-  └── GetTickets → DashboardSupportSection
+### Example Integration Points:
+
+```typescript
+// Services: WHMCS GetClientProducts API
+// Domains: WHMCS GetClientsDomains API
+// Invoices: WHMCS GetInvoices API
+// Tickets: WHMCS GetTickets API
+// Profile: WHMCS GetClientsDetails API
 ```
 
 ## Accessibility Features
 
-- Semantic HTML (`<main>`, `<nav>`, `<ul>`, `<li>`)
-- Proper heading hierarchy (h1, h2, h3)
-- ARIA labels for icons and actions
+- Semantic HTML throughout
+- Proper heading hierarchy (h1 → h2 → h3)
+- ARIA labels on interactive elements
 - Keyboard navigation support
-- Screen reader friendly text
-- Focus management
-- Color contrast compliance
+- Screen reader friendly
+- Focus indicators on all interactive elements
 
 ## Internationalization
 
 - All text via translation keys
-- Locale-aware routes (`/en/dashboard`, `/tr/dashboard`)
+- Locale-aware routing (`/en/dashboard`, `/tr/dashboard`)
 - Locale-aware internal links
-- Date/time formatting (to be implemented with locale)
-- Currency formatting (to be implemented with WHMCS settings)
+- Date formatting respects locale
+- Currency formatting (to be implemented)
+
+## Color & Status System
+
+- **Green**: Healthy, active, paid, all good
+- **Yellow/Amber**: Warning, expiring soon, needs attention
+- **Red**: Critical, suspended, overdue, expired
+- **Gray**: Neutral, inactive, cancelled
 
 ## Responsive Design
 
 - Mobile-first approach
-- Grid layout adapts to screen size
-- Sidebar stacks on mobile
-- Touch-friendly action buttons
+- Sidebar collapses on mobile (consider drawer)
+- Grid layouts adapt to screen size
+- Touch-friendly button sizes
 - Readable text at all sizes
 
-## Color & Tone
+## What Makes This Different
 
-- **Green**: All good, active, success
-- **Amber**: Attention needed, expiring soon
-- **Red**: Only for critical issues (overdue, expired)
-- **Muted**: Secondary information
-- **No urgency red** unless truly urgent
+1. **No Information Overload**: Traditional dashboards show everything at once. This shows what matters.
 
-## Future Enhancements (Not Implemented)
+2. **Status-First Design**: The first thing you see is whether everything is okay.
+
+3. **Calm Language**: "Everything looks good" instead of "All systems operational"
+
+4. **Progressive Disclosure**: Details are hidden until you need them.
+
+5. **Action-Oriented**: Quick actions are prominent, not buried in menus.
+
+6. **Visual Hierarchy**: Important information is large and clear. Less important is smaller and muted.
+
+7. **No Sales Language**: No upsells, no marketing, just what the user needs.
+
+## Future Enhancements
 
 - Real-time status updates
-- Notification center
-- Customizable widget order
-- Service health indicators
-- Usage statistics
-- Quick domain search
-- One-click renewals
-
-## Implementation Notes
-
-- All components use placeholder data
-- WHMCS data integration points clearly marked
-- Components are composable and reusable
-- Translation keys follow namespace pattern
-- No hardcoded text anywhere
-- Accessible by default
-
-## Testing Considerations
-
-- Empty state (no services)
-- Single service
-- Multiple services
-- Overdue billing
-- Active tickets
-- No recent activity
-- Different screen sizes
-- Screen reader testing
-- Keyboard navigation
-
----
-
-**This dashboard prioritizes user peace of mind over feature completeness. It's designed to reduce stress, not create it.**
+- Notification system
+- Search functionality
+- Filters and sorting
+- Export capabilities
+- Mobile app considerations

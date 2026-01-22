@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { createMetadata } from "@/lib/seo"
 import { addLocaleToPath } from "@/lib/locale-utils"
-import { ArrowLeft, Server, ExternalLink } from "lucide-react"
+import { ArrowLeft, Globe, ExternalLink, RefreshCw } from "lucide-react"
 import { format } from "date-fns"
 import enDashboard from "@/locales/en/dashboard.json"
 import trDashboard from "@/locales/tr/dashboard.json"
@@ -18,36 +18,34 @@ export async function generateMetadata({
   const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
   
   return createMetadata(
-    { path: '/dashboard/services/[id]' },
+    { path: '/dashboard/domains/[id]' },
     {
       en: {
-        title: 'Service Details',
-        description: 'View and manage your service',
+        title: 'Domain Details',
+        description: 'View and manage your domain',
       },
       tr: {
-        title: 'Hizmet Detayları',
-        description: 'Hizmetinizi görüntüleyin ve yönetin',
+        title: 'Alan Adı Detayları',
+        description: 'Alan adınızı görüntüleyin ve yönetin',
       },
     },
     validLocale
   )
 }
 
-// PLACEHOLDER DATA - Replace with WHMCS API: GetClientsProducts (single product)
-const placeholderService = {
+// PLACEHOLDER DATA - Replace with WHMCS API: GetClientsDomains (single domain)
+const placeholderDomain = {
   id: '1',
-  name: 'WordPress Hosting - Starter',
   domain: 'example.com',
   status: 'active' as const,
-  renewalDate: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-  expiresDate: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-  price: 29.99,
-  billingCycle: 'Monthly',
-  // Additional WHMCS data would include: product name, domain, status, next due date, 
-  // amount, billing cycle, username, password, notes, etc.
+  expiresDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
+  autoRenew: true,
+  registrationDate: new Date(Date.now() - 365 * 24 * 60 * 60 * 1000),
+  // Additional WHMCS data would include: domain name, registrar, expiry date, 
+  // registration date, nameservers, DNS records, etc.
 }
 
-export default async function ServiceDetailPage({
+export default async function DomainDetailPage({
   params,
 }: {
   params: Promise<{ locale: string; id: string }>
@@ -59,32 +57,35 @@ export default async function ServiceDetailPage({
 
   const statusConfig = {
     active: { label: t.status.active, variant: 'default' as const },
-    suspended: { label: t.status.suspended, variant: 'destructive' as const },
-    pending: { label: t.status.pending, variant: 'secondary' as const },
-    cancelled: { label: t.status.cancelled, variant: 'outline' as const },
     expired: { label: t.status.expired, variant: 'destructive' as const },
+    pending: { label: t.status.pending, variant: 'secondary' as const },
   }
 
-  const config = statusConfig[placeholderService.status] || statusConfig.active
+  const config = statusConfig[placeholderDomain.status] || statusConfig.active
+  const isExpiringSoon = placeholderDomain.expiresDate && 
+    new Date(placeholderDomain.expiresDate) < new Date(Date.now() + 30 * 24 * 60 * 60 * 1000)
 
   return (
     <>
       <Link 
-        href={getPath('/dashboard/services')}
+        href={getPath('/dashboard/domains')}
         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
       >
         <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-        {t.serviceDetail.backToServices}
+        {t.domainDetail.backToDomains}
       </Link>
 
       <div className="mb-8">
         <div className="flex items-start justify-between gap-4 mb-4">
           <div>
             <h1 className="text-3xl font-semibold text-foreground mb-2">
-              {placeholderService.name}
+              {placeholderDomain.domain}
             </h1>
-            {placeholderService.domain && (
-              <p className="text-muted-foreground">{placeholderService.domain}</p>
+            {placeholderDomain.autoRenew && (
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <RefreshCw className="h-4 w-4" aria-hidden="true" />
+                <span>{t.domainDetail.autoRenewEnabled}</span>
+              </div>
             )}
           </div>
           <Badge variant={config.variant} className="text-sm">
@@ -95,30 +96,29 @@ export default async function ServiceDetailPage({
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
-          {/* Service Details */}
+          {/* Domain Details */}
           <section className="rounded-lg border bg-card p-6">
             <h2 className="text-lg font-semibold text-foreground mb-4">
-              {t.serviceDetail.serviceDetails}
+              {t.domainDetail.domainInformation}
             </h2>
             <dl className="space-y-4">
               <div>
-                <dt className="text-sm text-muted-foreground mb-1">{t.serviceDetail.serviceId}</dt>
-                <dd className="font-medium text-foreground">{placeholderService.id}</dd>
-              </div>
-              <div>
-                <dt className="text-sm text-muted-foreground mb-1">{t.serviceDetail.billingCycle}</dt>
-                <dd className="font-medium text-foreground">{placeholderService.billingCycle}</dd>
-              </div>
-              <div>
-                <dt className="text-sm text-muted-foreground mb-1">{t.serviceDetail.nextDueDate}</dt>
+                <dt className="text-sm text-muted-foreground mb-1">{t.domainDetail.registrationDate}</dt>
                 <dd className="font-medium text-foreground">
-                  {format(new Date(placeholderService.renewalDate), 'MMMM d, yyyy')}
+                  {format(new Date(placeholderDomain.registrationDate), 'MMMM d, yyyy')}
                 </dd>
               </div>
               <div>
-                <dt className="text-sm text-muted-foreground mb-1">{t.serviceDetail.amount}</dt>
+                <dt className="text-sm text-muted-foreground mb-1">{t.domainDetail.expiryDate}</dt>
+                <dd className={`font-medium ${isExpiringSoon ? 'text-amber-600 dark:text-amber-500' : 'text-foreground'}`}>
+                  {format(new Date(placeholderDomain.expiresDate), 'MMMM d, yyyy')}
+                  {isExpiringSoon && ` (${t.domainDetail.expiringSoon})`}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm text-muted-foreground mb-1">{t.domains.autoRenew}</dt>
                 <dd className="font-medium text-foreground">
-                  ${placeholderService.price.toFixed(2)} / {placeholderService.billingCycle.toLowerCase()}
+                  {placeholderDomain.autoRenew ? t.domainDetail.enabled : t.domainDetail.disabled}
                 </dd>
               </div>
             </dl>
@@ -130,14 +130,21 @@ export default async function ServiceDetailPage({
               {t.serviceDetail.actions}
             </h2>
             <div className="space-y-3">
+              {!placeholderDomain.autoRenew && (
+                <Button className="w-full" variant="outline">
+                  {t.domainDetail.enableAutoRenew}
+                </Button>
+              )}
+              {isExpiringSoon && (
+                <Button className="w-full">
+                  {t.domainDetail.renewDomain}
+                </Button>
+              )}
               <Button className="w-full" variant="outline">
-                {t.serviceDetail.renewService}
+                {t.domainDetail.manageDns}
               </Button>
               <Button className="w-full" variant="outline">
-                {t.serviceDetail.upgradePlan}
-              </Button>
-              <Button className="w-full" variant="outline">
-                {t.serviceDetail.requestCancellation}
+                {t.domainDetail.transferDomain}
               </Button>
             </div>
           </section>
@@ -153,7 +160,7 @@ export default async function ServiceDetailPage({
               <Button variant="ghost" className="w-full justify-start" asChild>
                 <a href="#" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
-                  {t.serviceDetail.controlPanel}
+                  {t.domainDetail.dnsManagement}
                 </a>
               </Button>
               <Button variant="ghost" className="w-full justify-start" asChild>

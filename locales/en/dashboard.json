@@ -1,87 +1,202 @@
 {
-  "title": "Dashboard",
+  "seo": {
+    "title": "Dashboard",
+    "description": "Manage your services, domains, and account"
+  },
   "greeting": {
-    "morning": "Good morning",
-    "afternoon": "Good afternoon",
-    "evening": "Good evening",
-    "default": "Welcome back"
+    "welcome": "Welcome back",
+    "goodMorning": "Good morning",
+    "goodAfternoon": "Good afternoon",
+    "goodEvening": "Good evening"
+  },
+  "overview": {
+    "title": "Overview",
+    "subtitle": "Here's everything you need to know at a glance",
+    "allGood": "Everything looks good",
+    "allGoodDescription": "All your services are running smoothly",
+    "attentionNeeded": "Needs attention",
+    "attentionNeededDescription": "A few things need your attention"
   },
   "status": {
-    "title": "Everything looks good",
-    "subtitle": "All your services are running smoothly",
-    "allGood": "All systems operational",
-    "attentionNeeded": "Attention needed",
-    "issues": "issues require attention",
-    "issue": "issue requires attention",
-    "viewDetails": "View details"
+    "active": "Active",
+    "suspended": "Suspended",
+    "pending": "Pending",
+    "cancelled": "Cancelled",
+    "expired": "Expired",
+    "healthy": "Healthy",
+    "warning": "Warning",
+    "critical": "Critical"
   },
   "quickActions": {
     "title": "Quick actions",
-    "manageDomains": "Manage domains",
-    "viewHosting": "View hosting",
-    "openTicket": "Open support ticket",
-    "viewBilling": "View billing",
-    "checkStatus": "System status"
+    "openTicket": "Open a ticket",
+    "viewInvoices": "View invoices",
+    "addDomain": "Add domain",
+    "renewService": "Renew service",
+    "upgradePlan": "Upgrade plan"
   },
   "services": {
     "title": "Your services",
-    "active": "Active",
-    "expiringSoon": "Expiring soon",
-    "expired": "Expired",
-    "suspended": "Suspended",
-    "pending": "Pending",
-    "domains": "Domains",
-    "hosting": "Hosting plans",
-    "ssl": "SSL certificates",
-    "viewAll": "View all",
-    "renewNow": "Renew now",
-    "daysRemaining": "{{days}} days remaining",
-    "expiredDaysAgo": "Expired {{days}} days ago",
-    "expiresToday": "Expires today",
-    "noServices": "No active services",
-    "noServicesDescription": "Get started by purchasing a domain or hosting plan"
+    "subtitle": "All your hosting and related services",
+    "empty": "No services yet",
+    "emptyDescription": "When you purchase a service, it will appear here",
+    "viewAll": "View all services",
+    "renewalDate": "Renews",
+    "expires": "Expires",
+    "manage": "Manage",
+    "viewDetails": "View details"
   },
-  "recentActivity": {
-    "title": "Recent activity",
-    "empty": "No recent activity",
-    "emptyDescription": "Your recent actions and updates will appear here",
-    "domainRenewed": "Domain renewed",
-    "domainRegistered": "Domain registered",
-    "hostingActivated": "Hosting activated",
-    "sslInstalled": "SSL certificate installed",
-    "ticketOpened": "Support ticket opened",
-    "ticketReplied": "Reply received",
-    "paymentReceived": "Payment received",
-    "invoiceGenerated": "Invoice generated",
-    "ago": "{{time}} ago",
-    "justNow": "Just now"
+  "domains": {
+    "title": "Your domains",
+    "subtitle": "All domains registered with us",
+    "empty": "No domains yet",
+    "emptyDescription": "When you register a domain, it will appear here",
+    "viewAll": "View all domains",
+    "expires": "Expires",
+    "autoRenew": "Auto-renew",
+    "manage": "Manage",
+    "renewNow": "Renew now"
   },
   "billing": {
-    "title": "Billing overview",
+    "title": "Billing",
+    "subtitle": "Invoices and payment information",
     "balance": "Account balance",
-    "due": "Amount due",
     "nextInvoice": "Next invoice",
-    "dueDate": "Due {{date}}",
+    "due": "Due",
     "overdue": "Overdue",
     "paid": "Paid",
-    "viewInvoices": "View all invoices",
-    "makePayment": "Make payment",
-    "noBalance": "No balance due",
-    "noBalanceDescription": "Your account is up to date"
+    "unpaid": "Unpaid",
+    "viewAll": "View all invoices",
+    "noInvoices": "No invoices yet"
   },
-  "support": {
-    "title": "Need help?",
-    "description": "We're here to help. Get in touch whenever you need assistance.",
-    "openTicket": "Open a ticket",
-    "viewTickets": "View tickets",
-    "knowledgeBase": "Knowledge base",
-    "contactUs": "Contact us",
-    "activeTickets": "Active tickets",
-    "noActiveTickets": "No active tickets"
+  "tickets": {
+    "title": "Support tickets",
+    "subtitle": "Get help when you need it",
+    "open": "Open",
+    "answered": "Answered",
+    "closed": "Closed",
+    "viewAll": "View all tickets",
+    "noTickets": "No tickets yet",
+    "createTicket": "Create a ticket"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "services": "Services",
+    "domains": "Domains",
+    "billing": "Billing",
+    "tickets": "Tickets",
+    "profile": "Profile",
+    "logout": "Log out"
+  },
+  "alerts": {
+    "expiringSoon": "Expiring soon",
+    "paymentDue": "Payment due",
+    "serviceSuspended": "Service suspended",
+    "domainExpiring": "Domain expiring",
+    "days": "days"
   },
   "empty": {
-    "title": "Welcome to your dashboard",
-    "description": "Once you have active services, they'll appear here. Get started by purchasing a domain or hosting plan.",
-    "getStarted": "Get started"
+    "title": "Nothing here yet",
+    "description": "When you have services, domains, or tickets, they'll appear here"
+  },
+  "overviewStatus": {
+    "allGood": "Everything looks good",
+    "allGoodDescription": "All your services are running smoothly",
+    "attentionNeeded": "Needs attention",
+    "attentionNeededDescription": "A few things need your attention",
+    "actionRequired": "Action required",
+    "actionRequiredDescription": "Some services require immediate attention"
+  },
+  "servicesPage": {
+    "title": "Your services",
+    "subtitle": "Manage all your hosting and related services"
+  },
+  "serviceDetail": {
+    "backToServices": "Back to services",
+    "serviceDetails": "Service Details",
+    "serviceId": "Service ID",
+    "billingCycle": "Billing Cycle",
+    "nextDueDate": "Next Due Date",
+    "amount": "Amount",
+    "actions": "Actions",
+    "renewService": "Renew Service",
+    "upgradePlan": "Upgrade Plan",
+    "requestCancellation": "Request Cancellation",
+    "quickLinks": "Quick Links",
+    "controlPanel": "Control Panel",
+    "openSupportTicket": "Open Support Ticket"
+  },
+  "domainsPage": {
+    "title": "Your domains",
+    "subtitle": "Manage all domains registered with us"
+  },
+  "domainDetail": {
+    "backToDomains": "Back to domains",
+    "autoRenewEnabled": "Auto-renew enabled",
+    "domainInformation": "Domain Information",
+    "registrationDate": "Registration Date",
+    "expiryDate": "Expiry Date",
+    "expiringSoon": "Expiring soon",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "enableAutoRenew": "Enable Auto-Renew",
+    "renewDomain": "Renew Domain",
+    "manageDns": "Manage DNS",
+    "transferDomain": "Transfer Domain",
+    "dnsManagement": "DNS Management"
+  },
+  "billingPage": {
+    "title": "Billing",
+    "subtitle": "View invoices and payment information",
+    "accountBalance": "Account Balance",
+    "nextInvoice": "Next Invoice",
+    "due": "Due",
+    "unpaidInvoices": "Unpaid Invoices",
+    "invoices": "Invoices",
+    "downloadAll": "Download All",
+    "noInvoicesDescription": "When you have invoices, they will appear here",
+    "date": "Date",
+    "download": "Download",
+    "payNow": "Pay Now"
+  },
+  "ticketsPage": {
+    "title": "Support Tickets",
+    "subtitle": "Get help when you need it",
+    "createTicket": "Create Ticket",
+    "noTicketsDescription": "When you create a support ticket, it will appear here",
+    "createFirstTicket": "Create Your First Ticket",
+    "created": "Created",
+    "lastReply": "Last reply",
+    "backToTickets": "Back to tickets"
+  },
+  "ticketDetail": {
+    "addReply": "Add Reply",
+    "typeReplyPlaceholder": "Type your reply here...",
+    "sendReply": "Send Reply",
+    "you": "You",
+    "supportTeam": "Support Team"
+  },
+  "newTicket": {
+    "title": "Create Support Ticket",
+    "subtitle": "We're here to help. Describe your issue and we'll get back to you soon.",
+    "backToTickets": "Back to tickets"
+  },
+  "profile": {
+    "title": "Profile Settings",
+    "subtitle": "Manage your account information and preferences",
+    "personalInformation": "Personal Information",
+    "addressInformation": "Address Information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "companyName": "Company Name",
+    "address": "Address",
+    "city": "City",
+    "state": "State",
+    "zipCode": "ZIP Code",
+    "country": "Country",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel"
   }
 }

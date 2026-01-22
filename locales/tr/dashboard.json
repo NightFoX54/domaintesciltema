@@ -1,87 +1,202 @@
 {
-  "title": "Kontrol Paneli",
+  "seo": {
+    "title": "Kontrol Paneli",
+    "description": "Hizmetlerinizi, alan adlarınızı ve hesabınızı yönetin"
+  },
   "greeting": {
-    "morning": "Günaydın",
-    "afternoon": "İyi öğleden sonralar",
-    "evening": "İyi akşamlar",
-    "default": "Tekrar hoş geldiniz"
+    "welcome": "Tekrar hoş geldiniz",
+    "goodMorning": "Günaydın",
+    "goodAfternoon": "İyi öğleden sonralar",
+    "goodEvening": "İyi akşamlar"
+  },
+  "overview": {
+    "title": "Genel Bakış",
+    "subtitle": "İhtiyacınız olan her şeyi bir bakışta görün",
+    "allGood": "Her şey yolunda görünüyor",
+    "allGoodDescription": "Tüm hizmetleriniz sorunsuz çalışıyor",
+    "attentionNeeded": "Dikkat gerekiyor",
+    "attentionNeededDescription": "Birkaç şey dikkatinizi gerektiriyor"
   },
   "status": {
-    "title": "Her şey yolunda görünüyor",
-    "subtitle": "Tüm hizmetleriniz sorunsuz çalışıyor",
-    "allGood": "Tüm sistemler çalışıyor",
-    "attentionNeeded": "Dikkat gerekiyor",
-    "issues": "sorun dikkat gerektiriyor",
-    "issue": "sorun dikkat gerektiriyor",
-    "viewDetails": "Detayları görüntüle"
+    "active": "Aktif",
+    "suspended": "Askıya Alındı",
+    "pending": "Beklemede",
+    "cancelled": "İptal Edildi",
+    "expired": "Süresi Doldu",
+    "healthy": "Sağlıklı",
+    "warning": "Uyarı",
+    "critical": "Kritik"
   },
   "quickActions": {
     "title": "Hızlı işlemler",
-    "manageDomains": "Alan adlarını yönet",
-    "viewHosting": "Hosting'i görüntüle",
     "openTicket": "Destek talebi aç",
-    "viewBilling": "Faturalamayı görüntüle",
-    "checkStatus": "Sistem durumu"
+    "viewInvoices": "Faturaları görüntüle",
+    "addDomain": "Alan adı ekle",
+    "renewService": "Hizmeti yenile",
+    "upgradePlan": "Planı yükselt"
   },
   "services": {
     "title": "Hizmetleriniz",
-    "active": "Aktif",
-    "expiringSoon": "Yakında sona erecek",
-    "expired": "Süresi doldu",
-    "suspended": "Askıya alındı",
-    "pending": "Beklemede",
-    "domains": "Alan adları",
-    "hosting": "Hosting planları",
-    "ssl": "SSL sertifikaları",
-    "viewAll": "Tümünü görüntüle",
-    "renewNow": "Şimdi yenile",
-    "daysRemaining": "{{days}} gün kaldı",
-    "expiredDaysAgo": "{{days}} gün önce süresi doldu",
-    "expiresToday": "Bugün sona eriyor",
-    "noServices": "Aktif hizmet yok",
-    "noServicesDescription": "Bir alan adı veya hosting planı satın alarak başlayın"
+    "subtitle": "Tüm hosting ve ilgili hizmetleriniz",
+    "empty": "Henüz hizmet yok",
+    "emptyDescription": "Bir hizmet satın aldığınızda burada görünecek",
+    "viewAll": "Tüm hizmetleri görüntüle",
+    "renewalDate": "Yenilenme",
+    "expires": "Süresi doluyor",
+    "manage": "Yönet",
+    "viewDetails": "Detayları görüntüle"
   },
-  "recentActivity": {
-    "title": "Son aktiviteler",
-    "empty": "Son aktivite yok",
-    "emptyDescription": "Son işlemleriniz ve güncellemeleriniz burada görünecek",
-    "domainRenewed": "Alan adı yenilendi",
-    "domainRegistered": "Alan adı kaydedildi",
-    "hostingActivated": "Hosting etkinleştirildi",
-    "sslInstalled": "SSL sertifikası yüklendi",
-    "ticketOpened": "Destek talebi açıldı",
-    "ticketReplied": "Yanıt alındı",
-    "paymentReceived": "Ödeme alındı",
-    "invoiceGenerated": "Fatura oluşturuldu",
-    "ago": "{{time}} önce",
-    "justNow": "Az önce"
+  "domains": {
+    "title": "Alan adlarınız",
+    "subtitle": "Bizde kayıtlı tüm alan adları",
+    "empty": "Henüz alan adı yok",
+    "emptyDescription": "Bir alan adı kaydettiğinizde burada görünecek",
+    "viewAll": "Tüm alan adlarını görüntüle",
+    "expires": "Süresi doluyor",
+    "autoRenew": "Otomatik yenileme",
+    "manage": "Yönet",
+    "renewNow": "Şimdi yenile"
   },
   "billing": {
-    "title": "Faturalama özeti",
+    "title": "Faturalama",
+    "subtitle": "Faturalar ve ödeme bilgileri",
     "balance": "Hesap bakiyesi",
-    "due": "Ödenecek tutar",
     "nextInvoice": "Sonraki fatura",
-    "dueDate": "{{date}} tarihine kadar ödenmeli",
-    "overdue": "Gecikmiş",
+    "due": "Vadesi",
+    "overdue": "Vadesi geçmiş",
     "paid": "Ödendi",
-    "viewInvoices": "Tüm faturaları görüntüle",
-    "makePayment": "Ödeme yap",
-    "noBalance": "Ödenecek bakiye yok",
-    "noBalanceDescription": "Hesabınız güncel"
+    "unpaid": "Ödenmedi",
+    "viewAll": "Tüm faturaları görüntüle",
+    "noInvoices": "Henüz fatura yok"
   },
-  "support": {
-    "title": "Yardıma mı ihtiyacınız var?",
-    "description": "Yardımcı olmak için buradayız. İhtiyacınız olduğunda bizimle iletişime geçin.",
-    "openTicket": "Talep aç",
-    "viewTickets": "Talepleri görüntüle",
-    "knowledgeBase": "Yardım merkezi",
-    "contactUs": "Bize ulaşın",
-    "activeTickets": "Aktif talepler",
-    "noActiveTickets": "Aktif talep yok"
+  "tickets": {
+    "title": "Destek talepleri",
+    "subtitle": "İhtiyacınız olduğunda yardım alın",
+    "open": "Açık",
+    "answered": "Yanıtlandı",
+    "closed": "Kapatıldı",
+    "viewAll": "Tüm talepleri görüntüle",
+    "noTickets": "Henüz talep yok",
+    "createTicket": "Talep oluştur"
+  },
+  "navigation": {
+    "dashboard": "Kontrol Paneli",
+    "services": "Hizmetler",
+    "domains": "Alan Adları",
+    "billing": "Faturalama",
+    "tickets": "Talepler",
+    "profile": "Profil",
+    "logout": "Çıkış Yap"
+  },
+  "alerts": {
+    "expiringSoon": "Yakında süresi doluyor",
+    "paymentDue": "Ödeme vadesi",
+    "serviceSuspended": "Hizmet askıya alındı",
+    "domainExpiring": "Alan adı süresi doluyor",
+    "days": "gün"
   },
   "empty": {
-    "title": "Kontrol paneline hoş geldiniz",
-    "description": "Aktif hizmetleriniz olduğunda burada görünecekler. Bir alan adı veya hosting planı satın alarak başlayın.",
-    "getStarted": "Başlayın"
+    "title": "Henüz burada bir şey yok",
+    "description": "Hizmetleriniz, alan adlarınız veya talepleriniz olduğunda burada görünecek"
+  },
+  "overviewStatus": {
+    "allGood": "Her şey yolunda görünüyor",
+    "allGoodDescription": "Tüm hizmetleriniz sorunsuz çalışıyor",
+    "attentionNeeded": "Dikkat gerekiyor",
+    "attentionNeededDescription": "Birkaç şey dikkatinizi gerektiriyor",
+    "actionRequired": "Aksiyon gerekli",
+    "actionRequiredDescription": "Bazı hizmetler acil dikkat gerektiriyor"
+  },
+  "servicesPage": {
+    "title": "Hizmetleriniz",
+    "subtitle": "Tüm hosting ve ilgili hizmetlerinizi yönetin"
+  },
+  "serviceDetail": {
+    "backToServices": "Hizmetlere dön",
+    "serviceDetails": "Hizmet Detayları",
+    "serviceId": "Hizmet ID",
+    "billingCycle": "Faturalama Döngüsü",
+    "nextDueDate": "Sonraki Vade Tarihi",
+    "amount": "Tutar",
+    "actions": "İşlemler",
+    "renewService": "Hizmeti Yenile",
+    "upgradePlan": "Planı Yükselt",
+    "requestCancellation": "İptal Talebi",
+    "quickLinks": "Hızlı Bağlantılar",
+    "controlPanel": "Kontrol Paneli",
+    "openSupportTicket": "Destek Talebi Aç"
+  },
+  "domainsPage": {
+    "title": "Alan adlarınız",
+    "subtitle": "Bizde kayıtlı tüm alan adlarını yönetin"
+  },
+  "domainDetail": {
+    "backToDomains": "Alan adlarına dön",
+    "autoRenewEnabled": "Otomatik yenileme etkin",
+    "domainInformation": "Alan Adı Bilgileri",
+    "registrationDate": "Kayıt Tarihi",
+    "expiryDate": "Son Kullanma Tarihi",
+    "expiringSoon": "Yakında süresi doluyor",
+    "enabled": "Etkin",
+    "disabled": "Devre Dışı",
+    "enableAutoRenew": "Otomatik Yenilemeyi Etkinleştir",
+    "renewDomain": "Alan Adını Yenile",
+    "manageDns": "DNS Yönet",
+    "transferDomain": "Alan Adını Transfer Et",
+    "dnsManagement": "DNS Yönetimi"
+  },
+  "billingPage": {
+    "title": "Faturalama",
+    "subtitle": "Faturaları ve ödeme bilgilerini görüntüleyin",
+    "accountBalance": "Hesap Bakiyesi",
+    "nextInvoice": "Sonraki Fatura",
+    "due": "Vadesi",
+    "unpaidInvoices": "Ödenmemiş Faturalar",
+    "invoices": "Faturalar",
+    "downloadAll": "Tümünü İndir",
+    "noInvoicesDescription": "Faturalarınız olduğunda burada görünecek",
+    "date": "Tarih",
+    "download": "İndir",
+    "payNow": "Şimdi Öde"
+  },
+  "ticketsPage": {
+    "title": "Destek Talepleri",
+    "subtitle": "İhtiyacınız olduğunda yardım alın",
+    "createTicket": "Talep Oluştur",
+    "noTicketsDescription": "Bir destek talebi oluşturduğunuzda burada görünecek",
+    "createFirstTicket": "İlk Talebinizi Oluşturun",
+    "created": "Oluşturuldu",
+    "lastReply": "Son yanıt",
+    "backToTickets": "Taleplere dön"
+  },
+  "ticketDetail": {
+    "addReply": "Yanıt Ekle",
+    "typeReplyPlaceholder": "Yanıtınızı buraya yazın...",
+    "sendReply": "Yanıtı Gönder",
+    "you": "Siz",
+    "supportTeam": "Destek Ekibi"
+  },
+  "newTicket": {
+    "title": "Destek Talebi Oluştur",
+    "subtitle": "Yardımcı olmak için buradayız. Sorununuzu açıklayın, size yakında dönüş yapacağız.",
+    "backToTickets": "Taleplere dön"
+  },
+  "profile": {
+    "title": "Profil Ayarları",
+    "subtitle": "Hesap bilgilerinizi ve tercihlerinizi yönetin",
+    "personalInformation": "Kişisel Bilgiler",
+    "addressInformation": "Adres Bilgileri",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "emailAddress": "E-posta Adresi",
+    "phoneNumber": "Telefon Numarası",
+    "companyName": "Şirket Adı",
+    "address": "Adres",
+    "city": "Şehir",
+    "state": "Eyalet/İl",
+    "zipCode": "Posta Kodu",
+    "country": "Ülke",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "cancel": "İptal"
   }
 }

@@ -1,296 +1,213 @@
-'use client'
+import type { Metadata } from "next"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { createMetadata } from "@/lib/seo"
+import { addLocaleToPath } from "@/lib/locale-utils"
+import { CreditCard, Download, ExternalLink, ArrowRight } from "lucide-react"
+import { format } from "date-fns"
+import enDashboard from "@/locales/en/dashboard.json"
+import trDashboard from "@/locales/tr/dashboard.json"
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { ArrowLeft, Download, CreditCard, Calendar, CheckCircle2, AlertCircle, XCircle } from 'lucide-react'
-import { useTranslation } from '@/lib/i18n'
-import { useLocale } from '@/hooks/use-locale'
-import { addLocaleToPath } from '@/lib/locale-utils'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-
-// WHMCS data types (conceptual)
-type InvoiceStatus = 'paid' | 'unpaid' | 'overdue' | 'cancelled'
-
-interface Invoice {
-  id: string
-  number: string
-  date: string
-  dueDate: string
-  amount: number
-  status: InvoiceStatus
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
+  
+  return createMetadata(
+    { path: '/dashboard/billing' },
+    {
+      en: {
+        title: 'Billing - Dashboard',
+        description: 'View invoices and payment information',
+      },
+      tr: {
+        title: 'Faturalama - Kontrol Paneli',
+        description: 'Faturaları ve ödeme bilgilerini görüntüleyin',
+      },
+    },
+    validLocale
+  )
 }
 
-interface Payment {
-  id: string
-  date: string
-  amount: number
-  method: string
-  transactionId: string
-  invoiceId?: string
+// PLACEHOLDER DATA - Replace with WHMCS API: GetInvoices
+const placeholderInvoices = [
+  {
+    id: '1',
+    invoiceNumber: 'INV-2024-001',
+    date: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
+    dueDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+    amount: 29.99,
+    status: 'unpaid' as const,
+  },
+  {
+    id: '2',
+    invoiceNumber: 'INV-2024-002',
+    date: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000),
+    dueDate: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000),
+    amount: 29.99,
+    status: 'paid' as const,
+  },
+  {
+    id: '3',
+    invoiceNumber: 'INV-2024-003',
+    date: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000),
+    dueDate: new Date(Date.now() - 55 * 24 * 60 * 60 * 1000),
+    amount: 29.99,
+    status: 'paid' as const,
+  },
+]
+
+const placeholderBalance = 0
+const placeholderNextInvoice = {
+  date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+  amount: 29.99,
 }
 
-export default function BillingPage() {
-  const { t } = useTranslation('billing')
-  const locale = useLocale()
-  const getPath = (path: string) => addLocaleToPath(path, locale)
-  const [activeTab, setActiveTab] = useState<'invoices' | 'payments'>('invoices')
+export default async function BillingPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const validLocale = (locale === 'en' || locale === 'tr') ? locale : 'tr'
+  const getPath = (path: string) => addLocaleToPath(path, validLocale)
+  const t = validLocale === 'en' ? enDashboard : trDashboard
 
-  // Placeholder data - in real app, this comes from WHMCS
-  // WHMCS API: GetInvoices, GetTransactions
-  const placeholderInvoices: Invoice[] = [
-    {
-      id: '1',
-      number: 'INV-2024-001',
-      date: '2024-01-15',
-      dueDate: '2024-02-15',
-      amount: 49.99,
-      status: 'paid',
-    },
-    {
-      id: '2',
-      number: 'INV-2024-002',
-      date: '2024-02-01',
-      dueDate: '2024-03-01',
-      amount: 29.99,
-      status: 'unpaid',
-    },
-    {
-      id: '3',
-      number: 'INV-2024-003',
-      date: '2024-01-20',
-      dueDate: '2024-02-20',
-      amount: 99.99,
-      status: 'overdue',
-    },
-  ]
-
-  const placeholderPayments: Payment[] = [
-    {
-      id: '1',
-      date: '2024-01-15',
-      amount: 49.99,
-      method: 'Credit Card',
-      transactionId: 'TXN-12345',
-      invoiceId: '1',
-    },
-    {
-      id: '2',
-      date: '2024-01-10',
-      amount: 29.99,
-      method: 'PayPal',
-      transactionId: 'TXN-12344',
-      invoiceId: '2',
-    },
-  ]
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format(amount)
-  }
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    })
-  }
-
-  const getStatusBadge = (status: InvoiceStatus) => {
-    const variants = {
-      paid: { variant: 'default' as const, icon: CheckCircle2, className: 'bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-400 border-green-200 dark:border-green-800' },
-      unpaid: { variant: 'secondary' as const, icon: AlertCircle, className: '' },
-      overdue: { variant: 'destructive' as const, icon: XCircle, className: '' },
-      cancelled: { variant: 'outline' as const, icon: XCircle, className: '' },
-    }
-    const config = variants[status]
-    const Icon = config.icon
-    return (
-      <Badge variant={config.variant} className={config.className}>
-        <Icon className="h-3 w-3 mr-1" aria-hidden="true" />
-        {t(`invoices.${status}`)}
-      </Badge>
-    )
+  const statusConfig = {
+    paid: { label: t.billing.paid, variant: 'default' as const },
+    unpaid: { label: t.billing.unpaid, variant: 'destructive' as const },
+    overdue: { label: t.billing.overdue, variant: 'destructive' as const },
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-      <main className="flex-1">
-        <div className="container mx-auto px-4 lg:px-6 py-8 lg:py-12">
-          {/* Page Header */}
-          <div className="mb-8">
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="mb-4"
-            >
-              <Link href={getPath('/dashboard')}>
-                <ArrowLeft className="h-4 w-4 mr-2" aria-hidden="true" />
-                {t('title')}
-              </Link>
-            </Button>
-            <h1 className="text-3xl font-semibold text-foreground mb-2">
-              {t('title')}
-            </h1>
-            <p className="text-muted-foreground">
-              {t('overview.title')}
+    <>
+      <div className="mb-8">
+        <h1 className="text-3xl font-semibold text-foreground mb-2">
+          {t.billingPage.title}
+        </h1>
+        <p className="text-muted-foreground">
+          {t.billingPage.subtitle}
+        </p>
+      </div>
+
+      {/* Summary Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="rounded-lg border bg-card p-6">
+          <div className="flex items-center gap-2 mb-2">
+            <CreditCard className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
+            <span className="text-sm text-muted-foreground">{t.billingPage.accountBalance}</span>
+          </div>
+          <p className="text-2xl font-semibold text-foreground">
+            ${placeholderBalance.toFixed(2)}
+          </p>
+        </div>
+        <div className="rounded-lg border bg-card p-6">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-sm text-muted-foreground">{t.billingPage.nextInvoice}</span>
+          </div>
+          <p className="text-2xl font-semibold text-foreground">
+            ${placeholderNextInvoice.amount.toFixed(2)}
+          </p>
+          <p className="text-sm text-muted-foreground mt-1">
+            {t.billingPage.due} {format(new Date(placeholderNextInvoice.date), 'MMM d, yyyy')}
+          </p>
+        </div>
+        <div className="rounded-lg border bg-card p-6">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-sm text-muted-foreground">{t.billingPage.unpaidInvoices}</span>
+          </div>
+          <p className="text-2xl font-semibold text-foreground">
+            {placeholderInvoices.filter(i => i.status === 'unpaid').length}
+          </p>
+        </div>
+      </div>
+
+      {/* Invoices List */}
+      <section>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-semibold text-foreground">{t.billingPage.invoices}</h2>
+          <Button variant="outline" size="sm">
+            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t.billingPage.downloadAll}
+          </Button>
+        </div>
+
+        {placeholderInvoices.length === 0 ? (
+          <div className="rounded-lg border bg-card p-12 text-center">
+            <p className="text-lg font-medium text-foreground mb-2">
+              {t.billing.noInvoices}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {t.billingPage.noInvoicesDescription}
             </p>
           </div>
-
-          {/* Tabs */}
-          <div className="flex gap-2 mb-6 border-b">
-            <button
-              onClick={() => setActiveTab('invoices')}
-              className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
-                activeTab === 'invoices'
-                  ? 'border-primary text-foreground'
-                  : 'border-transparent text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {t('invoices.title')}
-            </button>
-            <button
-              onClick={() => setActiveTab('payments')}
-              className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
-                activeTab === 'payments'
-                  ? 'border-primary text-foreground'
-                  : 'border-transparent text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {t('payments.title')}
-            </button>
+        ) : (
+          <div className="space-y-4">
+            {placeholderInvoices.map((invoice) => {
+              const config = statusConfig[invoice.status] || statusConfig.unpaid
+              const isOverdue = invoice.status === 'unpaid' && 
+                new Date(invoice.dueDate) < new Date()
+              
+              return (
+                <div
+                  key={invoice.id}
+                  className="rounded-lg border bg-card p-6 hover:shadow-md transition-shadow"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="font-semibold text-foreground">
+                          {invoice.invoiceNumber}
+                        </h3>
+                        <Badge variant={isOverdue ? statusConfig.overdue.variant : config.variant}>
+                          {isOverdue ? statusConfig.overdue.label : config.label}
+                        </Badge>
+                      </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div>
+                          <span className="text-muted-foreground">{t.billingPage.date}: </span>
+                          <span className="text-foreground">
+                            {format(new Date(invoice.date), 'MMM d, yyyy')}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">{t.billingPage.due}: </span>
+                          <span className={isOverdue ? 'text-red-600 dark:text-red-500 font-medium' : 'text-foreground'}>
+                            {format(new Date(invoice.dueDate), 'MMM d, yyyy')}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">{t.billingPage.amount}: </span>
+                          <span className="font-semibold text-foreground">
+                            ${invoice.amount.toFixed(2)}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Button variant="outline" size="sm" asChild>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                          <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                          {t.billingPage.download}
+                        </a>
+                      </Button>
+                      {invoice.status === 'unpaid' && (
+                        <Button size="sm">
+                          {t.billingPage.payNow}
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
-
-          {/* Invoices Tab */}
-          {activeTab === 'invoices' && (
-            <Card>
-              <CardHeader>
-                <CardTitle>{t('invoices.title')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {placeholderInvoices.length === 0 ? (
-                  <div className="text-center py-12">
-                    <p className="text-muted-foreground mb-2">{t('invoices.empty')}</p>
-                    <p className="text-sm text-muted-foreground">{t('invoices.emptyDescription')}</p>
-                  </div>
-                ) : (
-                  <div className="overflow-x-auto">
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>{t('invoices.invoiceNumber', { number: '' }).replace(' #', '')}</TableHead>
-                          <TableHead>{t('invoices.date')}</TableHead>
-                          <TableHead>{t('invoices.dueDate')}</TableHead>
-                          <TableHead className="text-right">{t('invoices.amount')}</TableHead>
-                          <TableHead>{t('invoices.status')}</TableHead>
-                          <TableHead className="text-right">Actions</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {placeholderInvoices.map((invoice) => (
-                          <TableRow key={invoice.id}>
-                            <TableCell className="font-medium">
-                              {t('invoices.invoiceNumber', { number: invoice.number })}
-                            </TableCell>
-                            <TableCell>{formatDate(invoice.date)}</TableCell>
-                            <TableCell>{formatDate(invoice.dueDate)}</TableCell>
-                            <TableCell className="text-right font-medium">
-                              {formatCurrency(invoice.amount)}
-                            </TableCell>
-                            <TableCell>{getStatusBadge(invoice.status)}</TableCell>
-                            <TableCell className="text-right">
-                              <div className="flex items-center justify-end gap-2">
-                                <Button asChild variant="ghost" size="sm">
-                                  <Link href={getPath(`/dashboard/billing/invoices/${invoice.id}`)}>
-                                    {t('invoices.view')}
-                                  </Link>
-                                </Button>
-                                {invoice.status !== 'paid' && (
-                                  <Button asChild size="sm">
-                                    <Link href={getPath('/dashboard/billing/pay')}>
-                                      {t('invoices.payNow')}
-                                    </Link>
-                                  </Button>
-                                )}
-                              </div>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          )}
-
-          {/* Payments Tab */}
-          {activeTab === 'payments' && (
-            <Card>
-              <CardHeader>
-                <CardTitle>{t('payments.title')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {placeholderPayments.length === 0 ? (
-                  <div className="text-center py-12">
-                    <p className="text-muted-foreground mb-2">{t('payments.empty')}</p>
-                    <p className="text-sm text-muted-foreground">{t('payments.emptyDescription')}</p>
-                  </div>
-                ) : (
-                  <div className="overflow-x-auto">
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>{t('payments.date')}</TableHead>
-                          <TableHead className="text-right">{t('payments.amount')}</TableHead>
-                          <TableHead>{t('payments.method')}</TableHead>
-                          <TableHead>{t('payments.transactionId')}</TableHead>
-                          <TableHead>{t('payments.invoice')}</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {placeholderPayments.map((payment) => (
-                          <TableRow key={payment.id}>
-                            <TableCell>{formatDate(payment.date)}</TableCell>
-                            <TableCell className="text-right font-medium">
-                              {formatCurrency(payment.amount)}
-                            </TableCell>
-                            <TableCell>{payment.method}</TableCell>
-                            <TableCell className="font-mono text-xs">
-                              {payment.transactionId}
-                            </TableCell>
-                            <TableCell>
-                              {payment.invoiceId ? (
-                                <Button asChild variant="link" size="sm" className="h-auto p-0">
-                                  <Link href={getPath(`/dashboard/billing/invoices/${payment.invoiceId}`)}>
-                                    {t('payments.viewInvoice')}
-                                  </Link>
-                                </Button>
-                              ) : (
-                                <span className="text-muted-foreground">—</span>
-                              )}
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          )}
-        </div>
-      </main>
-      <SiteFooter />
-    </div>
+        )}
+      </section>
+    </>
   )
 }
