@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ShoppingCart } from "lucide-react"
 import { useTranslation } from "@/lib/i18n"
@@ -120,10 +121,17 @@ export function SiteHeader() {
           <div className="flex h-16 items-center justify-between">
             <Link
               href={getPath("/")}
-              className="font-semibold text-xl tracking-tight text-foreground hover:opacity-80 transition-opacity"
+              className="flex items-center hover:opacity-80 transition-opacity"
               aria-label={t("nav.homeLabel")}
             >
-              Domain Tescil
+              <Image
+                src="/logo.png"
+                alt="Domain Tescil"
+                width={140}
+                height={40}
+                className="h-8 w-auto"
+                priority
+              />
             </Link>
 
             <div className="hidden md:flex items-center gap-10">

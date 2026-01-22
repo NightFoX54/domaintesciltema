@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useTranslation } from "@/lib/i18n"
 import { useLocale } from "@/hooks/use-locale"
 import { addLocaleToPath } from "@/lib/locale-utils"
@@ -16,7 +17,13 @@ export function SiteFooter() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-5">
-            <h2 className="font-semibold text-2xl text-foreground tracking-tight">Domain Tescil</h2>
+            <Image
+              src="/logo.png"
+              alt="Domain Tescil"
+              width={180}
+              height={50}
+              className="h-10 w-auto"
+            />
             <p className="text-[15px] text-muted-foreground/90 leading-relaxed max-w-sm text-pretty">
               {t("footer.tagline")}
             </p>
