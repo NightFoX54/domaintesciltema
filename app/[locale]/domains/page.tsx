@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Shield, TrendingUp, Key, Database, Check, Globe } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
@@ -15,13 +16,26 @@ import Link from "next/link"
 import { useTranslation } from "@/lib/i18n"
 import { useParams } from "next/navigation"
 import { addLocaleToPath } from "@/lib/locale-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
 
 export default function DomainsPage() {
   const { t } = useTranslation('domains')
   const params = useParams()
   const locale = (params?.locale as string) || 'tr'
+  const hasTrackedRef = useRef(false)
   
   const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+
+  useEffect(() => {
+    if (!hasTrackedRef.current) {
+      trackEvent(AnalyticsEventName.PRODUCT_VIEW, {
+        product_type: 'domain',
+        locale: locale,
+      })
+      hasTrackedRef.current = true
+    }
+  }, [locale])
   
   return (
     <div className="min-h-screen bg-background">
@@ -101,7 +115,16 @@ export default function DomainsPage() {
           headingLevel={2}
         />
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href={getPath("/configure/domain?domain=yourdomain.com&tld=.com")}>
+          <Link 
+            href={getPath("/configure/domain?domain=yourdomain.com&tld=.com")}
+            onClick={() => {
+              trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+                product_type: 'domain',
+                configurator_type: 'domain',
+                locale: locale,
+              })
+            }}
+          >
             <Button size="lg" className="px-8 shadow-md hover:shadow-lg transition-shadow">
               {t("overview.findDomain.searchButton")}
             </Button>
@@ -174,7 +197,16 @@ export default function DomainsPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href={getPath("/configure/domain?domain=yourdomain.com&tld=.com")}>
+              <Link 
+                href={getPath("/configure/domain?domain=yourdomain.com&tld=.com")}
+                onClick={() => {
+                  trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+                    product_type: 'domain',
+                    configurator_type: 'domain',
+                    locale: locale,
+                  })
+                }}
+              >
                 <Button size="lg" className="shadow-md hover:shadow-lg transition-shadow">
                   {t("overview.philosophy.findDomain")}
                 </Button>

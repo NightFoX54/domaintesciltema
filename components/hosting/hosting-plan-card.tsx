@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { useTranslation } from "@/lib/i18n"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
+import { useParams } from "next/navigation"
 
 interface HostingPlanFeature {
   text: string
@@ -36,9 +39,23 @@ export function HostingPlanCard({
   className,
 }: HostingPlanCardProps) {
   const { t } = useTranslation('common')
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
   const displayPopularLabel = popularLabel || t('ui.mostPopular')
-  
-  // TODO: Add analytics tracking for plan selections
+
+  const handleConfigureClick = () => {
+    const url = new URL(actionHref, window.location.origin)
+    const plan = url.searchParams.get('plan') || 'starter'
+    const type = url.searchParams.get('type') || 'linux'
+    
+    trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+      product_type: 'hosting',
+      product_id: type,
+      configurator_type: 'hosting',
+      billing_cycle: plan,
+      locale: locale,
+    })
+  }
 
   return (
     <div
@@ -74,7 +91,7 @@ export function HostingPlanCard({
             </li>
           ))}
         </ul>
-        <Link href={actionHref}>
+        <Link href={actionHref} onClick={handleConfigureClick}>
           <Button className={cn("w-full h-11", isPopular ? "shadow-md" : "shadow-sm")}>
             {actionLabel}
           </Button>

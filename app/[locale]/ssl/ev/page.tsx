@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -9,12 +10,26 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useTranslation } from "@/lib/i18n"
 import { useParams } from "next/navigation"
 import { addLocaleToPath } from "@/lib/locale-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
 
 export default function EVSSLPage() {
   const { t } = useTranslation('ssl')
   const params = useParams()
   const locale = (params?.locale as string) || 'tr'
+  const hasTrackedRef = useRef(false)
   const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+
+  useEffect(() => {
+    if (!hasTrackedRef.current) {
+      trackEvent(AnalyticsEventName.PRODUCT_VIEW, {
+        product_type: 'ssl',
+        product_id: 'ev',
+        locale: locale,
+      })
+      hasTrackedRef.current = true
+    }
+  }, [locale])
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -81,7 +96,19 @@ export default function EVSSLPage() {
             </div>
 
             <Button size="lg" className="w-full text-base" asChild>
-              <Link href="/configure/ssl?type=ev">{t("ev.pricing.actionLabel")}</Link>
+              <Link 
+                href="/configure/ssl?type=ev"
+                onClick={() => {
+                  trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+                    product_type: 'ssl',
+                    product_id: 'ev',
+                    configurator_type: 'ssl',
+                    locale: locale,
+                  })
+                }}
+              >
+                {t("ev.pricing.actionLabel")}
+              </Link>
             </Button>
 
             <p className="text-[13px] text-muted-foreground text-center mt-6">
@@ -233,7 +260,19 @@ export default function EVSSLPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-base" asChild>
-                <Link href="/configure/ssl?type=ev">{t("ev.cta.primary")}</Link>
+                <Link 
+                  href="/configure/ssl?type=ev"
+                  onClick={() => {
+                    trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+                      product_type: 'ssl',
+                      product_id: 'ev',
+                      configurator_type: 'ssl',
+                      locale: locale,
+                    })
+                  }}
+                >
+                  {t("ev.cta.primary")}
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="text-base bg-transparent" asChild>
                 <Link href="/contact">{t("ev.cta.secondary")}</Link>

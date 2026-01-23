@@ -2,6 +2,9 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
+import { useParams } from "next/navigation"
 
 interface SSLPricingFeature {
   text: string
@@ -26,7 +29,20 @@ export function SSLPricingCard({
   renewalNote,
   className,
 }: SSLPricingCardProps) {
-  // TODO: Add analytics tracking
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+
+  const handleConfigureClick = () => {
+    const url = new URL(actionHref, window.location.origin)
+    const sslType = url.searchParams.get('type') || 'positive'
+    
+    trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+      product_type: 'ssl',
+      product_id: sslType,
+      configurator_type: 'ssl',
+      locale: locale,
+    })
+  }
 
   return (
     <div className={cn("max-w-md mx-auto bg-background p-10 rounded-2xl shadow-sm border border-border", className)}>
@@ -45,7 +61,7 @@ export function SSLPricingCard({
       </div>
 
       <Button size="lg" className="w-full text-base" asChild>
-        <Link href={actionHref}>{actionLabel}</Link>
+        <Link href={actionHref} onClick={handleConfigureClick}>{actionLabel}</Link>
       </Button>
 
       {renewalNote && (

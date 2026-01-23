@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -10,6 +10,9 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
 import { formatCurrency } from "@/lib/format-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
+import { useParams } from "next/navigation"
 
 export const dynamic = "force-dynamic"
 
@@ -17,11 +20,26 @@ export default function ConfigureDomainPage() {
   const { t, language } = useTranslation('configure')
   const router = useRouter()
   const searchParams = useSearchParams()
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
   const domainName = searchParams.get("domain") || "yourdomain.com"
   const tld = searchParams.get("tld") || ".com"
   const editId = searchParams.get("editId")
+  const hasTrackedStartedRef = useRef(false)
   const [registrationPeriod, setRegistrationPeriod] = useState("1")
   const [isAdding, setIsAdding] = useState(false)
+
+  useEffect(() => {
+    if (!hasTrackedStartedRef.current) {
+      trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+        product_type: 'domain',
+        product_id: domainName,
+        configurator_type: 'domain',
+        locale: locale,
+      })
+      hasTrackedStartedRef.current = true
+    }
+  }, [domainName, locale])
 
   const basePrice = 12.99
   const renewalPrice = 14.99
@@ -64,6 +82,33 @@ export default function ConfigureDomainPage() {
 
     // Trigger cart update event
     window.dispatchEvent(new Event("cartUpdated"))
+
+    const currency = locale === 'tr' ? 'TRY' : 'USD'
+    const billingCycleStr = `${period}year`
+
+    trackEvent(AnalyticsEventName.CONFIGURATOR_COMPLETED, {
+      product_type: 'domain',
+      product_id: domainName,
+      configurator_type: 'domain',
+      billing_cycle: billingCycleStr,
+      price: totalPrice,
+      locale: locale,
+      configuration_options: {
+        tld: tld,
+        period: period,
+      },
+    })
+
+    trackEvent(AnalyticsEventName.ADD_TO_CART, {
+      product_type: 'domain',
+      product_id: domainName,
+      billing_cycle: billingCycleStr,
+      price: totalPrice,
+      currency: currency,
+      locale: locale,
+      quantity: 1,
+      cart_total: totalPrice,
+    })
 
     // Navigate to cart
     setTimeout(() => {

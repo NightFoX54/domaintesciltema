@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Check, Shield, ArrowLeft, Lock } from "lucide-react"
@@ -8,6 +8,9 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
 import { formatCurrency } from "@/lib/format-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
+import { useParams } from "next/navigation"
 import enConfigure from "@/locales/en/configure.json"
 import trConfigure from "@/locales/tr/configure.json"
 
@@ -17,10 +20,25 @@ export default function ConfigureSSLPage() {
   const { t, language } = useTranslation('configure')
   const router = useRouter()
   const searchParams = useSearchParams()
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
   const sslType = searchParams.get("type") || "positive"
   const editId = searchParams.get("editId")
+  const hasTrackedStartedRef = useRef(false)
 
   const [isAdding, setIsAdding] = useState(false)
+
+  useEffect(() => {
+    if (!hasTrackedStartedRef.current) {
+      trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+        product_type: 'ssl',
+        product_id: sslType,
+        configurator_type: 'ssl',
+        locale: locale,
+      })
+      hasTrackedStartedRef.current = true
+    }
+  }, [sslType, locale])
 
   const sslDetails: Record<string, { name: string; price: number; description: string }> = {
     positive: {
@@ -70,6 +88,31 @@ export default function ConfigureSSLPage() {
 
     localStorage.setItem("cart", JSON.stringify(cart))
     window.dispatchEvent(new Event("cartUpdated"))
+
+    const currency = locale === 'tr' ? 'TRY' : 'USD'
+
+    trackEvent(AnalyticsEventName.CONFIGURATOR_COMPLETED, {
+      product_type: 'ssl',
+      product_id: sslType,
+      configurator_type: 'ssl',
+      billing_cycle: '1year',
+      price: ssl.price,
+      locale: locale,
+      configuration_options: {
+        ssl_type: sslType,
+      },
+    })
+
+    trackEvent(AnalyticsEventName.ADD_TO_CART, {
+      product_type: 'ssl',
+      product_id: sslType,
+      billing_cycle: '1year',
+      price: ssl.price,
+      currency: currency,
+      locale: locale,
+      quantity: 1,
+      cart_total: ssl.price,
+    })
 
     setTimeout(() => {
       router.push("/cart")

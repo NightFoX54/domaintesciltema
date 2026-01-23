@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Check, Server, Zap, Shield } from "lucide-react"
@@ -15,13 +16,27 @@ import Link from "next/link"
 import { useTranslation } from "@/lib/i18n"
 import { useParams } from "next/navigation"
 import { addLocaleToPath } from "@/lib/locale-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
 
 export default function LinuxHostingPage() {
   const { t } = useTranslation('hosting')
   const params = useParams()
   const locale = (params?.locale as string) || 'tr'
+  const hasTrackedRef = useRef(false)
   
   const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+
+  useEffect(() => {
+    if (!hasTrackedRef.current) {
+      trackEvent(AnalyticsEventName.PRODUCT_VIEW, {
+        product_type: 'hosting',
+        product_id: 'linux',
+        locale: locale,
+      })
+      hasTrackedRef.current = true
+    }
+  }, [locale])
   
   return (
     <div className="min-h-screen bg-background">
@@ -41,7 +56,17 @@ export default function LinuxHostingPage() {
                 {t("linux.hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link href="/configure/hosting?plan=starter&type=linux">
+                <Link 
+                  href="/configure/hosting?plan=starter&type=linux"
+                  onClick={() => {
+                    trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+                      product_type: 'hosting',
+                      product_id: 'linux',
+                      configurator_type: 'hosting',
+                      locale: locale,
+                    })
+                  }}
+                >
                   <Button size="lg" className="h-12 px-8 text-base shadow-md">
                     {t("linux.hero.configurePlan")}
                   </Button>
@@ -301,7 +326,17 @@ export default function LinuxHostingPage() {
               {t("linux.cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Link href="/configure/hosting?plan=starter&type=linux">
+              <Link 
+                href="/configure/hosting?plan=starter&type=linux"
+                onClick={() => {
+                  trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+                    product_type: 'hosting',
+                    product_id: 'linux',
+                    configurator_type: 'hosting',
+                    locale: locale,
+                  })
+                }}
+              >
                 <Button size="lg" className="h-12 px-8 text-base shadow-md">
                   {t("linux.cta.choosePlan")}
                 </Button>

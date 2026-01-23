@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Server, Zap, Shield, Users } from "lucide-react"
 import Link from "next/link"
@@ -13,13 +14,26 @@ import { HostingTypeCard } from "@/components/hosting/hosting-type-card"
 import { useTranslation } from "@/lib/i18n"
 import { useParams } from "next/navigation"
 import { addLocaleToPath } from "@/lib/locale-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
 
 export default function HostingOverviewPage() {
   const { t } = useTranslation('hosting')
   const params = useParams()
   const locale = (params?.locale as string) || 'tr'
+  const hasTrackedRef = useRef(false)
   
   const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+
+  useEffect(() => {
+    if (!hasTrackedRef.current) {
+      trackEvent(AnalyticsEventName.PRODUCT_VIEW, {
+        product_type: 'hosting',
+        locale: locale,
+      })
+      hasTrackedRef.current = true
+    }
+  }, [locale])
   
   return (
     <div className="min-h-screen bg-background">

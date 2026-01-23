@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { Check, Shield, Globe, Lock, TrendingUp, FileCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -15,13 +16,26 @@ import { CTABlock } from "@/components/common/cta-block"
 import { useTranslation } from "@/lib/i18n"
 import { useParams } from "next/navigation"
 import { addLocaleToPath } from "@/lib/locale-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
 
 export default function SSLPage() {
   const { t } = useTranslation('ssl')
   const params = useParams()
   const locale = (params?.locale as string) || 'tr'
+  const hasTrackedRef = useRef(false)
   
   const getPath = (path: string) => addLocaleToPath(path, locale as 'en' | 'tr')
+
+  useEffect(() => {
+    if (!hasTrackedRef.current) {
+      trackEvent(AnalyticsEventName.PRODUCT_VIEW, {
+        product_type: 'ssl',
+        locale: locale,
+      })
+      hasTrackedRef.current = true
+    }
+  }, [locale])
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -11,6 +11,9 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { useTranslation } from "@/lib/i18n"
 import { formatCurrency } from "@/lib/format-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
+import { useParams } from "next/navigation"
 
 export const dynamic = "force-dynamic"
 
@@ -18,14 +21,29 @@ export default function ConfigureHostingPage() {
   const { t, language } = useTranslation('configure')
   const router = useRouter()
   const searchParams = useSearchParams()
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
   const planType = searchParams.get("plan") || "starter"
   const hostingType = searchParams.get("type") || "linux"
   const editId = searchParams.get("editId")
+  const hasTrackedStartedRef = useRef(false)
 
   const [billingCycle, setBillingCycle] = useState("12")
   const [addBackups, setAddBackups] = useState(false)
   const [addPriority, setAddPriority] = useState(false)
   const [isAdding, setIsAdding] = useState(false)
+
+  useEffect(() => {
+    if (!hasTrackedStartedRef.current) {
+      trackEvent(AnalyticsEventName.CONFIGURATOR_STARTED, {
+        product_type: 'hosting',
+        product_id: hostingType,
+        configurator_type: 'hosting',
+        locale: locale,
+      })
+      hasTrackedStartedRef.current = true
+    }
+  }, [hostingType, locale])
 
   const planNames: Record<string, string> = {
     starter: "Starter",
@@ -88,6 +106,35 @@ export default function ConfigureHostingPage() {
 
     localStorage.setItem("cart", JSON.stringify(cart))
     window.dispatchEvent(new Event("cartUpdated"))
+
+    const currency = locale === 'tr' ? 'TRY' : 'USD'
+    const billingCycleStr = `${months}month`
+
+    trackEvent(AnalyticsEventName.CONFIGURATOR_COMPLETED, {
+      product_type: 'hosting',
+      product_id: hostingType,
+      configurator_type: 'hosting',
+      billing_cycle: billingCycleStr,
+      price: totalPrice,
+      locale: locale,
+      configuration_options: {
+        plan: planType,
+        billing_cycle: months,
+        backups: addBackups,
+        priority: addPriority,
+      },
+    })
+
+    trackEvent(AnalyticsEventName.ADD_TO_CART, {
+      product_type: 'hosting',
+      product_id: hostingType,
+      billing_cycle: billingCycleStr,
+      price: totalPrice,
+      currency: currency,
+      locale: locale,
+      quantity: 1,
+      cart_total: totalPrice,
+    })
 
     setTimeout(() => {
       router.push("/cart")

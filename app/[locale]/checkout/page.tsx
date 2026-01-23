@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -14,6 +14,9 @@ import { SiteFooter } from "@/components/site-footer"
 import Link from "next/link"
 import { useTranslation } from "@/lib/i18n"
 import { formatCurrency } from "@/lib/format-utils"
+import { trackEvent } from "@/lib/analytics"
+import { AnalyticsEventName } from "@/lib/analytics-events"
+import { useParams } from "next/navigation"
 
 interface CartItem {
   id: string
@@ -38,6 +41,9 @@ interface CartItem {
 export default function CheckoutPage() {
   const { t, language } = useTranslation('checkout')
   const router = useRouter()
+  const params = useParams()
+  const locale = (params?.locale as string) || 'tr'
+  const hasTrackedRef = useRef(false)
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [paymentMethod, setPaymentMethod] = useState("card")
@@ -52,12 +58,41 @@ export default function CheckoutPage() {
         router.push("/cart")
       } else {
         setCartItems(items)
+        
+        // Track checkout_started once when page loads with items
+        if (!hasTrackedRef.current && items.length > 0) {
+          const currency = locale === 'tr' ? 'TRY' : 'USD'
+          const totalPrice = items.reduce((sum: number, item: CartItem) => sum + item.price, 0)
+          
+          // Get billing cycle from first item (or default)
+          const firstItem = items[0]
+          let billingCycle: string | undefined
+          if (firstItem.type === 'hosting' && firstItem.billingCycle) {
+            billingCycle = `${firstItem.billingCycle}month`
+          } else if (firstItem.type === 'domain' && firstItem.period) {
+            billingCycle = `${firstItem.period}year`
+          } else if (firstItem.type === 'ssl') {
+            billingCycle = '1year'
+          }
+
+          trackEvent(AnalyticsEventName.CHECKOUT_STARTED, {
+            product_type: firstItem.type,
+            billing_cycle: billingCycle,
+            price: totalPrice,
+            currency: currency,
+            locale: locale,
+            cart_total: totalPrice,
+            cart_items_count: items.length,
+          })
+          
+          hasTrackedRef.current = true
+        }
       }
     } else {
       router.push("/cart")
     }
     setIsLoading(false)
-  }, [router])
+  }, [router, locale])
 
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0)
 
